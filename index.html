@@ -449,21 +449,210 @@
     }
 
     @media (max-width: 640px) {
-      body { line-height: 1.55; }
-      .container { padding: 0 14px; }
-      header { padding: 18px 0 14px; }
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.45rem; }
-      h3 { font-size: 1.08rem; }
-      .hero, .panel, .card { padding: 18px; border-radius: 20px; }
-      .tabs, .device-tabs { display: grid; grid-template-columns: 1fr; }
-      .tab-btn, .device-btn { width: 100%; text-align: left; font-size: 0.95rem; }
-      .step { grid-template-columns: 1fr; }
-      .step-number { width: 46px; height: 46px; border-radius: 14px; }
-      .hero-box ul, .mini-list, .step ul { padding-left: 18px; }
-      .ip-input-wrap { grid-template-columns: 1fr; }
-      .open-ip-btn, .submit-btn { width: 100%; justify-self: stretch; }
-      .symbol-note { align-items: flex-start; }
+      body {
+        line-height: 1.5;
+        background: linear-gradient(180deg, #eef9ff 0%, #f8fdff 150px, var(--bg) 150px);
+      }
+
+      .container {
+        padding: 0 12px;
+      }
+
+      header {
+        padding: 12px 0 10px;
+      }
+
+      .hero {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .hero > div:first-child {
+        margin-bottom: 14px !important;
+      }
+
+      .hero > div:first-child img {
+        max-width: 170px !important;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .badge {
+        padding: 6px 12px;
+        font-size: 0.82rem;
+        margin-bottom: 8px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      h2 {
+        font-size: 1.55rem;
+      }
+
+      h3 {
+        font-size: 1.08rem;
+        margin-top: 18px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-box {
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .tabs-wrap {
+        margin-top: 10px;
+        padding: 8px 0 8px;
+        overflow: hidden;
+      }
+
+      .tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding: 2px 2px 8px;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tab-btn {
+        flex: 0 0 auto;
+        width: auto;
+        min-height: 40px;
+        padding: 9px 14px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        text-align: center;
+        scroll-snap-align: start;
+      }
+
+      .panel {
+        margin-top: 12px;
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .card,
+      .support-box {
+        padding: 16px;
+        border-radius: 18px;
+        margin-bottom: 14px;
+      }
+
+      .overview-grid,
+      .info-grid,
+      .step-grid,
+      .help-grid,
+      .official-images,
+      .form-grid,
+      .guide-layout {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .overview-card {
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .overview-card strong {
+        font-size: 1.05rem;
+      }
+
+      .highlight,
+      .warning,
+      .danger,
+      .success {
+        padding: 14px;
+        margin: 14px 0;
+      }
+
+      .device-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .device-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .device-btn {
+        flex: 0 0 auto;
+        width: auto;
+        min-height: 40px;
+        padding: 9px 14px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      .step {
+        grid-template-columns: 46px 1fr;
+        gap: 12px;
+        padding: 14px;
+        border-radius: 18px;
+      }
+
+      .step-number {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+      }
+
+      .hero-box ul,
+      .mini-list,
+      .step ul,
+      ol {
+        padding-left: 20px;
+      }
+
+      .ip-input-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .open-ip-btn,
+      .submit-btn,
+      .store-link,
+      .inline-help-link {
+        width: 100%;
+        text-align: center;
+        justify-self: stretch;
+      }
+
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea,
+      .router-select,
+      .ip-input {
+        padding: 13px 14px;
+        font-size: 1rem;
+      }
+
+      .guide-image,
+      .official-images img {
+        border-radius: 16px;
+      }
+
+      .symbol-note {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -854,6 +1043,10 @@
           const isActive = btn.dataset.tab === target;
           btn.classList.toggle('active', isActive);
           btn.setAttribute('aria-selected', String(isActive));
+
+          if (isActive && window.innerWidth <= 640) {
+            btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
         });
 
         panels.forEach((panel) => {
