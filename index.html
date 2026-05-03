@@ -299,6 +299,35 @@
       font-weight: bold;
     }
 
+    .store-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .store-link,
+    .inline-help-link {
+      display: inline-block;
+      color: #2a6f97;
+      font-weight: bold;
+      text-decoration: none;
+      background: var(--primary-soft);
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px;
+      margin-top: 8px;
+    }
+
+    .store-link:hover,
+    .store-link:focus-visible,
+    .inline-help-link:hover,
+    .inline-help-link:focus-visible {
+      border-color: var(--primary);
+      color: var(--primary);
+      outline: none;
+    }
+
     .support-box {
       background: linear-gradient(135deg, #eef8ff, #ffffff);
       border: 2px solid var(--line);
@@ -585,7 +614,7 @@
           <div class="step-list">
             <div class="step"><div class="step-number">1</div><div><h4>Router öffnen</h4><p>Öffnen Sie einen Internet-Browser und geben Sie die Router-Adresse direkt oben in die Adressleiste ein.</p><ul><li>Beispiele: 192.168.0.1, 192.168.1.1 oder fritz.box</li><li>Nicht bei Google eingeben</li></ul></div></div>
             <div class="step"><div class="step-number">2</div><div><h4>Einloggen</h4><p>Benutzername und Passwort stehen häufig auf dem Router oder auf einem Aufkleber.</p></div></div>
-            <div class="step"><div class="step-number">3</div><div><h4>5 GHz ausschalten</h4><p>Gehen Sie in den Bereich WLAN oder Wireless und deaktivieren Sie 5 GHz oder aktivieren Sie ausschließlich 2,4 GHz.</p></div></div>
+            <div class="step"><div class="step-number">3</div><div><h4>5 GHz ausschalten</h4><p>Gehen Sie in den Bereich WLAN oder Wireless und deaktivieren Sie 5 GHz oder aktivieren Sie ausschließlich 2,4 GHz.</p><a class="inline-help-link" href="#hilfe" data-link-tab="hilfe">Brauchen Sie Hilfe beim Router? WLAN-Hilfe öffnen →</a></div></div>
             <div class="step"><div class="step-number">4</div><div><h4>Drucker verbinden</h4><p>Lassen Sie das Handy mit dem WLAN verbunden, öffnen Sie die App, fügen Sie den Drucker hinzu, wählen Sie WLAN aus und geben Sie das Passwort ein.</p></div></div>
             <div class="step"><div class="step-number">5</div><div><h4>Fertig</h4><p>Der Drucker ist jetzt verbunden. Danach können Sie 5 GHz bei Bedarf wieder einschalten.</p></div></div>
           </div>
@@ -756,8 +785,8 @@
       <h2>Erste Schritte</h2>
       <p class="lead">Hier werden die wichtigen ersten Schritte aus der mitgelieferten Anleitung nochmals übersichtlich dargestellt, damit die Installation des Druckers leichter gelingt.</p>
 
-      <div class="card"><h3>1. App herunterladen</h3><ul class="mini-list"><li>Android: Suchen Sie im App-Markt oder bei Google Play nach <strong>Fun Print</strong>.</li><li>iPhone: Suchen Sie im App Store nach <strong>Fun Print</strong>.</li><li>Verwenden Sie bei Bedarf den QR-Code aus der mitgelieferten Anleitung.</li></ul></div>
-      <div class="card"><h3>2. Gerät mit dem WLAN verbinden</h3><ul class="mini-list"><li>Beim ersten Gebrauch muss das Gerät mit dem Netzwerk verbunden werden.</li><li>Auf der Seite erscheint zunächst <strong>Connecting</strong>.</li><li>Danach wird eine Seite mit einem QR-Code angezeigt.</li><li>Scannen Sie den QR-Code mit Ihrem Handy, um zur Netzwerkseite zu gelangen.</li><li>Geben Sie den Namen des <strong>2,4-GHz-WLANs</strong> und das Passwort ein.</li><li>Klicken Sie auf den ersten roten Block, um das akustische Signal zu erzeugen.</li><li>Halten Sie das Handy mit aktiviertem Ton in die Nähe des Geräts, um die Netzwerkverbindung zu starten.</li><li>Sobald auf der Geräteseite <strong>Press to talk</strong> angezeigt wird, können Sie die Taste drücken.</li></ul></div>
+      <div class="card"><h3>1. App herunterladen</h3><ul class="mini-list"><li><strong>Android:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Google Play Store herunter.</li><li><strong>iPhone:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Apple App Store herunter.</li><li>Verwenden Sie alternativ den QR-Code aus der mitgelieferten Anleitung.</li></ul><div class="store-links"><a class="store-link" href="https://play.google.com/store/apps/details?id=com.fun.mxw&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android App herunterladen →</a><a class="store-link" href="https://apps.apple.com/at/app/fun-print/id1592740556" target="_blank" rel="noopener noreferrer">iPhone App herunterladen →</a></div></div>
+      <div class="card"><h3>2. Gerät mit dem WLAN verbinden</h3><ul class="mini-list"><li>Beim ersten Gebrauch muss das Gerät mit dem Netzwerk verbunden werden.</li><li>Auf der Seite erscheint zunächst <strong>Connecting</strong>.</li><li>Danach wird eine Seite mit einem QR-Code angezeigt.</li><li>Scannen Sie den QR-Code mit Ihrem Handy, um zur Netzwerkseite zu gelangen.</li><li>Geben Sie den Namen des <strong>2,4-GHz-WLANs</strong> und das Passwort ein.<br><a class="inline-help-link" href="#inbetriebnahme" data-link-tab="inbetriebnahme">Probleme mit der Umstellung auf 2,4 GHz? Zur Inbetriebnahme →</a></li><li>Klicken Sie auf den ersten roten Block, um das akustische Signal zu erzeugen.</li><li>Halten Sie das Handy mit aktiviertem Ton in die Nähe des Geräts, um die Netzwerkverbindung zu starten.</li><li>Sobald auf der Geräteseite <strong>Press to talk</strong> angezeigt wird, können Sie die Taste drücken.</li></ul></div>
       <div class="card"><h3>3. AI-Funktion nutzen</h3><ul class="mini-list"><li>Drücken Sie die <strong>AI-Taste</strong>, um zu sprechen und Inhalte zu erstellen.</li><li>Nach erfolgreicher Einrichtung des Netzwerks erscheint <strong>Press to talk</strong>.</li><li>Halten Sie die AI-Schaltfläche am Gerät gedrückt, um die Erstellungsfunktion zu nutzen.</li><li>Beispiel: „Ein Bild drucken, das einen kleinen Hund im Feld zeigt.“</li><li>Halten Sie die Taste gedrückt, sprechen Sie den Befehl und lassen Sie sie wieder los.</li></ul></div>
       <div class="warning"><strong>Wichtig für die Einrichtung:</strong> 5GWi‑Fi wird nicht unterstützt. Für die Installation muss ein <strong>2,4 GHz WLAN</strong> verwendet werden.</div>
       <div class="official-images">
