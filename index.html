@@ -325,17 +325,20 @@
 
     .official-images {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 18px;
       margin-top: 18px;
     }
 
     .official-images img {
       width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
       border-radius: 20px;
       border: 2px solid var(--line);
       box-shadow: 0 8px 22px rgba(78, 195, 255, 0.08);
       display: block;
+      background: #fff;
     }
 
     .symbol-note { display: flex; align-items: center; gap: 16px; }
@@ -691,7 +694,9 @@
       <div class="card"><h3>2. Gerät mit dem WLAN verbinden</h3><ul class="mini-list"><li>Beim ersten Gebrauch muss das Gerät mit dem Netzwerk verbunden werden.</li><li>Auf der Seite erscheint zunächst <strong>Connecting</strong>.</li><li>Danach wird eine Seite mit einem QR-Code angezeigt.</li><li>Scannen Sie den QR-Code mit Ihrem Handy, um zur Netzwerkseite zu gelangen.</li><li>Geben Sie den Namen des <strong>2,4-GHz-WLANs</strong> und das Passwort ein.</li><li>Klicken Sie auf den ersten roten Block, um das akustische Signal zu erzeugen.</li><li>Halten Sie das Handy mit aktiviertem Ton in die Nähe des Geräts, um die Netzwerkverbindung zu starten.</li><li>Sobald auf der Geräteseite <strong>Press to talk</strong> angezeigt wird, können Sie die Taste drücken.</li></ul></div>
       <div class="card"><h3>3. AI-Funktion nutzen</h3><ul class="mini-list"><li>Drücken Sie die <strong>AI-Taste</strong>, um zu sprechen und Inhalte zu erstellen.</li><li>Nach erfolgreicher Einrichtung des Netzwerks erscheint <strong>Press to talk</strong>.</li><li>Halten Sie die AI-Schaltfläche am Gerät gedrückt, um die Erstellungsfunktion zu nutzen.</li><li>Beispiel: „Ein Bild drucken, das einen kleinen Hund im Feld zeigt.“</li><li>Halten Sie die Taste gedrückt, sprechen Sie den Befehl und lassen Sie sie wieder los.</li></ul></div>
       <div class="warning"><strong>Wichtig für die Einrichtung:</strong> 5GWi‑Fi wird nicht unterstützt. Für die Installation muss ein <strong>2,4 GHz WLAN</strong> verwendet werden.</div>
-      <div class="official-images"><img src="offizielle-anleitung-1.jpg" alt="Mitgelieferte Anleitung Seite 1"><img src="offizielle-anleitung-2.jpg" alt="Mitgelieferte Anleitung Seite 2"></div>
+      <div class="official-images">
+        <img src="Bild%208.png" alt="Mitgelieferte Anleitung zur Installation des Q15 Mini Printers">
+      </div>
     </section>
 
     <section class="panel" id="entsorgung">
