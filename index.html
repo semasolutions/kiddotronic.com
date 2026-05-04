@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Gebrauchsanleitung für den Kiddotronic Q15 Mini Printer mit AI inklusive WLAN-Hilfe, 2,4-GHz-Einrichtung, Sicherheit und Support." />
   <title>Kiddotronic KI Mini Printer – Gebrauchsanleitung</title>
+
   <style>
     :root {
       --bg: #f5fbff;
@@ -99,6 +100,11 @@
 
     .hero-box h3 { margin-top: 0; font-size: 1.1rem; }
     .hero-box ul { margin: 0; padding-left: 18px; }
+
+    .mobile-menu-bar,
+    .mobile-menu-overlay {
+      display: none;
+    }
 
     .tabs-wrap {
       position: sticky;
@@ -454,6 +460,10 @@
         background: linear-gradient(180deg, #eef9ff 0%, #f8fdff 150px, var(--bg) 150px);
       }
 
+      body.menu-open {
+        overflow: hidden;
+      }
+
       .container {
         padding: 0 12px;
       }
@@ -508,35 +518,92 @@
         border-radius: 18px;
       }
 
+      .mobile-menu-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(245, 251, 255, 0.96);
+        backdrop-filter: blur(10px);
+        padding: 10px 0;
+        margin-top: 8px;
+      }
+
+      .mobile-menu-bar strong {
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .mobile-menu-btn {
+        width: 48px;
+        height: 48px;
+        border: 2px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+        color: var(--text);
+        font-size: 1.45rem;
+        font-weight: bold;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(36, 59, 83, 0.32);
+        z-index: 39;
+      }
+
+      .mobile-menu-overlay.active {
+        display: block;
+      }
+
       .tabs-wrap {
-        margin-top: 10px;
-        padding: 8px 0 8px;
-        overflow: hidden;
+        position: fixed;
+        top: 0;
+        right: -88%;
+        width: 86%;
+        max-width: 340px;
+        height: 100vh;
+        z-index: 40;
+        margin-top: 0;
+        padding: 24px 18px;
+        background: linear-gradient(180deg, #4ec3ff, #5260e8);
+        box-shadow: -18px 0 40px rgba(36, 59, 83, 0.25);
+        transition: right 0.25s ease;
+        overflow-y: auto;
+      }
+
+      .tabs-wrap.open {
+        right: 0;
       }
 
       .tabs {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 8px;
-        padding: 2px 2px 8px;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .tabs::-webkit-scrollbar {
-        display: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
       }
 
       .tab-btn {
-        flex: 0 0 auto;
-        width: auto;
-        min-height: 40px;
-        padding: 9px 14px;
-        font-size: 0.9rem;
-        white-space: nowrap;
-        text-align: center;
-        scroll-snap-align: start;
+        width: 100%;
+        min-height: 54px;
+        padding: 14px 18px;
+        border-radius: 18px;
+        border-color: rgba(255,255,255,0.5);
+        background: rgba(255,255,255,0.92);
+        text-align: left;
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .tab-btn.active {
+        background: #fff;
+        color: #2a6f97;
+        border-color: #fff;
+        box-shadow: 0 12px 22px rgba(0,0,0,0.12);
       }
 
       .panel {
@@ -656,6 +723,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="container">
     <div class="hero">
@@ -687,7 +755,14 @@
   </header>
 
   <main class="container">
-    <div class="tabs-wrap">
+    <div class="mobile-menu-bar">
+      <strong id="mobileCurrentTab">Übersicht</strong>
+      <button class="mobile-menu-btn" type="button" id="mobileMenuBtn" aria-label="Menü öffnen">☰</button>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <div class="tabs-wrap" id="tabsWrap">
       <nav class="tabs" aria-label="Navigationsreiter">
         <button class="tab-btn active" type="button" data-tab="uebersicht">Übersicht</button>
         <button class="tab-btn" type="button" data-tab="video">Video Anleitung</button>
@@ -947,10 +1022,10 @@
         <div class="router-guide" id="guide-netgear"><div class="highlight"><strong>Netgear:</strong> Öffnen Sie <strong>routerlogin.net</strong> oder <strong>192.168.1.1</strong>. Gehen Sie zu den Funk- bzw. Wireless-Einstellungen. Aktivieren Sie nur 2,4 GHz für die Einrichtung.</div></div>
         <div class="router-guide" id="guide-asus"><div class="highlight"><strong>ASUS:</strong> Öffnen Sie <strong>router.asus.com</strong> oder <strong>192.168.1.1</strong>. Nach dem Login finden Sie die Einstellung meist unter <strong>Wireless</strong>. Schalten Sie 5 GHz aus oder richten Sie 2,4 GHz separat ein.</div></div>
         <div class="router-guide" id="guide-o2"><div class="highlight"><strong>O2 HomeBox:</strong> Öffnen Sie <strong>o2.box</strong> oder die auf dem Gerät angegebene IP-Adresse. Gehen Sie in das WLAN-Menü und verwenden Sie für die Drucker-Einrichtung nur 2,4 GHz.</div></div>
-        <div class="router-guide" id="guide-huawei"><div class="highlight"><strong>Huawei:</strong> Öffnen Sie häufig <strong>192.168.3.1</strong> oder <strong>192.168.8.1</strong>. Suchen Sie den Bereich WLAN oder Wi‑Fi und deaktivieren Sie 5 GHz vorübergehend.</div></div>
+        <div class="router-guide" id="guide-huawei"><div class="highlight"><strong>Huawei:</strong> Öffnen Sie häufig <strong>192.168.3.1</strong> oder <strong>192.168.8.1</strong>. Suchen Sie den Bereich WLAN oder Wi-Fi und deaktivieren Sie 5 GHz vorübergehend.</div></div>
         <div class="router-guide" id="guide-dlink"><div class="highlight"><strong>D-Link:</strong> Öffnen Sie <strong>192.168.0.1</strong> oder <strong>192.168.1.1</strong>. Melden Sie sich an und suchen Sie unter WLAN / Wireless die 2,4-GHz-Einstellungen.</div></div>
         <div class="router-guide" id="guide-zte"><div class="highlight"><strong>ZTE:</strong> Öffnen Sie <strong>192.168.1.1</strong> oder die auf dem Router angegebene Adresse. Aktivieren Sie 2,4 GHz und schalten Sie 5 GHz für die Einrichtung aus.</div></div>
-        <div class="router-guide" id="guide-generic"><div class="highlight"><strong>Allgemeine Hilfe:</strong> Öffnen Sie die Router-Adresse direkt im Browser. Diese steht oft auf der Unterseite des Routers oder lässt sich am Handy unter WLAN-Details finden. Suchen Sie danach nach <strong>WLAN</strong>, <strong>Wi‑Fi</strong> oder <strong>Wireless</strong> und wählen Sie 2,4 GHz.</div></div>
+        <div class="router-guide" id="guide-generic"><div class="highlight"><strong>Allgemeine Hilfe:</strong> Öffnen Sie die Router-Adresse direkt im Browser. Diese steht oft auf der Unterseite des Routers oder lässt sich am Handy unter WLAN-Details finden. Suchen Sie danach nach <strong>WLAN</strong>, <strong>Wi-Fi</strong> oder <strong>Wireless</strong> und wählen Sie 2,4 GHz.</div></div>
       </div>
 
       <div class="highlight">
@@ -977,7 +1052,7 @@
       <div class="card"><h3>1. App herunterladen</h3><ul class="mini-list"><li><strong>Android:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Google Play Store herunter.</li><li><strong>iPhone:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Apple App Store herunter.</li><li>Verwenden Sie alternativ den QR-Code aus der mitgelieferten Anleitung.</li></ul><div class="store-links"><a class="store-link" href="https://play.google.com/store/apps/details?id=com.fun.mxw&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android App herunterladen →</a><a class="store-link" href="https://apps.apple.com/at/app/fun-print/id1592740556" target="_blank" rel="noopener noreferrer">iPhone App herunterladen →</a></div></div>
       <div class="card"><h3>2. Gerät mit dem WLAN verbinden</h3><ul class="mini-list"><li>Beim ersten Gebrauch muss das Gerät mit dem Netzwerk verbunden werden.</li><li>Auf der Seite erscheint zunächst <strong>Connecting</strong>.</li><li>Danach wird eine Seite mit einem QR-Code angezeigt.</li><li>Scannen Sie den QR-Code mit Ihrem Handy, um zur Netzwerkseite zu gelangen.</li><li>Geben Sie den Namen des <strong>2,4-GHz-WLANs</strong> und das Passwort ein.<br><a class="inline-help-link" href="#inbetriebnahme" data-link-tab="inbetriebnahme">Probleme mit der Umstellung auf 2,4 GHz? Zur Inbetriebnahme →</a></li><li>Klicken Sie auf den ersten roten Block, um das akustische Signal zu erzeugen.</li><li>Halten Sie das Handy mit aktiviertem Ton in die Nähe des Geräts, um die Netzwerkverbindung zu starten.</li><li>Sobald auf der Geräteseite <strong>Press to talk</strong> angezeigt wird, können Sie die Taste drücken.</li></ul></div>
       <div class="card"><h3>3. AI-Funktion nutzen</h3><ul class="mini-list"><li>Drücken Sie die <strong>AI-Taste</strong>, um zu sprechen und Inhalte zu erstellen.</li><li>Nach erfolgreicher Einrichtung des Netzwerks erscheint <strong>Press to talk</strong>.</li><li>Halten Sie die AI-Schaltfläche am Gerät gedrückt, um die Erstellungsfunktion zu nutzen.</li><li>Beispiel: „Ein Bild drucken, das einen kleinen Hund im Feld zeigt.“</li><li>Halten Sie die Taste gedrückt, sprechen Sie den Befehl und lassen Sie sie wieder los.</li></ul></div>
-      <div class="warning"><strong>Wichtig für die Einrichtung:</strong> 5GWi‑Fi wird nicht unterstützt. Für die Installation muss ein <strong>2,4 GHz WLAN</strong> verwendet werden.</div>
+      <div class="warning"><strong>Wichtig für die Einrichtung:</strong> 5GWi-Fi wird nicht unterstützt. Für die Installation muss ein <strong>2,4 GHz WLAN</strong> verwendet werden.</div>
       <div class="official-images">
         <img src="Bild%208.png" alt="Mitgelieferte Anleitung zur Installation des Q15 Mini Printers">
       </div>
@@ -1035,6 +1110,39 @@
       const supportForm = document.getElementById('supportForm');
       const deviceButtons = document.querySelectorAll('.device-btn');
       const deviceGuides = document.querySelectorAll('.device-guide');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+      const tabsWrap = document.getElementById('tabsWrap');
+      const mobileCurrentTab = document.getElementById('mobileCurrentTab');
+
+      function getTabLabel(target) {
+        const activeButton = document.querySelector('.tab-btn[data-tab="' + target + '"]');
+        return activeButton ? activeButton.textContent.trim() : 'Übersicht';
+      }
+
+      function closeMobileMenu() {
+        if (tabsWrap) tabsWrap.classList.remove('open');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+
+      function openMobileMenu() {
+        if (tabsWrap) tabsWrap.classList.add('open');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
+        document.body.classList.add('menu-open');
+      }
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+      }
+
+      if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+      }
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeMobileMenu();
+      });
 
       function openTab(target, updateHash = true) {
         if (!target) return;
@@ -1043,10 +1151,6 @@
           const isActive = btn.dataset.tab === target;
           btn.classList.toggle('active', isActive);
           btn.setAttribute('aria-selected', String(isActive));
-
-          if (isActive && window.innerWidth <= 640) {
-            btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-          }
         });
 
         panels.forEach((panel) => {
@@ -1054,6 +1158,12 @@
           panel.classList.toggle('active', isActive);
           panel.hidden = !isActive;
         });
+
+        if (mobileCurrentTab) {
+          mobileCurrentTab.textContent = getTabLabel(target);
+        }
+
+        closeMobileMenu();
 
         if (updateHash) history.replaceState(null, '', '#' + target);
         window.scrollTo({ top: 0, behavior: 'smooth' });
