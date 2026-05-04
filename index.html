@@ -858,104 +858,8 @@
       <p class="lead">Hier finden Sie zusätzliche Hilfe, wenn die Verbindung nicht sofort klappt. Alles ist besonders einfach erklärt.</p>
 
       <div class="card">
-        <h3>Schritt 1: Router-IP-Adresse finden</h3>
-        <p>Die Router-IP ist die Adresse Ihres Internet-Routers. Stellen Sie sich das wie die Hausnummer Ihres Routers vor. Sie brauchen diese Adresse, um die Router-Seite zu öffnen und dort das 2,4-GHz-WLAN zu prüfen.</p>
-
-        <div class="device-tabs" aria-label="Gerät auswählen">
-          <button class="device-btn active" type="button" data-device="ios">iPhone / iPad</button>
-          <button class="device-btn" type="button" data-device="android">Android</button>
-          <button class="device-btn" type="button" data-device="windows">Windows Laptop</button>
-          <button class="device-btn" type="button" data-device="mac">Apple Mac</button>
-        </div>
-
-        <div class="device-guide active" id="device-ios">
-          <h3>iPhone oder iPad</h3>
-          <div class="guide-layout">
-            <div>
-              <ol>
-                <li>Öffnen Sie am iPhone die <strong>Einstellungen</strong>.</li>
-                <li>Tippen Sie auf <strong>WLAN</strong>.</li>
-                <li>Tippen Sie neben Ihrem verbundenen WLAN auf das kleine <strong>i</strong>.</li>
-                <li>Scrollen Sie etwas nach unten.</li>
-                <li>Bei <strong>Router</strong> steht die IP-Adresse.</li>
-                <li>Diese Adresse können Sie unten bei <strong>Direkt zur Router-Seite</strong> eingeben.</li>
-              </ol>
-              <div class="simple-note"><strong>Merksatz:</strong> iPhone → Einstellungen → WLAN → kleines i → Router.</div>
-            </div>
-            <img class="guide-image" src="IOS%20WLAN%20Verbindung.jpeg" alt="iPhone Anleitung zur Router-IP finden">
-          </div>
-        </div>
-
-        <div class="device-guide" id="device-android">
-          <h3>Android Handy</h3>
-          <div class="guide-layout">
-            <div>
-              <ol>
-                <li>Öffnen Sie am Android-Handy die <strong>Einstellungen</strong>.</li>
-                <li>Tippen Sie auf <strong>WLAN</strong> oder <strong>Netzwerk &amp; Internet</strong>.</li>
-                <li>Tippen Sie auf Ihr verbundenes WLAN.</li>
-                <li>Öffnen Sie <strong>Netzwerkdetails</strong> oder <strong>Erweitert</strong>.</li>
-                <li>Bei <strong>Gateway</strong> steht meistens die Router-IP.</li>
-                <li>Diese Adresse können Sie unten bei <strong>Direkt zur Router-Seite</strong> eingeben.</li>
-              </ol>
-              <div class="simple-note"><strong>Merksatz:</strong> Android → Einstellungen → WLAN → Netzwerkdetails → Gateway.</div>
-            </div>
-            <img class="guide-image" src="Android%20WLAN%20Verbindung.jpeg" alt="Android Anleitung zur Router-IP finden">
-          </div>
-        </div>
-
-        <div class="device-guide" id="device-windows">
-          <h3>Windows Laptop</h3>
-          <ol>
-            <li>Klicken Sie unten rechts auf das <strong>WLAN-Symbol</strong>.</li>
-            <li>Klicken Sie auf Ihr verbundenes WLAN.</li>
-            <li>Klicken Sie auf <strong>Eigenschaften</strong>.</li>
-            <li>Scrollen Sie nach unten.</li>
-            <li>Suchen Sie <strong>IPv4-DNS-Server</strong> oder <strong>Standardgateway</strong>.</li>
-            <li>Die Adresse sieht meistens so aus: <strong>192.168.0.1</strong> oder <strong>192.168.1.1</strong>.</li>
-            <li>Diese Adresse können Sie unten bei <strong>Direkt zur Router-Seite</strong> eingeben.</li>
-          </ol>
-          <div class="simple-note"><strong>Ganz einfach:</strong> Unten rechts WLAN anklicken → Eigenschaften → nach IP-Adresse suchen.</div>
-        </div>
-
-        <div class="device-guide" id="device-mac">
-          <h3>Apple Mac / MacBook</h3>
-          <ol>
-            <li>Klicken Sie oben links auf das <strong>Apple-Zeichen</strong>.</li>
-            <li>Öffnen Sie die <strong>Systemeinstellungen</strong>.</li>
-            <li>Klicken Sie auf <strong>WLAN</strong>.</li>
-            <li>Klicken Sie bei Ihrem verbundenen WLAN auf <strong>Details</strong>.</li>
-            <li>Öffnen Sie den Bereich <strong>TCP/IP</strong>.</li>
-            <li>Bei <strong>Router</strong> steht die Router-IP.</li>
-            <li>Diese Adresse können Sie unten bei <strong>Direkt zur Router-Seite</strong> eingeben.</li>
-          </ol>
-          <div class="simple-note"><strong>Merksatz:</strong> Apple-Zeichen → Systemeinstellungen → WLAN → Details → TCP/IP → Router.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Häufige Fehler</h3>
-        <ul class="mini-list">
-          <li>IP-Adresse wurde bei Google statt oben in die Browserleiste eingegeben.</li>
-          <li>Handy ist mit 5 GHz WLAN verbunden.</li>
-          <li>Falsches WLAN-Passwort wurde eingegeben.</li>
-          <li>Der Drucker ist zu weit vom Router entfernt.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Schritt 2: Direkt zur Router-Seite</h3>
-        <p>Geben Sie hier die gefundene IP-Adresse ein. Danach öffnet sich die Router-Seite in einem neuen Fenster oder Tab. Dort können Sie später das 2,4-GHz-WLAN einstellen.</p>
-        <div class="ip-input-wrap">
-          <input class="ip-input" id="routerIpInput" type="text" inputmode="url" placeholder="z. B. 192.168.0.1 oder fritz.box" autocomplete="off">
-          <button class="open-ip-btn" id="openRouterIpBtn" type="button">Router öffnen</button>
-        </div>
-        <div class="highlight"><strong>Wichtig:</strong> Die Router-Seite öffnet sich nur, wenn Ihr Handy, Tablet oder Laptop mit dem gleichen WLAN verbunden ist wie der Router.</div>
-      </div>
-
-      <div class="card">
-        <h3>Schritt 3: Router-Anleitung auswählen</h3>
-        <p>Wählen Sie hier Ihren Router aus. Dann sehen Sie direkt die passende Hilfe zur Umstellung auf 2,4 GHz WLAN.</p>
+        <h3>Schritt 1: Router auswählen</h3>
+        <p>Wählen Sie zuerst Ihren Router aus. Dann wird die passende Adresse automatisch eingesetzt und Sie sehen direkt die passende Hilfe zur Umstellung auf <strong>2,4 GHz WLAN</strong>.</p>
 
         <select class="router-select" id="routerSelect">
           <option value="">Bitte Router auswählen</option>
@@ -983,6 +887,102 @@
         <div class="router-guide" id="guide-dlink"><div class="highlight"><strong>D-Link:</strong> Öffnen Sie <strong>192.168.0.1</strong> oder <strong>192.168.1.1</strong>. Melden Sie sich an und suchen Sie unter WLAN / Wireless die 2,4-GHz-Einstellungen.</div></div>
         <div class="router-guide" id="guide-zte"><div class="highlight"><strong>ZTE:</strong> Öffnen Sie <strong>192.168.1.1</strong> oder die auf dem Router angegebene Adresse. Aktivieren Sie 2,4 GHz und schalten Sie 5 GHz für die Einrichtung aus.</div></div>
         <div class="router-guide" id="guide-generic"><div class="highlight"><strong>Allgemeine Hilfe:</strong> Öffnen Sie die Router-Adresse direkt im Browser. Diese steht oft auf der Unterseite des Routers oder lässt sich am Handy unter WLAN-Details finden. Suchen Sie danach nach <strong>WLAN</strong>, <strong>Wi-Fi</strong> oder <strong>Wireless</strong> und wählen Sie 2,4 GHz.</div></div>
+      </div>
+
+      <div class="card">
+        <h3>Schritt 2: Router-Seite öffnen</h3>
+        <p>Die passende Router-Adresse wird nach der Auswahl automatisch vorgeschlagen. Klicken Sie anschließend auf <strong>Router öffnen</strong>.</p>
+        <div class="ip-input-wrap">
+          <input class="ip-input" id="routerIpInput" type="text" inputmode="url" placeholder="z. B. 192.168.0.1 oder fritz.box" autocomplete="off">
+          <button class="open-ip-btn" id="openRouterIpBtn" type="button">Router öffnen</button>
+        </div>
+        <div class="highlight"><strong>Wichtig:</strong> Die Router-Seite öffnet sich nur, wenn Ihr Handy, Tablet oder Laptop mit dem gleichen WLAN verbunden ist wie der Router.</div>
+      </div>
+
+      <div class="card">
+        <h3>Alternative: Router-Adresse am Gerät finden</h3>
+        <p>Wenn Sie Ihren Router nicht kennen oder die Adresse nicht funktioniert, können Sie die Router-IP direkt auf Ihrem Gerät nachsehen.</p>
+
+        <div class="device-tabs" aria-label="Gerät auswählen">
+          <button class="device-btn active" type="button" data-device="ios">iPhone / iPad</button>
+          <button class="device-btn" type="button" data-device="android">Android</button>
+          <button class="device-btn" type="button" data-device="windows">Windows Laptop</button>
+          <button class="device-btn" type="button" data-device="mac">Apple Mac</button>
+        </div>
+
+        <div class="device-guide active" id="device-ios">
+          <h3>iPhone oder iPad</h3>
+          <div class="guide-layout">
+            <div>
+              <ol>
+                <li>Öffnen Sie am iPhone die <strong>Einstellungen</strong>.</li>
+                <li>Tippen Sie auf <strong>WLAN</strong>.</li>
+                <li>Tippen Sie neben Ihrem verbundenen WLAN auf das kleine <strong>i</strong>.</li>
+                <li>Scrollen Sie etwas nach unten.</li>
+                <li>Bei <strong>Router</strong> steht die IP-Adresse.</li>
+                <li>Diese Adresse können Sie oben bei <strong>Router-Seite öffnen</strong> eingeben.</li>
+              </ol>
+              <div class="simple-note"><strong>Merksatz:</strong> iPhone → Einstellungen → WLAN → kleines i → Router.</div>
+            </div>
+            <img class="guide-image" src="IOS%20WLAN%20Verbindung.jpeg" alt="iPhone Anleitung zur Router-IP finden">
+          </div>
+        </div>
+
+        <div class="device-guide" id="device-android">
+          <h3>Android Handy</h3>
+          <div class="guide-layout">
+            <div>
+              <ol>
+                <li>Öffnen Sie am Android-Handy die <strong>Einstellungen</strong>.</li>
+                <li>Tippen Sie auf <strong>WLAN</strong> oder <strong>Netzwerk &amp; Internet</strong>.</li>
+                <li>Tippen Sie auf Ihr verbundenes WLAN.</li>
+                <li>Öffnen Sie <strong>Netzwerkdetails</strong> oder <strong>Erweitert</strong>.</li>
+                <li>Bei <strong>Gateway</strong> steht meistens die Router-IP.</li>
+                <li>Diese Adresse können Sie oben bei <strong>Router-Seite öffnen</strong> eingeben.</li>
+              </ol>
+              <div class="simple-note"><strong>Merksatz:</strong> Android → Einstellungen → WLAN → Netzwerkdetails → Gateway.</div>
+            </div>
+            <img class="guide-image" src="Android%20WLAN%20Verbindung.jpeg" alt="Android Anleitung zur Router-IP finden">
+          </div>
+        </div>
+
+        <div class="device-guide" id="device-windows">
+          <h3>Windows Laptop</h3>
+          <ol>
+            <li>Klicken Sie unten rechts auf das <strong>WLAN-Symbol</strong>.</li>
+            <li>Klicken Sie auf Ihr verbundenes WLAN.</li>
+            <li>Klicken Sie auf <strong>Eigenschaften</strong>.</li>
+            <li>Scrollen Sie nach unten.</li>
+            <li>Suchen Sie <strong>IPv4-DNS-Server</strong> oder <strong>Standardgateway</strong>.</li>
+            <li>Die Adresse sieht meistens so aus: <strong>192.168.0.1</strong> oder <strong>192.168.1.1</strong>.</li>
+            <li>Diese Adresse können Sie oben bei <strong>Router-Seite öffnen</strong> eingeben.</li>
+          </ol>
+          <div class="simple-note"><strong>Ganz einfach:</strong> Unten rechts WLAN anklicken → Eigenschaften → nach IP-Adresse suchen.</div>
+        </div>
+
+        <div class="device-guide" id="device-mac">
+          <h3>Apple Mac / MacBook</h3>
+          <ol>
+            <li>Klicken Sie oben links auf das <strong>Apple-Zeichen</strong>.</li>
+            <li>Öffnen Sie die <strong>Systemeinstellungen</strong>.</li>
+            <li>Klicken Sie auf <strong>WLAN</strong>.</li>
+            <li>Klicken Sie bei Ihrem verbundenen WLAN auf <strong>Details</strong>.</li>
+            <li>Öffnen Sie den Bereich <strong>TCP/IP</strong>.</li>
+            <li>Bei <strong>Router</strong> steht die Router-IP.</li>
+            <li>Diese Adresse können Sie oben bei <strong>Router-Seite öffnen</strong> eingeben.</li>
+          </ol>
+          <div class="simple-note"><strong>Merksatz:</strong> Apple-Zeichen → Systemeinstellungen → WLAN → Details → TCP/IP → Router.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Häufige Fehler</h3>
+        <ul class="mini-list">
+          <li>IP-Adresse wurde bei Google statt oben in die Browserleiste eingegeben.</li>
+          <li>Handy ist mit 5 GHz WLAN verbunden.</li>
+          <li>Falsches WLAN-Passwort wurde eingegeben.</li>
+          <li>Der Drucker ist zu weit vom Router entfernt.</li>
+        </ul>
       </div>
 
       <div class="highlight"><strong>Tipp:</strong> Die Einrichtung muss in der Regel nur einmal durchgeführt werden. Danach verbindet sich der Drucker automatisch.</div>
@@ -1058,6 +1058,20 @@
       const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
       const tabsWrap = document.getElementById('tabsWrap');
       const mobileCurrentTab = document.getElementById('mobileCurrentTab');
+
+      const routerDefaults = {
+        fritzbox: 'fritz.box',
+        speedport: 'speedport.ip',
+        vodafone: '192.168.0.1',
+        tplink: '192.168.0.1',
+        netgear: 'routerlogin.net',
+        asus: 'router.asus.com',
+        o2: 'o2.box',
+        huawei: '192.168.3.1',
+        dlink: '192.168.0.1',
+        zte: '192.168.1.1',
+        generic: ''
+      };
 
       function getTabLabel(target) {
         const activeButton = document.querySelector('.tab-btn[data-tab="' + target + '"]');
@@ -1140,6 +1154,7 @@
           if (!selected) return;
           const target = document.getElementById('guide-' + selected);
           if (target) target.classList.add('active');
+          if (routerIpInput && routerDefaults[selected]) routerIpInput.value = routerDefaults[selected];
         });
       }
 
