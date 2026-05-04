@@ -877,7 +877,7 @@
         </select>
 
         <div class="router-guide" id="guide-fritzbox"><div class="highlight"><strong>AVM FRITZ!Box:</strong> Öffnen Sie <strong>fritz.box</strong> im Browser. Melden Sie sich mit dem Kennwort an, das auf der Unterseite des Routers steht. Gehen Sie zu <strong>WLAN → Funknetz</strong> oder zu den WLAN-Einstellungen und deaktivieren Sie 5 GHz bzw. nutzen Sie nur 2,4 GHz für die Einrichtung.</div></div>
-        <div class="router-guide" id="guide-speedport"><div class="highlight"><strong>Telekom Speedport:</strong> Öffnen Sie <strong>speedport.ip</strong> oder <strong>192.168.2.1</strong>. Das Gerätepasswort steht meist auf der Rückseite. Öffnen Sie die WLAN-Einstellungen und deaktivieren Sie 5 GHz oder trennen Sie 2,4 GHz und 5 GHz.</div></div>
+        <div class="router-guide" id="guide-speedport"><div class="highlight"><strong>Telekom Speedport:</strong> Öffnen Sie <strong>speedport.ip</strong> oder <strong>192.168.0.1</strong>. Falls diese Adresse nicht funktioniert, versuchen Sie <strong>192.168.2.1</strong>. Das Gerätepasswort steht meist auf der Rückseite. Öffnen Sie die WLAN-Einstellungen und deaktivieren Sie 5 GHz oder trennen Sie 2,4 GHz und 5 GHz.</div></div>
         <div class="router-guide" id="guide-vodafone"><div class="highlight"><strong>Vodafone Station:</strong> Öffnen Sie <strong>192.168.0.1</strong> im Browser. Melden Sie sich mit dem Router-Passwort an. Gehen Sie in die WLAN-Einstellungen und deaktivieren Sie 5 GHz vorübergehend.</div></div>
         <div class="router-guide" id="guide-tplink"><div class="highlight"><strong>TP-Link:</strong> Öffnen Sie <strong>192.168.0.1</strong>, <strong>192.168.1.1</strong> oder <strong>tplinkwifi.net</strong>. Melden Sie sich an und gehen Sie zu <strong>Wireless</strong> oder <strong>WLAN</strong>. Aktivieren Sie 2,4 GHz und deaktivieren Sie 5 GHz, falls nötig.</div></div>
         <div class="router-guide" id="guide-netgear"><div class="highlight"><strong>Netgear:</strong> Öffnen Sie <strong>routerlogin.net</strong> oder <strong>192.168.1.1</strong>. Gehen Sie zu den Funk- bzw. Wireless-Einstellungen. Aktivieren Sie nur 2,4 GHz für die Einrichtung.</div></div>
@@ -897,6 +897,17 @@
           <button class="open-ip-btn" id="openRouterIpBtn" type="button">Router öffnen</button>
         </div>
         <div class="highlight"><strong>Wichtig:</strong> Die Router-Seite öffnet sich nur, wenn Ihr Handy, Tablet oder Laptop mit dem gleichen WLAN verbunden ist wie der Router.</div>
+      </div>
+
+      <div class="card">
+        <h3>Schritt 3: 2,4 GHz aktivieren</h3>
+        <p>Suchen Sie auf der Router-Seite den Bereich <strong>WLAN</strong>, <strong>Wi-Fi</strong>, <strong>Wireless</strong> oder <strong>Funknetz</strong>.</p>
+        <div class="step-list">
+          <div class="step"><div class="step-number">1</div><div><h4>2,4 GHz einschalten</h4><p>Stellen Sie sicher, dass das <strong>2,4-GHz-WLAN</strong> aktiviert ist.</p></div></div>
+          <div class="step"><div class="step-number">2</div><div><h4>5 GHz kurz ausschalten</h4><p>Schalten Sie <strong>5 GHz</strong> für die Einrichtung kurz aus oder trennen Sie 2,4 GHz und 5 GHz mit unterschiedlichen WLAN-Namen.</p></div></div>
+          <div class="step"><div class="step-number">3</div><div><h4>Drucker verbinden</h4><p>Verbinden Sie Ihr Handy mit dem <strong>2,4-GHz-WLAN</strong>, öffnen Sie die App und starten Sie die Verbindung mit dem Drucker erneut.</p></div></div>
+          <div class="step"><div class="step-number">4</div><div><h4>Danach wieder zurückstellen</h4><p>Nach erfolgreicher Einrichtung können Sie <strong>5 GHz</strong> bei Bedarf wieder einschalten.</p></div></div>
+        </div>
       </div>
 
       <div class="card">
@@ -1150,11 +1161,14 @@
       if (routerSelect) {
         routerSelect.addEventListener('change', function () {
           routerGuides.forEach((guide) => guide.classList.remove('active'));
+
           const selected = this.value;
-          if (!selected) return;
           const target = document.getElementById('guide-' + selected);
           if (target) target.classList.add('active');
-          if (routerIpInput && routerDefaults[selected]) routerIpInput.value = routerDefaults[selected];
+
+          if (routerIpInput) {
+            routerIpInput.value = routerDefaults[selected] || '';
+          }
         });
       }
 
@@ -1169,7 +1183,7 @@
         if (!routerIpInput) return;
         const value = normalizeRouterUrl(routerIpInput.value);
         if (!value) {
-          alert('Bitte geben Sie eine Router-IP oder Router-Adresse ein.');
+          alert('Bitte wählen Sie zuerst Ihren Router aus oder geben Sie eine Router-IP ein.');
           return;
         }
 
