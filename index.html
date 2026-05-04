@@ -469,35 +469,40 @@
       }
 
       header {
-        padding: 12px 0 10px;
+        padding: 10px 0 8px;
       }
 
       .hero {
-        padding: 20px;
-        border-radius: 22px;
+        padding: 14px;
+        border-radius: 20px;
+        min-height: auto;
       }
 
+      .hero::before { width: 140px; height: 140px; right: -38px; top: -35px; }
+      .hero::after { width: 90px; height: 90px; left: -24px; bottom: -25px; }
+
       .hero > div:first-child {
-        margin-bottom: 14px !important;
+        margin-bottom: 8px !important;
       }
 
       .hero > div:first-child img {
-        max-width: 170px !important;
+        max-width: 118px !important;
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 10px;
       }
 
       .badge {
-        padding: 6px 12px;
-        font-size: 0.82rem;
-        margin-bottom: 8px;
+        padding: 5px 10px;
+        font-size: 0.78rem;
+        margin-bottom: 6px;
       }
 
       h1 {
-        font-size: 1.65rem;
+        font-size: 1.38rem;
+        margin-bottom: 8px;
       }
 
       h2 {
@@ -510,12 +515,23 @@
       }
 
       .hero p {
-        font-size: 1rem;
+        font-size: 0.92rem;
+        line-height: 1.42;
       }
 
       .hero-box {
-        padding: 16px;
-        border-radius: 18px;
+        padding: 12px;
+        border-radius: 16px;
+      }
+
+      .hero-box h3 {
+        font-size: 0.98rem;
+        margin-bottom: 6px;
+      }
+
+      .hero-box ul {
+        font-size: 0.88rem;
+        line-height: 1.42;
       }
 
       .mobile-menu-bar {
@@ -527,8 +543,8 @@
         z-index: 30;
         background: rgba(245, 251, 255, 0.96);
         backdrop-filter: blur(10px);
-        padding: 10px 0;
-        margin-top: 8px;
+        padding: 8px 0;
+        margin-top: 6px;
       }
 
       .mobile-menu-bar strong {
@@ -537,8 +553,8 @@
       }
 
       .mobile-menu-btn {
-        width: 48px;
-        height: 48px;
+        width: 46px;
+        height: 46px;
         border: 2px solid var(--line);
         border-radius: 16px;
         background: #fff;
@@ -607,7 +623,7 @@
       }
 
       .panel {
-        margin-top: 12px;
+        margin-top: 10px;
         padding: 18px;
         border-radius: 22px;
       }
@@ -781,15 +797,7 @@
 
       <div class="card">
         <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1); background:#eaf6ff;">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/ypgsz8aO7eE?rel=0"
-            title="Video Anleitung zur App-Installation und Drucker-Verbindung"
-            frameborder="0"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:20px;">
-          </iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/ypgsz8aO7eE?rel=0" title="Video Anleitung zur App-Installation und Drucker-Verbindung" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:20px;"></iframe>
         </div>
         <div class="highlight" style="margin-top:18px;">
           Falls das Video in Ihrem Browser nicht angezeigt wird, öffnen Sie es bitte direkt auf YouTube:
@@ -801,61 +809,20 @@
 
     <section class="panel active" id="uebersicht">
       <h2>Willkommen</h2>
-      <p class="lead">
-        Diese Seite hilft Ihnen dabei, den Kiddotronic Q15 Mini Printer mit AI richtig einzurichten und sicher zu verwenden. Wenn Sie unsicher sind, starten Sie hier: Wählen Sie einfach den Bereich aus, der am besten zu Ihrer Frage passt.
-      </p>
+      <p class="lead">Diese Seite hilft Ihnen dabei, den Kiddotronic Q15 Mini Printer mit AI richtig einzurichten und sicher zu verwenden. Wenn Sie unsicher sind, starten Sie hier: Wählen Sie einfach den Bereich aus, der am besten zu Ihrer Frage passt.</p>
 
       <div class="overview-grid">
-        <a class="overview-card" href="#video" data-link-tab="video">
-          <strong>🎬 Video Anleitung</strong>
-          Stellen Sie den Drucker zum ersten Mal ein? Schauen Sie sich die Videoanleitung an. Dort sehen Sie, wie die App installiert und der Drucker richtig verbunden wird.
-          <span>Video ansehen →</span>
-        </a>
-
-        <a class="overview-card" href="#offiziell" data-link-tab="offiziell">
-          <strong>🧾 Erste Schritte</strong>
-          Hier finden Sie die wichtigsten Schritte aus der mitgelieferten Anleitung: App herunterladen, Gerät verbinden und AI-Funktion nutzen.
-          <span>Erste Schritte öffnen →</span>
-        </a>
-
-        <a class="overview-card" href="#inbetriebnahme" data-link-tab="inbetriebnahme">
-          <strong>🚀 Inbetriebnahme</strong>
-          Haben Sie Schwierigkeiten mit der WLAN-Verbindung oder mit der App? Prüfen Sie hier die zwei beschriebenen Methoden zur ersten Verbindung.
-          <span>Inbetriebnahme öffnen →</span>
-        </a>
-
-        <a class="overview-card" href="#hilfe" data-link-tab="hilfe">
-          <strong>📶 WLAN-Hilfe</strong>
-          Für die Installation muss das WLAN auf 2,4 GHz eingestellt sein. Hier wird einfach erklärt, wie Sie die Router-IP finden und den Router öffnen. Die Umstellung ist in der Regel nur für die Installation notwendig.
-          <span>WLAN-Hilfe öffnen →</span>
-        </a>
-
-        <a class="overview-card" href="#akku" data-link-tab="akku">
-          <strong>🔋 Akku &amp; Sicherheit</strong>
-          Lesen Sie hier wichtige Sicherheitshinweise zum richtigen Umgang mit dem Akku sowie Hinweise zum Laden und Lagern.
-          <span>Sicherheitshinweise öffnen →</span>
-        </a>
-
-        <a class="overview-card" href="#entsorgung" data-link-tab="entsorgung">
-          <strong>♻️ Entsorgung</strong>
-          Der Drucker enthält eine Lithium-Batterie. Bitte lesen Sie die Entsorgungshinweise gründlich, damit Gerät und Akku richtig entsorgt werden.
-          <span>Entsorgung öffnen →</span>
-        </a>
-
-        <a class="overview-card" href="#kontakt" data-link-tab="kontakt">
-          <strong>✉️ Kontakt</strong>
-          Wenn Sie noch Fragen haben oder nicht weiterkommen, können Sie uns über das Kontaktformular direkt eine E-Mail mit Ihrem Anliegen schreiben.
-          <span>Kontakt öffnen →</span>
-        </a>
+        <a class="overview-card" href="#video" data-link-tab="video"><strong>🎬 Video Anleitung</strong>Stellen Sie den Drucker zum ersten Mal ein? Schauen Sie sich die Videoanleitung an. Dort sehen Sie, wie die App installiert und der Drucker richtig verbunden wird.<span>Video ansehen →</span></a>
+        <a class="overview-card" href="#offiziell" data-link-tab="offiziell"><strong>🧾 Erste Schritte</strong>Hier finden Sie die wichtigsten Schritte aus der mitgelieferten Anleitung: App herunterladen, Gerät verbinden und AI-Funktion nutzen.<span>Erste Schritte öffnen →</span></a>
+        <a class="overview-card" href="#inbetriebnahme" data-link-tab="inbetriebnahme"><strong>🚀 Inbetriebnahme</strong>Haben Sie Schwierigkeiten mit der WLAN-Verbindung oder mit der App? Prüfen Sie hier die zwei beschriebenen Methoden zur ersten Verbindung.<span>Inbetriebnahme öffnen →</span></a>
+        <a class="overview-card" href="#hilfe" data-link-tab="hilfe"><strong>📶 WLAN-Hilfe</strong>Für die Installation muss das WLAN auf 2,4 GHz eingestellt sein. Hier wird einfach erklärt, wie Sie die Router-IP finden und den Router öffnen. Die Umstellung ist in der Regel nur für die Installation notwendig.<span>WLAN-Hilfe öffnen →</span></a>
+        <a class="overview-card" href="#akku" data-link-tab="akku"><strong>🔋 Akku &amp; Sicherheit</strong>Lesen Sie hier wichtige Sicherheitshinweise zum richtigen Umgang mit dem Akku sowie Hinweise zum Laden und Lagern.<span>Sicherheitshinweise öffnen →</span></a>
+        <a class="overview-card" href="#entsorgung" data-link-tab="entsorgung"><strong>♻️ Entsorgung</strong>Der Drucker enthält eine Lithium-Batterie. Bitte lesen Sie die Entsorgungshinweise gründlich, damit Gerät und Akku richtig entsorgt werden.<span>Entsorgung öffnen →</span></a>
+        <a class="overview-card" href="#kontakt" data-link-tab="kontakt"><strong>✉️ Kontakt</strong>Wenn Sie noch Fragen haben oder nicht weiterkommen, können Sie uns über das Kontaktformular direkt eine E-Mail mit Ihrem Anliegen schreiben.<span>Kontakt öffnen →</span></a>
       </div>
 
-      <div class="highlight">
-        <strong>Wichtig:</strong> Der Drucker funktioniert bei der Einrichtung nur mit <strong>2,4 GHz WLAN</strong>. Wenn Ihr Router zusätzlich 5 GHz aktiviert hat, kann dies die Verbindung verhindern.
-      </div>
-
-      <div class="success">
-        Nach der ersten erfolgreichen Einrichtung verbindet sich der Drucker später meistens automatisch wieder.
-      </div>
+      <div class="highlight"><strong>Wichtig:</strong> Der Drucker funktioniert bei der Einrichtung nur mit <strong>2,4 GHz WLAN</strong>. Wenn Ihr Router zusätzlich 5 GHz aktiviert hat, kann dies die Verbindung verhindern.</div>
+      <div class="success">Nach der ersten erfolgreichen Einrichtung verbindet sich der Drucker später meistens automatisch wieder.</div>
     </section>
 
     <section class="panel" id="inbetriebnahme">
@@ -892,10 +859,7 @@
 
       <div class="card">
         <h3>Schritt 1: Router-IP-Adresse finden</h3>
-        <p>
-          Die Router-IP ist die Adresse Ihres Internet-Routers. Stellen Sie sich das wie die Hausnummer Ihres Routers vor.
-          Sie brauchen diese Adresse, um die Router-Seite zu öffnen und dort das 2,4-GHz-WLAN zu prüfen.
-        </p>
+        <p>Die Router-IP ist die Adresse Ihres Internet-Routers. Stellen Sie sich das wie die Hausnummer Ihres Routers vor. Sie brauchen diese Adresse, um die Router-Seite zu öffnen und dort das 2,4-GHz-WLAN zu prüfen.</p>
 
         <div class="device-tabs" aria-label="Gerät auswählen">
           <button class="device-btn active" type="button" data-device="ios">iPhone / iPad</button>
@@ -981,19 +945,12 @@
 
       <div class="card">
         <h3>Schritt 2: Direkt zur Router-Seite</h3>
-        <p>
-          Geben Sie hier die gefundene IP-Adresse ein. Danach öffnet sich die Router-Seite in einem neuen Fenster oder Tab.
-          Dort können Sie später das 2,4-GHz-WLAN einstellen.
-        </p>
-
+        <p>Geben Sie hier die gefundene IP-Adresse ein. Danach öffnet sich die Router-Seite in einem neuen Fenster oder Tab. Dort können Sie später das 2,4-GHz-WLAN einstellen.</p>
         <div class="ip-input-wrap">
           <input class="ip-input" id="routerIpInput" type="text" inputmode="url" placeholder="z. B. 192.168.0.1 oder fritz.box" autocomplete="off">
           <button class="open-ip-btn" id="openRouterIpBtn" type="button">Router öffnen</button>
         </div>
-
-        <div class="highlight">
-          <strong>Wichtig:</strong> Die Router-Seite öffnet sich nur, wenn Ihr Handy, Tablet oder Laptop mit dem gleichen WLAN verbunden ist wie der Router.
-        </div>
+        <div class="highlight"><strong>Wichtig:</strong> Die Router-Seite öffnet sich nur, wenn Ihr Handy, Tablet oder Laptop mit dem gleichen WLAN verbunden ist wie der Router.</div>
       </div>
 
       <div class="card">
@@ -1028,51 +985,40 @@
         <div class="router-guide" id="guide-generic"><div class="highlight"><strong>Allgemeine Hilfe:</strong> Öffnen Sie die Router-Adresse direkt im Browser. Diese steht oft auf der Unterseite des Routers oder lässt sich am Handy unter WLAN-Details finden. Suchen Sie danach nach <strong>WLAN</strong>, <strong>Wi-Fi</strong> oder <strong>Wireless</strong> und wählen Sie 2,4 GHz.</div></div>
       </div>
 
-      <div class="highlight">
-        <strong>Tipp:</strong> Die Einrichtung muss in der Regel nur einmal durchgeführt werden. Danach verbindet sich der Drucker automatisch.
-      </div>
+      <div class="highlight"><strong>Tipp:</strong> Die Einrichtung muss in der Regel nur einmal durchgeführt werden. Danach verbindet sich der Drucker automatisch.</div>
     </section>
 
     <section class="panel" id="akku">
       <h2>Akku &amp; Sicherheit</h2>
       <p class="lead">Das Gerät enthält einen wiederaufladbaren Lithium-Akku. Bitte beachten Sie die folgenden Hinweise für einen sicheren Betrieb.</p>
-
       <div class="info-grid">
         <div class="card"><h3>Sicherer Umgang</h3><ul class="mini-list"><li>Akku nicht vollständig entladen.</li><li>Möglichst nicht dauerhaft unter etwa 10–20 % Restladung betreiben.</li><li>Für längere Lagerung etwa 40–60 % Ladestand einhalten.</li><li>Beschädigte oder aufgeblähte Akkus nicht weiter verwenden.</li></ul></div>
         <div class="card"><h3>Ladehinweise</h3><ul class="mini-list"><li>Nur geeignete Ladegeräte und Anschlusskabel verwenden.</li><li>Gerät nicht öffnen, quetschen oder ins Feuer werfen.</li><li>Bei ungewöhnlicher Erwärmung oder Geruch sofort außer Betrieb nehmen.</li></ul></div>
       </div>
-
       <div class="danger"><strong>Achtung:</strong> Lithium-Akkus können bei unsachgemäßer Handhabung überhitzen, sich entzünden oder explodieren.</div>
     </section>
 
     <section class="panel" id="offiziell">
       <h2>Erste Schritte</h2>
       <p class="lead">Hier werden die wichtigen ersten Schritte aus der mitgelieferten Anleitung nochmals übersichtlich dargestellt, damit die Installation des Druckers leichter gelingt.</p>
-
       <div class="card"><h3>1. App herunterladen</h3><ul class="mini-list"><li><strong>Android:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Google Play Store herunter.</li><li><strong>iPhone:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Apple App Store herunter.</li><li>Verwenden Sie alternativ den QR-Code aus der mitgelieferten Anleitung.</li></ul><div class="store-links"><a class="store-link" href="https://play.google.com/store/apps/details?id=com.fun.mxw&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android App herunterladen →</a><a class="store-link" href="https://apps.apple.com/at/app/fun-print/id1592740556" target="_blank" rel="noopener noreferrer">iPhone App herunterladen →</a></div></div>
       <div class="card"><h3>2. Gerät mit dem WLAN verbinden</h3><ul class="mini-list"><li>Beim ersten Gebrauch muss das Gerät mit dem Netzwerk verbunden werden.</li><li>Auf der Seite erscheint zunächst <strong>Connecting</strong>.</li><li>Danach wird eine Seite mit einem QR-Code angezeigt.</li><li>Scannen Sie den QR-Code mit Ihrem Handy, um zur Netzwerkseite zu gelangen.</li><li>Geben Sie den Namen des <strong>2,4-GHz-WLANs</strong> und das Passwort ein.<br><a class="inline-help-link" href="#inbetriebnahme" data-link-tab="inbetriebnahme">Probleme mit der Umstellung auf 2,4 GHz? Zur Inbetriebnahme →</a></li><li>Klicken Sie auf den ersten roten Block, um das akustische Signal zu erzeugen.</li><li>Halten Sie das Handy mit aktiviertem Ton in die Nähe des Geräts, um die Netzwerkverbindung zu starten.</li><li>Sobald auf der Geräteseite <strong>Press to talk</strong> angezeigt wird, können Sie die Taste drücken.</li></ul></div>
       <div class="card"><h3>3. AI-Funktion nutzen</h3><ul class="mini-list"><li>Drücken Sie die <strong>AI-Taste</strong>, um zu sprechen und Inhalte zu erstellen.</li><li>Nach erfolgreicher Einrichtung des Netzwerks erscheint <strong>Press to talk</strong>.</li><li>Halten Sie die AI-Schaltfläche am Gerät gedrückt, um die Erstellungsfunktion zu nutzen.</li><li>Beispiel: „Ein Bild drucken, das einen kleinen Hund im Feld zeigt.“</li><li>Halten Sie die Taste gedrückt, sprechen Sie den Befehl und lassen Sie sie wieder los.</li></ul></div>
       <div class="warning"><strong>Wichtig für die Einrichtung:</strong> 5GWi-Fi wird nicht unterstützt. Für die Installation muss ein <strong>2,4 GHz WLAN</strong> verwendet werden.</div>
-      <div class="official-images">
-        <img src="Bild%208.png" alt="Mitgelieferte Anleitung zur Installation des Q15 Mini Printers">
-      </div>
+      <div class="official-images"><img src="Bild%208.png" alt="Mitgelieferte Anleitung zur Installation des Q15 Mini Printers"></div>
     </section>
 
     <section class="panel" id="entsorgung">
       <h2>Entsorgung</h2>
       <p class="lead">Dieser Bereich enthält die Hinweise zur gesetzeskonformen und sicheren Entsorgung des Geräts und des integrierten Lithium-Akkus.</p>
-
       <div class="card">
         <h3>Entsorgungshinweis für Lithium-Batterien</h3>
         <p>Dieses Produkt enthält Lithium-Batterien bzw. Akkumulatoren. Diese unterliegen besonderen gesetzlichen Vorschriften zur Entsorgung.</p>
         <p>Batterien und Akkumulatoren dürfen nicht über den Hausmüll entsorgt werden. Verbraucher sind gesetzlich verpflichtet, gebrauchte Batterien bei einer geeigneten Sammelstelle, zum Beispiel bei kommunalen Sammelstellen oder im Handel, zurückzugeben.</p>
         <ul class="mini-list"><li>Lithium-Batterien können bei unsachgemäßer Handhabung Brand- oder Explosionsgefahr darstellen.</li><li>Der Akku muss vor der Entsorgung nicht vollständig entladen werden.</li><li>Vor der Entsorgung sind die Batteriepole – soweit möglich – gegen Kurzschluss zu sichern, zum Beispiel durch Abkleben.</li><li>Beschädigte oder aufgeblähte Batterien sind mit besonderer Vorsicht zu behandeln.</li><li>Der Ausbau eines fest verbauten Akkus darf nur durch Fachpersonal erfolgen.</li></ul>
       </div>
-
       <div class="highlight symbol-note">
-        <span class="bin-symbol" aria-hidden="true">
-          <img src="Batterieverordnung%20Symbol.png" alt="Batterieverordnung Symbol" style="width:42px; height:42px; object-fit:contain; display:block;">
-        </span>
+        <span class="bin-symbol" aria-hidden="true"><img src="Batterieverordnung%20Symbol.png" alt="Batterieverordnung Symbol" style="width:42px; height:42px; object-fit:contain; display:block;"></span>
         <span>Das Symbol der durchgestrichenen Mülltonne weist darauf hin, dass Batterien und Akkus getrennt gesammelt werden müssen.</span>
       </div>
     </section>
@@ -1080,10 +1026,8 @@
     <section class="panel" id="kontakt">
       <h2>Kontakt &amp; Hilfe</h2>
       <p class="lead">Bei weiteren Fragen oder Problemen mit Ihrem Kiddotronic KI Mini Printer können Sie den Support kontaktieren.</p>
-
       <div class="support-box">
         <div class="support-intro"><h3 style="margin-top:0; margin-bottom:8px;">Support</h3><p style="margin:0 0 8px;">Beschreiben Sie Ihr Problem direkt über das Formular. Beim Absenden wird eine E-Mail an den Support vorbereitet.</p><a href="mailto:semasolutions@hotmail.com">semasolutions@hotmail.com</a></div>
-
         <form class="contact-form" id="supportForm">
           <div class="form-grid"><div><label for="customerName">Name</label><input type="text" id="customerName" name="customerName" placeholder="Ihr Name"></div><div><label for="customerEmail">E-Mail</label><input type="email" id="customerEmail" name="customerEmail" placeholder="ihre@email.de"></div></div>
           <div><label for="problemType">Problem auswählen</label><select id="problemType" name="problemType" required><option value="">Bitte Problem auswählen</option><option value="WLAN-Verbindung funktioniert nicht">WLAN-Verbindung funktioniert nicht</option><option value="Umstellung von 5 GHz auf 2,4 GHz">Umstellung von 5 GHz auf 2,4 GHz</option><option value="App-Installation">App-Installation</option><option value="Drucker wird nicht gefunden">Drucker wird nicht gefunden</option><option value="Druckproblem">Druckproblem</option><option value="Akku oder Laden">Akku oder Laden</option><option value="Sonstiges Problem">Sonstiges Problem</option></select></div>
@@ -1132,13 +1076,8 @@
         document.body.classList.add('menu-open');
       }
 
-      if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-      }
-
-      if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-      }
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+      if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
 
       document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') closeMobileMenu();
@@ -1159,9 +1098,7 @@
           panel.hidden = !isActive;
         });
 
-        if (mobileCurrentTab) {
-          mobileCurrentTab.textContent = getTabLabel(target);
-        }
+        if (mobileCurrentTab) mobileCurrentTab.textContent = getTabLabel(target);
 
         closeMobileMenu();
 
@@ -1174,9 +1111,7 @@
         button.addEventListener('click', () => openTab(button.dataset.tab));
       });
 
-      const overviewLinks = document.querySelectorAll('[data-link-tab]');
-
-      overviewLinks.forEach((link) => {
+      document.querySelectorAll('[data-link-tab]').forEach((link) => {
         link.addEventListener('click', function (event) {
           event.preventDefault();
           openTab(this.dataset.linkTab);
