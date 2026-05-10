@@ -313,7 +313,8 @@
     }
 
     .store-link,
-    .inline-help-link {
+    .inline-help-link,
+    .wlan-help-link {
       display: inline-block;
       color: #2a6f97;
       font-weight: bold;
@@ -328,7 +329,9 @@
     .store-link:hover,
     .store-link:focus-visible,
     .inline-help-link:hover,
-    .inline-help-link:focus-visible {
+    .inline-help-link:focus-visible,
+    .wlan-help-link:hover,
+    .wlan-help-link:focus-visible {
       border-color: var(--primary);
       color: var(--primary);
       outline: none;
@@ -398,26 +401,7 @@
     .router-guide { display: none; margin-top: 12px; }
     .router-guide.active { display: block; }
 
-    .official-images {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .official-images img {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 20px;
-      border: 2px solid var(--line);
-      box-shadow: 0 8px 22px rgba(78, 195, 255, 0.08);
-      display: block;
-      background: #fff;
-    }
-
     .instruction-image-card {
-      position: relative;
       width: 100%;
       max-width: 980px;
       margin: 18px auto;
@@ -434,29 +418,9 @@
       margin: 0 auto;
     }
 
-    .instruction-image-help {
-      position: absolute;
-      left: 37%;
-      top: 54%;
-      transform: translate(-50%, -50%);
-      display: inline-block;
-      background: rgba(230, 246, 255, 0.96);
-      border: 2px solid var(--line);
-      color: #2a6f97;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 999px;
-      padding: 12px 18px;
-      box-shadow: 0 8px 18px rgba(78, 195, 255, 0.25);
-      z-index: 2;
-      white-space: nowrap;
-    }
-
-    .instruction-image-help:hover,
-    .instruction-image-help:focus-visible {
-      border-color: var(--primary);
-      color: var(--primary);
-      outline: none;
+    .wlan-help-under-warning {
+      text-align: center;
+      margin: 14px 0 20px;
     }
 
     .target-card {
@@ -503,20 +467,9 @@
       .step-grid,
       .help-grid,
       .overview-grid,
-      .official-images,
       .form-grid,
       .guide-layout {
         grid-template-columns: 1fr;
-      }
-
-      .instruction-image-help {
-        left: 50%;
-        top: 54%;
-        font-size: 0.9rem;
-        padding: 9px 12px;
-        max-width: 86%;
-        white-space: normal;
-        text-align: center;
       }
     }
 
@@ -526,39 +479,24 @@
         background: linear-gradient(180deg, #eef9ff 0%, #f8fdff 150px, var(--bg) 150px);
       }
 
-      body.menu-open {
-        overflow: hidden;
-      }
+      body.menu-open { overflow: hidden; }
 
-      .container {
-        padding: 0 12px;
-      }
+      .container { padding: 0 12px; }
 
-      header {
-        padding: 10px 0 8px;
-      }
+      header { padding: 10px 0 8px; }
 
       .hero {
         padding: 14px;
         border-radius: 20px;
-        min-height: auto;
       }
 
       .hero::before { width: 140px; height: 140px; right: -38px; top: -35px; }
       .hero::after { width: 90px; height: 90px; left: -24px; bottom: -25px; }
 
-      .hero > div:first-child {
-        margin-bottom: 8px !important;
-      }
+      .hero > div:first-child { margin-bottom: 8px !important; }
+      .hero > div:first-child img { max-width: 118px !important; }
 
-      .hero > div:first-child img {
-        max-width: 118px !important;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
+      .hero-grid { grid-template-columns: 1fr; gap: 10px; }
 
       .badge {
         padding: 5px 10px;
@@ -566,39 +504,19 @@
         margin-bottom: 6px;
       }
 
-      h1 {
-        font-size: 1.38rem;
-        margin-bottom: 8px;
-      }
+      h1 { font-size: 1.38rem; margin-bottom: 8px; }
+      h2 { font-size: 1.55rem; }
+      h3 { font-size: 1.08rem; margin-top: 18px; }
 
-      h2 {
-        font-size: 1.55rem;
-      }
-
-      h3 {
-        font-size: 1.08rem;
-        margin-top: 18px;
-      }
-
-      .hero p {
-        font-size: 0.92rem;
-        line-height: 1.42;
-      }
+      .hero p { font-size: 0.92rem; line-height: 1.42; }
 
       .hero-box {
         padding: 12px;
         border-radius: 16px;
       }
 
-      .hero-box h3 {
-        font-size: 0.98rem;
-        margin-bottom: 6px;
-      }
-
-      .hero-box ul {
-        font-size: 0.88rem;
-        line-height: 1.42;
-      }
+      .hero-box h3 { font-size: 0.98rem; margin-bottom: 6px; }
+      .hero-box ul { font-size: 0.88rem; line-height: 1.42; }
 
       .mobile-menu-bar {
         display: flex;
@@ -639,9 +557,7 @@
         z-index: 39;
       }
 
-      .mobile-menu-overlay.active {
-        display: block;
-      }
+      .mobile-menu-overlay.active { display: block; }
 
       .tabs-wrap {
         position: fixed;
@@ -659,9 +575,7 @@
         overflow-y: auto;
       }
 
-      .tabs-wrap.open {
-        right: 0;
-      }
+      .tabs-wrap.open { right: 0; }
 
       .tabs {
         display: grid;
@@ -705,7 +619,6 @@
       .info-grid,
       .step-grid,
       .help-grid,
-      .official-images,
       .form-grid,
       .guide-layout {
         grid-template-columns: 1fr;
@@ -717,9 +630,7 @@
         border-radius: 18px;
       }
 
-      .overview-card strong {
-        font-size: 1.05rem;
-      }
+      .overview-card strong { font-size: 1.05rem; }
 
       .highlight,
       .warning,
@@ -738,9 +649,7 @@
         -webkit-overflow-scrolling: touch;
       }
 
-      .device-tabs::-webkit-scrollbar {
-        display: none;
-      }
+      .device-tabs::-webkit-scrollbar { display: none; }
 
       .device-btn {
         flex: 0 0 auto;
@@ -772,14 +681,13 @@
         padding-left: 20px;
       }
 
-      .ip-input-wrap {
-        grid-template-columns: 1fr;
-      }
+      .ip-input-wrap { grid-template-columns: 1fr; }
 
       .open-ip-btn,
       .submit-btn,
       .store-link,
-      .inline-help-link {
+      .inline-help-link,
+      .wlan-help-link {
         width: 100%;
         text-align: center;
         justify-self: stretch;
@@ -795,22 +703,11 @@
       }
 
       .guide-image,
-      .official-images img,
       .instruction-image-card img {
         border-radius: 16px;
       }
 
-      .instruction-image-help {
-        position: static;
-        transform: none;
-        display: block;
-        width: 100%;
-        margin-top: 12px;
-      }
-
-      .symbol-note {
-        align-items: flex-start;
-      }
+      .symbol-note { align-items: flex-start; }
     }
   </style>
 </head>
@@ -1103,7 +1000,6 @@
 
       <div class="instruction-image-card">
         <img src="Bild%208.png" alt="Schritt-für-Schritt Anleitung zur Verbindung des Q15 Mini Printers">
-        <a class="instruction-image-help" href="#wlan-umstellung" data-link-tab="hilfe" data-scroll-target="wlan-umstellung">Probleme mit 5 GHz? WLAN-Hilfe öffnen →</a>
       </div>
 
       <div class="card">
@@ -1118,6 +1014,10 @@
       </div>
 
       <div class="warning"><strong>Wichtig für die Einrichtung:</strong> 5GWi-Fi wird nicht unterstützt. Für die Installation muss ein <strong>2,4 GHz WLAN</strong> verwendet werden.</div>
+
+      <div class="wlan-help-under-warning">
+        <a class="wlan-help-link" href="#wlan-umstellung" data-link-tab="hilfe" data-scroll-target="wlan-umstellung">Probleme mit 5 GHz? WLAN-Hilfe öffnen →</a>
+      </div>
     </section>
 
     <section class="panel" id="entsorgung">
