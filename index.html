@@ -418,14 +418,14 @@
 
     .instruction-image-card {
       position: relative;
-      margin-top: 18px;
-      margin-bottom: 18px;
+      width: 100%;
+      max-width: 980px;
+      margin: 18px auto;
       text-align: center;
     }
 
     .instruction-image-card img {
       width: 100%;
-      max-width: 980px;
       border-radius: 20px;
       border: 2px solid var(--line);
       box-shadow: 0 8px 22px rgba(78, 195, 255, 0.08);
@@ -436,18 +436,18 @@
 
     .instruction-image-help {
       position: absolute;
-      left: 33%;
-      top: 67%;
+      left: 37%;
+      top: 54%;
       transform: translate(-50%, -50%);
       display: inline-block;
-      background: var(--primary-soft);
+      background: rgba(230, 246, 255, 0.96);
       border: 2px solid var(--line);
       color: #2a6f97;
       font-weight: bold;
       text-decoration: none;
       border-radius: 999px;
-      padding: 10px 16px;
-      box-shadow: 0 8px 18px rgba(78, 195, 255, 0.2);
+      padding: 12px 18px;
+      box-shadow: 0 8px 18px rgba(78, 195, 255, 0.25);
       z-index: 2;
       white-space: nowrap;
     }
@@ -457,6 +457,19 @@
       border-color: var(--primary);
       color: var(--primary);
       outline: none;
+    }
+
+    .target-card {
+      scroll-margin-top: 90px;
+    }
+
+    .target-flash {
+      animation: targetFlash 1.6s ease;
+    }
+
+    @keyframes targetFlash {
+      0% { box-shadow: 0 0 0 0 rgba(78, 195, 255, 0.55); border-color: var(--primary); }
+      100% { box-shadow: var(--shadow); }
     }
 
     .symbol-note { display: flex; align-items: center; gap: 16px; }
@@ -497,12 +510,13 @@
       }
 
       .instruction-image-help {
-        position: static;
-        transform: none;
-        margin-top: 12px;
-        width: 100%;
-        text-align: center;
+        left: 50%;
+        top: 54%;
+        font-size: 0.9rem;
+        padding: 9px 12px;
+        max-width: 86%;
         white-space: normal;
+        text-align: center;
       }
     }
 
@@ -786,6 +800,14 @@
         border-radius: 16px;
       }
 
+      .instruction-image-help {
+        position: static;
+        transform: none;
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+      }
+
       .symbol-note {
         align-items: flex-start;
       }
@@ -898,7 +920,7 @@
           <div class="step-list">
             <div class="step"><div class="step-number">1</div><div><h4>Router öffnen</h4><p>Öffnen Sie einen Internet-Browser und geben Sie die Router-Adresse direkt oben in die Adressleiste ein.</p><ul><li>Beispiele: 192.168.0.1, 192.168.1.1 oder fritz.box</li><li>Nicht bei Google eingeben</li></ul></div></div>
             <div class="step"><div class="step-number">2</div><div><h4>Einloggen</h4><p>Benutzername und Passwort stehen häufig auf dem Router oder auf einem Aufkleber.</p></div></div>
-            <div class="step"><div class="step-number">3</div><div><h4>5 GHz ausschalten</h4><p>Gehen Sie in den Bereich WLAN oder Wireless und deaktivieren Sie 5 GHz oder aktivieren Sie ausschließlich 2,4 GHz.</p><a class="inline-help-link" href="#hilfe" data-link-tab="hilfe">Brauchen Sie Hilfe beim Router? WLAN-Hilfe öffnen →</a></div></div>
+            <div class="step"><div class="step-number">3</div><div><h4>5 GHz ausschalten</h4><p>Gehen Sie in den Bereich WLAN oder Wireless und deaktivieren Sie 5 GHz oder aktivieren Sie ausschließlich 2,4 GHz.</p><a class="inline-help-link" href="#hilfe" data-link-tab="hilfe" data-scroll-target="wlan-umstellung">Brauchen Sie Hilfe beim Router? WLAN-Hilfe öffnen →</a></div></div>
             <div class="step"><div class="step-number">4</div><div><h4>Drucker verbinden</h4><p>Lassen Sie das Handy mit dem WLAN verbunden, öffnen Sie die App, fügen Sie den Drucker hinzu, wählen Sie WLAN aus und geben Sie das Passwort ein.</p></div></div>
             <div class="step"><div class="step-number">5</div><div><h4>Fertig</h4><p>Der Drucker ist jetzt verbunden. Danach können Sie 5 GHz bei Bedarf wieder einschalten.</p></div></div>
           </div>
@@ -952,7 +974,7 @@
         <div class="highlight"><strong>Wichtig:</strong> Die Router-Seite öffnet sich nur, wenn Ihr Handy, Tablet oder Laptop mit dem gleichen WLAN verbunden ist wie der Router.</div>
       </div>
 
-      <div class="card">
+      <div class="card target-card" id="wlan-umstellung">
         <h3>Schritt 3: 2,4 GHz aktivieren</h3>
         <p>Suchen Sie auf der Router-Seite den Bereich <strong>WLAN</strong>, <strong>Wi-Fi</strong>, <strong>Wireless</strong> oder <strong>Funknetz</strong>.</p>
         <div class="step-list">
@@ -1081,7 +1103,7 @@
 
       <div class="instruction-image-card">
         <img src="Bild%208.png" alt="Schritt-für-Schritt Anleitung zur Verbindung des Q15 Mini Printers">
-        <a class="instruction-image-help" href="#hilfe" data-link-tab="hilfe">Probleme mit 5 GHz? WLAN-Hilfe öffnen →</a>
+        <a class="instruction-image-help" href="#wlan-umstellung" data-link-tab="hilfe" data-scroll-target="wlan-umstellung">Probleme mit 5 GHz? WLAN-Hilfe öffnen →</a>
       </div>
 
       <div class="card">
@@ -1187,7 +1209,23 @@
         if (event.key === 'Escape') closeMobileMenu();
       });
 
-      function openTab(target, updateHash = true) {
+      function scrollToTarget(targetId) {
+        if (!targetId) return;
+
+        setTimeout(function () {
+          const targetElement = document.getElementById(targetId);
+          if (!targetElement) return;
+
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          targetElement.classList.remove('target-flash');
+
+          setTimeout(function () {
+            targetElement.classList.add('target-flash');
+          }, 80);
+        }, 180);
+      }
+
+      function openTab(target, updateHash = true, scrollTarget = '') {
         if (!target) return;
 
         buttons.forEach((btn) => {
@@ -1206,8 +1244,15 @@
 
         closeMobileMenu();
 
-        if (updateHash) history.replaceState(null, '', '#' + target);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (updateHash) {
+          history.replaceState(null, '', scrollTarget ? '#' + scrollTarget : '#' + target);
+        }
+
+        if (scrollTarget) {
+          scrollToTarget(scrollTarget);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
 
       buttons.forEach((button) => {
@@ -1218,13 +1263,21 @@
       document.querySelectorAll('[data-link-tab]').forEach((link) => {
         link.addEventListener('click', function (event) {
           event.preventDefault();
-          openTab(this.dataset.linkTab);
+          openTab(this.dataset.linkTab, true, this.dataset.scrollTarget || '');
         });
       });
 
-      const initialTab = window.location.hash ? window.location.hash.replace('#', '') : 'uebersicht';
-      if (document.getElementById(initialTab)) openTab(initialTab, false);
-      else openTab('uebersicht', false);
+      const initialHash = window.location.hash ? window.location.hash.replace('#', '') : 'uebersicht';
+
+      if (document.getElementById(initialHash) && document.getElementById(initialHash).classList.contains('panel')) {
+        openTab(initialHash, false);
+      } else if (document.getElementById(initialHash)) {
+        const parentPanel = document.getElementById(initialHash).closest('.panel');
+        if (parentPanel) openTab(parentPanel.id, false, initialHash);
+        else openTab('uebersicht', false);
+      } else {
+        openTab('uebersicht', false);
+      }
 
       deviceButtons.forEach((button) => {
         button.addEventListener('click', function () {
