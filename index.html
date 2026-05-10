@@ -416,6 +416,49 @@
       background: #fff;
     }
 
+    .instruction-image-card {
+      position: relative;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .instruction-image-card img {
+      width: 100%;
+      max-width: 980px;
+      border-radius: 20px;
+      border: 2px solid var(--line);
+      box-shadow: 0 8px 22px rgba(78, 195, 255, 0.08);
+      display: block;
+      background: #fff;
+      margin: 0 auto;
+    }
+
+    .instruction-image-help {
+      position: absolute;
+      left: 33%;
+      top: 67%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      background: var(--primary-soft);
+      border: 2px solid var(--line);
+      color: #2a6f97;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 10px 16px;
+      box-shadow: 0 8px 18px rgba(78, 195, 255, 0.2);
+      z-index: 2;
+      white-space: nowrap;
+    }
+
+    .instruction-image-help:hover,
+    .instruction-image-help:focus-visible {
+      border-color: var(--primary);
+      color: var(--primary);
+      outline: none;
+    }
+
     .symbol-note { display: flex; align-items: center; gap: 16px; }
 
     .bin-symbol {
@@ -451,6 +494,15 @@
       .form-grid,
       .guide-layout {
         grid-template-columns: 1fr;
+      }
+
+      .instruction-image-help {
+        position: static;
+        transform: none;
+        margin-top: 12px;
+        width: 100%;
+        text-align: center;
+        white-space: normal;
       }
     }
 
@@ -729,7 +781,8 @@
       }
 
       .guide-image,
-      .official-images img {
+      .official-images img,
+      .instruction-image-card img {
         border-radius: 16px;
       }
 
@@ -1012,11 +1065,37 @@
     <section class="panel" id="offiziell">
       <h2>Erste Schritte</h2>
       <p class="lead">Hier werden die wichtigen ersten Schritte aus der mitgelieferten Anleitung nochmals übersichtlich dargestellt, damit die Installation des Druckers leichter gelingt.</p>
-      <div class="card"><h3>1. App herunterladen</h3><ul class="mini-list"><li><strong>Android:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Google Play Store herunter.</li><li><strong>iPhone:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Apple App Store herunter.</li><li>Verwenden Sie alternativ den QR-Code aus der mitgelieferten Anleitung.</li></ul><div class="store-links"><a class="store-link" href="https://play.google.com/store/apps/details?id=com.fun.mxw&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android App herunterladen →</a><a class="store-link" href="https://apps.apple.com/at/app/fun-print/id1592740556" target="_blank" rel="noopener noreferrer">iPhone App herunterladen →</a></div></div>
-      <div class="card"><h3>2. Gerät mit dem WLAN verbinden</h3><ul class="mini-list"><li>Beim ersten Gebrauch muss das Gerät mit dem Netzwerk verbunden werden.</li><li>Auf der Seite erscheint zunächst <strong>Connecting</strong>.</li><li>Danach wird eine Seite mit einem QR-Code angezeigt.</li><li>Scannen Sie den QR-Code mit Ihrem Handy, um zur Netzwerkseite zu gelangen.</li><li>Geben Sie den Namen des <strong>2,4-GHz-WLANs</strong> und das Passwort ein.<br><a class="inline-help-link" href="#inbetriebnahme" data-link-tab="inbetriebnahme">Probleme mit der Umstellung auf 2,4 GHz? Zur Inbetriebnahme →</a></li><li>Klicken Sie auf den ersten roten Block, um das akustische Signal zu erzeugen.</li><li>Halten Sie das Handy mit aktiviertem Ton in die Nähe des Geräts, um die Netzwerkverbindung zu starten.</li><li>Sobald auf der Geräteseite <strong>Press to talk</strong> angezeigt wird, können Sie die Taste drücken.</li></ul></div>
-      <div class="card"><h3>3. AI-Funktion nutzen</h3><ul class="mini-list"><li>Drücken Sie die <strong>AI-Taste</strong>, um zu sprechen und Inhalte zu erstellen.</li><li>Nach erfolgreicher Einrichtung des Netzwerks erscheint <strong>Press to talk</strong>.</li><li>Halten Sie die AI-Schaltfläche am Gerät gedrückt, um die Erstellungsfunktion zu nutzen.</li><li>Beispiel: „Ein Bild drucken, das einen kleinen Hund im Feld zeigt.“</li><li>Halten Sie die Taste gedrückt, sprechen Sie den Befehl und lassen Sie sie wieder los.</li></ul></div>
+
+      <div class="card">
+        <h3>1. App herunterladen</h3>
+        <ul class="mini-list">
+          <li><strong>Android:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Google Play Store herunter.</li>
+          <li><strong>iPhone:</strong> Laden Sie die App <strong>Fun Print</strong> direkt im Apple App Store herunter.</li>
+          <li>Verwenden Sie alternativ den QR-Code aus der mitgelieferten Anleitung.</li>
+        </ul>
+        <div class="store-links">
+          <a class="store-link" href="https://play.google.com/store/apps/details?id=com.fun.mxw&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android App herunterladen →</a>
+          <a class="store-link" href="https://apps.apple.com/at/app/fun-print/id1592740556" target="_blank" rel="noopener noreferrer">iPhone App herunterladen →</a>
+        </div>
+      </div>
+
+      <div class="instruction-image-card">
+        <img src="Bild%208.png" alt="Schritt-für-Schritt Anleitung zur Verbindung des Q15 Mini Printers">
+        <a class="instruction-image-help" href="#hilfe" data-link-tab="hilfe">Probleme mit 5 GHz? WLAN-Hilfe öffnen →</a>
+      </div>
+
+      <div class="card">
+        <h3>2. AI-Funktion nutzen</h3>
+        <ul class="mini-list">
+          <li>Drücken Sie die <strong>AI-Taste</strong>, um zu sprechen und Inhalte zu erstellen.</li>
+          <li>Nach erfolgreicher Einrichtung des Netzwerks erscheint <strong>Press to talk</strong>.</li>
+          <li>Halten Sie die AI-Schaltfläche am Gerät gedrückt, um die Erstellungsfunktion zu nutzen.</li>
+          <li>Beispiel: „Ein Bild drucken, das einen kleinen Hund im Feld zeigt.“</li>
+          <li>Halten Sie die Taste gedrückt, sprechen Sie den Befehl und lassen Sie sie wieder los.</li>
+        </ul>
+      </div>
+
       <div class="warning"><strong>Wichtig für die Einrichtung:</strong> 5GWi-Fi wird nicht unterstützt. Für die Installation muss ein <strong>2,4 GHz WLAN</strong> verwendet werden.</div>
-      <div class="official-images"><img src="Bild%208.png" alt="Mitgelieferte Anleitung zur Installation des Q15 Mini Printers"></div>
     </section>
 
     <section class="panel" id="entsorgung">
@@ -1233,8 +1312,8 @@
       }
     })();
   </script>
-  
-    <script src="https://elfsightcdn.com/platform.js" async></script>
+
+  <script src="https://elfsightcdn.com/platform.js" async></script>
   <div class="elfsight-app-0ca4a38d-de3e-46f3-8eb0-978ba4dc2fac" data-elfsight-app-lazy></div>
 </body>
 </html>
