@@ -51,7 +51,7 @@
       z-index: -1;
     }
     a { color: inherit; }
-    img, iframe { max-width: 100%; display: block; }
+    img, iframe, svg { max-width: 100%; display: block; }
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
     .top-strip {
@@ -111,9 +111,9 @@
       overflow: hidden;
     }
     .hero-inner {
-      min-height: 670px;
+      min-height: 700px;
       display: grid;
-      grid-template-columns: 1fr 0.92fr;
+      grid-template-columns: 0.95fr 1.05fr;
       align-items: center;
       gap: 44px;
       padding: 72px 0;
@@ -151,7 +151,9 @@
       background: var(--yellow);
       color: var(--black);
       text-decoration: none;
+      font: inherit;
       font-weight: 800;
+      cursor: pointer;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .btn:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--black); }
@@ -160,34 +162,113 @@
     .btn.white { background: var(--white); }
     .btn.magenta { background: var(--magenta); color: var(--white); }
 
-    .printer-card {
+    .printer-demo {
       background: var(--white);
       border: 4px solid var(--black);
       border-radius: 28px;
       box-shadow: 12px 12px 0 var(--black);
-      padding: 28px;
-      transform: rotate(1.2deg);
+      padding: 24px;
+      transform: rotate(1deg);
     }
-    .printer-visual {
+    .demo-label { margin: 0 0 12px; font-size: 1.45rem; line-height: 1.05; }
+    .demo-input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-bottom: 14px; }
+    .demo-input {
+      min-height: 52px;
+      width: 100%;
+      border: 3px solid var(--black);
+      border-radius: 18px;
+      padding: 11px 14px;
+      font: inherit;
+      font-weight: 700;
+      background: var(--paper);
+    }
+    .prompt-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+    .prompt-chip {
+      border: 2px solid var(--black);
+      border-radius: 999px;
+      background: var(--soft-yellow);
+      padding: 6px 10px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .prompt-chip:nth-child(2) { background: var(--soft-cyan); }
+    .prompt-chip:nth-child(3) { background: var(--soft-pink); }
+    .printer-machine {
+      position: relative;
+      padding: 18px 18px 26px;
       border: 4px solid var(--black);
       border-radius: 24px;
-      padding: 18px;
-      background: linear-gradient(180deg, var(--white), #dff4ff);
+      background: linear-gradient(180deg, #fdfdfd, #dff4ff);
+      overflow: hidden;
+    }
+    .printer-top {
+      display: grid;
+      grid-template-columns: 1fr 118px;
+      gap: 14px;
+      align-items: stretch;
+      margin-bottom: 14px;
     }
     .printer-screen {
-      min-height: 190px;
+      min-height: 120px;
       display: grid;
       place-items: center;
       text-align: center;
       background: var(--black);
       color: var(--green);
-      border-radius: 14px;
-      font-size: 1.4rem;
+      border: 3px solid #2c3d48;
+      border-radius: 16px;
+      font-size: 1.08rem;
       font-weight: 800;
+      padding: 14px;
     }
-    .printer-paper { height: 84px; margin-top: 16px; border: 3px solid var(--black); border-radius: 12px; background: repeating-linear-gradient(180deg, var(--white), var(--white) 13px, #e8f8ff 14px); }
-    .specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
-    .specs span { border: 3px solid var(--black); border-radius: 14px; background: var(--yellow); text-align: center; padding: 10px; font-weight: 800; }
+    .image-preview {
+      background: var(--white);
+      border: 3px solid var(--black);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      padding: 8px;
+    }
+    .thermal-slot {
+      position: relative;
+      height: 18px;
+      background: var(--black);
+      border-radius: 999px;
+      margin: 0 16px;
+      z-index: 3;
+    }
+    .print-window {
+      position: relative;
+      min-height: 178px;
+      margin: -2px 28px 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+    .printed-paper {
+      width: min(250px, 88%);
+      min-height: 158px;
+      background:
+        repeating-linear-gradient(180deg, rgba(0,0,0,0.055) 0 1px, transparent 1px 13px),
+        var(--white);
+      border: 3px solid var(--black);
+      border-top: 0;
+      padding: 12px;
+      transform: translateY(-160px);
+      transition: transform 0.9s cubic-bezier(.2,.85,.2,1);
+      filter: grayscale(1) contrast(1.25);
+    }
+    .printed-paper.printed { transform: translateY(0); }
+    .print-caption { margin: 8px 0 0; text-align: center; font-size: 0.9rem; font-weight: 800; line-height: 1.1; }
+    .status-lights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+    .status-lights span { border: 3px solid var(--black); border-radius: 14px; background: var(--yellow); text-align: center; padding: 9px; font-weight: 800; }
+    .status-lights span:nth-child(2) { background: var(--cyan); }
+    .status-lights span:nth-child(3) { background: var(--soft-pink); }
+
+    .ai-art { width: 100%; aspect-ratio: 1 / 1; border: 2px solid var(--black); border-radius: 10px; background: #fff; }
+    .ai-art text { font-family: 'Baloo 2', Arial, Helvetica, sans-serif; font-weight: 800; }
 
     section { padding: 82px 0; }
     .section-head { display: grid; grid-template-columns: 0.78fr 1fr; gap: 34px; align-items: end; margin-bottom: 34px; }
@@ -255,17 +336,19 @@
       .links { width: 100%; overflow-x: auto; }
       .hero-inner, .section-head, .product-showcase, .video-grid, .login-box, .footer-grid { grid-template-columns: 1fr; }
       .grid-3, .social-grid { grid-template-columns: 1fr 1fr; }
-      .printer-card { transform: none; }
+      .printer-demo { transform: none; }
     }
     @media (max-width: 620px) {
       .container, .hero-inner { width: min(100% - 24px, 1180px); }
       .top-strip .container { align-items: flex-start; flex-direction: column; padding: 10px 0; }
       .links a, .links button { padding: 0 10px; }
       .hero-inner { min-height: auto; padding: 52px 0; }
-      .grid-3, .social-grid, .specs { grid-template-columns: 1fr; }
+      .demo-input-row { grid-template-columns: 1fr; }
+      .printer-top { grid-template-columns: 1fr; }
+      .grid-3, .social-grid, .status-lights { grid-template-columns: 1fr; }
       .actions .btn { width: 100%; }
       section { padding: 58px 0; }
-      .printer-card, .tile, .product-card, .side-card, .login-box { box-shadow: 5px 5px 0 var(--black); }
+      .printer-demo, .tile, .product-card, .side-card, .login-box { box-shadow: 5px 5px 0 var(--black); }
     }
   </style>
 </head>
@@ -296,19 +379,39 @@
       <div>
         <span class="badge">Kiddotronic Original</span>
         <h1>KI Mini Thermo Printer fuer kleine grosse Ideen.</h1>
-        <p>Eine markentreue Kiddotronic Website im Baloo-2-Look: hell, mutig, verspielt und klar. Der Q15 Mini Printer mit AI steht als erstes Produkt im Mittelpunkt, mit direktem Kauf-Link, Anleitung und Datenblatt.</p>
+        <p>Text eingeben, Motiv erzeugen, Thermodruck starten: Diese Demo zeigt den Ablauf des Q15 Mini Printers mit AI direkt auf der Website.</p>
         <div class="actions">
           <a class="btn red" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Jetzt auf Amazon kaufen</a>
           <a class="btn cyan" href="#produkte">Produkte entdecken</a>
           <a class="btn white" href="q15-mini-printer-anleitung.html">Anleitung oeffnen</a>
         </div>
       </div>
-      <aside class="printer-card" aria-label="Q15 Produktvorschau">
-        <div class="printer-visual">
-          <div class="printer-screen">KIDDOTRONIC<br>Q15 AI PRINT</div>
-          <div class="printer-paper"></div>
+
+      <aside class="printer-demo" aria-label="Interaktive Q15 AI Druckdemo">
+        <h2 class="demo-label">AI Print Demo</h2>
+        <div class="demo-input-row">
+          <input class="demo-input" id="aiPrompt" type="text" value="Ein kleiner Roboter mit Sternen" aria-label="Text fuer AI Bild eingeben">
+          <button class="btn magenta" id="generatePrintBtn" type="button">Bild erstellen</button>
         </div>
-        <div class="specs"><span>AI</span><span>APP</span><span>2.4 GHz</span></div>
+        <div class="prompt-chips" aria-label="Beispiel Prompts">
+          <button class="prompt-chip" type="button" data-prompt="Ein kleiner Roboter mit Sternen">Roboter</button>
+          <button class="prompt-chip" type="button" data-prompt="Eine Katze auf dem Mond">Katze</button>
+          <button class="prompt-chip" type="button" data-prompt="Ein Dino mit Sonnenbrille">Dino</button>
+        </div>
+        <div class="printer-machine">
+          <div class="printer-top">
+            <div class="printer-screen" id="printerScreen">Prompt eingeben<br>AI Bild erstellen</div>
+            <div class="image-preview" id="imagePreview" aria-label="AI Bild Vorschau"></div>
+          </div>
+          <div class="thermal-slot" aria-hidden="true"></div>
+          <div class="print-window">
+            <div class="printed-paper" id="printedPaper">
+              <div id="printArt"></div>
+              <p class="print-caption" id="printCaption">Bereit zum Drucken</p>
+            </div>
+          </div>
+        </div>
+        <div class="status-lights"><span>AI</span><span>Bild</span><span>Print</span></div>
       </aside>
     </div>
   </header>
@@ -449,6 +552,63 @@
   </footer>
 
   <script>
+    const artTemplates = {
+      robot: '<svg class="ai-art" viewBox="0 0 160 160" role="img" aria-label="Roboter Bild"><rect width="160" height="160" fill="#fff"/><circle cx="30" cy="28" r="7" fill="#000"/><circle cx="124" cy="34" r="5" fill="#000"/><path d="M44 56h72v64H44z" fill="none" stroke="#000" stroke-width="7"/><path d="M62 56V40h36v16" fill="none" stroke="#000" stroke-width="7"/><circle cx="66" cy="82" r="8" fill="#000"/><circle cx="94" cy="82" r="8" fill="#000"/><path d="M65 104h30" stroke="#000" stroke-width="7" stroke-linecap="round"/><path d="M31 73h13M116 73h13M58 120v18M102 120v18" stroke="#000" stroke-width="7" stroke-linecap="round"/><text x="80" y="151" text-anchor="middle" font-size="14" fill="#000">AI BOT</text></svg>',
+      cat: '<svg class="ai-art" viewBox="0 0 160 160" role="img" aria-label="Katze auf dem Mond"><rect width="160" height="160" fill="#fff"/><circle cx="103" cy="54" r="28" fill="none" stroke="#000" stroke-width="7"/><circle cx="118" cy="46" r="27" fill="#fff"/><path d="M43 103c16-36 58-36 74 0 10 24-5 38-37 38s-47-14-37-38z" fill="none" stroke="#000" stroke-width="7"/><path d="M56 78l10 18M104 96l10-18" stroke="#000" stroke-width="7" stroke-linecap="round"/><circle cx="68" cy="112" r="5" fill="#000"/><circle cx="92" cy="112" r="5" fill="#000"/><path d="M80 121l-7 7M80 121l7 7" stroke="#000" stroke-width="5" stroke-linecap="round"/><text x="80" y="151" text-anchor="middle" font-size="13" fill="#000">MOON CAT</text></svg>',
+      dino: '<svg class="ai-art" viewBox="0 0 160 160" role="img" aria-label="Dino mit Sonnenbrille"><rect width="160" height="160" fill="#fff"/><path d="M33 111c4-33 29-55 67-54 22 1 37 14 37 32 0 20-20 28-42 24l-7 24H54l-4-19z" fill="none" stroke="#000" stroke-width="7" stroke-linejoin="round"/><path d="M79 57l10-18 10 19 11-16 5 21" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/><path d="M93 80h16M112 80h16M109 80l5 8" stroke="#000" stroke-width="6" stroke-linecap="round"/><path d="M47 119l-14 14M79 137v-18" stroke="#000" stroke-width="7" stroke-linecap="round"/><text x="80" y="151" text-anchor="middle" font-size="13" fill="#000">COOL DINO</text></svg>',
+      star: '<svg class="ai-art" viewBox="0 0 160 160" role="img" aria-label="Stern Bild"><rect width="160" height="160" fill="#fff"/><path d="M80 19l16 42 45 2-35 28 12 44-38-25-38 25 12-44-35-28 45-2z" fill="none" stroke="#000" stroke-width="8" stroke-linejoin="round"/><circle cx="62" cy="79" r="5" fill="#000"/><circle cx="96" cy="79" r="5" fill="#000"/><path d="M67 100c9 8 19 8 28 0" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/><text x="80" y="151" text-anchor="middle" font-size="13" fill="#000">STAR IDEA</text></svg>'
+    };
+
+    function chooseArt(prompt) {
+      const text = prompt.toLowerCase();
+      if (text.includes('katze') || text.includes('cat') || text.includes('mond')) return artTemplates.cat;
+      if (text.includes('dino') || text.includes('saurier')) return artTemplates.dino;
+      if (text.includes('stern') || text.includes('star')) return artTemplates.robot;
+      return artTemplates.star;
+    }
+
+    function runPrintDemo() {
+      const promptInput = document.getElementById('aiPrompt');
+      const screen = document.getElementById('printerScreen');
+      const preview = document.getElementById('imagePreview');
+      const paper = document.getElementById('printedPaper');
+      const printArt = document.getElementById('printArt');
+      const caption = document.getElementById('printCaption');
+      const prompt = promptInput.value.trim() || 'Eine kreative Kiddotronic Idee';
+      const art = chooseArt(prompt);
+
+      paper.classList.remove('printed');
+      screen.innerHTML = 'AI denkt ...<br>' + prompt.substring(0, 32);
+      caption.textContent = 'Bild wird erstellt';
+
+      setTimeout(function () {
+        preview.innerHTML = art;
+        printArt.innerHTML = art;
+        caption.textContent = prompt;
+        screen.innerHTML = 'Bild bereit<br>Druck startet';
+      }, 420);
+
+      setTimeout(function () {
+        paper.classList.add('printed');
+        screen.innerHTML = 'Thermo Print<br>fertig';
+      }, 820);
+    }
+
+    document.querySelectorAll('.prompt-chip').forEach(function (button) {
+      button.addEventListener('click', function () {
+        document.getElementById('aiPrompt').value = button.dataset.prompt;
+        runPrintDemo();
+      });
+    });
+    document.getElementById('generatePrintBtn').addEventListener('click', runPrintDemo);
+    document.getElementById('aiPrompt').addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        runPrintDemo();
+      }
+    });
+    runPrintDemo();
+
     document.getElementById('loginForm').addEventListener('submit', function (event) {
       event.preventDefault();
       const email = document.getElementById('email').value.trim();
