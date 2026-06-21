@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiddotronic Q15 Mini Printer Datenblatt</title>
+  <style>
+    :root { --ink:#101923; --blue:#1678d2; --cyan:#32d4ff; --pink:#ff4fb8; --yellow:#ffd34e; --paper:#fffaf0; --line:#d9e1e7; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink); background:#f6efe1; line-height:1.55; }
+    .sheet { width:min(960px, calc(100% - 32px)); margin:32px auto; background:#fff; border:3px solid var(--ink); box-shadow:10px 10px 0 rgba(16,25,35,.18); }
+    header { padding:28px; background:linear-gradient(120deg, var(--ink), var(--blue)); color:#fff; border-bottom:5px solid var(--cyan); }
+    img { max-width:180px; background:#fff; padding:10px; margin-bottom:24px; }
+    h1 { margin:0; font-size:clamp(2rem, 5vw, 4rem); line-height:1; }
+    .tag { display:inline-block; background:var(--yellow); color:var(--ink); border:2px solid var(--ink); padding:6px 10px; font-weight:900; margin-bottom:12px; }
+    main { padding:28px; display:grid; gap:22px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .card { border:2px solid var(--ink); padding:18px; background:var(--paper); }
+    h2 { margin:0 0 10px; color:var(--blue); }
+    ul { margin:0; padding-left:20px; }
+    li + li { margin-top:8px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    a.btn, button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:12px 16px; background:var(--yellow); border:2px solid var(--ink); box-shadow:4px 4px 0 var(--ink); color:var(--ink); text-decoration:none; font-weight:900; cursor:pointer; font-family:inherit; }
+    a.hot { background:var(--pink); color:#fff; }
+    footer { padding:18px 28px 28px; color:#5f6f7a; }
+    @media print { body { background:#fff; } .sheet { margin:0; width:100%; box-shadow:none; border:0; } .actions { display:none; } }
+    @media (max-width:720px) { .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <header>
+      <img src="logo.png" alt="Kiddotronic Logo">
+      <span class="tag">Produktdatenblatt</span>
+      <h1>Q15 Mini Printer mit AI</h1>
+      <p>Kompakter KI Mini Thermo Printer fuer kreative Ausdrucke, Notizen, Lernkarten, Etiketten und schnelle Ideen im Alltag.</p>
+    </header>
+    <main>
+      <section class="grid">
+        <div class="card"><h2>Produkt</h2><ul><li>Thermodrucker ohne Tintenpatronen</li><li>AI-Funktion ueber Taste und App</li><li>Geeignet fuer kreative Ausdrucke und einfache Organisation</li><li>Digitale Anleitung mit WLAN-Hilfe</li></ul></div>
+        <div class="card"><h2>Verbindung</h2><ul><li>App: Fun Print</li><li>WLAN-Einrichtung ueber 2,4 GHz</li><li>Hinweise zur Router-Einstellung in der Anleitung</li><li>Video-Anleitung online verfuegbar</li></ul></div>
+        <div class="card"><h2>Downloads</h2><ul><li>Produktanleitung online</li><li>Dieses Datenblatt als druckbare Seite</li><li>Supportkontakt per E-Mail</li><li>Weitere Unterlagen koennen spaeter ergaenzt werden</li></ul></div>
+        <div class="card"><h2>Kauf & Support</h2><ul><li>Direkter Kauf ueber Amazon</li><li>Support: semasolutions@hotmail.com</li><li>Marke: Kiddotronic</li><li>Website: kiddotronic.com</li></ul></div>
+      </section>
+      <section class="card"><h2>Wichtige Hinweise</h2><p>Fuer die Ersteinrichtung muss ein 2,4-GHz-WLAN verwendet werden. Lesen Sie vor Verwendung die Sicherheits- und Entsorgungshinweise in der Produktanleitung.</p></section>
+      <div class="actions">
+        <a class="btn hot" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon kaufen</a>
+        <a class="btn" href="q15-mini-printer-anleitung.html">Anleitung oeffnen</a>
+        <button onclick="window.print()">Als PDF speichern / drucken</button>
+      </div>
+    </main>
+    <footer>Kiddotronic Q15 Mini Printer mit AI · Datenblatt · Stand 2026</footer>
+  </article>
+</body>
+</html>
