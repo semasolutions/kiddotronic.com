@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kiddotronic KI Mini Thermo Printer: kompakter Thermodrucker mit App, AI-Funktion und digitaler Produktanleitung." />
-  <title>Kiddotronic | KI Mini Thermo Printer</title>
+  <meta name="description" content="Kiddotronic Markenwebsite fuer KI Mini Thermo Printer, Produkte, Datenblaetter, Videos, Social Media und Kundenlogin." />
+  <title>Kiddotronic | Retro Tech fuer smarte Mini Printer</title>
   <style>
     :root {
-      --bg: #f4f6f8;
-      --surface: #ffffff;
-      --surface-soft: #eef4f8;
-      --ink: #1f2b35;
-      --muted: #63717c;
-      --line: #d9e1e7;
-      --brand: #0b6fa4;
-      --brand-dark: #084b70;
-      --accent: #f4a62a;
-      --shadow: 0 18px 45px rgba(28, 45, 58, 0.12);
+      --ink: #101923;
+      --panel: #172330;
+      --panel-2: #213244;
+      --paper: #fffaf0;
+      --cream: #f6efe1;
+      --line: #2f4456;
+      --cyan: #32d4ff;
+      --blue: #1678d2;
+      --pink: #ff4fb8;
+      --yellow: #ffd34e;
+      --green: #72f2a8;
+      --muted: #6d7c87;
+      --shadow: 0 24px 70px rgba(8, 16, 28, 0.22);
+      --radius: 8px;
     }
 
     * { box-sizing: border-box; }
@@ -25,433 +29,461 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--ink);
-      background: var(--bg);
+      background: var(--cream);
       line-height: 1.55;
+      letter-spacing: 0;
     }
-    img { max-width: 100%; height: auto; display: block; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.26;
+      background-image:
+        linear-gradient(rgba(16,25,35,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16,25,35,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      z-index: -1;
+    }
     a { color: inherit; }
+    img, iframe { max-width: 100%; display: block; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
-    .topbar {
-      background: #1f2b35;
+    .top-strip {
+      background: var(--ink);
       color: #fff;
       font-size: 0.9rem;
+      border-bottom: 3px solid var(--cyan);
     }
-    .topbar-inner,
-    .nav-inner,
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-    .topbar-inner {
+    .top-strip .container {
       min-height: 42px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 18px;
+      justify-content: space-between;
+      gap: 16px;
     }
-    .topbar a { text-decoration: none; color: #fff; opacity: 0.9; }
+    .top-strip a { color: #fff; text-decoration: none; }
 
-    .main-nav {
+    .nav {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid var(--line);
+      background: rgba(246, 239, 225, 0.96);
+      border-bottom: 1px solid rgba(16,25,35,0.16);
       backdrop-filter: blur(12px);
     }
-    .nav-inner {
-      min-height: 78px;
+    .nav .container {
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 26px;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0;
-    }
-    .brand img { width: 148px; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
-    .nav-links a,
-    .nav-link {
-      min-height: 78px;
-      display: inline-flex;
-      align-items: center;
-      padding: 0 18px;
-      text-decoration: none;
-      border-left: 1px solid transparent;
-      border-right: 1px solid transparent;
-      color: var(--ink);
-      font-weight: 700;
-    }
-    .nav-links a:hover,
-    .nav-link:hover {
-      background: var(--surface-soft);
-      border-color: var(--line);
-      color: var(--brand);
-    }
-    .nav-product { position: relative; }
-    .product-menu {
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand img { width: 156px; height: auto; }
+    .brand-mark {
       display: none;
-      position: absolute;
-      top: 78px;
-      left: 0;
-      width: 360px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 1.2rem;
     }
-    .nav-product:hover .product-menu,
-    .nav-product:focus-within .product-menu { display: block; }
-    .product-menu a {
-      display: block;
-      min-height: auto;
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--line);
+    .links { display: flex; align-items: center; gap: 2px; }
+    .links a, .links button {
+      min-height: 48px;
+      padding: 0 14px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 0.98rem;
+      font-family: inherit;
     }
-    .product-menu span {
-      display: block;
-      color: var(--muted);
-      font-weight: 400;
-      margin-top: 4px;
-    }
+    .links a:hover, .links button:hover { color: var(--blue); background: rgba(50, 212, 255, 0.14); }
 
     .hero {
-      background: linear-gradient(90deg, rgba(12, 50, 74, 0.94), rgba(11, 111, 164, 0.84)), url('Bild%208.png');
+      background:
+        linear-gradient(120deg, rgba(16,25,35,0.96), rgba(22,120,210,0.84) 58%, rgba(255,79,184,0.66)),
+        url('Bild%208.png');
       background-size: cover;
       background-position: center;
       color: #fff;
-      min-height: 560px;
-      display: flex;
+      min-height: 680px;
+      display: grid;
       align-items: center;
+      border-bottom: 6px solid var(--ink);
     }
-    .hero-content {
+    .hero-inner {
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 70px 0;
-      max-width: 760px;
-      margin-left: max(20px, calc((100% - 1180px) / 2));
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+      padding: 80px 0;
     }
-    .eyebrow {
+    .kicker {
+      display: inline-block;
+      color: var(--ink);
+      background: var(--yellow);
+      padding: 7px 11px;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-      color: #bfe8ff;
-      font-size: 0.88rem;
-      margin: 0 0 14px;
+      font-size: 0.86rem;
+      margin-bottom: 16px;
+      border: 2px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--pink);
     }
-    h1 {
-      margin: 0 0 22px;
-      font-size: clamp(2.2rem, 5vw, 4.7rem);
-      line-height: 1.02;
-      letter-spacing: 0;
-    }
-    .hero p {
-      max-width: 650px;
-      font-size: 1.15rem;
-      margin: 0 0 30px;
-      color: rgba(255, 255, 255, 0.9);
-    }
+    h1 { margin: 0 0 18px; font-size: clamp(2.6rem, 6vw, 5.7rem); line-height: 0.96; letter-spacing: 0; }
+    .hero p { color: rgba(255,255,255,0.9); font-size: 1.18rem; max-width: 650px; margin: 0 0 28px; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 13px 20px;
-      border: 2px solid transparent;
+      min-height: 50px;
+      padding: 13px 18px;
+      color: var(--ink);
+      background: var(--yellow);
+      border: 2px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
       text-decoration: none;
-      font-weight: 700;
-      background: var(--accent);
-      color: #18242c;
+      font-weight: 900;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
     }
-    .btn.secondary {
-      background: transparent;
-      border-color: rgba(255,255,255,0.75);
-      color: #fff;
-    }
+    .btn:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+    .btn.alt { background: #fff; }
+    .btn.hot { background: var(--pink); color: #fff; }
+    .btn.cool { background: var(--cyan); }
 
-    section { padding: 72px 0; }
-    .section-head {
+    .hero-card {
+      background: rgba(255,250,240,0.94);
+      color: var(--ink);
+      border: 3px solid var(--ink);
+      box-shadow: 12px 12px 0 rgba(0,0,0,0.38);
+      padding: 26px;
+      border-radius: var(--radius);
+    }
+    .device-shell {
+      background: linear-gradient(180deg, #fff, #dce9ef);
+      border: 3px solid var(--ink);
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+    .device-screen {
+      min-height: 170px;
+      background: #101923;
+      color: var(--green);
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 36px;
-      align-items: end;
-      margin-bottom: 32px;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      border: 2px solid #304255;
+      box-shadow: inset 0 0 32px rgba(114,242,168,0.18);
     }
-    h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.08; letter-spacing: 0; }
-    .section-head p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+    .paper-roll { height: 74px; background: repeating-linear-gradient(180deg, #fff, #fff 12px, #e7eef2 13px); border: 2px solid #c8d5dc; margin-top: 14px; }
+    .spec-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .spec-row span { background: #fff; border: 2px solid var(--ink); padding: 10px; font-weight: 800; text-align: center; }
 
-    .product-grid,
-    .feature-grid,
-    .service-grid {
+    section { padding: 82px 0; }
+    .section-head { display: grid; grid-template-columns: 0.78fr 1fr; gap: 34px; align-items: end; margin-bottom: 34px; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 4rem); line-height: 1; letter-spacing: 0; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.08rem; }
+
+    .brand-band { background: var(--paper); }
+    .brand-grid, .product-grid, .download-grid, .future-grid, .social-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+      gap: 18px;
     }
     .tile {
       background: #fff;
-      padding: 28px;
-      min-height: 230px;
+      border: 2px solid var(--ink);
+      box-shadow: 6px 6px 0 rgba(16,25,35,0.16);
+      border-radius: var(--radius);
+      padding: 24px;
+      min-height: 190px;
     }
-    .tile strong {
-      display: block;
-      font-size: 1.18rem;
-      margin-bottom: 10px;
-      color: var(--brand-dark);
-    }
+    .tile strong { display: block; font-size: 1.18rem; margin-bottom: 10px; color: var(--blue); }
     .tile p { margin: 0; color: var(--muted); }
-    .tile a { color: var(--brand); font-weight: 700; text-decoration: none; }
 
-    .product-highlight {
-      background: #fff;
-      border-top: 5px solid var(--brand);
-      box-shadow: var(--shadow);
+    .product-main {
+      background: var(--ink);
+      color: #fff;
+      border-top: 6px solid var(--cyan);
+      border-bottom: 6px solid var(--pink);
+    }
+    .product-showcase {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 0;
-      margin-top: 22px;
-    }
-    .product-copy { padding: 38px; }
-    .product-copy h3 { font-size: 2rem; line-height: 1.12; margin: 0 0 14px; }
-    .product-copy p { color: var(--muted); margin: 0 0 22px; }
-    .product-facts {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-    .product-facts li {
-      border-top: 1px solid var(--line);
-      padding-top: 10px;
-      color: var(--ink);
-    }
-    .product-visual {
-      background: linear-gradient(135deg, #eef4f8, #d8eaf4);
-      display: grid;
-      place-items: center;
-      padding: 34px;
-    }
-    .device {
-      width: min(330px, 100%);
-      background: #fff;
-      border: 1px solid #d2dde5;
-      box-shadow: 0 24px 45px rgba(31, 43, 53, 0.18);
-      padding: 22px;
-    }
-    .device-screen {
-      height: 150px;
-      background: linear-gradient(180deg, #101820, #263b4b);
-      margin-bottom: 18px;
-      display: grid;
-      place-items: center;
-      color: #bfe8ff;
-      font-weight: 700;
-    }
-    .paper {
-      height: 82px;
-      background: repeating-linear-gradient(180deg, #fff, #fff 13px, #eef4f8 14px);
-      border: 1px solid #e2e9ee;
-    }
-
-    .band {
-      background: #1f2b35;
-      color: #fff;
-    }
-    .band .section-head p { color: rgba(255,255,255,0.72); }
-    .band .tile { background: #263642; color: #fff; }
-    .band .tile strong { color: #fff; }
-    .band .tile p { color: rgba(255,255,255,0.74); }
-
-    .contact-strip {
-      background: var(--brand-dark);
-      color: #fff;
-      padding: 44px 0;
-    }
-    .contact-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: 24px;
+      align-items: stretch;
     }
-    .contact-inner h2 { font-size: 2rem; }
-    .contact-inner p { margin: 8px 0 0; color: rgba(255,255,255,0.8); }
+    .product-copy, .product-panel {
+      background: var(--panel);
+      border: 2px solid rgba(255,255,255,0.18);
+      padding: 28px;
+      border-radius: var(--radius);
+    }
+    .product-copy h3 { margin: 0 0 12px; font-size: clamp(1.9rem, 3vw, 3rem); line-height: 1.05; }
+    .product-copy p { color: rgba(255,255,255,0.78); margin: 0 0 22px; }
+    .facts { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .facts li { padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.16); }
+    .product-panel { background: var(--panel-2); }
+    .price-note { color: rgba(255,255,255,0.7); margin-top: 14px; font-size: 0.94rem; }
 
-    footer {
-      background: #162028;
-      color: rgba(255,255,255,0.75);
-      padding: 34px 0;
-      font-size: 0.95rem;
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .footer-inner a { color: #fff; text-decoration: none; }
+    .downloads { background: #eaf1f5; }
+    .download-card { min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+    .download-card a { align-self: flex-start; }
+    .video-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 20px; }
+    .video-frame { background: #000; border: 3px solid var(--ink); box-shadow: 8px 8px 0 rgba(16,25,35,0.18); aspect-ratio: 16 / 9; overflow: hidden; }
+    .video-frame iframe { width: 100%; height: 100%; border: 0; }
+    .video-list { display: grid; gap: 14px; }
 
-    @media (max-width: 900px) {
-      .nav-inner { align-items: flex-start; flex-direction: column; padding: 14px 0; }
-      .nav-links { width: 100%; overflow-x: auto; }
-      .nav-links a, .nav-link { min-height: 52px; padding: 0 14px; white-space: nowrap; }
-      .product-menu { position: static; width: min(360px, 92vw); }
-      .hero { min-height: 500px; }
-      .hero-content { margin-left: auto; }
-      .section-head,
-      .product-highlight,
-      .contact-inner { grid-template-columns: 1fr; display: grid; }
-      .product-grid,
-      .feature-grid,
-      .service-grid { grid-template-columns: 1fr; }
-    }
+    .future-card { border-style: dashed; background: rgba(255,255,255,0.72); }
+    .social-grid a { text-decoration: none; color: var(--ink); }
+    .social-grid .tile:hover { transform: translateY(-3px); }
 
-    @media (max-width: 560px) {
-      .topbar-inner,
-      .nav-inner,
-      .container,
-      .hero-content { width: min(100% - 24px, 1180px); }
-      .topbar-inner { align-items: flex-start; flex-direction: column; padding: 10px 0; }
-      section { padding: 52px 0; }
-      .tile, .product-copy { padding: 22px; }
+    .login-section { background: var(--paper); }
+    .login-box {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+      background: #fff;
+      border: 3px solid var(--ink);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      border-radius: var(--radius);
+    }
+    .login-form { display: grid; gap: 12px; }
+    label { font-weight: 900; }
+    input {
+      width: 100%;
+      border: 2px solid var(--ink);
+      padding: 13px 14px;
+      font: inherit;
+      background: #fffaf0;
+    }
+    .portal-preview { background: #101923; color: #dfffea; padding: 20px; border-radius: var(--radius); border: 2px solid #304255; }
+    .portal-preview h3 { color: var(--green); margin-top: 0; }
+    .order-row { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid #304255; padding: 12px 0; }
+
+    .footer { background: var(--ink); color: rgba(255,255,255,0.72); padding: 38px 0; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr; gap: 24px; }
+    .footer a { color: #fff; text-decoration: none; display: block; margin-top: 8px; }
+
+    @media (max-width: 960px) {
+      .nav .container { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .links { width: 100%; overflow-x: auto; }
+      .hero-inner, .section-head, .product-showcase, .video-grid, .login-box, .footer-grid { grid-template-columns: 1fr; }
+      .brand-grid, .product-grid, .download-grid, .future-grid, .social-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 620px) {
+      .container, .hero-inner { width: min(100% - 24px, 1180px); }
+      .top-strip .container { align-items: flex-start; flex-direction: column; padding: 10px 0; }
+      .links a, .links button { padding: 0 10px; }
+      .hero { min-height: auto; }
+      .brand-grid, .product-grid, .download-grid, .future-grid, .social-grid, .spec-row { grid-template-columns: 1fr; }
       .actions .btn { width: 100%; }
+      section { padding: 58px 0; }
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <span>Kiddotronic Produktwelt fuer kompakte KI-Thermodrucker</span>
-      <a href="mailto:semasolutions@hotmail.com">Support kontaktieren</a>
+  <div class="top-strip">
+    <div class="container">
+      <span>Kiddotronic Retro Tech: smarte Produkte fuer kreative Familien, Schule und Alltag</span>
+      <a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Q15 direkt auf Amazon kaufen</a>
     </div>
   </div>
 
-  <nav class="main-nav" aria-label="Hauptnavigation">
-    <div class="nav-inner">
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="container">
       <a class="brand" href="#start" aria-label="Kiddotronic Startseite">
         <img src="logo.png" alt="Kiddotronic Logo">
+        <span class="brand-mark">Kiddotronic</span>
       </a>
-      <div class="nav-links">
-        <a href="#start">Start</a>
-        <div class="nav-product">
-          <a class="nav-link" href="#produkte">Produkte</a>
-          <div class="product-menu" aria-label="Produktnavigation">
-            <a href="#produkte">KI Mini Thermo Printer<span>Produktuebersicht, Vorteile und Einsatzbereiche</span></a>
-            <a href="q15-mini-printer-anleitung.html">Q15 Mini Printer Anleitung<span>Installation, WLAN-Hilfe und Sicherheit</span></a>
-          </div>
-        </div>
-        <a href="#service">Service</a>
-        <a href="#unternehmen">Unternehmen</a>
-        <a href="#kontakt">Kontakt</a>
+      <div class="links">
+        <a href="#marke">Marke</a>
+        <a href="#produkte">Produkte</a>
+        <a href="#downloads">Datenblaetter</a>
+        <a href="#videos">Videos</a>
+        <a href="#social">Social</a>
+        <button type="button" onclick="document.getElementById('login').scrollIntoView({behavior:'smooth'})">Login</button>
       </div>
     </div>
   </nav>
 
   <header class="hero" id="start">
-    <div class="hero-content">
-      <p class="eyebrow">KI Mini Thermo Printer</p>
-      <h1>Kompakter Thermodrucker fuer kreative Ideen, Notizen und Etiketten.</h1>
-      <p>Der Kiddotronic KI Mini Thermo Printer verbindet mobiles Drucken mit einfacher App-Bedienung und einer integrierten AI-Funktion fuer schnelle Inhalte im Alltag.</p>
-      <div class="actions">
-        <a class="btn" href="#produkte">Produkte ansehen</a>
-        <a class="btn secondary" href="q15-mini-printer-anleitung.html">Zur Anleitung</a>
+    <div class="hero-inner">
+      <div>
+        <span class="kicker">Kiddotronic Original</span>
+        <h1>KI Mini Thermo Printer im Retro-Tech Style.</h1>
+        <p>Kiddotronic verbindet spielerische Technik, klare Anleitungen und smarte Produktideen. Der Q15 Mini Printer mit AI ist der erste Produktfokus: klein, kreativ, einfach zu bedienen und direkt online kaufbar.</p>
+        <div class="actions">
+          <a class="btn hot" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Jetzt auf Amazon kaufen</a>
+          <a class="btn cool" href="#produkte">Produkte entdecken</a>
+          <a class="btn alt" href="q15-mini-printer-anleitung.html">Anleitung oeffnen</a>
+        </div>
       </div>
+      <aside class="hero-card" aria-label="Q15 Produktvorschau">
+        <div class="device-shell">
+          <div class="device-screen">KIDDOTRONIC<br>Q15 AI PRINT MODE</div>
+          <div class="paper-roll"></div>
+        </div>
+        <div class="spec-row">
+          <span>AI</span><span>APP</span><span>2.4 GHz</span>
+        </div>
+      </aside>
     </div>
   </header>
 
   <main>
-    <section id="produkte">
+    <section class="brand-band" id="marke">
+      <div class="container">
+        <div class="section-head">
+          <h2>Die Marke Kiddotronic</h2>
+          <p>Eine Marke fuer Produkte, die Technik zug&auml;nglich machen: visuell stark, leicht erkl&auml;rt und mit direktem Support fuer Kunden.</p>
+        </div>
+        <div class="brand-grid">
+          <div class="tile"><strong>Retro-Tech Identitaet</strong><p>Pixel-Look, klare Farben und ein freundlicher Technikcharakter machen Kiddotronic wiedererkennbar.</p></div>
+          <div class="tile"><strong>Einfach starten</strong><p>Produkte sollen ohne komplizierte Begriffe verstanden werden. Anleitung, Videos und Datenblaetter stehen direkt bereit.</p></div>
+          <div class="tile"><strong>Ausbauf&auml;hige Produktwelt</strong><p>Die Seite ist so aufgebaut, dass sp&auml;ter weitere Kiddotronic Produkte sauber erg&auml;nzt werden koennen.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-main" id="produkte">
       <div class="container">
         <div class="section-head">
           <h2>Produkte</h2>
-          <p>Uebersichtlich aufgebaut wie ein Produktkatalog: erst die Kategorie, dann das Produkt, danach die passende Anleitung und der Support.</p>
+          <p>Aktuelles Hauptprodukt plus vorbereitete Bereiche fuer weitere Produktlinien.</p>
         </div>
-
-        <div class="product-grid">
-          <div class="tile"><strong>Mini Thermodrucker</strong><p>Kompakte Drucker fuer schnelle Ausdrucke ohne Tinte. Ideal fuer Listen, kleine Bilder, Lernkarten und kreative Anwendungen.</p></div>
-          <div class="tile"><strong>AI Funktion</strong><p>Inhalte per Sprache oder App-Idee erstellen und direkt drucken. Besonders praktisch fuer Kinder, Schule, Alltag und kleine Projekte.</p></div>
-          <div class="tile"><strong>Digitale Anleitung</strong><p>Die vorhandene Q15 Anleitung bleibt als eigener Produkt-Unterabschnitt erreichbar. <a href="q15-mini-printer-anleitung.html">Anleitung oeffnen</a></p></div>
-        </div>
-
-        <article class="product-highlight">
-          <div class="product-copy">
+        <div class="product-showcase">
+          <article class="product-copy">
+            <span class="kicker">Featured Product</span>
             <h3>Q15 Mini Printer mit AI</h3>
-            <p>Der aktuelle KI Mini Thermo Printer von Kiddotronic ist auf einfache Bedienung ausgelegt: App installieren, Drucker verbinden, 2,4-GHz-WLAN nutzen und loslegen.</p>
-            <ul class="product-facts">
-              <li>Thermodruck ohne Tintenpatronen</li>
-              <li>App-Steuerung ueber Fun Print</li>
-              <li>AI-Taste fuer Sprachideen und kreative Inhalte</li>
-              <li>Produktanleitung mit WLAN-Hilfe und Sicherheitshinweisen</li>
+            <p>Der KI Mini Thermo Printer fuer kleine Bilder, Notizen, Lernkarten, Etiketten und kreative Ideen. Mit App-Anbindung, AI-Funktion und eigener digitaler Anleitung.</p>
+            <ul class="facts">
+              <li>Thermodruck ohne Tinte</li>
+              <li>AI-Taste und Fun Print App</li>
+              <li>Digitale Anleitung inklusive WLAN-Hilfe</li>
+              <li>Direkter Kauf ueber Amazon</li>
             </ul>
             <div class="actions" style="margin-top:24px;">
-              <a class="btn" href="q15-mini-printer-anleitung.html">Produktanleitung oeffnen</a>
+              <a class="btn hot" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon kaufen</a>
+              <a class="btn alt" href="q15-mini-printer-anleitung.html">Produktanleitung</a>
             </div>
-          </div>
-          <div class="product-visual" aria-label="Produktvorschau KI Mini Thermo Printer">
-            <div class="device">
-              <div class="device-screen">Q15 AI Printer</div>
-              <div class="paper"></div>
+          </article>
+          <aside class="product-panel">
+            <h3 style="margin-top:0;">Schnellzugriff</h3>
+            <div class="actions">
+              <a class="btn cool" href="datenblatt-q15-mini-printer.html" download>Datenblatt herunterladen</a>
+              <a class="btn alt" href="datenblatt-q15-mini-printer.html">Datenblatt ansehen</a>
+              <a class="btn alt" href="#login">Bestellungen ansehen</a>
             </div>
-          </div>
-        </article>
+            <p class="price-note">Hinweis: Preise, Verfuegbarkeit und Versandinformationen werden direkt bei Amazon angezeigt.</p>
+          </aside>
+        </div>
+
+        <div class="future-grid" style="margin-top:22px;">
+          <div class="tile future-card"><strong>Naechstes Produkt</strong><p>Platzhalter fuer weitere Kiddotronic Gadgets mit eigenem Datenblatt und Shop-Link.</p></div>
+          <div class="tile future-card"><strong>Zubehoer</strong><p>Bereich fuer Papierrollen, Stickerpapier, Bundles oder Ersatzteile.</p></div>
+          <div class="tile future-card"><strong>Bundles</strong><p>Vorbereiteter Platz fuer Geschenksets, Schulsets oder saisonale Angebote.</p></div>
+        </div>
       </div>
     </section>
 
-    <section class="band" id="service">
+    <section class="downloads" id="downloads">
       <div class="container">
         <div class="section-head">
-          <h2>Service und Hilfe</h2>
-          <p>Der Servicebereich fuehrt Nutzer schnell zur passenden Hilfe, ohne lange suchen zu muessen.</p>
+          <h2>Datenblaetter & Downloads</h2>
+          <p>Kunden, Haendler und Partner koennen hier Produktinformationen, Anleitungen und spaeter weitere Unterlagen herunterladen.</p>
         </div>
-        <div class="service-grid">
-          <div class="tile"><strong>Installation</strong><p>App herunterladen, Drucker vorbereiten und erste Verbindung starten.</p></div>
-          <div class="tile"><strong>WLAN-Hilfe</strong><p>2,4 GHz aktivieren, Router-Adresse finden und typische Fehler vermeiden.</p></div>
-          <div class="tile"><strong>Kontakt</strong><p>Bei Fragen kann der Support direkt per E-Mail kontaktiert werden.</p></div>
+        <div class="download-grid">
+          <div class="tile download-card"><div><strong>Q15 Datenblatt</strong><p>Kompakte Produktdaten, Einsatzbereiche, App-Hinweise und Kauf-Link.</p></div><a class="btn cool" href="datenblatt-q15-mini-printer.html" download>Download</a></div>
+          <div class="tile download-card"><div><strong>Q15 Anleitung</strong><p>Bestehende Produktanleitung mit Video, WLAN-Hilfe, Sicherheit und Kontakt.</p></div><a class="btn alt" href="q15-mini-printer-anleitung.html">Ansehen</a></div>
+          <div class="tile download-card"><div><strong>Media Kit</strong><p>Vorbereiteter Platz fuer Logo, Produktbilder und Markenmaterial.</p></div><a class="btn alt" href="mailto:semasolutions@hotmail.com?subject=Kiddotronic%20Media%20Kit">Anfragen</a></div>
         </div>
       </div>
     </section>
 
-    <section id="unternehmen">
+    <section id="videos">
       <div class="container">
         <div class="section-head">
-          <h2>Kiddotronic</h2>
-          <p>Kiddotronic steht fuer kompakte, leicht verstaendliche Technikprodukte mit klarer Anleitung und alltagstauglichem Support.</p>
+          <h2>Videos</h2>
+          <p>Auf der Startseite stehen Video-Inhalte im Mittelpunkt: ideal fuer Produktdemo, Installation und kreative Anwendungsideen.</p>
         </div>
-        <div class="feature-grid">
-          <div class="tile"><strong>Klarer Produktfokus</strong><p>Die Website stellt den KI Mini Thermo Printer in den Mittelpunkt und fuehrt direkt zum passenden Produktbereich.</p></div>
-          <div class="tile"><strong>Digitale Dokumentation</strong><p>Anleitungen, Hinweise und Support werden zentral gepflegt und sind jederzeit online erreichbar.</p></div>
-          <div class="tile"><strong>Einfacher Einstieg</strong><p>Neue Nutzer finden schnell die wichtigsten Schritte fuer Installation, WLAN und sichere Verwendung.</p></div>
+        <div class="video-grid">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/ypgsz8aO7eE?rel=0" title="Kiddotronic Q15 Video Anleitung" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video-list">
+            <div class="tile"><strong>YouTube Kanal</strong><p>Weitere Videos, Shorts und Produktdemos koennen direkt auf dem Kiddotronic Kanal gesammelt werden.</p><p><a href="https://youtube.com/@kiddotronic?si=8K9fbnotvSIShk-b" target="_blank" rel="noopener noreferrer">Kanal oeffnen</a></p></div>
+            <div class="tile"><strong>Video-Ideen</strong><p>Unboxing, Einrichtung in 60 Sekunden, AI-Funktion, Druckideen fuer Schule und Alltag.</p></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="contact-strip" id="kontakt">
-      <div class="container contact-inner">
-        <div>
-          <h2>Fragen zum Produkt?</h2>
-          <p>Der Support hilft bei Installation, WLAN-Verbindung und Bedienung des Q15 Mini Printers.</p>
+    <section class="brand-band" id="social">
+      <div class="container">
+        <div class="section-head">
+          <h2>Social Media</h2>
+          <p>Alle wichtigen Kiddotronic Kanaele an einem Ort. Diese Links koennen spaeter auch im Footer und auf Produktseiten weiterverwendet werden.</p>
         </div>
-        <a class="btn" href="mailto:semasolutions@hotmail.com">Support kontaktieren</a>
+        <div class="social-grid">
+          <a href="https://www.instagram.com/kiddotronic/" target="_blank" rel="noopener noreferrer"><div class="tile"><strong>Instagram</strong><p>Produktfotos, Reels und kurze Anwendungsideen.</p></div></a>
+          <a href="https://youtube.com/@kiddotronic?si=8K9fbnotvSIShk-b" target="_blank" rel="noopener noreferrer"><div class="tile"><strong>YouTube</strong><p>Videos, Tutorials und Produktdemos.</p></div></a>
+          <a href="https://www.facebook.com/share/1CeMKMzptA/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><div class="tile"><strong>Facebook</strong><p>Community, Updates und Support-Hinweise.</p></div></a>
+          <a href="https://www.google.com/goto?url=CAESWwHuR6pNXbO3q4nOyRLs_Ji941nEirUlo6wamHOQNhC6A0rOw4Vk9F-gN5m57uWWYzugI5THiAt4Soo7uJjsuw5SrZ4qIDFKcP4q7MHq27xiolr0lCaywj5St64=" target="_blank" rel="noopener noreferrer"><div class="tile"><strong>Google Profil</strong><p>Google-Link fuer Sichtbarkeit, Bewertung und Markenvertrauen.</p></div></a>
+          <a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer"><div class="tile"><strong>Amazon</strong><p>Direkt zum Produkt und Kaufabschluss.</p></div></a>
+          <a href="mailto:semasolutions@hotmail.com"><div class="tile"><strong>Support</strong><p>Kontakt fuer Fragen, Haendleranfragen und Produktservice.</p></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-section" id="login">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kundenlogin</h2>
+          <p>Der Login-Bereich ist als Kundenportal vorbereitet. Fuer echte Live-Bestellungen braucht es spaeter eine Shop-, Amazon- oder Warenwirtschafts-Anbindung.</p>
+        </div>
+        <div class="login-box">
+          <form class="login-form" id="loginForm">
+            <div><label for="email">E-Mail</label><input id="email" type="email" placeholder="kunde@email.de" required></div>
+            <div><label for="order">Bestellnummer</label><input id="order" type="text" placeholder="z. B. Amazon-Bestellnummer" required></div>
+            <button class="btn cool" type="submit">Bestellungen anzeigen</button>
+          </form>
+          <div class="portal-preview" id="portalPreview">
+            <h3>Kiddotronic Portal</h3>
+            <p>Nach dem Login koennen hier Bestellstatus, Downloads, Supportfaelle und Produktregistrierungen angezeigt werden.</p>
+            <div class="order-row"><span>Q15 Mini Printer</span><strong>Portal bereit</strong></div>
+            <div class="order-row"><span>Datenblatt</span><strong>Verfuegbar</strong></div>
+            <div class="order-row"><span>Live-Bestellungen</span><strong>Schnittstelle offen</strong></div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <span>Kiddotronic KI Mini Thermo Printer</span>
-      <span><a href="q15-mini-printer-anleitung.html">Q15 Anleitung</a> · <a href="mailto:semasolutions@hotmail.com">Kontakt</a></span>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><strong>Kiddotronic</strong><p>Retro-Tech Marke fuer kreative, smarte und leicht verstaendliche Produkte.</p></div>
+      <div><strong>Produkte</strong><a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Q15 auf Amazon</a><a href="q15-mini-printer-anleitung.html">Q15 Anleitung</a><a href="datenblatt-q15-mini-printer.html">Q15 Datenblatt</a></div>
+      <div><strong>Social</strong><a href="https://www.instagram.com/kiddotronic/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@kiddotronic?si=8K9fbnotvSIShk-b" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.facebook.com/share/1CeMKMzptA/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a></div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const order = document.getElementById('order').value.trim();
+      const preview = document.getElementById('portalPreview');
+      preview.innerHTML = '<h3>Willkommen im Kiddotronic Portal</h3><p>Angemeldet als <strong>' + email.replace(/[<>&]/g, '') + '</strong>. Die Bestellnummer <strong>' + order.replace(/[<>&]/g, '') + '</strong> wurde erfasst.</p><div class="order-row"><span>Q15 Mini Printer</span><strong>Bestellung gesucht</strong></div><div class="order-row"><span>Status</span><strong>Live-Anbindung erforderlich</strong></div><div class="order-row"><span>Downloads</span><strong><a href="datenblatt-q15-mini-printer.html" style="color:#72f2a8;">Datenblatt oeffnen</a></strong></div>';
+    });
+  </script>
 </body>
 </html>
