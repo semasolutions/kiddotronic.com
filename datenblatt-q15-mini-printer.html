@@ -30,9 +30,10 @@
     a.btn, button { display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:12px 16px; background:var(--yellow); border:3px solid var(--black); border-radius:999px; box-shadow:5px 5px 0 var(--black); color:var(--black); text-decoration:none; font:inherit; font-weight:800; cursor:pointer; }
     a.hot { background:var(--red); color:var(--white); }
     a.cool { background:var(--cyan); }
+    a.white { background:var(--white); }
     footer { padding:18px 28px 28px; color:#51616c; }
     @media print { body { background:#fff; } body::before { display:none; } .sheet { margin:0; width:100%; box-shadow:none; border:0; } .actions { display:none; } }
-    @media (max-width:720px) { .grid { grid-template-columns:1fr; } .sheet { width:min(100% - 20px, 960px); margin:20px auto; } }
+    @media (max-width:720px) { .grid { grid-template-columns:1fr; } .sheet { width:min(100% - 20px, 960px); margin:20px auto; } .actions a, .actions button { width:100%; } }
   </style>
 </head>
 <body>
@@ -44,17 +45,21 @@
       <p>Kompakter KI Mini Thermo Printer im Kiddotronic Brand-Look: Baloo 2, CMYK-Farbwelt, klare Produktinformation.</p>
     </header>
     <main>
+      <div class="actions">
+        <a class="btn hot" href="assets/kiddotronic-q15-datenblatt.pdf" download>PDF Datenblatt herunterladen</a>
+        <a class="btn cool" href="q15-mini-printer-anleitung.html">Anleitung oeffnen</a>
+        <button onclick="window.print()">Als PDF speichern / drucken</button>
+      </div>
       <section class="grid">
         <div class="card"><h2>Produkt</h2><ul><li>Thermodrucker ohne Tintenpatronen</li><li>AI-Funktion ueber Taste und App</li><li>Geeignet fuer kreative Ausdrucke und einfache Organisation</li><li>Digitale Anleitung mit WLAN-Hilfe</li></ul></div>
         <div class="card"><h2>Verbindung</h2><ul><li>App: Fun Print</li><li>WLAN-Einrichtung ueber 2,4 GHz</li><li>Hinweise zur Router-Einstellung in der Anleitung</li><li>Video-Anleitung online verfuegbar</li></ul></div>
-        <div class="card"><h2>Downloads</h2><ul><li>Produktanleitung online</li><li>Dieses Datenblatt als druckbare Seite</li><li>Supportkontakt per E-Mail</li><li>Weitere Unterlagen koennen spaeter ergaenzt werden</li></ul></div>
+        <div class="card"><h2>Downloads</h2><ul><li>PDF Datenblatt als direkter Download</li><li>Produktanleitung online</li><li>Druckbare Datenblatt-Seite</li><li>Supportkontakt per E-Mail</li></ul></div>
         <div class="card"><h2>Kauf & Support</h2><ul><li>Direkter Kauf ueber Amazon</li><li>Support: semasolutions@hotmail.com</li><li>Marke: Kiddotronic</li><li>Website: kiddotronic.com</li></ul></div>
       </section>
       <section class="card"><h2>Wichtige Hinweise</h2><p>Fuer die Ersteinrichtung muss ein 2,4-GHz-WLAN verwendet werden. Lesen Sie vor Verwendung die Sicherheits- und Entsorgungshinweise in der Produktanleitung.</p></section>
       <div class="actions">
-        <a class="btn hot" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon kaufen</a>
-        <a class="btn cool" href="q15-mini-printer-anleitung.html">Anleitung oeffnen</a>
-        <button onclick="window.print()">Als PDF speichern / drucken</button>
+        <a class="btn hot" href="assets/kiddotronic-q15-datenblatt.pdf" download>PDF Datenblatt herunterladen</a>
+        <a class="btn white" href="index.html#downloads">Zurueck zu Downloads</a>
       </div>
     </main>
     <footer>Kiddotronic Q15 Mini Printer mit AI · Datenblatt · Stand 2026</footer>
