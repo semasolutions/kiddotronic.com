@@ -287,6 +287,7 @@
     .video-frame {
       width: min(100%, 390px);
       margin: auto;
+      position: relative;
       background: var(--black);
       border: 4px solid var(--black);
       border-radius: 22px;
@@ -304,10 +305,54 @@
       background: var(--black);
     }
 
-    .video-note {
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-size: 1rem;
+    .video-cover {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--black);
+      border: 0;
+    }
+
+    .video-cover.is-hidden {
+      display: none;
+    }
+
+    .video-cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-badge {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 76px;
+      height: 76px;
+      border: 4px solid var(--white);
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .62);
+      box-shadow: 5px 5px 0 var(--black);
+      transform: translate(-50%, -50%);
+    }
+
+    .play-badge::before {
+      content: "";
+      position: absolute;
+      left: 30px;
+      top: 22px;
+      width: 0;
+      height: 0;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 22px solid var(--white);
     }
 
     .video-fallback {
@@ -442,13 +487,16 @@
         </div>
         <div>
           <div class="video-frame">
-            <video controls playsinline preload="metadata" poster="assets/kiddotronic-video-poster.jpg">
+            <video id="q15-video" controls playsinline preload="metadata">
               <source src="assets/kiddotronic-q15-demo.mp4" type="video/mp4">
               Ihr Browser kann dieses Video nicht abspielen.
             </video>
+            <button class="video-cover" type="button" data-video-trigger aria-label="Video abspielen">
+              <img src="assets/kiddotronic-video-cover.jpg" alt="">
+              <span class="play-badge" aria-hidden="true"></span>
+            </button>
           </div>
           <div class="video-fallback"><a class="btn" href="assets/kiddotronic-q15-demo.mp4" target="_blank" rel="noopener noreferrer">Video direkt oeffnen</a></div>
-          <p class="video-note">Direkt eingebundenes MP4-Video fuer bessere Wiedergabe am Handy.</p>
         </div>
       </div>
     </div>
@@ -460,5 +508,25 @@
       <a href="mailto:semasolutions@hotmail.com">Kontakt</a>
     </div>
   </footer>
+  <script>
+    const q15Video = document.getElementById("q15-video");
+    const q15VideoTrigger = document.querySelector("[data-video-trigger]");
+
+    if (q15Video && q15VideoTrigger) {
+      q15VideoTrigger.addEventListener("click", async () => {
+        q15VideoTrigger.classList.add("is-hidden");
+
+        try {
+          await q15Video.play();
+        } catch (error) {
+          q15VideoTrigger.classList.remove("is-hidden");
+        }
+      });
+
+      q15Video.addEventListener("play", () => {
+        q15VideoTrigger.classList.add("is-hidden");
+      });
+    }
+  </script>
 </body>
 </html>
