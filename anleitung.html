@@ -24,6 +24,7 @@
         html = html.replace(topBar, '');
         html = html.replace(navBar, '');
         html = html.replace('.tabs-wrap{position:sticky;top:82px;', '.tabs-wrap{position:sticky;top:0;');
+        html = html.replace('</head>', '<style>#uebersicht .overview-grid + .success{margin-top:30px}</style></head>');
         html = html.replace('https://www.youtube-nocookie.com/embed/ypgsz8aO7eE?rel=0', 'https://www.youtube-nocookie.com/embed/PJRTx_D-AQw?rel=0');
         html = html.replace(/https:\/\/www\.youtube(?:-nocookie)?\.com\/embed\/[A-Za-z0-9_-]+(?:\?rel=0)?/g, 'https://www.youtube-nocookie.com/embed/PJRTx_D-AQw?rel=0');
         html = html.replace(/<a href="q15-mini-printer-anleitung\.html">Anleitung<\/a>/g, '<a href="anleitung.html">Anleitung</a>');
