@@ -210,10 +210,17 @@
       background: var(--cyan);
     }
 
-    .btn.instagram {
-      background: var(--magenta);
+    .btn.instagram,
+    .btn.tiktok,
+    .btn.youtube {
       color: var(--white);
     }
+
+    .btn.instagram { background: var(--magenta); }
+
+    .btn.tiktok { background: var(--black); }
+
+    .btn.youtube { background: var(--red); }
 
     .visual-card {
       min-height: 410px;
@@ -371,17 +378,12 @@
       border-left: 22px solid var(--black);
     }
 
-    .video-fallback {
+    .social-buttons {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      margin-top: 16px;
-    }
-
-    .video-fallback .btn {
-      min-height: 50px;
-      padding: 11px 18px;
-      font-size: 1rem;
-      background: var(--cyan);
+      gap: 16px;
+      margin-top: 28px;
     }
 
     .footer {
@@ -448,7 +450,7 @@
         width: min(100%, 360px);
       }
 
-      .video-fallback .btn {
+      .social-buttons .btn {
         width: 100%;
       }
     }
@@ -494,12 +496,8 @@
     <div class="container">
       <div class="video-card">
         <div class="video-copy">
-          <span class="badge">Kiddotronic Video</span>
           <h2 id="instagram-video">Kinderfantasie zum Leben erwecken</h2>
           <p>Aus gesprochenen Ideen werden kleine Bilder, Geschichten und kreative Ausdrucke. Der Q15 macht Fantasie sichtbar.</p>
-          <div class="actions">
-            <a class="btn instagram" href="https://www.instagram.com/reel/DaK3mWhNdeB/" target="_blank" rel="noopener noreferrer">Mehr auf Instagram ansehen</a>
-          </div>
         </div>
         <div>
           <div class="video-frame">
@@ -512,8 +510,12 @@
               <span class="play-badge" aria-hidden="true"></span>
             </button>
           </div>
-          <div class="video-fallback"><a class="btn" href="assets/kiddotronic-q15-demo.mp4" target="_blank" rel="noopener noreferrer">Video direkt oeffnen</a></div>
         </div>
+      </div>
+      <div class="social-buttons" aria-label="Kiddotronic Social Media">
+        <a class="btn tiktok" href="https://www.tiktok.com/@kiddotronic" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="btn instagram" href="https://www.instagram.com/kiddotronic" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="btn youtube" href="https://youtube.com/@kiddotronic?si=j9I9fKxgDftwig69" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
     </div>
   </section>
