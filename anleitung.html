@@ -28,6 +28,10 @@
         html = html.replace('https://www.youtube-nocookie.com/embed/ypgsz8aO7eE?rel=0', 'https://www.youtube-nocookie.com/embed/PJRTx_D-AQw?rel=0');
         html = html.replace(/https:\/\/www\.youtube(?:-nocookie)?\.com\/embed\/[A-Za-z0-9_-]+(?:\?rel=0)?/g, 'https://www.youtube-nocookie.com/embed/PJRTx_D-AQw?rel=0');
         html = html.replace(/<a href="q15-mini-printer-anleitung\.html">Anleitung<\/a>/g, '<a href="anleitung.html">Anleitung</a>');
+        html = html.replace(
+          '<footer class="footer"><div class="wrap">Web-Gebrauchsanleitung f&uuml;r den Q15 Mini Printer mit AI | <a href="index.html#start">Zur Kiddotronic Startseite</a></div></footer>',
+          '<footer class="footer"><div class="wrap">Web-Gebrauchsanleitung f&uuml;r den Q15 Mini Printer mit AI | <a href="index.html#start">Startseite</a> | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a> | <a href="agb-widerruf.html">AGB &amp; Widerruf</a></div></footer>'
+        );
 
         document.open();
         document.write(html);
