@@ -298,7 +298,7 @@
     }
 
     .video-frame video {
-      display: none;
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -324,7 +324,7 @@
     }
 
     .video-cover.is-hidden {
-      display: flex;
+      display: none;
     }
 
     .video-cover img {
@@ -492,10 +492,14 @@
         </div>
         <div>
           <div class="video-frame">
-            <a class="video-cover" href="assets/kiddotronic-q15-demo.mp4" target="_blank" rel="noopener noreferrer" aria-label="Video abspielen">
+            <video id="q15-video" controls playsinline preload="metadata" poster="Webseite%20Bild.jpeg">
+              <source src="assets/kiddotronic-q15-demo.mp4" type="video/mp4">
+              Ihr Browser kann dieses Video nicht abspielen.
+            </video>
+            <button class="video-cover" type="button" data-video-trigger aria-label="Video abspielen">
               <img src="Webseite%20Bild.jpeg" alt="Kiddotronic Q15 Video Vorschau">
               <span class="play-badge" aria-hidden="true"></span>
-            </a>
+            </button>
           </div>
           <div class="video-fallback"><a class="btn" href="assets/kiddotronic-q15-demo.mp4" target="_blank" rel="noopener noreferrer">Video direkt oeffnen</a></div>
         </div>
@@ -509,5 +513,21 @@
       <a href="mailto:semasolutions@hotmail.com">Kontakt</a>
     </div>
   </footer>
+  <script>
+    const q15Video = document.getElementById("q15-video");
+    const q15VideoTrigger = document.querySelector("[data-video-trigger]");
+
+    if (q15Video && q15VideoTrigger) {
+      q15VideoTrigger.addEventListener("click", async () => {
+        q15VideoTrigger.classList.add("is-hidden");
+
+        try {
+          await q15Video.play();
+        } catch (error) {
+          q15VideoTrigger.classList.remove("is-hidden");
+        }
+      });
+    }
+  </script>
 </body>
 </html>
