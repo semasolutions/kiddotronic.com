@@ -226,6 +226,8 @@
       box-shadow: var(--shadow);
       padding: 30px;
       transform: rotate(2deg);
+      color: var(--white);
+      text-decoration: none;
     }
 
     .visual-card::before {
@@ -241,9 +243,11 @@
     .visual-card img {
       position: relative;
       z-index: 1;
-      width: min(320px, 78%);
+      width: min(370px, 92%);
+      max-height: 330px;
       height: auto;
       display: block;
+      object-fit: contain;
       filter: drop-shadow(5px 5px 0 rgba(0,0,0,.25));
     }
 
@@ -259,6 +263,13 @@
       border: 3px solid var(--black);
       border-radius: 999px;
       box-shadow: 4px 4px 0 var(--black);
+    }
+
+    .visual-card:hover,
+    .visual-card:focus-visible {
+      transform: rotate(2deg) translate(3px, 3px);
+      box-shadow: 5px 5px 0 var(--black);
+      outline: none;
     }
 
     .video-section {
@@ -472,10 +483,10 @@
         </div>
       </section>
 
-      <aside class="visual-card" aria-label="Kiddotronic Marke">
-        <img src="logo.png" alt="Kiddotronic">
+      <a class="visual-card" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" aria-label="Kiddotronic Q15 KI Mini Printer auf Amazon ansehen">
+        <img src="Kiddotronic%20cube.jpeg" alt="Kiddotronic Q15 KI Mini Printer">
         <span class="mini-note">AI Print</span>
-      </aside>
+      </a>
     </div>
   </main>
 
