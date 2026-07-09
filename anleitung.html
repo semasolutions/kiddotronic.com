@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kiddotronic | Q15 Anleitung</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/logo-kiddotronic_transparent-01%5B1%5D.png" type="image/png">
+  <link rel="apple-touch-icon" href="/logo-kiddotronic_transparent-01%5B1%5D.png">
   <style>
     html,body{margin:0;min-height:100%;background:#fffef4;font-family:Arial,sans-serif}
     .loading{min-height:100vh;display:grid;place-items:center;padding:24px;font-weight:800;color:#000;text-align:center}
@@ -20,11 +23,12 @@
       .then(function(html){
         var topBar = `<div class="top"><div class="wrap"><span>Kiddotronic Q15 | Digitale Gebrauchsanleitung</span><a href="index.html#start">Zur Kiddotronic Startseite</a></div></div>`;
         var navBar = `<nav class="nav"><div class="wrap"><a class="brand" href="index.html#start"><img src="logo.png" alt="Kiddotronic Logo"></a><div class="links"><a href="index.html#marke">Marke</a><div class="drop"><button class="dropBtn" type="button">Produkte</button><div class="dropMenu"><a href="index.html#neu">Neu im Sortiment</a><a href="index.html#produkte">Q15 KI Mini Printer</a><a href="q15-mini-printer-anleitung.html">Anleitung</a><a href="datenblatt-q15-mini-printer.html">Datenblatt</a></div></div><a href="#uebersicht" data-link-tab="uebersicht">&Uuml;bersicht</a><a href="#offiziell" data-link-tab="offiziell">Erste Schritte</a><a href="#hilfe" data-link-tab="hilfe">WLAN-Hilfe</a><a href="#kontakt" data-link-tab="kontakt">Kontakt</a></div></div></nav>`;
+        var iconLinks = `<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/logo-kiddotronic_transparent-01%5B1%5D.png" type="image/png"><link rel="apple-touch-icon" href="/logo-kiddotronic_transparent-01%5B1%5D.png">`;
 
         html = html.replace(topBar, '');
         html = html.replace(navBar, '');
         html = html.replace('.tabs-wrap{position:sticky;top:82px;', '.tabs-wrap{position:sticky;top:0;');
-        html = html.replace('</head>', '<style>#uebersicht .overview-grid + .success{margin-top:30px}</style></head>');
+        html = html.replace('</head>', iconLinks + '<style>#uebersicht .overview-grid + .success{margin-top:30px}</style></head>');
         html = html.replace('https://www.youtube-nocookie.com/embed/ypgsz8aO7eE?rel=0', 'https://www.youtube-nocookie.com/embed/PJRTx_D-AQw?rel=0');
         html = html.replace(/https:\/\/www\.youtube(?:-nocookie)?\.com\/embed\/[A-Za-z0-9_-]+(?:\?rel=0)?/g, 'https://www.youtube-nocookie.com/embed/PJRTx_D-AQw?rel=0');
         html = html.replace(/<a href="q15-mini-printer-anleitung\.html">Anleitung<\/a>/g, '<a href="anleitung.html">Anleitung</a>');
