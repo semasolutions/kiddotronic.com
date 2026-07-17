@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --black:#000; --white:#fff; --red:#ff0000; --yellow:#ffed00; --cyan:#00aeef; --paper:#fffef4; --soft:#e8f8ff; --ink:#172330; --shadow:8px 8px 0 #000; }
+    :root { --black:#000; --white:#fff; --red:#ff0000; --yellow:#ffed00; --cyan:#00aeef; --paper:#fffef4; --soft:#e8f8ff; --soft-yellow:#fff9c9; --ink:#172330; --shadow:8px 8px 0 #000; }
     * { box-sizing:border-box; }
     body { margin:0; min-height:100vh; font-family:"Baloo 2", Arial, sans-serif; color:var(--black); background:var(--paper); line-height:1.35; }
     body:before { content:""; position:fixed; inset:0; z-index:-1; opacity:.14; background-image:linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px), linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px); background-size:30px 30px; }
@@ -32,18 +32,34 @@
     .product-image { border:4px solid #000; border-radius:24px; box-shadow:6px 6px 0 #000; overflow:hidden; background:var(--soft); transform:rotate(-.6deg); }
     .product-image img { display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center; }
     .badge { display:inline-flex; width:max-content; margin-bottom:18px; padding:7px 15px; border:3px solid #000; border-radius:999px; background:var(--yellow); font-weight:800; box-shadow:5px 5px 0 #000; }
-    h1, h2, p { margin-top:0; }
+    h1, h2, h3, p { margin-top:0; }
     h1 { margin-bottom:18px; font-size:clamp(3rem, 7vw, 6rem); line-height:.9; font-weight:800; }
-    p { color:var(--ink); font-size:clamp(1.08rem, 1.9vw, 1.35rem); }
+    h2 { margin-bottom:18px; font-size:clamp(2.2rem, 5vw, 4rem); line-height:.95; font-weight:800; }
+    h3 { margin-bottom:10px; font-size:clamp(1.35rem, 2.2vw, 1.85rem); line-height:1; font-weight:800; }
+    p, td, th, li { color:var(--ink); font-size:clamp(1.04rem, 1.8vw, 1.22rem); }
     .doc-meta { display:grid; gap:12px; margin:22px 0; }
-    .doc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:3px solid #000; border-radius:16px; background:#fff9c9; color:var(--black); text-decoration:none; font-weight:800; box-shadow:5px 5px 0 #000; transition:transform .15s ease, box-shadow .15s ease; }
+    .doc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:3px solid #000; border-radius:16px; background:var(--soft-yellow); color:var(--black); text-decoration:none; font-weight:800; box-shadow:5px 5px 0 #000; transition:transform .15s ease, box-shadow .15s ease; }
     .doc-row:nth-child(2) { background:var(--soft); }
     .file-type { padding:4px 10px; border:3px solid #000; border-radius:999px; background:#fff; white-space:nowrap; }
     .hint { margin-top:18px; font-size:1rem; color:#3b4650; }
+    .section { padding:58px 0 66px; border-bottom:8px solid #000; }
+    .section.yellow { background:var(--yellow); }
+    .section.soft { background:var(--soft); }
+    .card { padding:clamp(24px, 5vw, 42px); background:#fff; border:5px solid #000; border-radius:26px; box-shadow:var(--shadow); }
+    .grid { display:grid; gap:18px; }
+    .grid-3 { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns:repeat(4, minmax(0, 1fr)); }
+    .info-box { min-height:170px; padding:20px; border:4px solid #000; border-radius:20px; background:var(--soft-yellow); box-shadow:5px 5px 0 #000; }
+    .info-box:nth-child(2n) { background:var(--soft); }
+    .info-box:nth-child(3n) { background:var(--yellow); }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border:4px solid #000; border-radius:18px; background:#fff; }
+    th, td { padding:14px 16px; text-align:left; border-bottom:3px solid #000; vertical-align:top; }
+    tr:last-child th, tr:last-child td { border-bottom:0; }
+    th { width:34%; background:var(--soft-yellow); color:#000; font-weight:800; }
     .footer { background:#000; color:rgba(255,255,255,.78); border-top:8px solid #ec008c; padding:28px 0; font-weight:700; }
     .legal-links { display:flex; gap:14px; flex-wrap:wrap; }
-    @media (max-width:900px) { .download-card { grid-template-columns:1fr; } .product-image { transform:none; } }
-    @media (max-width:640px) { .top .container, .nav .container, .footer .container { align-items:flex-start; flex-direction:column; padding:12px 0; } .nav-links, .nav-link, .actions, .actions .btn { width:100%; } .doc-row { align-items:flex-start; flex-direction:column; } }
+    @media (max-width:980px) { .download-card, .grid-3, .grid-4 { grid-template-columns:1fr; } .product-image { transform:none; } }
+    @media (max-width:640px) { .top .container, .nav .container, .footer .container { align-items:flex-start; flex-direction:column; padding:12px 0; } .nav-links, .nav-link, .actions, .actions .btn { width:100%; } .doc-row { align-items:flex-start; flex-direction:column; } th, td { display:block; width:100%; } th { border-bottom:0; } }
   </style>
 </head>
 <body>
@@ -56,8 +72,8 @@
           <div class="product-image"><img src="assets/kiddotronic-datenblatt-produktbild.jpg" alt="Kiddotronic KI Stickerdrucker fuer Kinder"></div>
           <article>
             <span class="badge">Produktdatenblatt</span>
-            <h1>KI Stickerdrucker für Kinder</h1>
-            <p>Hier findest du das separate PDF-Datenblatt zum Kiddotronic KI Stickerdrucker. Es ist als kompaktes Produktdokument aufgebaut und kann direkt angesehen, heruntergeladen oder weitergegeben werden.</p>
+            <h1>Kiddotronic KI Stickerdrucker</h1>
+            <p>Mini KI Stickerdrucker für Kinder mit KI-Sprachfunktion, Bluetooth/WLAN, tintenlosem Thermodruck und App-Steuerung. Entwickelt für Sticker, Ausmalbilder, Bastelprojekte, Schulhefte, Tagebücher und kreative Geschenkideen.</p>
             <div class="doc-meta" aria-label="Dokumente und Produktlinks">
               <a class="doc-row" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" target="_blank" rel="noopener noreferrer"><span>Datenblatt Deutsch öffnen</span><span class="file-type">PDF</span></a>
               <a class="doc-row" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer"><span>Produktseite Amazon.de öffnen</span><span class="file-type">LINK</span></a>
@@ -67,8 +83,70 @@
               <a class="btn secondary" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" download>PDF herunterladen</a>
               <a class="btn" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Amazon öffnen</a>
             </div>
-            <p class="hint">Das PDF enthält Kurzbeschreibung, Top-Verkaufsargumente, Produktdaten, Anwendungen und den Amazon-Link.</p>
+            <p class="hint">Die folgenden Produktdaten wurden von der Amazon.de-Produktseite übernommen.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section yellow" aria-labelledby="parents-title">
+      <div class="container">
+        <div class="card">
+          <span class="badge">Kaufargumente</span>
+          <h2 id="parents-title">Warum Eltern ihn kaufen</h2>
+          <div class="grid grid-4">
+            <article class="info-box"><h3>Kreativ statt Bildschirmzeit</h3><p>Kinder sprechen eigene Ideen ein und gestalten daraus Sticker, Ausmalbilder und kleine Kunstwerke.</p></article>
+            <article class="info-box"><h3>Sofort startklar</h3><p>Komplett-Set mit Drucker, USB-C Ladekabel, Bedienungsanleitung, Thermopapier und Thermo-Stickerpapier.</p></article>
+            <article class="info-box"><h3>Sauber ohne Tinte</h3><p>Thermodruck ohne Patronen, ohne Tinte und ohne Kleckern. Ideal für Zuhause, Reisen und kreative Nachmittage.</p></article>
+            <article class="info-box"><h3>Mehr als ein Sticker-Set</h3><p>Durch KI-Sprachfunktion und 6 Designstile entstehen immer wieder neue Motive zum Sammeln, Dekorieren und Verschenken.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" aria-labelledby="details-title">
+      <div class="container">
+        <div class="card">
+          <span class="badge">Technische Details</span>
+          <h2 id="details-title">Produktdaten laut Amazon.de</h2>
+          <table aria-label="Technische Daten Kiddotronic KI Stickerdrucker">
+            <tr><th>Marke</th><td>Kiddotronic</td></tr>
+            <tr><th>Modell</th><td>Kiddotronic Q15 Mini Bluetooth Thermodrucker Stickerdrucker</td></tr>
+            <tr><th>Hersteller-Modellnummer</th><td>Q15</td></tr>
+            <tr><th>ASIN</th><td>B0GYMHN6Z5</td></tr>
+            <tr><th>Farbe</th><td>Rot</td></tr>
+            <tr><th>Altersempfehlung</th><td>Geschenk ab 3 Jahren</td></tr>
+            <tr><th>Drucktechnologie</th><td>Thermodruck ohne Tinte</td></tr>
+            <tr><th>Druckausgabe</th><td>Monochrom</td></tr>
+            <tr><th>Druckauflösung</th><td>203 dpi</td></tr>
+            <tr><th>Max. Druckgeschwindigkeit</th><td>15 Seiten pro Minute</td></tr>
+            <tr><th>Papierformat</th><td>57 × 25 mm Thermopapier und Stickerpapier</td></tr>
+            <tr><th>Konnektivität</th><td>Bluetooth, WLAN und USB-C</td></tr>
+            <tr><th>Steuerung</th><td>KI-Sprachsteuerung, Fun-Print-App und Ein-Knopf-Bedienung</td></tr>
+            <tr><th>Kompatible Geräte</th><td>Smartphones und Tablets</td></tr>
+            <tr><th>Produkt-Features</th><td>KI-Sprachfunktion, HD-Vorschau-Display, tintenloser Thermodruck, tragbar, kabellos, USB-C</td></tr>
+            <tr><th>Abmessungen</th><td>9,4 × 8,9 × 8,1 cm</td></tr>
+            <tr><th>Gewicht</th><td>254 g</td></tr>
+            <tr><th>Stromverbrauch</th><td>4,44 W</td></tr>
+            <tr><th>Scanner</th><td>Kein Scanner</td></tr>
+            <tr><th>Zweiseitiger Druck</th><td>Nein</td></tr>
+            <tr><th>Garantie</th><td>1 Jahr Herstellergarantie</td></tr>
+            <tr><th>Hersteller</th><td>Shenzhen Tianyuan Huitong Technology Co., Ltd.</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="scope-title">
+      <div class="container">
+        <div class="card">
+          <span class="badge">Lieferumfang & Nutzung</span>
+          <h2 id="scope-title">Was enthalten ist</h2>
+          <div class="grid grid-3">
+            <article class="info-box"><h3>Lieferumfang</h3><p>1× Q15 Mini Thermodrucker, 1× USB-C Ladekabel, 1× Bedienungsanleitung, 1× Papierrolle Thermopapier und 2× Thermo-Stickerpapier.</p></article>
+            <article class="info-box"><h3>Typische Nutzung</h3><p>Schulhefte, Tagebücher, Bastelprojekte, kleine Geschenke, kreative Nachmittage, Reisen, Autofahrten und Regentage zuhause.</p></article>
+            <article class="info-box"><h3>Kreative Funktionen</h3><p>Eigene Sticker und Motive in Sekunden, KI-Bilder per Sprache, Ausmalbilder, Dekorationen und 6 Zeichen- und Designstile.</p></article>
+          </div>
         </div>
       </div>
     </section>
