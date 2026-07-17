@@ -430,7 +430,7 @@
       padding: 0;
       overflow: hidden;
       cursor: pointer;
-      background: var(--black);
+      background: transparent;
       border: 0;
       color: var(--black);
       text-decoration: none;
@@ -666,16 +666,18 @@
       </div>
       <div class="video-card product-video">
         <div class="video-copy">
-          <span class="badge">Produktvideo</span>
           <h2>Reinsprechen. Drucken. Fertig.</h2>
           <p>Das Video zeigt genau den Kern des Q15: Eine Idee wird in den Drucker gesprochen, die KI erstellt ein Bild und der Sticker kommt direkt heraus.</p>
         </div>
         <div class="video-media">
           <div class="video-frame">
-            <video controls playsinline preload="metadata">
+            <video id="product-demo-video" controls playsinline preload="metadata">
               <source src="assets/kiddotronic-q15-landingpage-video.mp4" type="video/mp4">
               Ihr Browser kann dieses Video nicht abspielen.
             </video>
+            <button class="video-cover" type="button" data-video-trigger="product-demo-video" aria-label="Produktvideo abspielen">
+              <span class="play-badge" aria-hidden="true"></span>
+            </button>
           </div>
         </div>
       </div>
@@ -699,20 +701,22 @@
     </div>
   </footer>
   <script>
-    const q15Video = document.getElementById("q15-video");
-    const q15VideoTrigger = document.querySelector("[data-video-trigger]");
+    document.querySelectorAll("[data-video-trigger]").forEach((videoTrigger) => {
+      const targetId = videoTrigger.dataset.videoTrigger || "q15-video";
+      const targetVideo = document.getElementById(targetId);
 
-    if (q15Video && q15VideoTrigger) {
-      q15VideoTrigger.addEventListener("click", async () => {
-        q15VideoTrigger.classList.add("is-hidden");
+      if (!targetVideo) return;
+
+      videoTrigger.addEventListener("click", async () => {
+        videoTrigger.classList.add("is-hidden");
 
         try {
-          await q15Video.play();
+          await targetVideo.play();
         } catch (error) {
-          q15VideoTrigger.classList.remove("is-hidden");
+          videoTrigger.classList.remove("is-hidden");
         }
       });
-    }
+    });
   </script>
 </body>
 </html>
