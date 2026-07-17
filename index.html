@@ -582,7 +582,7 @@
       }
 
       .menu-toggle { justify-self: center; }
-      .nav-actions { justify-self: center; justify-content: center; }
+      .nav-actions { display: none; }
       .menu-panel-inner { justify-content: center; }
       .hero-inner, .section-head, .approved-card, .video-card, .video-card.product-video, .step-grid, .benefits-grid { grid-template-columns: 1fr; }
       .product-video .video-copy, .product-video .video-media { grid-column: auto; grid-row: auto; }
@@ -594,7 +594,7 @@
 
     @media (max-width: 640px) {
       .container { width: min(100% - 24px, 1180px); }
-      .nav-actions, .nav-actions .nav-link, .menu-panel-inner, .menu-panel-inner .nav-link, .actions, .actions .btn, .social-buttons .btn { width: 100%; }
+      .menu-panel-inner, .menu-panel-inner .nav-link, .actions, .actions .btn, .social-buttons .btn { width: 100%; }
       h1 { font-size: clamp(3rem, 14vw, 4.6rem); }
       h2, .approved-title { font-size: clamp(2.4rem, 12vw, 4rem); }
       .hero { padding-top: 42px; }
