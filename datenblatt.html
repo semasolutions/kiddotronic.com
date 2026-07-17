@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Datenblatt fuer den Kiddotronic KI Stickerdrucker fuer Kinder mit Dokumente-Download, Produktdaten und Verkaufsargumenten." />
-  <title>Kiddotronic | Datenblatt KI Stickerdrucker</title>
+  <meta name="description" content="PDF-Datenblatt zum Kiddotronic KI Stickerdrucker fuer Kinder herunterladen oder ansehen." />
+  <title>Kiddotronic | PDF-Datenblatt KI Stickerdrucker</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
   <style>
     :root { --black:#000; --white:#fff; --red:#ff0000; --yellow:#ffed00; --cyan:#00aeef; --paper:#fffef4; --soft:#e8f8ff; --ink:#172330; --shadow:8px 8px 0 #000; }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:"Baloo 2", Arial, sans-serif; color:var(--black); background:var(--paper); line-height:1.35; }
+    body { margin:0; min-height:100vh; font-family:"Baloo 2", Arial, sans-serif; color:var(--black); background:var(--paper); line-height:1.35; }
     body:before { content:""; position:fixed; inset:0; z-index:-1; opacity:.14; background-image:linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px), linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px); background-size:30px 30px; }
     .container { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
     .top { background:#000; color:#fff; border-bottom:6px solid var(--yellow); font-weight:800; }
@@ -24,74 +24,54 @@
     .nav-links, .actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
     .btn, .nav-link { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:9px 16px; border:3px solid #000; border-radius:999px; background:var(--yellow); color:#000; text-decoration:none; font:inherit; font-weight:800; box-shadow:5px 5px 0 #000; cursor:pointer; }
     .btn { min-height:58px; padding:14px 22px; border-width:4px; box-shadow:6px 6px 0 #000; }
-    .primary { background:var(--red); color:#fff; }
-    .secondary { background:var(--cyan); }
+    .btn.primary, .nav-link.primary { background:var(--red); color:#fff; }
+    .btn.secondary { background:var(--cyan); }
+    .btn:hover, .nav-link:hover { transform:translate(3px, 3px); box-shadow:3px 3px 0 #000; }
     .hero { padding:64px 0 72px; border-bottom:8px solid #000; background:linear-gradient(135deg, var(--cyan) 0 45%, transparent 45%), radial-gradient(circle at 88% 18%, var(--yellow) 0 13%, transparent 13%), linear-gradient(180deg, var(--paper), var(--soft)); }
-    .hero-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:30px; align-items:stretch; }
-    .card { background:#fff; border:5px solid #000; border-radius:26px; box-shadow:var(--shadow); padding:clamp(24px, 5vw, 42px); }
-    .hero-copy { transform:rotate(-.5deg); }
-    .docs { transform:rotate(.6deg); }
-    .badge { display:inline-flex; width:max-content; margin-bottom:18px; padding:7px 15px; border:3px solid #000; border-radius:999px; background:var(--yellow); font-weight:800; box-shadow:5px 5px 0 #000; }
-    h1, h2, h3, p { margin-top:0; }
-    h1 { margin-bottom:18px; font-size:clamp(3rem,7vw,6rem); line-height:.9; font-weight:800; }
-    h2 { margin-bottom:18px; font-size:clamp(2rem,4.6vw,3.7rem); line-height:.95; font-weight:800; }
-    h3 { margin-bottom:10px; font-size:clamp(1.35rem,2.2vw,1.85rem); line-height:1; font-weight:800; }
-    p, td, th, li { color:var(--ink); font-size:clamp(1.04rem,1.8vw,1.22rem); }
-    .product-image { margin:20px 0; border:4px solid #000; border-radius:22px; box-shadow:5px 5px 0 #000; overflow:hidden; background:var(--soft); }
+    .download-card { display:grid; grid-template-columns:minmax(0, .95fr) minmax(320px, 1.05fr); gap:30px; align-items:center; padding:clamp(24px, 5vw, 44px); background:#fff; border:5px solid #000; border-radius:28px; box-shadow:var(--shadow); }
+    .product-image { border:4px solid #000; border-radius:24px; box-shadow:6px 6px 0 #000; overflow:hidden; background:var(--soft); transform:rotate(-.6deg); }
     .product-image img { display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center; }
-    .doc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px; margin-top:14px; border:3px solid #000; border-radius:16px; background:#fff9c9; font-weight:800; }
+    .badge { display:inline-flex; width:max-content; margin-bottom:18px; padding:7px 15px; border:3px solid #000; border-radius:999px; background:var(--yellow); font-weight:800; box-shadow:5px 5px 0 #000; }
+    h1, h2, p { margin-top:0; }
+    h1 { margin-bottom:18px; font-size:clamp(3rem, 7vw, 6rem); line-height:.9; font-weight:800; }
+    p { color:var(--ink); font-size:clamp(1.08rem, 1.9vw, 1.35rem); }
+    .doc-meta { display:grid; gap:12px; margin:22px 0; }
+    .doc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:3px solid #000; border-radius:16px; background:#fff9c9; font-weight:800; }
+    .doc-row:nth-child(2) { background:var(--soft); }
     .file-type { padding:4px 10px; border:3px solid #000; border-radius:999px; background:#fff; white-space:nowrap; }
-    .section { padding:58px 0 66px; border-bottom:8px solid #000; }
-    .yellow { background:var(--yellow); }
-    .soft { background:var(--soft); }
-    .grid { display:grid; gap:18px; }
-    .grid-4 { grid-template-columns:repeat(4, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns:repeat(3, minmax(0, 1fr)); }
-    .grid-2 { grid-template-columns:repeat(2, minmax(0, 1fr)); }
-    .box { min-height:160px; padding:20px; border:4px solid #000; border-radius:20px; background:#fff9c9; box-shadow:5px 5px 0 #000; }
-    .box:nth-child(2n) { background:var(--soft); }
-    .box:nth-child(3n) { background:var(--yellow); }
-    .number { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; margin-bottom:14px; border:3px solid #000; border-radius:50%; background:#fff; font-weight:800; box-shadow:4px 4px 0 #000; }
-    table { width:100%; border-collapse:collapse; border:4px solid #000; border-radius:18px; overflow:hidden; background:#fff; }
-    th, td { padding:14px 16px; text-align:left; border-bottom:3px solid #000; vertical-align:top; }
-    tr:last-child th, tr:last-child td { border-bottom:0; }
-    th { width:34%; background:#fff9c9; color:#000; font-weight:800; }
-    .note { margin-top:18px; color:#3b4650; font-size:1rem; }
+    .hint { margin-top:18px; font-size:1rem; color:#3b4650; }
     .footer { background:#000; color:rgba(255,255,255,.78); border-top:8px solid #ec008c; padding:28px 0; font-weight:700; }
     .legal-links { display:flex; gap:14px; flex-wrap:wrap; }
-    @media (max-width:980px) { .hero-grid, .grid-4, .grid-3, .grid-2 { grid-template-columns:1fr; } .hero-copy, .docs { transform:none; } }
-    @media (max-width:640px) { .top .container, .nav .container, .footer .container { align-items:flex-start; flex-direction:column; padding:12px 0; } .nav-links, .nav-link, .actions .btn { width:100%; } th, td { display:block; width:100%; } th { border-bottom:0; } }
-    @media print { body { background:#fff; } body:before, .top, .nav, .footer, .actions { display:none!important; } .hero, .section { padding:18px 0; border:0; background:#fff!important; } .container { width:100%; } .card, .box, table { box-shadow:none; transform:none; break-inside:avoid; } h1 { font-size:42px; } h2 { font-size:30px; } p, li, td, th { font-size:14px; } }
+    @media (max-width:900px) { .download-card { grid-template-columns:1fr; } .product-image { transform:none; } }
+    @media (max-width:640px) { .top .container, .nav .container, .footer .container { align-items:flex-start; flex-direction:column; padding:12px 0; } .nav-links, .nav-link, .actions, .actions .btn { width:100%; } .doc-row { align-items:flex-start; flex-direction:column; } }
   </style>
 </head>
 <body>
-  <div class="top"><div class="container"><span>Kiddotronic | Datenblatt KI Stickerdrucker</span><a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a></div></div>
+  <div class="top"><div class="container"><span>Kiddotronic | PDF-Datenblatt</span><a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a></div></div>
   <nav class="nav" aria-label="Hauptnavigation"><div class="container"><a class="brand" href="index.html"><img src="logo.png" alt="Kiddotronic Logo"></a><div class="nav-links"><a class="nav-link primary" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a><a class="nav-link" href="index.html">Startseite</a><a class="nav-link" href="anleitung.html">Anleitung</a></div></div></nav>
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <article class="card hero-copy">
-          <span class="badge">Produktdatenblatt</span>
-          <h1>KI Stickerdrucker fuer Kinder</h1>
-          <p>Der Kiddotronic KI Stickerdrucker verwandelt gesprochene Ideen in kreative Sticker. Kinder sprechen ein Motiv ein, die KI erstellt ein Bild und der Drucker gibt den Ausdruck direkt aus.</p>
-          <div class="actions"><a class="btn primary" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a><a class="btn secondary" href="index.html">Zur Landingpage</a></div>
-        </article>
-        <aside class="card docs" aria-labelledby="documents-title">
-          <span class="badge">Dokumente</span>
-          <h2 id="documents-title">Download</h2>
-          <p>Dieses Datenblatt kann direkt als PDF gespeichert oder ausgedruckt werden.</p>
+      <div class="container">
+        <div class="download-card">
           <div class="product-image"><img src="assets/kiddotronic-datenblatt-produktbild.jpg" alt="Kiddotronic KI Stickerdrucker fuer Kinder"></div>
-          <div class="doc-row"><span>Datenblatt DE</span><span class="file-type">PDF</span></div>
-          <div class="doc-row"><span>Produktseite Amazon.de</span><span class="file-type">LINK</span></div>
-          <div class="actions"><button class="btn primary" type="button" onclick="window.print()">Datenblatt als PDF speichern</button><a class="btn" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Amazon oeffnen</a></div>
-        </aside>
+          <article>
+            <span class="badge">Produktdatenblatt</span>
+            <h1>KI Stickerdrucker für Kinder</h1>
+            <p>Hier findest du das separate PDF-Datenblatt zum Kiddotronic KI Stickerdrucker. Es ist als kompaktes Produktdokument aufgebaut und kann direkt angesehen, heruntergeladen oder weitergegeben werden.</p>
+            <div class="doc-meta" aria-label="Dokumentinformationen">
+              <div class="doc-row"><span>Datenblatt Deutsch</span><span class="file-type">PDF</span></div>
+              <div class="doc-row"><span>Produktseite Amazon.de</span><span class="file-type">LINK</span></div>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" target="_blank" rel="noopener noreferrer">PDF ansehen</a>
+              <a class="btn secondary" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" download>PDF herunterladen</a>
+              <a class="btn" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Amazon öffnen</a>
+            </div>
+            <p class="hint">Das PDF enthält Kurzbeschreibung, Top-Verkaufsargumente, Produktdaten, Anwendungen und den Amazon-Link.</p>
+          </article>
+        </div>
       </div>
     </section>
-    <section class="section yellow"><div class="container"><div class="card"><span class="badge">Nutzen</span><h2>Warum Kunden ihn kaufen</h2><div class="grid grid-4"><article class="box"><span class="number">1</span><h3>Sprache wird zum Sticker</h3><p>Eine Idee wird gesprochen, die KI macht daraus ein Motiv und der Drucker bringt es auf Papier.</p></article><article class="box"><span class="number">2</span><h3>Eigene Motive sofort</h3><p>Drache, Einhorn, Roboter, Weltraum oder Name: Kinder koennen immer neue Sticker-Ideen erfinden.</p></article><article class="box"><span class="number">3</span><h3>Ohne Tinte</h3><p>Thermodruck bedeutet: keine Patronen, kein Tintennachfuellen und weniger Aufwand.</p></article><article class="box"><span class="number">4</span><h3>Perfekt als Geschenk</h3><p>Ein greifbares KI-Spielzeug mit Sofort-Erlebnis: sprechen, drucken, ausmalen, kleben.</p></article></div></div></div></section>
-    <section class="section"><div class="container"><div class="card"><span class="badge">Produktbeschreibung</span><h2>Eine kleine Ideenmaschine fuer Kinder</h2><p>Der Kiddotronic KI Stickerdrucker verbindet Spracheingabe, KI-Bilderstellung und tintenlosen Thermodruck. Der besondere Kaufgrund ist der Moment, in dem aus einer gesprochenen Fantasie ein echter Ausdruck entsteht.</p></div></div></section>
-    <section class="section soft"><div class="container"><div class="card"><span class="badge">Technische Produktdaten</span><h2>Daten auf einen Blick</h2><table><tr><th>Produktname</th><td>Kiddotronic KI Stickerdrucker</td></tr><tr><th>Produktart</th><td>KI-gestuetzter Sticker- und Mini-Thermodrucker fuer kreative Anwendungen</td></tr><tr><th>Kernfunktion</th><td>Gesprochene Ideen in KI-Motive verwandeln und direkt als Sticker bzw. kreative Ausdrucke drucken</td></tr><tr><th>Drucktechnologie</th><td>Tintenloser Thermodruck</td></tr><tr><th>Druckausgabe</th><td>Monochrome Ausdrucke, ideal zum Ausmalen, Kleben und Weitergestalten</td></tr><tr><th>Bedienung</th><td>Spracheingabe fuer KI-Motive sowie App-/Smartphone-gestuetzte Nutzung je nach Funktion</td></tr><tr><th>Zielgruppe</th><td>Kinder, Familien, kreative Bastelfans und Geschenkkaeufer</td></tr><tr><th>Wichtigster Kundennutzen</th><td>Aus Fantasie wird in wenigen Schritten ein greifbarer, gestaltbarer Sticker</td></tr></table><p class="note">Hinweis: Exakte Angaben zu Lieferumfang, Papierformat, Akkulaufzeit und App-Funktionen sollten mit der finalen Amazon-Produktseite oder Verpackung abgeglichen werden.</p></div></div></section>
-    <section class="section yellow"><div class="container"><div class="card"><span class="badge">Anwendungen</span><h2>Wofuer der Drucker genutzt wird</h2><div class="grid grid-3"><article class="box"><h3>Sticker & Basteln</h3><p>Eigene Motive drucken, ausschneiden, kleben und verschenken.</p></article><article class="box"><h3>Ausmalen & Gestalten</h3><p>Schwarz-weisse Ausdrucke lassen Raum zum Ausmalen und Dekorieren.</p></article><article class="box"><h3>Lernen & Organisieren</h3><p>Geeignet fuer Lernkarten, Namensschilder, Etiketten und kreative Notizen.</p></article><article class="box"><h3>Journaling</h3><p>Persoenliche Sticker fuer Tagebuecher, Planer, Karten und Fotoalben.</p></article><article class="box"><h3>Rollenspiel</h3><p>Figuren, Gegenstaende und Szenen in Geschichten und Fantasiewelten einbauen.</p></article><article class="box"><h3>Geschenkidee</h3><p>Ein besonderes Kreativgeschenk fuer Geburtstage, Feiertage und Regentage.</p></article></div></div></div></section>
-    <section class="section"><div class="container"><div class="card"><span class="badge">Positionierung</span><h2>Nicht nur ein Drucker. Eine Ideenmaschine.</h2><div class="grid grid-2"><article class="box"><h3>Emotionaler Nutzen</h3><p>Kinder erleben, dass ihre eigenen Ideen sichtbar werden. Das macht ihn staerker als ein klassisches Sticker-Set.</p></article><article class="box"><h3>Praktischer Nutzen</h3><p>Tintenloser Sofortdruck, kompakte Nutzung und vielseitige Papiermoeglichkeiten machen ihn alltagstauglich.</p></article><article class="box"><h3>Amazon-Suchbegriffe</h3><p>KI Stickerdrucker, Stickerdrucker fuer Kinder, Thermodrucker, Mini Printer, Sticker Drucker.</p></article><article class="box"><h3>Kaufimpuls</h3><p>Das Produkt erklaert sich in Sekunden: Idee sagen, Bild entsteht, Sticker kommt heraus.</p></article></div></div></div></section>
   </main>
   <footer class="footer"><div class="container"><span>Kiddotronic KI Stickerdrucker</span><div class="legal-links"><a href="index.html">Startseite</a><a href="anleitung.html">Anleitung</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb-widerruf.html">AGB &amp; Widerruf</a></div></div></footer>
 </body>
