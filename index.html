@@ -20,20 +20,13 @@
       "name": "Kiddotronic",
       "url": "https://kiddotronic.com/",
       "logo": "https://kiddotronic.com/logo-kiddotronic_transparent-01%5B1%5D.png",
-      "sameAs": [
-        "https://www.instagram.com/kiddotronic",
-        "https://www.tiktok.com/@kiddotronic",
-        "https://youtube.com/@kiddotronic?si=j9I9fKxgDftwig69"
-      ],
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "SEMA Solutions e.U."
-      }
+      "sameAs": ["https://www.instagram.com/kiddotronic", "https://www.tiktok.com/@kiddotronic", "https://youtube.com/@kiddotronic?si=j9I9fKxgDftwig69"],
+      "parentOrganization": { "@type": "Organization", "name": "SEMA Solutions e.U." }
     }
   </script>
   <style>
     :root {
-      --ink: #101010;
+      --ink: #111111;
       --paper: #f7eddf;
       --paper-light: #fffaf2;
       --sand: #ead0b6;
@@ -59,6 +52,19 @@
       overflow-x: hidden;
     }
 
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, .approved-title, .step-card strong, .benefit-item strong, .hero-kicker, .section-kicker {
+      font-family: "Baloo 2", Arial, sans-serif !important;
+      color: var(--ink) !important;
+      -webkit-text-stroke: 0 !important;
+      text-shadow: none !important;
+      letter-spacing: 0 !important;
+      font-weight: 800 !important;
+      font-style: normal !important;
+      text-transform: none;
+    }
+
     .marquee {
       overflow: hidden;
       white-space: nowrap;
@@ -74,12 +80,7 @@
       animation: scroll 24s linear infinite;
     }
 
-    .marquee-track span {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 8px 18px;
-    }
+    .marquee-track span { padding: 8px 18px; }
 
     @keyframes scroll {
       from { transform: translateX(0); }
@@ -165,8 +166,7 @@
       flex-wrap: wrap;
     }
 
-    .nav-link,
-    .btn {
+    .nav-link, .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -187,22 +187,14 @@
       padding: 15px 28px;
       border-width: 4px;
       font-size: clamp(1.25rem, 2.8vw, 2rem);
-      text-transform: uppercase;
-      letter-spacing: 0;
     }
 
-    .nav-link:hover,
-    .btn:hover {
+    .nav-link:hover, .btn:hover {
       transform: translate(4px, 4px);
       box-shadow: 2px 2px 0 var(--ink);
     }
 
-    .nav-link.amazon-link,
-    .btn.product {
-      background: var(--red);
-      color: var(--white);
-    }
-
+    .nav-link.amazon-link, .btn.product { background: var(--red); color: var(--white); }
     .btn.manual { background: var(--blue); }
     .btn.instagram { background: #ec008c; color: var(--white); }
     .btn.tiktok { background: var(--ink); color: var(--white); }
@@ -218,12 +210,10 @@
       overflow: hidden;
     }
 
-    .hero::before,
-    .hero::after {
+    .hero::before, .hero::after {
       content: "";
       position: absolute;
       border-radius: 48% 52% 58% 42%;
-      background: var(--mint);
       z-index: 0;
     }
 
@@ -233,6 +223,7 @@
       left: 8%;
       top: 20%;
       transform: rotate(-18deg);
+      background: var(--mint);
     }
 
     .hero::after {
@@ -308,47 +299,28 @@
 
     .hero-copy { max-width: 660px; }
 
-    h1,
-    h2,
-    h3,
-    p { margin-top: 0; }
-
-    h1,
-    h2,
-    .approved-title {
-      font-family: "Arial Black", "Baloo 2", Arial, sans-serif;
-      letter-spacing: 0;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: var(--ink);
-      -webkit-text-stroke: 0;
-      text-shadow: none;
-    }
-
     h1 {
       margin-bottom: 22px;
-      font-size: clamp(3.3rem, 7vw, 6.4rem);
-      line-height: .88;
+      font-size: clamp(3.25rem, 6.7vw, 6.2rem);
+      line-height: .86;
     }
 
     h1 span { display: block; }
 
-    .hero-kicker,
-    .section-kicker {
-      display: block;
-      margin-bottom: 14px;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.7rem, 6.2vw, 5.1rem);
       line-height: .9;
-      font-weight: 800;
-      text-transform: uppercase;
     }
 
-    .hero-copy p,
-    .section-copy p,
-    .step-card p,
-    .parent-list li,
-    .benefit-item p,
-    .video-copy p {
+    .hero-kicker, .section-kicker {
+      display: block;
+      margin-bottom: 14px;
+      font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+      line-height: .95;
+    }
+
+    .hero-copy p, .section-copy p, .step-card p, .parent-list li, .benefit-item p, .video-copy p {
       color: #171717;
       font-size: clamp(1.12rem, 2vw, 1.38rem);
     }
@@ -360,10 +332,7 @@
       margin-top: 30px;
     }
 
-    .steps-section,
-    .benefits-section,
-    .video-section,
-    .approved-section {
+    .steps-section, .benefits-section, .video-section, .approved-section {
       border-top: 4px solid var(--ink);
       padding: clamp(56px, 8vw, 92px) 0;
     }
@@ -381,23 +350,13 @@
       margin-bottom: 34px;
     }
 
-    h2 {
-      margin-bottom: 0;
-      font-size: clamp(2.6rem, 6.8vw, 5.25rem);
-      line-height: .9;
-    }
-
-    .step-grid,
-    .benefits-grid {
+    .step-grid, .benefits-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
-    .step-card,
-    .benefit-item,
-    .approved-card,
-    .video-card {
+    .step-card, .benefit-item, .approved-card, .video-card {
       background: var(--white);
       border: 4px solid var(--ink);
       border-radius: 28px;
@@ -421,8 +380,6 @@
       margin-bottom: 10px;
       font-size: clamp(2.2rem, 4vw, 3.3rem);
       line-height: .85;
-      font-weight: 800;
-      text-transform: uppercase;
     }
 
     .step-number {
@@ -449,7 +406,7 @@
     }
 
     .approved-title {
-      font-size: clamp(2.8rem, 6.8vw, 5.8rem);
+      font-size: clamp(2.7rem, 6.2vw, 5.1rem);
       line-height: .9;
     }
 
@@ -488,7 +445,6 @@
       margin-bottom: 8px;
       font-size: clamp(1.35rem, 2.5vw, 1.85rem);
       line-height: 1;
-      font-weight: 800;
     }
 
     .video-card {
@@ -628,22 +584,8 @@
       .menu-toggle { justify-self: center; }
       .nav-actions { justify-self: center; justify-content: center; }
       .menu-panel-inner { justify-content: center; }
-      .hero-inner,
-      .section-head,
-      .approved-card,
-      .video-card,
-      .video-card.product-video,
-      .step-grid,
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .product-video .video-copy,
-      .product-video .video-media {
-        grid-column: auto;
-        grid-row: auto;
-      }
-
+      .hero-inner, .section-head, .approved-card, .video-card, .video-card.product-video, .step-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .product-video .video-copy, .product-video .video-media { grid-column: auto; grid-row: auto; }
       .cube-stage { min-height: auto; }
       .hero-copy { max-width: none; }
       .step-card { transform: none !important; }
@@ -652,16 +594,9 @@
 
     @media (max-width: 640px) {
       .container { width: min(100% - 24px, 1180px); }
-      .nav-actions,
-      .nav-actions .nav-link,
-      .menu-panel-inner,
-      .menu-panel-inner .nav-link,
-      .actions,
-      .actions .btn,
-      .social-buttons .btn { width: 100%; }
+      .nav-actions, .nav-actions .nav-link, .menu-panel-inner, .menu-panel-inner .nav-link, .actions, .actions .btn, .social-buttons .btn { width: 100%; }
       h1 { font-size: clamp(3rem, 14vw, 4.6rem); }
-      h2,
-      .approved-title { font-size: clamp(2.4rem, 12vw, 4rem); }
+      h2, .approved-title { font-size: clamp(2.4rem, 12vw, 4rem); }
       .hero { padding-top: 42px; }
       .video-card { padding: 20px; }
     }
@@ -677,12 +612,8 @@
 
   <nav class="nav" aria-label="Hauptnavigation">
     <div class="container">
-      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="site-menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <a class="brand" href="index.html" aria-label="Kiddotronic Startseite">
-        <img src="logo.png" alt="Kiddotronic Logo">
-      </a>
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="brand" href="index.html" aria-label="Kiddotronic Startseite"><img src="logo.png" alt="Kiddotronic Logo"></a>
       <div class="nav-actions" aria-label="Wichtige Links">
         <a class="nav-link amazon-link" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" aria-label="Kiddotronic KI Sticker Printer auf Amazon.de ansehen">Auf Amazon ansehen</a>
         <a class="nav-link" href="datenblatt.html">Datenblatt</a>
@@ -734,27 +665,9 @@
         </div>
       </div>
       <div class="step-grid">
-        <article class="step-card">
-          <div>
-            <span class="step-number">1</span>
-            <strong>Sag es!</strong>
-            <p>Ob Drache, Prinzessin, Rennauto oder Weltraum-Tier: Die Idee wird einfach eingesprochen.</p>
-          </div>
-        </article>
-        <article class="step-card">
-          <div>
-            <span class="step-number">2</span>
-            <strong>Druck es!</strong>
-            <p>Die KI macht daraus ein Motiv und der tintenlose Thermodruck bringt es sofort aufs Papier.</p>
-          </div>
-        </article>
-        <article class="step-card">
-          <div>
-            <span class="step-number">3</span>
-            <strong>Kleb es!</strong>
-            <p>Ausdrucke können ausgemalt, ausgeschnitten, aufgeklebt, gesammelt und verschenkt werden.</p>
-          </div>
-        </article>
+        <article class="step-card"><div><span class="step-number">1</span><strong>Sag es!</strong><p>Ob Drache, Prinzessin, Rennauto oder Weltraum-Tier: Die Idee wird einfach eingesprochen.</p></div></article>
+        <article class="step-card"><div><span class="step-number">2</span><strong>Druck es!</strong><p>Die KI macht daraus ein Motiv und der tintenlose Thermodruck bringt es sofort aufs Papier.</p></div></article>
+        <article class="step-card"><div><span class="step-number">3</span><strong>Kleb es!</strong><p>Ausdrucke können ausgemalt, ausgeschnitten, aufgeklebt, gesammelt und verschenkt werden.</p></div></article>
       </div>
     </div>
   </section>
@@ -786,30 +699,12 @@
           <p>Der KI Sticker Printer verbindet Sprache, KI und Sticker-Druck in einem einfachen Kreativ-Erlebnis. Kinder müssen nicht zeichnen können: Sie sagen, was sie sich vorstellen, und halten kurz danach ihr eigenes Motiv in der Hand.</p>
         </div>
         <div class="benefits-grid">
-          <article class="benefit-item">
-            <strong>Sprechen statt suchen</strong>
-            <p>Eigene Motive entstehen aus den Ideen der Kinder, nicht aus fertigen Vorlagen.</p>
-          </article>
-          <article class="benefit-item">
-            <strong>Eigene Sticker sofort</strong>
-            <p>Aus Fantasie werden kleine Motive für Hefte, Karten, Geschenke, Bastelprojekte und Rollenspiele.</p>
-          </article>
-          <article class="benefit-item">
-            <strong>6 Designstile</strong>
-            <p>Verschiedene Zeichen- und Designstile sorgen immer wieder für neue Motive zum Ausmalen und Sammeln.</p>
-          </article>
-          <article class="benefit-item">
-            <strong>Ohne Tinte</strong>
-            <p>Thermodruck bedeutet: keine Patronen, kein Tintennachfüllen, weniger Chaos beim kreativen Spielen.</p>
-          </article>
-          <article class="benefit-item">
-            <strong>Ausmalen & kleben</strong>
-            <p>Die Ausdrucke können weitergestaltet, angemalt, aufgeklebt und in Geschichten eingebaut werden.</p>
-          </article>
-          <article class="benefit-item">
-            <strong>Perfekt als Geschenk</strong>
-            <p>Ein kreatives Technikspielzeug für Kinder, die gerne basteln, Geschichten erfinden und eigene Welten bauen.</p>
-          </article>
+          <article class="benefit-item"><strong>Sprechen statt suchen</strong><p>Eigene Motive entstehen aus den Ideen der Kinder, nicht aus fertigen Vorlagen.</p></article>
+          <article class="benefit-item"><strong>Eigene Sticker sofort</strong><p>Aus Fantasie werden kleine Motive für Hefte, Karten, Geschenke, Bastelprojekte und Rollenspiele.</p></article>
+          <article class="benefit-item"><strong>6 Designstile</strong><p>Verschiedene Zeichen- und Designstile sorgen immer wieder für neue Motive zum Ausmalen und Sammeln.</p></article>
+          <article class="benefit-item"><strong>Ohne Tinte</strong><p>Thermodruck bedeutet: keine Patronen, kein Tintennachfüllen, weniger Chaos beim kreativen Spielen.</p></article>
+          <article class="benefit-item"><strong>Ausmalen & kleben</strong><p>Die Ausdrucke können weitergestaltet, angemalt, aufgeklebt und in Geschichten eingebaut werden.</p></article>
+          <article class="benefit-item"><strong>Perfekt als Geschenk</strong><p>Ein kreatives Technikspielzeug für Kinder, die gerne basteln, Geschichten erfinden und eigene Welten bauen.</p></article>
         </div>
       </div>
     </div>
@@ -818,44 +713,13 @@
   <section class="video-section" aria-labelledby="instagram-video">
     <div class="container">
       <div class="video-card">
-        <div class="video-copy">
-          <span class="section-kicker">Video</span>
-          <h2 id="instagram-video">Kinderfantasie zum Leben erwecken</h2>
-          <p>Aus gesprochenen Ideen werden kleine Bilder, Geschichten und kreative Sticker. Der KI Sticker Printer macht Fantasie sichtbar.</p>
-        </div>
-        <div>
-          <div class="video-frame">
-            <video id="q15-video" controls playsinline preload="metadata" poster="Webseite%20Bild.jpeg">
-              <source src="assets/kiddotronic-q15-demo.mp4" type="video/mp4">
-              Ihr Browser kann dieses Video nicht abspielen.
-            </video>
-            <button class="video-cover" type="button" data-video-trigger aria-label="Video abspielen">
-              <img src="Webseite%20Bild.jpeg" alt="Kiddotronic KI Sticker Printer Video Vorschau">
-              <span class="play-badge" aria-hidden="true"></span>
-            </button>
-          </div>
-        </div>
+        <div class="video-copy"><span class="section-kicker">Video</span><h2 id="instagram-video">Kinderfantasie zum Leben erwecken</h2><p>Aus gesprochenen Ideen werden kleine Bilder, Geschichten und kreative Sticker. Der KI Sticker Printer macht Fantasie sichtbar.</p></div>
+        <div><div class="video-frame"><video id="q15-video" controls playsinline preload="metadata" poster="Webseite%20Bild.jpeg"><source src="assets/kiddotronic-q15-demo.mp4" type="video/mp4">Ihr Browser kann dieses Video nicht abspielen.</video><button class="video-cover" type="button" data-video-trigger aria-label="Video abspielen"><img src="Webseite%20Bild.jpeg" alt="Kiddotronic KI Sticker Printer Video Vorschau"><span class="play-badge" aria-hidden="true"></span></button></div></div>
       </div>
-
       <div class="video-card product-video">
-        <div class="video-copy">
-          <span class="section-kicker">Produktvideo</span>
-          <h2>Reinsprechen. Drucken. Fertig.</h2>
-          <p>Das Video zeigt genau den Kern des KI Sticker Printers: Eine Idee wird in den Drucker gesprochen, die KI erstellt ein Bild und der Sticker kommt direkt heraus.</p>
-        </div>
-        <div class="video-media">
-          <div class="video-frame">
-            <video id="product-demo-video" controls playsinline preload="metadata">
-              <source src="assets/kiddotronic-q15-landingpage-video.mp4" type="video/mp4">
-              Ihr Browser kann dieses Video nicht abspielen.
-            </video>
-            <button class="video-cover" type="button" data-video-trigger="product-demo-video" aria-label="Produktvideo abspielen">
-              <span class="play-badge" aria-hidden="true"></span>
-            </button>
-          </div>
-        </div>
+        <div class="video-copy"><span class="section-kicker">Produktvideo</span><h2>Reinsprechen. Drucken. Fertig.</h2><p>Das Video zeigt genau den Kern des KI Sticker Printers: Eine Idee wird in den Drucker gesprochen, die KI erstellt ein Bild und der Sticker kommt direkt heraus.</p></div>
+        <div class="video-media"><div class="video-frame"><video id="product-demo-video" controls playsinline preload="metadata"><source src="assets/kiddotronic-q15-landingpage-video.mp4" type="video/mp4">Ihr Browser kann dieses Video nicht abspielen.</video><button class="video-cover" type="button" data-video-trigger="product-demo-video" aria-label="Produktvideo abspielen"><span class="play-badge" aria-hidden="true"></span></button></div></div>
       </div>
-
       <div class="social-buttons" aria-label="Kiddotronic Social Media">
         <a class="btn tiktok" href="https://www.tiktok.com/@kiddotronic" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a class="btn instagram" href="https://www.instagram.com/kiddotronic" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -875,6 +739,7 @@
       </div>
     </div>
   </footer>
+
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const menuPanel = document.getElementById("site-menu");
@@ -891,17 +756,10 @@
     document.querySelectorAll("[data-video-trigger]").forEach((videoTrigger) => {
       const targetId = videoTrigger.dataset.videoTrigger || "q15-video";
       const targetVideo = document.getElementById(targetId);
-
       if (!targetVideo) return;
-
       videoTrigger.addEventListener("click", async () => {
         videoTrigger.classList.add("is-hidden");
-
-        try {
-          await targetVideo.play();
-        } catch (error) {
-          videoTrigger.classList.remove("is-hidden");
-        }
+        try { await targetVideo.play(); } catch (error) { videoTrigger.classList.remove("is-hidden"); }
       });
     });
   </script>
