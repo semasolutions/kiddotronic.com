@@ -3,109 +3,384 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PDF-Datenblatt zum Kiddotronic KI Stickerdrucker fuer Kinder herunterladen oder ansehen." />
-  <title>Kiddotronic | PDF-Datenblatt KI Stickerdrucker</title>
+  <meta name="description" content="PDF-Datenblatt zum Kiddotronic KI Sticker Printer fuer Kinder herunterladen oder ansehen." />
+  <title>Kiddotronic | Produktdatenblatt KI Sticker Printer</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --black:#000;
-      --white:#fff;
-      --red:#ef3128;
-      --yellow:#ffed38;
-      --cyan:#55b5e8;
-      --paper:#fffaf1;
-      --cream:#f7eddf;
+      --ink:#101010;
+      --paper:#f7eddf;
+      --paper-light:#fffaf2;
+      --sand:#ead0b6;
+      --yellow:#ffec3d;
+      --red:#ee3027;
+      --blue:#63b4df;
       --soft:#e8f8ff;
       --soft-yellow:#fff9c9;
-      --ink:#172330;
-      --shadow:8px 8px 0 #000;
+      --white:#fff;
+      --text:#1b2632;
+      --shadow:8px 8px 0 var(--ink);
     }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; font-family:"Baloo 2", Arial, sans-serif; color:var(--black); background:var(--paper); line-height:1.35; overflow-x:hidden; }
-    .container { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
-    .top { background:#000; color:#fff; border-bottom:6px solid var(--yellow); font-weight:800; }
-    .top .container, .nav .container, .footer .container { min-height:48px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; }
-    .top a, .footer a { color:var(--yellow); text-decoration:none; }
-    .nav { background:var(--cream); border-bottom:4px solid #000; }
-    .nav .container { min-height:92px; }
-    .brand img { display:block; width:min(210px, 50vw); height:auto; filter:drop-shadow(0 4px 0 rgba(0,0,0,.18)); }
-    .nav-links, .actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
-    .btn, .nav-link { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:10px 18px; border:3px solid #000; border-radius:999px; background:var(--yellow); color:#000; text-decoration:none; font:inherit; font-weight:800; box-shadow:5px 5px 0 #000; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; }
-    .btn { min-height:56px; padding:13px 22px; border-width:4px; box-shadow:6px 6px 0 #000; }
-    .btn.primary, .nav-link.primary { background:var(--red); color:#fff; }
-    .btn.secondary { background:var(--cyan); }
-    .btn:hover, .nav-link:hover, .doc-row:hover { transform:translate(3px, 3px); box-shadow:3px 3px 0 #000; }
 
-    .hero { position:relative; padding:58px 0 70px; border-bottom:8px solid #000; background:linear-gradient(135deg, var(--cream) 0 62%, var(--soft) 62%); overflow:hidden; }
-    .hero::after { content:""; position:absolute; right:-100px; top:-120px; width:360px; height:360px; border-radius:50%; background:var(--yellow); z-index:0; }
-    .download-card { position:relative; z-index:1; display:grid; grid-template-columns:minmax(280px, .85fr) minmax(0, 1.15fr); gap:42px; align-items:center; padding:clamp(22px, 4vw, 38px); background:#fff; border:5px solid #000; border-radius:28px; box-shadow:var(--shadow); overflow:hidden; }
-    .product-image { align-self:stretch; min-height:430px; display:grid; place-items:center; padding:22px; border:4px solid #000; border-radius:24px; box-shadow:6px 6px 0 #000; overflow:hidden; background:var(--paper); }
-    .product-image img { display:block; width:100%; height:100%; max-height:520px; object-fit:contain; object-position:center; }
-    .badge { display:inline-flex; width:max-content; max-width:100%; margin-bottom:16px; padding:7px 15px; border:3px solid #000; border-radius:999px; background:var(--yellow); font-weight:800; box-shadow:5px 5px 0 #000; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      min-height:100vh;
+      font-family:"Baloo 2", Arial, sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.35;
+      overflow-x:hidden;
+    }
+    a { color:inherit; }
     h1, h2, h3, p { margin-top:0; }
-    h1 { max-width:720px; margin-bottom:18px; font-size:clamp(2.6rem, 4.8vw, 4.9rem); line-height:.95; font-weight:800; letter-spacing:0; overflow-wrap:normal; }
-    h2 { margin-bottom:18px; font-size:clamp(2.1rem, 4.2vw, 3.6rem); line-height:.95; font-weight:800; letter-spacing:0; }
-    h3 { margin-bottom:10px; font-size:clamp(1.3rem, 2vw, 1.75rem); line-height:1; font-weight:800; }
-    p, td, th, li { color:var(--ink); font-size:clamp(1.02rem, 1.55vw, 1.18rem); }
-    .lead { max-width:720px; }
-    .quick-facts { display:flex; gap:10px; flex-wrap:wrap; margin:22px 0 6px; }
-    .quick-fact { padding:8px 12px; border:3px solid #000; border-radius:999px; background:var(--soft-yellow); font-weight:800; box-shadow:3px 3px 0 #000; }
-    .doc-meta { display:grid; gap:12px; margin:22px 0; }
-    .doc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:3px solid #000; border-radius:16px; background:var(--soft-yellow); color:var(--black); text-decoration:none; font-weight:800; box-shadow:5px 5px 0 #000; transition:transform .15s ease, box-shadow .15s ease; }
+    .container { width:min(1160px, calc(100% - 36px)); margin:0 auto; }
+
+    .top {
+      background:var(--ink);
+      color:var(--white);
+      border-bottom:6px solid var(--yellow);
+      font-weight:800;
+    }
+    .top .container, .nav .container, .footer .container {
+      min-height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .top a, .footer a { color:var(--yellow); text-decoration:none; }
+
+    .nav {
+      background:var(--sand);
+      border-bottom:4px solid var(--ink);
+    }
+    .nav .container { min-height:94px; }
+    .brand img {
+      display:block;
+      width:min(230px, 54vw);
+      height:auto;
+      filter:drop-shadow(0 4px 0 rgba(0,0,0,.18));
+    }
+    .nav-links, .actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+
+    .btn, .nav-link {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:10px 18px;
+      border:3px solid var(--ink);
+      border-radius:999px;
+      background:var(--yellow);
+      color:var(--ink);
+      text-decoration:none;
+      font:inherit;
+      font-weight:800;
+      box-shadow:5px 5px 0 var(--ink);
+      cursor:pointer;
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn {
+      min-height:58px;
+      padding:14px 23px;
+      border-width:4px;
+      box-shadow:6px 6px 0 var(--ink);
+      font-size:clamp(1.05rem, 2vw, 1.25rem);
+    }
+    .btn.primary, .nav-link.primary { background:var(--red); color:var(--white); }
+    .btn.secondary { background:var(--blue); }
+    .btn:hover, .nav-link:hover, .doc-row:hover {
+      transform:translate(3px, 3px);
+      box-shadow:3px 3px 0 var(--ink);
+    }
+
+    .hero {
+      position:relative;
+      padding:clamp(34px, 6vw, 72px) 0;
+      border-bottom:8px solid var(--ink);
+      background:linear-gradient(135deg, var(--paper) 0 64%, var(--soft) 64%);
+      overflow:hidden;
+    }
+    .hero::before, .hero::after {
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+    }
+    .hero::before {
+      left:-140px;
+      bottom:-130px;
+      width:330px;
+      height:330px;
+      background:#a9d6c9;
+    }
+    .hero::after {
+      right:-120px;
+      top:-120px;
+      width:380px;
+      height:380px;
+      background:var(--yellow);
+    }
+
+    .download-card {
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(300px, .9fr) minmax(0, 1.1fr);
+      gap:clamp(26px, 5vw, 54px);
+      align-items:center;
+      padding:clamp(22px, 4.5vw, 46px);
+      background:var(--white);
+      border:5px solid var(--ink);
+      border-radius:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .product-panel {
+      position:relative;
+      min-height:520px;
+      padding:18px;
+      border:4px solid var(--ink);
+      border-radius:26px;
+      background:var(--paper-light);
+      box-shadow:7px 7px 0 var(--ink);
+      overflow:hidden;
+    }
+    .product-panel::after {
+      content:"";
+      position:absolute;
+      inset:auto -30px -44px auto;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:var(--yellow);
+      z-index:0;
+    }
+    .product-panel img {
+      position:relative;
+      z-index:1;
+      display:block;
+      width:100%;
+      height:100%;
+      min-height:484px;
+      object-fit:cover;
+      object-position:center;
+      border-radius:18px;
+    }
+
+    .copy { min-width:0; }
+    .badge {
+      display:inline-flex;
+      width:max-content;
+      max-width:100%;
+      margin-bottom:18px;
+      padding:8px 16px;
+      border:3px solid var(--ink);
+      border-radius:999px;
+      background:var(--yellow);
+      font-weight:800;
+      box-shadow:5px 5px 0 var(--ink);
+    }
+    h1 {
+      max-width:620px;
+      margin-bottom:10px;
+      font-size:clamp(2.35rem, 5.2vw, 4.65rem);
+      line-height:.9;
+      font-weight:800;
+      letter-spacing:0;
+    }
+    .product-name {
+      margin-bottom:18px;
+      font-size:clamp(1.45rem, 2.5vw, 2.05rem);
+      line-height:1.05;
+      font-weight:800;
+      color:var(--red);
+    }
+    h2 {
+      margin-bottom:18px;
+      font-size:clamp(2.1rem, 4.8vw, 4rem);
+      line-height:.92;
+      font-weight:800;
+    }
+    h3 {
+      margin-bottom:10px;
+      font-size:clamp(1.25rem, 2vw, 1.7rem);
+      line-height:1;
+      font-weight:800;
+    }
+    p, td, th, li {
+      color:var(--text);
+      font-size:clamp(1.02rem, 1.55vw, 1.18rem);
+    }
+    .lead { max-width:660px; margin-bottom:0; }
+
+    .quick-facts {
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:10px;
+      margin:24px 0 22px;
+    }
+    .quick-fact {
+      min-height:72px;
+      display:grid;
+      place-items:center;
+      padding:10px;
+      border:3px solid var(--ink);
+      border-radius:18px;
+      background:var(--soft-yellow);
+      text-align:center;
+      font-weight:800;
+      box-shadow:4px 4px 0 var(--ink);
+    }
+    .quick-fact:nth-child(2n) { background:var(--soft); }
+
+    .doc-meta { display:grid; gap:12px; margin:18px 0 24px; }
+    .doc-row {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:15px 17px;
+      border:3px solid var(--ink);
+      border-radius:18px;
+      background:var(--soft-yellow);
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:5px 5px 0 var(--ink);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
     .doc-row:nth-child(2) { background:var(--soft); }
-    .file-type { padding:4px 10px; border:3px solid #000; border-radius:999px; background:#fff; white-space:nowrap; }
-    .hint { margin-top:18px; font-size:1rem; color:#3b4650; }
-    .section { padding:58px 0 66px; border-bottom:8px solid #000; }
+    .file-type {
+      flex:0 0 auto;
+      padding:4px 10px;
+      border:3px solid var(--ink);
+      border-radius:999px;
+      background:var(--white);
+      white-space:nowrap;
+    }
+    .hint { margin:16px 0 0; font-size:1rem; color:#4a5560; }
+
+    .section { padding:58px 0 66px; border-bottom:8px solid var(--ink); }
     .section.yellow { background:var(--yellow); }
     .section.soft { background:var(--soft); }
-    .card { padding:clamp(24px, 5vw, 42px); background:#fff; border:5px solid #000; border-radius:26px; box-shadow:var(--shadow); }
+    .card {
+      padding:clamp(24px, 5vw, 42px);
+      background:var(--white);
+      border:5px solid var(--ink);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+    }
     .grid { display:grid; gap:18px; }
     .grid-3 { grid-template-columns:repeat(3, minmax(0, 1fr)); }
     .grid-4 { grid-template-columns:repeat(4, minmax(0, 1fr)); }
-    .info-box { min-height:170px; padding:20px; border:4px solid #000; border-radius:20px; background:var(--soft-yellow); box-shadow:5px 5px 0 #000; }
+    .info-box {
+      min-height:170px;
+      padding:20px;
+      border:4px solid var(--ink);
+      border-radius:20px;
+      background:var(--soft-yellow);
+      box-shadow:5px 5px 0 var(--ink);
+    }
     .info-box:nth-child(2n) { background:var(--soft); }
     .info-box:nth-child(3n) { background:var(--yellow); }
-    table { width:100%; border-collapse:collapse; overflow:hidden; border:4px solid #000; border-radius:18px; background:#fff; }
-    th, td { padding:14px 16px; text-align:left; border-bottom:3px solid #000; vertical-align:top; }
+    table {
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:4px solid var(--ink);
+      border-radius:20px;
+      background:var(--white);
+    }
+    th, td { padding:14px 16px; text-align:left; border-bottom:3px solid var(--ink); vertical-align:top; }
     tr:last-child th, tr:last-child td { border-bottom:0; }
-    th { width:34%; background:var(--soft-yellow); color:#000; font-weight:800; }
-    .footer { background:#000; color:rgba(255,255,255,.78); border-top:8px solid #ec008c; padding:28px 0; font-weight:700; }
+    th { width:34%; background:var(--soft-yellow); color:var(--ink); font-weight:800; }
+
+    .footer {
+      background:var(--ink);
+      color:rgba(255,255,255,.78);
+      border-top:8px solid var(--red);
+      padding:28px 0;
+      font-weight:700;
+    }
     .legal-links { display:flex; gap:14px; flex-wrap:wrap; }
-    @media (max-width:980px) { .download-card, .grid-3, .grid-4 { grid-template-columns:1fr; } .product-image { min-height:auto; } .product-image img { max-height:460px; } }
-    @media (max-width:640px) { .container { width:min(100% - 24px, 1120px); } .top .container, .nav .container, .footer .container { align-items:flex-start; flex-direction:column; padding:12px 0; } .nav-links, .nav-link, .actions, .actions .btn { width:100%; } .download-card { padding:18px; border-radius:22px; } h1 { font-size:clamp(2.4rem, 12vw, 3.6rem); } .doc-row { align-items:flex-start; flex-direction:column; } th, td { display:block; width:100%; } th { border-bottom:0; } }
+
+    @media (max-width:980px) {
+      .download-card, .grid-3, .grid-4 { grid-template-columns:1fr; }
+      .product-panel { min-height:auto; }
+      .product-panel img { min-height:0; max-height:620px; }
+      .quick-facts { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width:640px) {
+      .container { width:min(100% - 24px, 1160px); }
+      .top .container, .nav .container, .footer .container { align-items:flex-start; flex-direction:column; padding:12px 0; }
+      .nav-links, .nav-link, .actions, .actions .btn { width:100%; }
+      .download-card { padding:18px; border-radius:22px; }
+      h1 { font-size:clamp(2.25rem, 12vw, 3.55rem); }
+      .quick-facts { grid-template-columns:1fr 1fr; }
+      .doc-row { align-items:flex-start; flex-direction:column; }
+      th, td { display:block; width:100%; }
+      th { border-bottom:0; }
+    }
   </style>
 </head>
 <body>
-  <div class="top"><div class="container"><span>Kiddotronic | PDF-Datenblatt</span><a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a></div></div>
-  <nav class="nav" aria-label="Hauptnavigation"><div class="container"><a class="brand" href="index.html"><img src="logo.png" alt="Kiddotronic Logo"></a><div class="nav-links"><a class="nav-link primary" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a><a class="nav-link" href="index.html">Startseite</a><a class="nav-link" href="anleitung.html">Anleitung</a></div></div></nav>
+  <div class="top">
+    <div class="container">
+      <span>Kiddotronic | Produktdatenblatt</span>
+      <a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon.de ansehen</a>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="container">
+      <a class="brand" href="index.html"><img src="logo.png" alt="Kiddotronic Logo"></a>
+      <div class="nav-links">
+        <a class="nav-link primary" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a>
+        <a class="nav-link" href="index.html">Startseite</a>
+        <a class="nav-link" href="anleitung.html">Anleitung</a>
+      </div>
+    </div>
+  </nav>
+
   <main>
     <section class="hero">
       <div class="container">
         <div class="download-card">
-          <div class="product-image"><img src="Kiddotronic%20cube.jpeg?v=4" alt="Kiddotronic KI Stickerdrucker"></div>
-          <article>
+          <div class="product-panel">
+            <img src="Webseite%20Bild.jpeg?v=8" alt="Kiddotronic KI Sticker Printer mit Kind und rotem Drucker">
+          </div>
+          <article class="copy">
             <span class="badge">Produktdatenblatt</span>
-            <h1>Kiddotronic KI Stickerdrucker</h1>
-            <p class="lead">Mini KI Stickerdrucker für Kinder mit KI-Sprachfunktion, Bluetooth/WLAN, tintenlosem Thermodruck und App-Steuerung. Entwickelt für Sticker, Ausmalbilder, Bastelprojekte, Schulhefte, Tagebücher und kreative Geschenkideen.</p>
+            <h1>Technische Daten & Download</h1>
+            <div class="product-name">Kiddotronic KI Sticker Printer fuer Kinder</div>
+            <p class="lead">Mini KI Stickerdrucker mit KI-Sprachfunktion: Kinder sprechen eine Idee ein, die KI erstellt ein Motiv und der tintenlose Thermodruck bringt es direkt als Sticker oder Ausmalbild aufs Papier.</p>
+
             <div class="quick-facts" aria-label="Kurzdaten">
-              <span class="quick-fact">203 dpi</span>
-              <span class="quick-fact">57 × 25 mm</span>
-              <span class="quick-fact">254 g</span>
-              <span class="quick-fact">USB-C</span>
+              <span class="quick-fact">203 dpi<br>Druckauflösung</span>
+              <span class="quick-fact">57 x 25 mm<br>Stickerpapier</span>
+              <span class="quick-fact">254 g<br>tragbar</span>
+              <span class="quick-fact">USB-C<br>Bluetooth/WLAN</span>
             </div>
+
             <div class="doc-meta" aria-label="Dokumente und Produktlinks">
               <a class="doc-row" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" target="_blank" rel="noopener noreferrer"><span>Datenblatt Deutsch öffnen</span><span class="file-type">PDF</span></a>
               <a class="doc-row" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer"><span>Produktseite Amazon.de öffnen</span><span class="file-type">LINK</span></a>
             </div>
+
             <div class="actions">
               <a class="btn primary" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" target="_blank" rel="noopener noreferrer">PDF ansehen</a>
               <a class="btn secondary" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" download>PDF herunterladen</a>
               <a class="btn" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Amazon öffnen</a>
             </div>
-            <p class="hint">Die folgenden Produktdaten wurden von der Amazon.de-Produktseite übernommen.</p>
+            <p class="hint">Die Produktdaten unten sind aus der Amazon.de-Produktseite zusammengefasst.</p>
           </article>
         </div>
       </div>
@@ -131,7 +406,7 @@
         <div class="card">
           <span class="badge">Technische Details</span>
           <h2 id="details-title">Produktdaten laut Amazon.de</h2>
-          <table aria-label="Technische Daten Kiddotronic KI Stickerdrucker">
+          <table aria-label="Technische Daten Kiddotronic KI Sticker Printer">
             <tr><th>Marke</th><td>Kiddotronic</td></tr>
             <tr><th>Modell</th><td>Kiddotronic Q15 Mini Bluetooth Thermodrucker Stickerdrucker</td></tr>
             <tr><th>Hersteller-Modellnummer</th><td>Q15</td></tr>
@@ -142,12 +417,12 @@
             <tr><th>Druckausgabe</th><td>Monochrom</td></tr>
             <tr><th>Druckauflösung</th><td>203 dpi</td></tr>
             <tr><th>Max. Druckgeschwindigkeit</th><td>15 Seiten pro Minute</td></tr>
-            <tr><th>Papierformat</th><td>57 × 25 mm Thermopapier und Stickerpapier</td></tr>
+            <tr><th>Papierformat</th><td>57 x 25 mm Thermopapier und Stickerpapier</td></tr>
             <tr><th>Konnektivität</th><td>Bluetooth, WLAN und USB-C</td></tr>
             <tr><th>Steuerung</th><td>KI-Sprachsteuerung, Fun-Print-App und Ein-Knopf-Bedienung</td></tr>
             <tr><th>Kompatible Geräte</th><td>Smartphones und Tablets</td></tr>
             <tr><th>Produkt-Features</th><td>KI-Sprachfunktion, HD-Vorschau-Display, tintenloser Thermodruck, tragbar, kabellos, USB-C</td></tr>
-            <tr><th>Abmessungen</th><td>9,4 × 8,9 × 8,1 cm</td></tr>
+            <tr><th>Abmessungen</th><td>9,4 x 8,9 x 8,1 cm</td></tr>
             <tr><th>Gewicht</th><td>254 g</td></tr>
             <tr><th>Stromverbrauch</th><td>4,44 W</td></tr>
             <tr><th>Scanner</th><td>Kein Scanner</td></tr>
@@ -165,7 +440,7 @@
           <span class="badge">Lieferumfang & Nutzung</span>
           <h2 id="scope-title">Was enthalten ist</h2>
           <div class="grid grid-3">
-            <article class="info-box"><h3>Lieferumfang</h3><p>1× Q15 Mini Thermodrucker, 1× USB-C Ladekabel, 1× Bedienungsanleitung, 1× Papierrolle Thermopapier und 2× Thermo-Stickerpapier.</p></article>
+            <article class="info-box"><h3>Lieferumfang</h3><p>1x Q15 Mini Thermodrucker, 1x USB-C Ladekabel, 1x Bedienungsanleitung, 1x Papierrolle Thermopapier und 2x Thermo-Stickerpapier.</p></article>
             <article class="info-box"><h3>Typische Nutzung</h3><p>Schulhefte, Tagebücher, Bastelprojekte, kleine Geschenke, kreative Nachmittage, Reisen, Autofahrten und Regentage zuhause.</p></article>
             <article class="info-box"><h3>Kreative Funktionen</h3><p>Eigene Sticker und Motive in Sekunden, KI-Bilder per Sprache, Ausmalbilder, Dekorationen und 6 Zeichen- und Designstile.</p></article>
           </div>
@@ -173,6 +448,18 @@
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container"><span>Kiddotronic KI Stickerdrucker</span><div class="legal-links"><a href="index.html">Startseite</a><a href="anleitung.html">Anleitung</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb-widerruf.html">AGB &amp; Widerruf</a></div></div></footer>
+
+  <footer class="footer">
+    <div class="container">
+      <span>Kiddotronic KI Sticker Printer</span>
+      <div class="legal-links">
+        <a href="index.html">Startseite</a>
+        <a href="anleitung.html">Anleitung</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb-widerruf.html">AGB &amp; Widerruf</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
