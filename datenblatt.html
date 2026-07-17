@@ -26,7 +26,7 @@
     .btn { min-height:58px; padding:14px 22px; border-width:4px; box-shadow:6px 6px 0 #000; }
     .btn.primary, .nav-link.primary { background:var(--red); color:#fff; }
     .btn.secondary { background:var(--cyan); }
-    .btn:hover, .nav-link:hover { transform:translate(3px, 3px); box-shadow:3px 3px 0 #000; }
+    .btn:hover, .nav-link:hover, .doc-row:hover { transform:translate(3px, 3px); box-shadow:3px 3px 0 #000; }
     .hero { padding:64px 0 72px; border-bottom:8px solid #000; background:linear-gradient(135deg, var(--cyan) 0 45%, transparent 45%), radial-gradient(circle at 88% 18%, var(--yellow) 0 13%, transparent 13%), linear-gradient(180deg, var(--paper), var(--soft)); }
     .download-card { display:grid; grid-template-columns:minmax(0, .95fr) minmax(320px, 1.05fr); gap:30px; align-items:center; padding:clamp(24px, 5vw, 44px); background:#fff; border:5px solid #000; border-radius:28px; box-shadow:var(--shadow); }
     .product-image { border:4px solid #000; border-radius:24px; box-shadow:6px 6px 0 #000; overflow:hidden; background:var(--soft); transform:rotate(-.6deg); }
@@ -36,7 +36,7 @@
     h1 { margin-bottom:18px; font-size:clamp(3rem, 7vw, 6rem); line-height:.9; font-weight:800; }
     p { color:var(--ink); font-size:clamp(1.08rem, 1.9vw, 1.35rem); }
     .doc-meta { display:grid; gap:12px; margin:22px 0; }
-    .doc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:3px solid #000; border-radius:16px; background:#fff9c9; font-weight:800; }
+    .doc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:3px solid #000; border-radius:16px; background:#fff9c9; color:var(--black); text-decoration:none; font-weight:800; box-shadow:5px 5px 0 #000; transition:transform .15s ease, box-shadow .15s ease; }
     .doc-row:nth-child(2) { background:var(--soft); }
     .file-type { padding:4px 10px; border:3px solid #000; border-radius:999px; background:#fff; white-space:nowrap; }
     .hint { margin-top:18px; font-size:1rem; color:#3b4650; }
@@ -58,9 +58,9 @@
             <span class="badge">Produktdatenblatt</span>
             <h1>KI Stickerdrucker für Kinder</h1>
             <p>Hier findest du das separate PDF-Datenblatt zum Kiddotronic KI Stickerdrucker. Es ist als kompaktes Produktdokument aufgebaut und kann direkt angesehen, heruntergeladen oder weitergegeben werden.</p>
-            <div class="doc-meta" aria-label="Dokumentinformationen">
-              <div class="doc-row"><span>Datenblatt Deutsch</span><span class="file-type">PDF</span></div>
-              <div class="doc-row"><span>Produktseite Amazon.de</span><span class="file-type">LINK</span></div>
+            <div class="doc-meta" aria-label="Dokumente und Produktlinks">
+              <a class="doc-row" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" target="_blank" rel="noopener noreferrer"><span>Datenblatt Deutsch öffnen</span><span class="file-type">PDF</span></a>
+              <a class="doc-row" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer"><span>Produktseite Amazon.de öffnen</span><span class="file-type">LINK</span></a>
             </div>
             <div class="actions">
               <a class="btn primary" href="assets/kiddotronic-ki-stickerdrucker-datenblatt.pdf" target="_blank" rel="noopener noreferrer">PDF ansehen</a>
