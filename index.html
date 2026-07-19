@@ -815,7 +815,43 @@
         #kiddotronic-ai-demo .viz-controls .btn:disabled { cursor: wait; opacity: .72; }
         #kiddotronic-ai-demo .form-label { font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 800; }
         #kiddotronic-ai-demo .kd-examples { margin-top: 12px; }
-        @media (max-width: 600px) { .voice-command-card { align-items: flex-start; } #kiddotronic-ai-demo .viz-controls .btn { width: 100%; } }
+        @media (max-width: 600px) {
+          .voice-command-card { align-items: flex-start; }
+          #kiddotronic-ai-demo .kd-controls {
+            position: sticky;
+            top: 8px;
+            z-index: 30;
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            border-width: 3px;
+            border-radius: 18px;
+            box-shadow: 4px 4px 0 var(--ink);
+          }
+          #kiddotronic-ai-demo .form-label {
+            font-size: 1.05rem;
+          }
+          #kiddotronic-ai-demo .viz-controls {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overscroll-behavior-inline: contain;
+            scroll-snap-type: inline proximity;
+            scrollbar-width: none;
+            gap: 8px;
+            margin-top: 6px;
+            padding: 2px 2px 6px;
+          }
+          #kiddotronic-ai-demo .viz-controls::-webkit-scrollbar { display: none; }
+          #kiddotronic-ai-demo .viz-controls .btn {
+            flex: 0 0 auto;
+            width: auto;
+            min-height: 38px;
+            padding: 6px 11px;
+            border-width: 2px;
+            scroll-snap-align: start;
+            white-space: nowrap;
+          }
+          #kiddotronic-ai-demo .kd-examples { display: none; }
+        }
       </style>
 ﻿<div id="kiddotronic-ai-demo" class="kd-demo">
   <div class="kd-controls card">
