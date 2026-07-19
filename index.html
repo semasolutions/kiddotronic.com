@@ -546,6 +546,67 @@
       margin-top: 10px;
     }
 
+    .reviews-section {
+      border-top: 4px solid var(--ink);
+      padding: clamp(56px, 8vw, 92px) 0;
+      background: var(--mint);
+    }
+
+    .reviews-section .section-head { align-items: center; }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .review-card {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      background: var(--white);
+      border: 4px solid var(--ink);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .review-card:nth-child(2) { background: #fff06d; }
+    .review-card:nth-child(3) { background: #f8d8e6; }
+
+    .review-stars {
+      margin-bottom: 12px;
+      color: var(--red);
+      font-size: 1.35rem;
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+
+    .review-card h3 {
+      margin-bottom: 14px;
+      font-size: clamp(1.45rem, 2.5vw, 1.95rem);
+      line-height: 1;
+    }
+
+    .review-card blockquote {
+      margin: 0 0 22px;
+      font-size: 1.08rem;
+      flex: 1;
+    }
+
+    .review-author {
+      padding-top: 16px;
+      border-top: 3px solid var(--ink);
+      font-weight: 800;
+    }
+
+    .review-label {
+      display: block;
+      margin-top: 3px;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
     .footer {
       background: var(--ink);
       color: rgba(255,255,255,.78);
@@ -584,7 +645,7 @@
       .menu-toggle { justify-self: center; }
       .nav-actions { display: none; }
       .menu-panel-inner { justify-content: center; }
-      .hero-inner, .section-head, .approved-card, .video-card, .video-card.product-video, .step-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .hero-inner, .section-head, .approved-card, .video-card, .video-card.product-video, .step-grid, .benefits-grid, .review-grid { grid-template-columns: 1fr; }
       .product-video .video-copy, .product-video .video-media { grid-column: auto; grid-row: auto; }
       .cube-stage { min-height: auto; }
       .hero-copy { max-width: none; }
@@ -724,6 +785,40 @@
         <a class="btn tiktok" href="https://www.tiktok.com/@kiddotronic" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a class="btn instagram" href="https://www.instagram.com/kiddotronic" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a class="btn youtube" href="https://youtube.com/@kiddotronic?si=j9I9fKxgDftwig69" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">Kundenstimmen</span>
+          <h2 id="reviews-title">Das sagen Familien</h2>
+        </div>
+        <div class="section-copy">
+          <p>Erfahrungen und beispielhafte Anwendungsszenarien rund um den Kiddotronic KI Sticker Printer.</p>
+        </div>
+      </div>
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <h3>Absolute Kaufempfehlung!</h3>
+          <blockquote>„Wir sind total begeistert von diesem KI-Mini-Drucker von Kiddotronic! Die Bildschirmqualität ist wirklich hervorragend – das Display ist scharf, hell und die Bilder werden super dargestellt. Die Bedienung ist kinderleicht und unser Kind hatte sofort riesigen Spaß damit. Besonders beeindruckend ist, wie schnell die gewünschten Bilder erstellt und ausgedruckt werden. Die Ausdrucke sind klar und für einen Thermodrucker von sehr guter Qualität. Das Gerät fördert die Kreativität und beschäftigt Kinder auf eine sinnvolle Art. Wir sind rundum zufrieden und können den Drucker nur weiterempfehlen.“</blockquote>
+          <div class="review-author">Rebeth Patrizia Dionela<span class="review-label">Verifizierter Kauf</span></div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="Beispielhafte Bewertung mit 5 von 5 Sternen">★★★★★</div>
+          <h3>Kreativität ohne Grenzen</h3>
+          <blockquote>„Unsere Tochter nutzt den Mini KI Printer für Sticker, Ausmalbilder und kleine Bastelprojekte. Die Sprachfunktion macht das Erstellen eigener Motive besonders spannend, und das Drucken ohne Tinte ist im Alltag sehr praktisch.“</blockquote>
+          <div class="review-author">Beispielstimme<span class="review-label">Beispiel – keine echte Kundenbewertung</span></div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="Beispielhafte Bewertung mit 5 von 5 Sternen">★★★★★</div>
+          <h3>Ein voller Erfolg bei Kindern</h3>
+          <blockquote>„Die Bedienung ist intuitiv und die Idee wird in wenigen Schritten zum eigenen Sticker. Besonders schön: Die Motive können danach ausgemalt, ausgeschnitten und für kreative Projekte verwendet werden.“</blockquote>
+          <div class="review-author">Beispielstimme<span class="review-label">Beispiel – keine echte Kundenbewertung</span></div>
+        </article>
       </div>
     </div>
   </section>
