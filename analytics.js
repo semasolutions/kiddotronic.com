@@ -130,3 +130,39 @@
     createControls();
   }
 })();
+
+(() => {
+  const updateReview = () => {
+    const reviewCards = document.querySelectorAll(".reviews-section .review-card");
+    if (reviewCards.length < 3) return;
+
+    const card = reviewCards[2];
+    const author = card.querySelector(".review-author");
+    if (!author || !author.textContent.includes("Andreas F.")) return;
+
+    const stars = card.querySelector(".review-stars");
+    const title = card.querySelector("h3");
+    const quote = card.querySelector("blockquote");
+
+    if (stars) {
+      stars.textContent = "★★★★★";
+      stars.setAttribute("aria-label", "Bewertung mit 5 von 5 Sternen");
+    }
+
+    if (title) {
+      title.textContent = "Ein unterhaltsames und kreatives Gadget für Kinder";
+    }
+
+    if (quote) {
+      quote.textContent = "„Dieser kleine Sticker-Drucker ist bei uns zu Hause schnell zum Favoriten geworden, vor allem weil er Technik und kreatives Basteln auf eine Art verbindet, die Kinder wirklich begeistert. Die Bluetooth-Verbindung zur App funktioniert reibungslos, und mein Kind hatte keine Schwierigkeiten, das Gerät zu koppeln und innerhalb weniger Minuten nach dem Auspacken mit dem Drucken von Stickern zu beginnen. Der tintenlose Thermodruck ist ein genialer Ansatz, da es keine Sauerei gibt, keine Patronen gewechselt werden müssen und keine Gefahr besteht, Kleidung oder Möbel zu verschmutzen. Die KI-Sprachfunktion sorgt für zusätzlichen Spaß, da sie auf einfache Befehle reagiert und das Kind fast wie ein kleiner Begleiter durch den Druckvorgang führt. Meine Tochter liebt es besonders, eigene Ausmalbilder zu gestalten und sie dann als Sticker auszudrucken, um Notizbücher, Wasserflaschen und sogar ihre Reisetasche zu verzieren. Das mitgelieferte Stickerpapier hat eine gute Qualität, klebt gut, ohne Rückstände beim Abziehen zu hinterlassen, und druckt Bilder klar und ohne Verwischen. Das Gerät ist kompakt genug, um es auf Reisen mitzunehmen, was lange Autofahrten deutlich unterhaltsamer gemacht hat, da die Kinder unterwegs eigene Designs erstellen und personalisieren können. Die Verarbeitung wirkt für ein Kindergerät stabil, mit abgerundeten Kanten und einem Design, das offensichtlich dafür gemacht ist, auch mal einen Sturz zu überstehen. Insgesamt ist dies ein durchdachtes Geschenk, das Technik, Kreativität und bildschirmfreie Unterhaltung vereint, und es hat sich die fünf Sterne bei uns zu Hause redlich verdient.“";
+    }
+
+    author.innerHTML = 'Elena<span class="review-label">Vine Kundenrezension eines kostenlosen Produkts · 7. September 2026</span>';
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", updateReview);
+  } else {
+    updateReview();
+  }
+})();
