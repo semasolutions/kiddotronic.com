@@ -166,3 +166,108 @@
     updateReview();
   }
 })();
+
+(() => {
+  const SUPPORT_EMAIL = "semasolutions@hotmail.com";
+  const SUPPORT_SUBJECT = "Produkt Support – Kiddotronic Mini Sticker Printer";
+
+  const createSupportSection = () => {
+    if (document.getElementById("kiddotronic-product-support")) return;
+
+    const reviews = document.querySelector(".reviews-section");
+    if (!reviews) return;
+
+    const style = document.createElement("style");
+    style.id = "kiddotronic-support-styles";
+    style.textContent = `
+      #kiddotronic-product-support{max-width:1180px;margin:34px auto 70px;padding:0 18px;font-family:"Baloo 2",Arial,sans-serif;color:#111}
+      .kiddotronic-support-box{padding:clamp(24px,5vw,46px);background:#ffec3d;border:5px solid #111;border-radius:30px;box-shadow:10px 10px 0 #111}
+      .kiddotronic-support-eyebrow{display:inline-block;margin-bottom:10px;padding:7px 14px;border:3px solid #111;border-radius:999px;background:#fff;font-weight:900}
+      .kiddotronic-support-box h2{margin:0 0 12px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.02}
+      .kiddotronic-support-box .support-lead{max-width:800px;margin:0 0 24px;font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.5;font-weight:700}
+      .kiddotronic-support-form{display:grid;grid-template-columns:1fr;gap:16px;max-width:820px}
+      .kiddotronic-support-form label{font-size:1rem;font-weight:900}
+      .kiddotronic-support-form input,.kiddotronic-support-form textarea{width:100%;box-sizing:border-box;margin-top:6px;padding:14px 16px;border:3px solid #111;border-radius:15px;background:#fff;color:#111;font:600 1rem/1.45 "Baloo 2",Arial,sans-serif;outline:none}
+      .kiddotronic-support-form textarea{min-height:170px;resize:vertical}
+      .kiddotronic-support-form input:focus,.kiddotronic-support-form textarea:focus{box-shadow:0 0 0 4px #8cc8ea}
+      .kiddotronic-support-submit{width:fit-content;min-height:54px;padding:11px 24px;border:4px solid #111;border-radius:999px;background:#ff6f91;color:#111;box-shadow:4px 4px 0 #111;font:900 1.05rem "Baloo 2",Arial,sans-serif;cursor:pointer}
+      .kiddotronic-support-submit:disabled{opacity:.65;cursor:wait}
+      .kiddotronic-support-status{min-height:24px;margin:0;font-weight:900}
+      .kiddotronic-support-privacy{margin:0;max-width:760px;font-size:.85rem;line-height:1.4}
+      .kiddotronic-support-privacy a{color:#111;font-weight:900}
+      @media(max-width:600px){#kiddotronic-product-support{margin-top:24px;margin-bottom:48px;padding:0 12px}.kiddotronic-support-box{padding:22px 16px;border-radius:22px;box-shadow:6px 6px 0 #111}.kiddotronic-support-submit{width:100%}}
+    `;
+    document.head.appendChild(style);
+
+    const section = document.createElement("section");
+    section.id = "kiddotronic-product-support";
+    section.innerHTML = `
+      <div class="kiddotronic-support-box">
+        <div class="kiddotronic-support-eyebrow">💬 PRODUKT-SUPPORT</div>
+        <h2>Fragen zum Kiddotronic Mini Sticker Printer?</h2>
+        <p class="support-lead">Wenden Sie sich an unseren Produkt-Support. Wir möchten Ihnen schnellstmöglich weiterhelfen. Geben Sie einfach Ihre E-Mail-Adresse und Ihre Frage ein – es öffnet sich kein E-Mail-Programm.</p>
+        <form class="kiddotronic-support-form">
+          <label>Ihre E-Mail-Adresse
+            <input type="email" name="email" autocomplete="email" required placeholder="name@beispiel.de">
+          </label>
+          <label>Ihre Frage
+            <textarea name="message" required maxlength="4000" placeholder="Wie können wir Ihnen helfen?"></textarea>
+          </label>
+          <button class="kiddotronic-support-submit" type="submit">Frage an Produkt-Support senden →</button>
+          <p class="kiddotronic-support-status" role="status" aria-live="polite"></p>
+          <p class="kiddotronic-support-privacy">Ihre E-Mail-Adresse und Ihre Nachricht werden zur Bearbeitung Ihrer Supportanfrage übermittelt. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        </form>
+      </div>`;
+
+    reviews.insertAdjacentElement("afterend", section);
+
+    const form = section.querySelector(".kiddotronic-support-form");
+    const submit = section.querySelector(".kiddotronic-support-submit");
+    const status = section.querySelector(".kiddotronic-support-status");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const message = form.querySelector('textarea[name="message"]').value.trim();
+
+      submit.disabled = true;
+      status.textContent = "Ihre Anfrage wird gesendet …";
+
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(SUPPORT_EMAIL)}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            _subject: SUPPORT_SUBJECT,
+            _template: "table",
+            _captcha: "false",
+            _replyto: email,
+            "E-Mail des Kunden": email,
+            "Frage": message,
+            "Seite": window.location.href
+          })
+        });
+
+        if (!response.ok) throw new Error("Senden fehlgeschlagen");
+
+        form.reset();
+        status.textContent = "✓ Vielen Dank! Ihre Anfrage wurde an unseren Produkt-Support gesendet.";
+      } catch (error) {
+        status.textContent = "Das Senden hat leider nicht funktioniert. Bitte versuchen Sie es später erneut.";
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", createSupportSection);
+  } else {
+    createSupportSection();
+  }
+})();
