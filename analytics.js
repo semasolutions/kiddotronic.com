@@ -14,260 +14,38 @@
     .privacy-settings{position:fixed;left:12px;bottom:12px;z-index:9998;min-height:38px;padding:6px 12px;font-size:.85rem;background:#fff}
     @media(max-width:560px){.cookie-banner{left:10px;right:10px;padding:20px}.cookie-actions{grid-template-columns:1fr}.cookie-actions button{width:100%}}
   `;
-
-  const addStyles = () => {
-    if (document.getElementById("kiddotronic-analytics-styles")) return;
-    const style = document.createElement("style");
-    style.id = "kiddotronic-analytics-styles";
-    style.textContent = styles;
-    document.head.appendChild(style);
-  };
-
-  const configureConsent = (state) => {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-    window.gtag("consent", "default", {
-      analytics_storage: state === "granted" ? "granted" : "denied",
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      wait_for_update: 500
-    });
-  };
-
-  const loadAnalytics = () => {
-    if (document.querySelector('script[data-kiddotronic-ga]')) return;
-    configureConsent("granted");
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=" + MEASUREMENT_ID;
-    script.dataset.kiddotronicGa = "true";
-    document.head.appendChild(script);
-    window.gtag("js", new Date());
-    window.gtag("config", MEASUREMENT_ID, { anonymize_ip: true });
-
-    document.addEventListener("click", (event) => {
-      const link = event.target.closest('a[href*="amazon."]');
-      if (!link) return;
-      window.gtag("event", "amazon_click", {
-        link_url: link.href,
-        link_text: (link.textContent || "").trim(),
-        page_location: location.href
-      });
-    });
-  };
-
-  const createControls = () => {
-    addStyles();
-    const banner = document.createElement("aside");
-    banner.className = "cookie-banner";
-    banner.setAttribute("aria-label", "Datenschutzeinstellungen");
-    banner.innerHTML = `
-      <strong>Wir verwenden Cookies</strong>
-      <p>Notwendige Speicherfunktionen sorgen dafür, dass deine Datenschutzauswahl erhalten bleibt. Mit deiner freiwilligen Einwilligung verwenden wir zusätzlich Google Analytics-Cookies, um Seitenaufrufe und Klicks auf Amazon zu messen und unser Angebot zu verbessern. Ohne Zustimmung bleibt die Analyse deaktiviert. Deine Auswahl kannst du jederzeit ändern. <a href="datenschutz.html">Mehr erfahren</a></p>
-      <div class="cookie-actions">
-        <button type="button" class="accept">Analytics-Cookies erlauben</button>
-        <button type="button" class="reject">Optionale Cookies ablehnen</button>
-      </div>`;
-    document.body.appendChild(banner);
-
-    const settings = document.createElement("button");
-    settings.type = "button";
-    settings.className = "privacy-settings";
-    settings.textContent = "Datenschutz-Einstellungen";
-    settings.hidden = true;
-    document.body.appendChild(settings);
-
-    const clearAnalyticsCookies = () => {
-      document.cookie.split(";").forEach((entry) => {
-        const name = entry.split("=")[0].trim();
-        if (!/^_ga(?:_|$)/.test(name)) return;
-        const expires = "expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax";
-        document.cookie = name + "=;" + expires;
-        document.cookie = name + "=;" + expires + ";domain=kiddotronic.com";
-        document.cookie = name + "=;" + expires + ";domain=.kiddotronic.com";
-      });
-    };
-
-    const setChoice = (choice) => {
-      const previousChoice = localStorage.getItem(STORAGE_KEY);
-      localStorage.setItem(STORAGE_KEY, choice);
-      banner.hidden = true;
-      settings.hidden = false;
-      if (choice === "granted") {
-        loadAnalytics();
-      } else {
-        configureConsent("denied");
-        clearAnalyticsCookies();
-        if (previousChoice === "granted") location.reload();
-      }
-    };
-
-    banner.querySelector(".accept").addEventListener("click", () => setChoice("granted"));
-    banner.querySelector(".reject").addEventListener("click", () => setChoice("denied"));
-    settings.addEventListener("click", () => {
-      banner.hidden = false;
-      settings.hidden = true;
-    });
-
-    const choice = localStorage.getItem(STORAGE_KEY);
-    if (choice === "granted") {
-      banner.hidden = true;
-      settings.hidden = false;
-      loadAnalytics();
-    } else if (choice === "denied") {
-      banner.hidden = true;
-      settings.hidden = false;
-      configureConsent("denied");
-    } else {
-      configureConsent("denied");
-    }
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", createControls);
-  } else {
-    createControls();
-  }
+  const addStyles=()=>{if(document.getElementById("kiddotronic-analytics-styles"))return;const s=document.createElement("style");s.id="kiddotronic-analytics-styles";s.textContent=styles;document.head.appendChild(s)};
+  const configureConsent=(state)=>{window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};window.gtag("consent","default",{analytics_storage:state==="granted"?"granted":"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",wait_for_update:500})};
+  const loadAnalytics=()=>{if(document.querySelector('script[data-kiddotronic-ga]'))return;configureConsent("granted");const s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+MEASUREMENT_ID;s.dataset.kiddotronicGa="true";document.head.appendChild(s);window.gtag("js",new Date());window.gtag("config",MEASUREMENT_ID,{anonymize_ip:true});document.addEventListener("click",e=>{const l=e.target.closest('a[href*="amazon."]');if(!l)return;window.gtag("event","amazon_click",{link_url:l.href,link_text:(l.textContent||"").trim(),page_location:location.href})})};
+  const createControls=()=>{addStyles();const b=document.createElement("aside");b.className="cookie-banner";b.setAttribute("aria-label","Datenschutzeinstellungen");b.innerHTML=`<strong>Wir verwenden Cookies</strong><p>Notwendige Speicherfunktionen sorgen dafür, dass deine Datenschutzauswahl erhalten bleibt. Mit deiner freiwilligen Einwilligung verwenden wir zusätzlich Google Analytics-Cookies, um Seitenaufrufe und Klicks auf Amazon zu messen und unser Angebot zu verbessern. Ohne Zustimmung bleibt die Analyse deaktiviert. Deine Auswahl kannst du jederzeit ändern. <a href="datenschutz.html">Mehr erfahren</a></p><div class="cookie-actions"><button type="button" class="accept">Analytics-Cookies erlauben</button><button type="button" class="reject">Optionale Cookies ablehnen</button></div>`;document.body.appendChild(b);const settings=document.createElement("button");settings.type="button";settings.className="privacy-settings";settings.textContent="Datenschutz-Einstellungen";settings.hidden=true;document.body.appendChild(settings);const clear=()=>{document.cookie.split(";").forEach(entry=>{const n=entry.split("=")[0].trim();if(!/^_ga(?:_|$)/.test(n))return;const ex="expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Lax";document.cookie=n+"=;"+ex;document.cookie=n+"=;"+ex+";domain=kiddotronic.com";document.cookie=n+"=;"+ex+";domain=.kiddotronic.com"})};const setChoice=choice=>{const prev=localStorage.getItem(STORAGE_KEY);localStorage.setItem(STORAGE_KEY,choice);b.hidden=true;settings.hidden=false;if(choice==="granted")loadAnalytics();else{configureConsent("denied");clear();if(prev==="granted")location.reload()}};b.querySelector(".accept").addEventListener("click",()=>setChoice("granted"));b.querySelector(".reject").addEventListener("click",()=>setChoice("denied"));settings.addEventListener("click",()=>{b.hidden=false;settings.hidden=true});const choice=localStorage.getItem(STORAGE_KEY);if(choice==="granted"){b.hidden=true;settings.hidden=false;loadAnalytics()}else if(choice==="denied"){b.hidden=true;settings.hidden=false;configureConsent("denied")}else configureConsent("denied")};
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",createControls);else createControls();
 })();
 
 (() => {
-  const updateReview = () => {
-    const reviewCards = document.querySelectorAll(".reviews-section .review-card");
-    if (reviewCards.length < 3) return;
-
-    const card = reviewCards[2];
-    const author = card.querySelector(".review-author");
-    if (!author || !author.textContent.includes("Andreas F.")) return;
-
-    const stars = card.querySelector(".review-stars");
-    const title = card.querySelector("h3");
-    const quote = card.querySelector("blockquote");
-
-    if (stars) {
-      stars.textContent = "★★★★★";
-      stars.setAttribute("aria-label", "Bewertung mit 5 von 5 Sternen");
-    }
-
-    if (title) {
-      title.textContent = "Ein unterhaltsames und kreatives Gadget für Kinder";
-    }
-
-    if (quote) {
-      quote.textContent = "„Dieser kleine Sticker-Drucker ist bei uns zu Hause schnell zum Favoriten geworden, vor allem weil er Technik und kreatives Basteln auf eine Art verbindet, die Kinder wirklich begeistert. Die Bluetooth-Verbindung zur App funktioniert reibungslos, und mein Kind hatte keine Schwierigkeiten, das Gerät zu koppeln und innerhalb weniger Minuten nach dem Auspacken mit dem Drucken von Stickern zu beginnen. Der tintenlose Thermodruck ist ein genialer Ansatz, da es keine Sauerei gibt, keine Patronen gewechselt werden müssen und keine Gefahr besteht, Kleidung oder Möbel zu verschmutzen. Die KI-Sprachfunktion sorgt für zusätzlichen Spaß, da sie auf einfache Befehle reagiert und das Kind fast wie ein kleiner Begleiter durch den Druckvorgang führt. Meine Tochter liebt es besonders, eigene Ausmalbilder zu gestalten und sie dann als Sticker auszudrucken, um Notizbücher, Wasserflaschen und sogar ihre Reisetasche zu verzieren. Das mitgelieferte Stickerpapier hat eine gute Qualität, klebt gut, ohne Rückstände beim Abziehen zu hinterlassen, und druckt Bilder klar und ohne Verwischen. Das Gerät ist kompakt genug, um es auf Reisen mitzunehmen, was lange Autofahrten deutlich unterhaltsamer gemacht hat, da die Kinder unterwegs eigene Designs erstellen und personalisieren können. Die Verarbeitung wirkt für ein Kindergerät stabil, mit abgerundeten Kanten und einem Design, das offensichtlich dafür gemacht ist, auch mal einen Sturz zu überstehen. Insgesamt ist dies ein durchdachtes Geschenk, das Technik, Kreativität und bildschirmfreie Unterhaltung vereint, und es hat sich die fünf Sterne bei uns zu Hause redlich verdient.“";
-    }
-
-    author.innerHTML = 'Elena<span class="review-label">Vine Kundenrezension eines kostenlosen Produkts · 7. September 2026</span>';
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", updateReview);
-  } else {
-    updateReview();
-  }
+  const updateReview=()=>{const cards=document.querySelectorAll(".reviews-section .review-card");if(cards.length<3)return;const card=cards[2],author=card.querySelector(".review-author");if(!author||!author.textContent.includes("Andreas F."))return;const stars=card.querySelector(".review-stars"),title=card.querySelector("h3"),quote=card.querySelector("blockquote");if(stars){stars.textContent="★★★★★";stars.setAttribute("aria-label","Bewertung mit 5 von 5 Sternen")}if(title)title.textContent="Ein unterhaltsames und kreatives Gadget für Kinder";if(quote)quote.textContent="„Dieser kleine Sticker-Drucker ist bei uns zu Hause schnell zum Favoriten geworden, vor allem weil er Technik und kreatives Basteln auf eine Art verbindet, die Kinder wirklich begeistert. Die Bluetooth-Verbindung zur App funktioniert reibungslos, und mein Kind hatte keine Schwierigkeiten, das Gerät zu koppeln und innerhalb weniger Minuten nach dem Auspacken mit dem Drucken von Stickern zu beginnen. Der tintenlose Thermodruck ist ein genialer Ansatz, da es keine Sauerei gibt, keine Patronen gewechselt werden müssen und keine Gefahr besteht, Kleidung oder Möbel zu verschmutzen. Die KI-Sprachfunktion sorgt für zusätzlichen Spaß, da sie auf einfache Befehle reagiert und das Kind fast wie ein kleiner Begleiter durch den Druckvorgang führt. Meine Tochter liebt es besonders, eigene Ausmalbilder zu gestalten und sie dann als Sticker auszudrucken, um Notizbücher, Wasserflaschen und sogar ihre Reisetasche zu verzieren. Das mitgelieferte Stickerpapier hat eine gute Qualität, klebt gut, ohne Rückstände beim Abziehen zu hinterlassen, und druckt Bilder klar und ohne Verwischen. Das Gerät ist kompakt genug, um es auf Reisen mitzunehmen, was lange Autofahrten deutlich unterhaltsamer gemacht hat, da die Kinder unterwegs eigene Designs erstellen und personalisieren können. Die Verarbeitung wirkt für ein Kindergerät stabil, mit abgerundeten Kanten und einem Design, das offensichtlich dafür gemacht ist, auch mal einen Sturz zu überstehen. Insgesamt ist dies ein durchdachtes Geschenk, das Technik, Kreativität und bildschirmfreie Unterhaltung vereint, und es hat sich die fünf Sterne bei uns zu Hause redlich verdient.“";author.innerHTML='Elena<span class="review-label">Vine Kundenrezension eines kostenlosen Produkts · 7. September 2026</span>'};
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",updateReview);else updateReview();
 })();
 
 (() => {
-  const SUPPORT_EMAIL = "semasolutions@hotmail.com";
-  const SUPPORT_SUBJECT = "Produkt Support – Kiddotronic Mini Sticker Printer";
-
-  const createSupportSection = () => {
-    if (document.getElementById("kiddotronic-product-support")) return;
-
-    const reviews = document.querySelector(".reviews-section");
-    if (!reviews) return;
-
-    const style = document.createElement("style");
-    style.id = "kiddotronic-support-styles";
-    style.textContent = `
+  const SUPPORT_EMAIL="semasolutions@hotmail.com";
+  const SUPPORT_SUBJECT="Produkt Support – Kiddotronic Mini Sticker Printer";
+  const createSupportSection=()=>{
+    if(document.getElementById("kiddotronic-product-support"))return;
+    const reviews=document.querySelector(".reviews-section");if(!reviews)return;
+    const style=document.createElement("style");style.id="kiddotronic-support-styles";style.textContent=`
       #kiddotronic-product-support{max-width:1180px;margin:34px auto 70px;padding:0 18px;font-family:"Baloo 2",Arial,sans-serif;color:#111}
       .kiddotronic-support-box{padding:clamp(24px,5vw,46px);background:#ffec3d;border:5px solid #111;border-radius:30px;box-shadow:10px 10px 0 #111}
       .kiddotronic-support-eyebrow{display:inline-block;margin-bottom:10px;padding:7px 14px;border:3px solid #111;border-radius:999px;background:#fff;font-weight:900}
-      .kiddotronic-support-box h2{margin:0 0 12px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.02}
-      .kiddotronic-support-box .support-lead{max-width:800px;margin:0 0 24px;font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.5;font-weight:700}
-      .kiddotronic-support-form{display:grid;grid-template-columns:1fr;gap:16px;max-width:820px}
-      .kiddotronic-support-form label{font-size:1rem;font-weight:900}
-      .kiddotronic-support-form input,.kiddotronic-support-form textarea{width:100%;box-sizing:border-box;margin-top:6px;padding:14px 16px;border:3px solid #111;border-radius:15px;background:#fff;color:#111;font:600 1rem/1.45 "Baloo 2",Arial,sans-serif;outline:none}
-      .kiddotronic-support-form textarea{min-height:170px;resize:vertical}
-      .kiddotronic-support-form input:focus,.kiddotronic-support-form textarea:focus{box-shadow:0 0 0 4px #8cc8ea}
-      .kiddotronic-support-submit{width:fit-content;min-height:54px;padding:11px 24px;border:4px solid #111;border-radius:999px;background:#ff6f91;color:#111;box-shadow:4px 4px 0 #111;font:900 1.05rem "Baloo 2",Arial,sans-serif;cursor:pointer}
-      .kiddotronic-support-submit:disabled{opacity:.65;cursor:wait}
-      .kiddotronic-support-status{min-height:24px;margin:0;font-weight:900}
-      .kiddotronic-support-privacy{margin:0;max-width:760px;font-size:.85rem;line-height:1.4}
-      .kiddotronic-support-privacy a{color:#111;font-weight:900}
+      .kiddotronic-support-box h2{margin:0 0 12px;font-size:clamp(2rem,5vw,3.4rem);line-height:1.02}.kiddotronic-support-box .support-lead{max-width:800px;margin:0 0 24px;font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.5;font-weight:700}
+      .kiddotronic-support-form{display:grid;gap:16px;max-width:820px}.kiddotronic-support-form label{font-size:1rem;font-weight:900}.kiddotronic-support-form input,.kiddotronic-support-form textarea{width:100%;box-sizing:border-box;margin-top:6px;padding:14px 16px;border:3px solid #111;border-radius:15px;background:#fff;color:#111;font:600 1rem/1.45 "Baloo 2",Arial,sans-serif;outline:none}.kiddotronic-support-form textarea{min-height:170px;resize:vertical}.kiddotronic-support-form input:focus,.kiddotronic-support-form textarea:focus{box-shadow:0 0 0 4px #8cc8ea}.kiddotronic-support-submit{width:fit-content;min-height:54px;padding:11px 24px;border:4px solid #111;border-radius:999px;background:#ff6f91;color:#111;box-shadow:4px 4px 0 #111;font:900 1.05rem "Baloo 2",Arial,sans-serif;cursor:pointer}.kiddotronic-support-submit:disabled{opacity:.65;cursor:wait}.kiddotronic-support-status{min-height:24px;margin:0;font-weight:900}.kiddotronic-support-privacy{margin:0;max-width:760px;font-size:.85rem;line-height:1.4}.kiddotronic-support-privacy a{color:#111;font-weight:900}
+      .support-success-backdrop{position:fixed;inset:0;z-index:100001;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(17,17,17,.72)}.support-success-backdrop[hidden]{display:none}.support-success-modal{width:min(520px,100%);padding:30px;background:#fff;border:5px solid #111;border-radius:28px;box-shadow:9px 9px 0 #111;text-align:center}.support-success-modal .check{font-size:3rem}.support-success-modal h3{margin:5px 0 10px;font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.05}.support-success-modal p{margin:0 0 20px;font-size:1.05rem;line-height:1.5}.support-success-close{padding:10px 24px;border:4px solid #111;border-radius:999px;background:#ffec3d;box-shadow:4px 4px 0 #111;font:900 1rem "Baloo 2",Arial,sans-serif;cursor:pointer}
       @media(max-width:600px){#kiddotronic-product-support{margin-top:24px;margin-bottom:48px;padding:0 12px}.kiddotronic-support-box{padding:22px 16px;border-radius:22px;box-shadow:6px 6px 0 #111}.kiddotronic-support-submit{width:100%}}
-    `;
-    document.head.appendChild(style);
-
-    const section = document.createElement("section");
-    section.id = "kiddotronic-product-support";
-    section.innerHTML = `
-      <div class="kiddotronic-support-box">
-        <div class="kiddotronic-support-eyebrow">💬 PRODUKT-SUPPORT</div>
-        <h2>Fragen zum Kiddotronic Mini Sticker Printer?</h2>
-        <p class="support-lead">Wenden Sie sich an unseren Produkt-Support. Wir möchten Ihnen schnellstmöglich weiterhelfen. Geben Sie einfach Ihre E-Mail-Adresse und Ihre Frage ein – es öffnet sich kein E-Mail-Programm.</p>
-        <form class="kiddotronic-support-form">
-          <label>Ihre E-Mail-Adresse
-            <input type="email" name="email" autocomplete="email" required placeholder="name@beispiel.de">
-          </label>
-          <label>Ihre Frage
-            <textarea name="message" required maxlength="4000" placeholder="Wie können wir Ihnen helfen?"></textarea>
-          </label>
-          <button class="kiddotronic-support-submit" type="submit">Frage an Produkt-Support senden →</button>
-          <p class="kiddotronic-support-status" role="status" aria-live="polite"></p>
-          <p class="kiddotronic-support-privacy">Ihre E-Mail-Adresse und Ihre Nachricht werden zur Bearbeitung Ihrer Supportanfrage übermittelt. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-        </form>
-      </div>`;
-
-    reviews.insertAdjacentElement("afterend", section);
-
-    const form = section.querySelector(".kiddotronic-support-form");
-    const submit = section.querySelector(".kiddotronic-support-submit");
-    const status = section.querySelector(".kiddotronic-support-status");
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-
-      const email = form.querySelector('input[name="email"]').value.trim();
-      const message = form.querySelector('textarea[name="message"]').value.trim();
-
-      submit.disabled = true;
-      status.textContent = "Ihre Anfrage wird gesendet …";
-
-      try {
-        const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(SUPPORT_EMAIL)}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify({
-            _subject: SUPPORT_SUBJECT,
-            _template: "table",
-            _captcha: "false",
-            _replyto: email,
-            "E-Mail des Kunden": email,
-            "Frage": message,
-            "Seite": window.location.href
-          })
-        });
-
-        if (!response.ok) throw new Error("Senden fehlgeschlagen");
-
-        form.reset();
-        status.textContent = "✓ Vielen Dank! Ihre Anfrage wurde an unseren Produkt-Support gesendet.";
-      } catch (error) {
-        status.textContent = "Das Senden hat leider nicht funktioniert. Bitte versuchen Sie es später erneut.";
-      } finally {
-        submit.disabled = false;
-      }
-    });
+    `;document.head.appendChild(style);
+    const section=document.createElement("section");section.id="kiddotronic-product-support";section.innerHTML=`<div class="kiddotronic-support-box"><div class="kiddotronic-support-eyebrow">💬 PRODUKT-SUPPORT</div><h2>Fragen zum Kiddotronic Mini Sticker Printer?</h2><p class="support-lead">Wenden Sie sich an unseren Produkt-Support. Wir möchten Ihnen schnellstmöglich weiterhelfen. Geben Sie einfach Ihre E-Mail-Adresse und Ihre Frage ein.</p><form class="kiddotronic-support-form"><label>Ihre E-Mail-Adresse<input type="email" name="email" autocomplete="email" required placeholder="name@beispiel.de"></label><label>Ihre Frage<textarea name="message" required maxlength="4000" placeholder="Wie können wir Ihnen helfen?"></textarea></label><button class="kiddotronic-support-submit" type="submit">Frage an Produkt-Support senden →</button><p class="kiddotronic-support-status" role="status" aria-live="polite"></p><p class="kiddotronic-support-privacy">Ihre E-Mail-Adresse und Ihre Nachricht werden zur Bearbeitung Ihrer Supportanfrage übermittelt. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p></form></div>`;reviews.insertAdjacentElement("afterend",section);
+    const success=document.createElement("div");success.className="support-success-backdrop";success.hidden=true;success.innerHTML=`<div class="support-success-modal" role="dialog" aria-modal="true" aria-labelledby="support-success-title"><div class="check">✓</div><h3 id="support-success-title">Vielen Dank für Ihre Support-Anfrage!</h3><p>Ein Mitarbeiter wird sich schnellstmöglich um Ihre Anfrage kümmern.</p><button type="button" class="support-success-close">Fenster schließen</button></div>`;document.body.appendChild(success);
+    const form=section.querySelector(".kiddotronic-support-form"),submit=section.querySelector(".kiddotronic-support-submit"),status=section.querySelector(".kiddotronic-support-status"),close=success.querySelector(".support-success-close");
+    const closeSuccess=()=>{success.hidden=true;document.body.style.overflow=""};close.addEventListener("click",closeSuccess);success.addEventListener("click",e=>{if(e.target===success)closeSuccess()});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!success.hidden)closeSuccess()});
+    form.addEventListener("submit",async event=>{event.preventDefault();if(!form.reportValidity())return;const email=form.querySelector('input[name="email"]').value.trim(),message=form.querySelector('textarea[name="message"]').value.trim();submit.disabled=true;status.textContent="Ihre Anfrage wird gesendet …";try{const response=await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(SUPPORT_EMAIL)}`,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:SUPPORT_SUBJECT,_template:"table",_captcha:"false",_replyto:email,"E-Mail des Kunden":email,"Frage":message,"Seite":window.location.href})});if(!response.ok)throw new Error("Senden fehlgeschlagen");form.reset();status.textContent="";success.hidden=false;document.body.style.overflow="hidden";close.focus()}catch(error){status.textContent="Das Senden hat leider nicht funktioniert. Bitte versuchen Sie es später erneut."}finally{submit.disabled=false}});
   };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", createSupportSection);
-  } else {
-    createSupportSection();
-  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",createSupportSection);else createSupportSection();
 })();
