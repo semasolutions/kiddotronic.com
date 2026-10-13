@@ -27,33 +27,27 @@
 })();
 
 
-/* Decorative Halloween pumpkins, automatically disabled after October 31. */
+/* Subtle seasonal decorations, only in the top area of the page. */
 (() => {
-  const end = Date.parse("2026-11-01T00:00:00+01:00");
-  const init = () => {
-    if (Date.now() >= end || document.getElementById("kiddotronic-halloween-pumpkins")) return;
-    const style = document.createElement("style");
-    style.textContent = `
-      #kiddotronic-halloween-pumpkins{position:fixed;inset:0;pointer-events:none;z-index:89999;overflow:hidden}
-      #kiddotronic-halloween-pumpkins .pumpkin{position:absolute;bottom:-90px;left:var(--left);font-size:var(--size);opacity:0;filter:drop-shadow(2px 4px 2px rgba(0,0,0,.2));animation:kiddotronic-pumpkin-float var(--duration) linear var(--delay) infinite}
-      @keyframes kiddotronic-pumpkin-float{0%{transform:translate3d(0,0,0) rotate(-15deg);opacity:0}10%{opacity:.8}50%{transform:translate3d(22px,-55vh,0) rotate(12deg)}90%{opacity:.8}100%{transform:translate3d(-12px,-115vh,0) rotate(-12deg);opacity:0}}
-      @media(prefers-reduced-motion:reduce){#kiddotronic-halloween-pumpkins{display:none}}
-      @media(max-width:600px){#kiddotronic-halloween-pumpkins .pumpkin{font-size:calc(var(--size) * .7)}}
+  const end=Date.parse("2026-11-01T00:00:00+01:00");
+  const init=()=>{
+    if(Date.now()>=end || document.getElementById("kiddotronic-halloween-decor"))return;
+    const style=document.createElement("style");
+    style.textContent=`
+      #kiddotronic-halloween-decor{position:absolute;top:0;left:0;right:0;height:420px;overflow:hidden;pointer-events:none;z-index:3}
+      #kiddotronic-halloween-decor .seasonal-item{position:absolute;top:var(--top);left:var(--left);font-size:var(--size);opacity:.48;animation:kiddotronic-seasonal-drift 7s ease-in-out infinite alternate;animation-delay:var(--delay)}
+      @keyframes kiddotronic-seasonal-drift{from{transform:translateY(0) rotate(-5deg)}to{transform:translateY(-12px) rotate(5deg)}}
+      @media(max-width:600px){#kiddotronic-halloween-decor{height:290px}#kiddotronic-halloween-decor .seasonal-item{font-size:24px;opacity:.38}}
+      @media(prefers-reduced-motion:reduce){#kiddotronic-halloween-decor .seasonal-item{animation:none}}
     `;
     document.head.appendChild(style);
     const layer=document.createElement("div");
-    layer.id="kiddotronic-halloween-pumpkins";
+    layer.id="kiddotronic-halloween-decor";
     layer.setAttribute("aria-hidden","true");
-    const positions=[6,22,39,58,76,92];
-    positions.forEach((left,i)=>{
-      const pumpkin=document.createElement("span");
-      pumpkin.className="pumpkin";
-      pumpkin.textContent="🎃";
-      pumpkin.style.setProperty("--left",left+"%");
-      pumpkin.style.setProperty("--size",(26+(i%3)*9)+"px");
-      pumpkin.style.setProperty("--duration",(14+(i%3)*4)+"s");
-      pumpkin.style.setProperty("--delay",(-i*3.4)+"s");
-      layer.appendChild(pumpkin);
+    [{icon:"🎃",left:"5%",top:"75px",delay:"0s",size:"30px"},{icon:"🎁",left:"88%",top:"115px",delay:"-2s",size:"29px"},{icon:"🎁",left:"12%",top:"265px",delay:"-4s",size:"25px"}].forEach(item=>{
+      const el=document.createElement("span");el.className="seasonal-item";el.textContent=item.icon;
+      for(const key of ["left","top","delay","size"])el.style.setProperty("--"+key,item[key]);
+      layer.appendChild(el);
     });
     document.body.appendChild(layer);
   };
