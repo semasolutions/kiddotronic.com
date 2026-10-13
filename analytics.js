@@ -25,29 +25,3 @@
   const updateReview=()=>{const cards=document.querySelectorAll(".reviews-section .review-card");if(cards.length<3)return;const card=cards[2],author=card.querySelector(".review-author");if(!author||!author.textContent.includes("Andreas F."))return;const stars=card.querySelector(".review-stars"),title=card.querySelector("h3"),quote=card.querySelector("blockquote");if(stars){stars.textContent="★★★★★";stars.setAttribute("aria-label","Bewertung mit 5 von 5 Sternen")}if(title)title.textContent="Ein unterhaltsames und kreatives Gadget für Kinder";if(quote)quote.textContent="„Dieser kleine Sticker-Drucker ist bei uns zu Hause schnell zum Favoriten geworden, vor allem weil er Technik und kreatives Basteln auf eine Art verbindet, die Kinder wirklich begeistert. Die Bluetooth-Verbindung zur App funktioniert reibungslos … Meine Tochter liebt es besonders, eigene Ausmalbilder zu gestalten und sie dann als Sticker auszudrucken … Insgesamt ist dies ein durchdachtes Geschenk, das Technik, Kreativität und bildschirmfreie Unterhaltung vereint …“";author.innerHTML='Elena<span class="review-label">Vine Kundenrezension eines kostenlosen Produkts · 7. September 2026</span>'};
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",updateReview);else updateReview();
 })();
-
-(() => {
-  const endsAt = Date.parse("2026-10-20T23:59:00+02:00");
-  const init = () => {
-    if (Date.now() >= endsAt || document.getElementById("kiddotronic-discount-countdown")) return;
-    const style = document.createElement("style");
-    style.textContent = '#kiddotronic-discount-countdown{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:9997;width:min(520px,calc(100% - 28px));box-sizing:border-box;padding:15px 42px 15px 18px;text-align:center;background:#ffec3d;color:#111;border:4px solid #111;border-radius:20px;box-shadow:6px 6px 0 #111;font-family:"Baloo 2",Arial,sans-serif}#kiddotronic-discount-countdown strong{display:block;font-size:clamp(1.1rem,3vw,1.5rem);line-height:1.2}#kiddotronic-discount-countdown .discount-clock{display:block;margin-top:5px;font-size:1.05rem;font-weight:900;font-variant-numeric:tabular-nums}#kiddotronic-discount-countdown .discount-close{position:absolute;right:10px;top:9px;background:#fff;border:2px solid #111;border-radius:50%;width:28px;height:28px;font-weight:900;cursor:pointer}@media(max-width:560px){#kiddotronic-discount-countdown{top:8px;padding:12px 38px 12px 10px;border-radius:16px}}';
-    document.head.appendChild(style);
-    const banner=document.createElement("aside");
-    banner.id="kiddotronic-discount-countdown";
-    banner.setAttribute("aria-label","20 Prozent Rabatt Aktion");
-    banner.innerHTML='<button class="discount-close" type="button" aria-label="Aktion schließen">×</button><strong>🎉 20 % Rabatt – nur für kurze Zeit!</strong><span class="discount-clock" aria-live="off"></span>';
-    document.body.appendChild(banner);
-    const clock=banner.querySelector(".discount-clock");
-    let timer;
-    const update=()=>{
-      const left=Math.max(0,endsAt-Date.now());
-      if(!left){clearInterval(timer);banner.remove();return;}
-      const days=Math.floor(left/86400000),hours=Math.floor(left/3600000)%24,minutes=Math.floor(left/60000)%60,seconds=Math.floor(left/1000)%60;
-      clock.textContent=days+" Tage · "+String(hours).padStart(2,"0")+":"+String(minutes).padStart(2,"0")+":"+String(seconds).padStart(2,"0");
-    };
-    banner.querySelector(".discount-close").addEventListener("click",()=>{clearInterval(timer);banner.remove()});
-    update();timer=setInterval(update,1000);
-  };
-  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
-})();
