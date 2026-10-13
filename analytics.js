@@ -25,3 +25,37 @@
   const updateReview=()=>{const cards=document.querySelectorAll(".reviews-section .review-card");if(cards.length<3)return;const card=cards[2],author=card.querySelector(".review-author");if(!author||!author.textContent.includes("Andreas F."))return;const stars=card.querySelector(".review-stars"),title=card.querySelector("h3"),quote=card.querySelector("blockquote");if(stars){stars.textContent="★★★★★";stars.setAttribute("aria-label","Bewertung mit 5 von 5 Sternen")}if(title)title.textContent="Ein unterhaltsames und kreatives Gadget für Kinder";if(quote)quote.textContent="„Dieser kleine Sticker-Drucker ist bei uns zu Hause schnell zum Favoriten geworden, vor allem weil er Technik und kreatives Basteln auf eine Art verbindet, die Kinder wirklich begeistert. Die Bluetooth-Verbindung zur App funktioniert reibungslos … Meine Tochter liebt es besonders, eigene Ausmalbilder zu gestalten und sie dann als Sticker auszudrucken … Insgesamt ist dies ein durchdachtes Geschenk, das Technik, Kreativität und bildschirmfreie Unterhaltung vereint …“";author.innerHTML='Elena<span class="review-label">Vine Kundenrezension eines kostenlosen Produkts · 7. September 2026</span>'};
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",updateReview);else updateReview();
 })();
+
+
+/* Decorative Halloween pumpkins, automatically disabled after October 31. */
+(() => {
+  const end = Date.parse("2026-11-01T00:00:00+01:00");
+  const init = () => {
+    if (Date.now() >= end || document.getElementById("kiddotronic-halloween-pumpkins")) return;
+    const style = document.createElement("style");
+    style.textContent = `
+      #kiddotronic-halloween-pumpkins{position:fixed;inset:0;pointer-events:none;z-index:89999;overflow:hidden}
+      #kiddotronic-halloween-pumpkins .pumpkin{position:absolute;bottom:-90px;left:var(--left);font-size:var(--size);opacity:0;filter:drop-shadow(2px 4px 2px rgba(0,0,0,.2));animation:kiddotronic-pumpkin-float var(--duration) linear var(--delay) infinite}
+      @keyframes kiddotronic-pumpkin-float{0%{transform:translate3d(0,0,0) rotate(-15deg);opacity:0}10%{opacity:.8}50%{transform:translate3d(22px,-55vh,0) rotate(12deg)}90%{opacity:.8}100%{transform:translate3d(-12px,-115vh,0) rotate(-12deg);opacity:0}}
+      @media(prefers-reduced-motion:reduce){#kiddotronic-halloween-pumpkins{display:none}}
+      @media(max-width:600px){#kiddotronic-halloween-pumpkins .pumpkin{font-size:calc(var(--size) * .7)}}
+    `;
+    document.head.appendChild(style);
+    const layer=document.createElement("div");
+    layer.id="kiddotronic-halloween-pumpkins";
+    layer.setAttribute("aria-hidden","true");
+    const positions=[6,22,39,58,76,92];
+    positions.forEach((left,i)=>{
+      const pumpkin=document.createElement("span");
+      pumpkin.className="pumpkin";
+      pumpkin.textContent="🎃";
+      pumpkin.style.setProperty("--left",left+"%");
+      pumpkin.style.setProperty("--size",(26+(i%3)*9)+"px");
+      pumpkin.style.setProperty("--duration",(14+(i%3)*4)+"s");
+      pumpkin.style.setProperty("--delay",(-i*3.4)+"s");
+      layer.appendChild(pumpkin);
+    });
+    document.body.appendChild(layer);
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
+})();
