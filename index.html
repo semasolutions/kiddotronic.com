@@ -1367,15 +1367,18 @@
         sessionStorage.setItem(sessionKey, "true");
       };
 
-      syncCountdown();
-      const syncInterval = setInterval(() => {
-        if (popup.hidden) return clearInterval(syncInterval);
+      // Show the seasonal offer five seconds after the page has loaded.
+      setTimeout(() => {
+        if (sessionStorage.getItem(sessionKey) === "true") return;
         syncCountdown();
-      }, 250);
-
-      popup.hidden = false;
-      document.body.classList.add("offer-popup-open");
-      closeButton.focus();
+        popup.hidden = false;
+        document.body.classList.add("offer-popup-open");
+        closeButton.focus();
+        const syncInterval = setInterval(() => {
+          if (popup.hidden) return clearInterval(syncInterval);
+          syncCountdown();
+        }, 250);
+      }, 5000);
 
       closeButton.addEventListener("click", closePopup);
       popup.addEventListener("click", (event) => {
