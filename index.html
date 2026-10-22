@@ -422,6 +422,11 @@
       box-shadow: 3px 3px 0 #000;
     }
 
+    .amazon-offer .amazon-price { display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:14px;margin:14px 0 8px;line-height:1.1; }
+    .amazon-offer .amazon-price del {font-size:clamp(1.5rem,3vw,2.3rem);color:#ddd;text-shadow:none;-webkit-text-stroke:0;opacity:.9;}
+    .amazon-offer .amazon-price span {font-size:clamp(2.8rem,6vw,4.6rem);color:#ff7a00;}
+    .amazon-offer .amazon-savings {font-size:clamp(1.1rem,2.5vw,1.45rem);font-weight:800;color:#fff;margin:0 0 20px;}
+    .amazon-offer.is-expired .amazon-price, .amazon-offer.is-expired .amazon-savings {display:none;}
     .amazon-countdown {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -935,9 +940,9 @@
         <p>Einfach eine Idee einsprechen, die KI erstellt ein Motiv und der Drucker gibt es als Sticker aus. So wird aus jedem Einfall sofort etwas zum Kleben, Sammeln, Ausmalen und Verschenken.</p>
         <div class="actions">
           <div class="amazon-offer" aria-label="Halloween-Angebot bis 31. Oktober">
-            <span class="amazon-offer-label">🎃 Jetzt 24 % sparen – bis 31. Oktober!</span>
-            <strong>Halloween-Aktion verlängert – jetzt auf Amazon ansehen!</strong>
-            <div class="amazon-countdown" id="amazon-countdown" data-end="2026-10-31T23:59:59+01:00" aria-label="Verbleibende Aktionszeit"><div class="countdown-part"><b data-days>00</b><span>Tage</span></div><div class="countdown-part"><b data-hours>00</b><span>Stunden</span></div><div class="countdown-part"><b data-minutes>00</b><span>Minuten</span></div><div class="countdown-part"><b data-seconds>00</b><span>Sekunden</span></div></div>
+            <span class="amazon-offer-label">🎃 Bis 31. Oktober auf Amazon sparen!</span>
+            <strong class="amazon-price"><del>49,95 €</del> <span>37,95 €</span></strong>
+            <p class="amazon-savings">Bis zu 24 % auf Amazon sparen</p>
             <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a>
           </div>
         </div>
@@ -1288,52 +1293,6 @@
   </script>
   <script>
     (() => {
-      const timer = document.getElementById("amazon-countdown");
-      const offer = timer?.closest(".amazon-offer");
-      if (!timer || !offer) return;
-
-      const end = new Date(timer.dataset.end).getTime();
-      const fields = {
-        days: timer.querySelector("[data-days]"),
-        hours: timer.querySelector("[data-hours]"),
-        minutes: timer.querySelector("[data-minutes]"),
-        seconds: timer.querySelector("[data-seconds]")
-      };
-
-      const updateCountdown = () => {
-        const remaining = Math.max(0, end - Date.now());
-        const totalSeconds = Math.floor(remaining / 1000);
-        const days = Math.floor(totalSeconds / 86400);
-        const hours = Math.floor((totalSeconds % 86400) / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
-
-        fields.days.textContent = String(days).padStart(2, "0");
-        fields.hours.textContent = String(hours).padStart(2, "0");
-        fields.minutes.textContent = String(minutes).padStart(2, "0");
-        fields.seconds.textContent = String(seconds).padStart(2, "0");
-
-        if (remaining === 0) {
-          offer.classList.add("is-expired");
-          timer.innerHTML = '<div class="countdown-part"><b>Aktion beendet</b></div>';
-          const label = offer.querySelector(".amazon-offer-label");
-          const message = offer.querySelector("strong");
-          if (label) label.textContent = "🎁 Sticker-Drucker auf Amazon entdecken";
-          if (message) message.textContent = "Entdecke Kiddotronic als kreative Geschenkidee!";
-          return false;
-        }
-        return true;
-      };
-
-      if (updateCountdown()) {
-        const interval = setInterval(() => {
-          if (!updateCountdown()) clearInterval(interval);
-        }, 1000);
-      }
-    })();
-  </script>
-  <script>
-    (() => {
       const popup = document.getElementById("halloween-offer-popup");
       const sourceOffer = document.querySelector(".hero .amazon-offer");
       const popupContent = popup?.querySelector(".offer-popup-content");
@@ -1349,20 +1308,6 @@
       });
       popupContent.appendChild(popupOffer);
 
-      const syncCountdown = () => {
-        ["days", "hours", "minutes", "seconds"].forEach((unit) => {
-          const source = sourceOffer.querySelector("[data-" + unit + "]");
-          const target = popupOffer.querySelector("[data-" + unit + "]");
-          if (source && target) target.textContent = source.textContent;
-        });
-        if (sourceOffer.classList.contains("is-expired")) {
-          popupOffer.classList.add("is-expired");
-          const sourceTimer = sourceOffer.querySelector(".amazon-countdown");
-          const targetTimer = popupOffer.querySelector(".amazon-countdown");
-          if (sourceTimer && targetTimer) targetTimer.innerHTML = sourceTimer.innerHTML;
-        }
-      };
-
       const closePopup = () => {
         popup.hidden = true;
         document.body.classList.remove("offer-popup-open");
@@ -1371,17 +1316,15 @@
 
       // Show the renewed promotion immediately, but never after it has expired.
       if (Date.now() <= Date.parse("2026-10-31T23:59:59+01:00")) {
-        syncCountdown();
         popup.hidden = false;
         document.body.classList.add("offer-popup-open");
         closeButton.focus();
-        const syncInterval = setInterval(() => {
+        const expiryTimer = setInterval(() => {
           if (popup.hidden || Date.now() > Date.parse("2026-10-31T23:59:59+01:00")) {
             if (!popup.hidden) closePopup();
-            return clearInterval(syncInterval);
+            clearInterval(expiryTimer);
           }
-          syncCountdown();
-        }, 250);
+        }, 60000);
       }
 
       closeButton.addEventListener("click", closePopup);
