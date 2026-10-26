@@ -1,0 +1,17 @@
+.ai-content-note {
+  display: block;
+  margin: 5px 0 8px;
+  color: #555;
+  font: 400 10px/1.35 Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: center;
+}
+.brand { flex-wrap: wrap; }
+.brand > .ai-content-note { flex-basis: 100%; margin: 2px 0 0; }
+.visual-card > .ai-content-note { position: absolute; bottom: -18px; left: 0; right: 0; }
+.amazon-offer .gift-image { margin-bottom: 0; }
+.amazon-offer > .ai-content-note { margin-bottom: 14px; }
+#kiddotronic-ai-demo .kd-stage > .ai-content-note {
+  position: absolute; top: 8px; left: 0; right: 0; z-index: 6;
+}
