@@ -336,151 +336,33 @@
 
     .amazon-offer {
       width: min(100%, 640px);
-      position: relative;
-      isolation: isolate;
-      padding: 26px 24px 24px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(255,106,0,.3) 0 4px, transparent 5px),
-        radial-gradient(circle at 88% 28%, rgba(180,255,50,.22) 0 4px, transparent 5px),
-        linear-gradient(145deg, #2d124d 0%, #13091f 58%, #050507 100%);
-      color: var(--white);
-      border: 5px solid var(--ink);
-      border-radius: 30px;
-      box-shadow: 10px 10px 0 var(--ink), 0 0 32px rgba(255,106,0,.5);
-      transform: rotate(-1deg);
+      padding: 26px 24px;
+      background: #fff8ed;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 24px;
       text-align: center;
     }
 
-    .amazon-offer::before,
-    .amazon-offer::after {
-      position: absolute;
-      z-index: -1;
-      font-size: clamp(4rem, 10vw, 7rem);
-      filter: drop-shadow(4px 5px 0 #000);
-      opacity: .92;
-      pointer-events: none;
-    }
-
-    .amazon-offer::before {
-      content: "🎃";
-      left: -18px;
-      bottom: -22px;
-      transform: rotate(-13deg);
-    }
-
-    .amazon-offer::after {
-      content: "🦇";
-      right: 12px;
-      top: 10px;
-      transform: rotate(12deg);
-      animation: halloween-float 2.3s ease-in-out infinite alternate;
-    }
-
-    @keyframes halloween-float {
-      from { transform: translateY(-3px) rotate(7deg); }
-      to { transform: translateY(7px) rotate(16deg); }
-    }
-
     .amazon-offer-label {
-      display: inline-block;
-      margin-bottom: 7px;
-      padding: 6px 15px;
-      color: #17100a;
-      background: #b7ff36;
-      border: 3px solid var(--ink);
-      border-radius: 999px;
-      box-shadow: 4px 4px 0 #000;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      display: block;
+      margin-bottom: 12px;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
       font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transform: rotate(1.5deg);
+      line-height: 1.25;
     }
 
-    .amazon-offer strong {
-      display: block;
-      margin: 9px 0 18px;
-      color: #ff7a00 !important;
-      font-size: clamp(2.8rem, 6vw, 5.2rem);
-      line-height: .86;
-      text-shadow: 3px 3px 0 #000, 0 0 16px rgba(255,122,0,.7) !important;
-      -webkit-text-stroke: 1px #111 !important;
+    .amazon-offer .amazon-gift-copy {
+      margin: 0 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--ink);
     }
 
     .amazon-offer .btn {
       width: 100%;
-      position: relative;
-      z-index: 2;
-      background: #ff6a00;
-      color: var(--white);
-      border-color: #000;
-      box-shadow: 7px 7px 0 #000;
-    }
-
-    .amazon-offer .btn:hover {
-      box-shadow: 3px 3px 0 #000;
-    }
-
-    .amazon-offer .amazon-price { display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:14px;margin:14px 0 8px;line-height:1.1; }
-    .amazon-offer .amazon-price del {font-size:clamp(1.5rem,3vw,2.3rem);color:#ddd;text-shadow:none;-webkit-text-stroke:0;opacity:.9;}
-    .amazon-offer .amazon-price span {font-size:clamp(2.8rem,6vw,4.6rem);color:#ff7a00;}
-    .amazon-offer .amazon-savings {font-size:clamp(1.1rem,2.5vw,1.45rem);font-weight:800;color:#fff;margin:0 0 20px;}
-    .amazon-offer.is-expired .amazon-price, .amazon-offer.is-expired .amazon-savings {display:none;}
-    .amazon-countdown {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 9px;
-      margin: 0 0 20px;
-    }
-
-    .countdown-part {
-      padding: 11px 6px;
-      color: #fff;
-      background: linear-gradient(180deg, #4d2378, #251037);
-      border: 3px solid #ff7a00;
-      border-radius: 15px;
-      box-shadow: 4px 4px 0 #000;
-    }
-
-    .countdown-part b,
-    .countdown-part span {
-      display: block;
-    }
-
-    .countdown-part b {
-      color: #b7ff36;
-      font-size: clamp(1.55rem, 3vw, 2.3rem);
-      line-height: 1;
-      text-shadow: 2px 2px 0 #000;
-    }
-
-    .countdown-part span {
-      margin-top: 5px;
-      color: #fff;
-      font-size: .75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .amazon-offer small {
-      display: block;
-      margin-top: 14px;
-      color: #fff;
-      font-size: .95rem;
-      font-weight: 700;
-    }
-
-    .amazon-offer.is-expired .amazon-countdown {
-      grid-template-columns: 1fr;
-    }
-
-    .amazon-offer.is-expired .countdown-part {
-      padding: 14px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .amazon-offer::after { animation: none; }
+      white-space: normal;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
     }
 
     .offer-popup {
@@ -490,8 +372,8 @@
       display: grid;
       place-items: center;
       padding: 20px;
-      background: rgba(5, 2, 10, .82);
-      backdrop-filter: blur(6px);
+      background: rgba(5, 2, 10, .5);
+      backdrop-filter: blur(3px);
       overflow-y: auto;
     }
 
@@ -500,7 +382,6 @@
     .offer-popup-card {
       width: min(680px, 100%);
       position: relative;
-      animation: offer-popup-in .35s cubic-bezier(.2,.9,.25,1.2);
     }
 
     .offer-popup-card .amazon-offer {
@@ -535,10 +416,6 @@
 
     body.offer-popup-open { overflow: hidden; }
 
-    @keyframes offer-popup-in {
-      from { opacity: 0; transform: translateY(28px) scale(.92) rotate(-2deg); }
-      to { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
-    }
 
     @media (max-width: 560px) {
       .offer-popup { padding: 14px; }
@@ -890,8 +767,8 @@
 <!-- TikTok Pixel Code End -->
 </head>
 <body>
-  <div class="offer-popup" id="halloween-offer-popup" hidden>
-    <div class="offer-popup-card" role="dialog" aria-modal="true">
+  <div class="offer-popup" id="gift-hint-popup" hidden>
+    <div class="offer-popup-card" role="dialog" aria-modal="true" aria-label="Geschenkidee von Kiddotronic">
       <button class="offer-popup-close" type="button" aria-label="Hinweis schließen">×</button>
       <div class="offer-popup-content"></div>
     </div>
@@ -939,11 +816,10 @@
         <h1 id="headline"><span>KI Sticker</span><span>Printer</span></h1>
         <p>Einfach eine Idee einsprechen, die KI erstellt ein Motiv und der Drucker gibt es als Sticker aus. So wird aus jedem Einfall sofort etwas zum Kleben, Sammeln, Ausmalen und Verschenken.</p>
         <div class="actions">
-          <div class="amazon-offer" aria-label="Halloween-Angebot bis 31. Oktober">
-            <span class="amazon-offer-label">🎃 Bis 31. Oktober auf Amazon sparen!</span>
-            <strong class="amazon-price"><del>49,95 €</del> <span>37,95 €</span></strong>
-            <p class="amazon-savings">Bis zu 24 % auf Amazon sparen</p>
-            <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a>
+          <div class="amazon-offer" aria-label="Geschenkidee von Kiddotronic">
+            <span class="amazon-offer-label">🎁 Noch auf der Suche nach einem besonderen Geschenk?</span>
+            <p class="amazon-gift-copy">Mit Kiddotronic werden Kinderideen zu echten Stickern – zum Ausmalen, Verschenken und Staunen.</p>
+            <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Geschenk auf Amazon entdecken</a>
           </div>
         </div>
       </section>
@@ -1293,14 +1169,16 @@
   </script>
   <script>
     (() => {
-      const popup = document.getElementById("halloween-offer-popup");
+      const popup = document.getElementById("gift-hint-popup");
       const sourceOffer = document.querySelector(".hero .amazon-offer");
       const popupContent = popup?.querySelector(".offer-popup-content");
       const closeButton = popup?.querySelector(".offer-popup-close");
-      const sessionKey = "kiddotronic_halloween_offer_oct31_closed";
+      const sessionKey = "kiddotronic_gift_hint_seen";
 
       if (!popup || !sourceOffer || !popupContent || !closeButton) return;
-      if (sessionStorage.getItem(sessionKey) === "true") return;
+      try {
+        if (sessionStorage.getItem(sessionKey) === "true") return;
+      } catch (_) { /* Keep the hint usable when storage is unavailable. */ }
 
       const popupOffer = sourceOffer.cloneNode(true);
       popupOffer.querySelectorAll("[id]").forEach((element) => {
@@ -1311,21 +1189,14 @@
       const closePopup = () => {
         popup.hidden = true;
         document.body.classList.remove("offer-popup-open");
-        sessionStorage.setItem(sessionKey, "true");
+        sourceOffer.querySelector("a")?.focus();
       };
 
-      // Show the renewed promotion immediately, but never after it has expired.
-      if (Date.now() <= Date.parse("2026-10-31T23:59:59+01:00")) {
-        popup.hidden = false;
-        document.body.classList.add("offer-popup-open");
-        closeButton.focus();
-        const expiryTimer = setInterval(() => {
-          if (popup.hidden || Date.now() > Date.parse("2026-10-31T23:59:59+01:00")) {
-            if (!popup.hidden) closePopup();
-            clearInterval(expiryTimer);
-          }
-        }, 60000);
-      }
+      // A timeless gift hint, shown only once per browser session.
+      popup.hidden = false;
+      document.body.classList.add("offer-popup-open");
+      try { sessionStorage.setItem(sessionKey, "true"); } catch (_) {}
+      closeButton.focus();
 
       closeButton.addEventListener("click", closePopup);
       popup.addEventListener("click", (event) => {
