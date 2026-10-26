@@ -337,11 +337,44 @@
     .amazon-offer {
       width: min(100%, 640px);
       padding: 26px 24px;
-      background: #fff8ed;
+      background: linear-gradient(145deg, #fff5dc, #fff0f3 65%, #f1ecff);
       color: var(--ink);
       border: 2px solid var(--ink);
       border-radius: 24px;
       text-align: center;
+    }
+
+    .gift-eyebrow {
+      display: block;
+      margin-bottom: 12px;
+      font-size: .95rem;
+      font-weight: 800;
+      color: #743659;
+    }
+
+    .amazon-offer .gift-image {
+      display: block;
+      width: min(100%, 320px);
+      height: auto;
+      margin: 0 auto 18px;
+      object-fit: contain;
+    }
+
+    .offer-popup-card {
+      max-height: calc(100dvh - 40px);
+      overflow-y: auto;
+      border-radius: 24px;
+    }
+
+    .offer-popup .offer-popup-close {
+      right: 8px;
+      top: 8px;
+    }
+
+    @media (max-width: 560px), (max-height: 760px) {
+      .offer-popup .gift-image { width: min(100%, 210px); }
+      .offer-popup .amazon-offer-label { font-size: 1.35rem; }
+      .offer-popup .amazon-gift-copy { font-size: 1rem; }
     }
 
     .amazon-offer-label {
@@ -817,9 +850,11 @@
         <p>Einfach eine Idee einsprechen, die KI erstellt ein Motiv und der Drucker gibt es als Sticker aus. So wird aus jedem Einfall sofort etwas zum Kleben, Sammeln, Ausmalen und Verschenken.</p>
         <div class="actions">
           <div class="amazon-offer" aria-label="Geschenkidee von Kiddotronic">
-            <span class="amazon-offer-label">🎁 Noch auf der Suche nach einem besonderen Geschenk?</span>
-            <p class="amazon-gift-copy">Mit Kiddotronic werden Kinderideen zu echten Stickern – zum Ausmalen, Verschenken und Staunen.</p>
-            <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Geschenk auf Amazon entdecken</a>
+            <span class="gift-eyebrow">🎁 Kleine Ideen. Große Freude.</span>
+            <img class="gift-image" src="assets/kiddotronic-gift-cutout.png" alt="Ein Kind entdeckt den roten Kiddotronic Stickerdrucker mit Einhornmotiv, Papierrollen und USB-Kabel" width="1266" height="1243">
+            <span class="amazon-offer-label">Noch kein Geschenk, das für leuchtende Augen sorgt?</span>
+            <p class="amazon-gift-copy">Verschenke ein kleines Wow – und ganz viel Fantasie. Mit Kiddotronic werden aus „Stell dir mal vor …“ echte Sticker zum Ausmalen, Kleben und Verschenken.</p>
+            <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Jetzt Lieblingsgeschenk entdecken</a>
           </div>
         </div>
       </section>
