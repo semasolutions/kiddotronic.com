@@ -11,13 +11,13 @@ atelierKicker:'EIN KLEINES GESCHENK VON UNS',atelierTitle:'Deine Fantasie.\nDein
 atelierIntro:'Gestalte einen persönlichen Geschenkanhänger. Für dein Kiddotronic-Päckchen, die selbstgebackenen Kekse oder einfach einen lieben Menschen.',
 themeLegend:'1. Wähle deinen Weihnachtszauber',themeTree:'Tannenliebe',themeCookie:'Kekszauber',themeStar:'Sternenglanz',
 toLabel:'2. Für wen ist dein Geschenk?',fromLabel:'3. Von wem kommt der Weihnachtsgruß?',
-download:'Deinen Anhänger herunterladen ↓',atelierPrivacy:'Ohne Anmeldung. Deine Eingaben bleiben in deinem Browser. Als SVG speichern und auf Papier ausdrucken.',
+download:'Anhänger als PDF herunterladen ↓',atelierPrivacy:'Ohne Anmeldung. Deine Eingaben bleiben in deinem Browser. Als A4-PDF speichern: Anhänger mittig, 7,5 × 11 cm. Beim Drucken „Tatsächliche Größe“ wählen.',
 previewCaption:'Für kleine Gesten, die ganz groß ankommen.',faqKicker:'GUT ZU WISSEN',faqTitle:'Große Vorfreude.\nKlare Antworten.',faqIntro:'Damit aus einer schönen Geschenkidee ein gutes Gefühl wird.',guideLink:'Zur ausführlichen Anleitung ↗',
 q1:'Was macht der KI Sticker Printer?',a1:'Kinder sprechen eine Idee ein. Die KI erstellt daraus ein Motiv und der Drucker bringt es aufs Papier. Die Sticker lassen sich anschließend ausmalen, sammeln, kleben oder verschenken.',
 q2:'Braucht er Tintenpatronen?',a2:'Nein. Der Kiddotronic Sticker Printer verwendet Thermodruck. Dafür wird passendes Thermopapier beziehungsweise Thermo-Stickerpapier benötigt.',
 q3:'Wo bestelle ich das Geschenk?',a3:'Die Bestellung erfolgt bei Amazon. Dort findest du die aktuellen Angaben zu Verfügbarkeit, Liefertermin, Lieferumfang und Produktdetails. Bitte prüfe den angezeigten Liefertermin vor deiner Bestellung.',amazonLink:'Produkt auf Amazon ansehen ↗',
 q4:'Wo finde ich Hilfe zur Einrichtung?',a4:'Unsere digitale Anleitung führt durch die Einrichtung und enthält WLAN-Hinweise. Das Datenblatt bietet weitere Produktinformationen.',dataSheet:'Datenblatt',
-q5:'Ist der Geschenkanhänger ein Ausdruck des Geräts?',a5:'Der Anhänger im Weihnachtsatelier ist eine eigene Gestaltungshilfe dieser Webseite. Du kannst ihn als SVG herunterladen und mit einem normalen Drucker auf Papier drucken. Er zeigt keine Druckvorschau des Kiddotronic-Geräts.',
+q5:'Ist der Geschenkanhänger ein Ausdruck des Geräts?',a5:'Der Anhänger im Weihnachtsatelier ist eine eigene Gestaltungshilfe dieser Webseite. Du kannst ihn als mittig ausgerichtete A4-PDF herunterladen und mit einem normalen Drucker auf Papier drucken. Er zeigt keine Druckvorschau des Kiddotronic-Geräts.',
 finalKicker:'DAS SCHÖNSTE PASST IN KEINE SCHLEIFE',finalTitle:'Zeit zusammen.\nIdeen ohne Ende.',finalText:'Schenke den Anfang von vielen kleinen Geschichten.',finalCta:'Kiddotronic auf Amazon entdecken ↗',
 toPlaceholder:'z. B. Emma',fromPlaceholder:'z. B. Mama & Papa',to:'FÜR',from:'VON HERZEN VON',recipient:'Dich',sender:'Deinem Weihnachtswichtel',greeting:'Frohe Weihnachten',status:'Dein Anhänger ist bereit. Der Download wurde gestartet.',preview:'Vorschau deines Geschenkanhängers',reduced:'Schneefall ist wegen deiner Einstellung für reduzierte Bewegung ausgeschaltet.'
 },
@@ -31,13 +31,13 @@ atelierKicker:'A LITTLE GIFT FROM US',atelierTitle:'Your imagination.\nYour Chri
 atelierIntro:'Create a personal gift tag. For your Kiddotronic present, homemade cookies or someone you love.',
 themeLegend:'1. Choose your Christmas magic',themeTree:'Christmas tree',themeCookie:'Cookie magic',themeStar:'Starlight',
 toLabel:'2. Who is your gift for?',fromLabel:'3. Who is sending the Christmas greeting?',
-download:'Download your gift tag ↓',atelierPrivacy:'No account needed. Your entries stay in your browser. Save as SVG and print on paper.',
+download:'Download your gift tag as PDF ↓',atelierPrivacy:'No account needed. Your entries stay in your browser. Save as an A4 PDF: centered tag, 7.5 × 11 cm. Select “Actual size” when printing.',
 previewCaption:'For little gestures that mean a lot.',faqKicker:'GOOD TO KNOW',faqTitle:'Big excitement.\nClear answers.',faqIntro:'So a lovely gift idea comes with peace of mind.',guideLink:'Read the full user guide ↗',
 q1:'What does the AI Sticker Printer do?',a1:'Children speak an idea. AI turns it into a motif and the printer puts it on paper. The stickers can then be colored, collected, stuck on or given away.',
 q2:'Does it need ink cartridges?',a2:'No. The Kiddotronic Sticker Printer uses thermal printing. It requires suitable thermal paper or thermal sticker paper.',
 q3:'Where can I order the gift?',a3:'Orders are placed on Amazon. You can find current availability, delivery estimates, included items and product details there. Please check the estimated delivery date before ordering.',amazonLink:'View the product on Amazon ↗',
 q4:'Where can I get help setting it up?',a4:'Our digital guide walks you through setup and includes Wi-Fi guidance. The data sheet provides more product information.',dataSheet:'Data sheet',
-q5:'Is the gift tag a printout from the device?',a5:'The gift tag in the Christmas atelier is a separate design tool on this website. Download it as SVG and print it on paper using a regular printer. It is not a preview of output from the Kiddotronic device.',
+q5:'Is the gift tag a printout from the device?',a5:'The gift tag in the Christmas atelier is a separate design tool on this website. Download it as a centered A4 PDF and print it on paper using a regular printer. It is not a preview of output from the Kiddotronic device.',
 finalKicker:'THE BEST THINGS CANNOT BE TIED WITH A BOW',finalTitle:'Time together.\nEndless ideas.',finalText:'Give the beginning of many little stories.',finalCta:'Discover Kiddotronic on Amazon ↗',
 toPlaceholder:'e.g. Emma',fromPlaceholder:'e.g. Mum & Dad',to:'FOR',from:'WITH LOVE FROM',recipient:'You',sender:'Your Christmas elf',greeting:'Merry Christmas',status:'Your gift tag is ready. The download has started.',preview:'Preview of your personal gift tag',reduced:'Snowfall is off because you prefer reduced motion.'
 }};
@@ -69,12 +69,47 @@ document.querySelectorAll('[data-tag-theme]').forEach(button=>button.addEventLis
  renderTag();
 }));
 [toInput,fromInput].filter(Boolean).forEach(input=>input.addEventListener('input',renderTag));
-document.getElementById('tag-download')?.addEventListener('click',()=>{
- const url=URL.createObjectURL(new Blob([tagSVG()],{type:'image/svg+xml;charset=utf-8'}));
- const a=document.createElement('a');a.href=url;a.download='kiddotronic-weihnachtsanhaenger.svg';document.body.append(a);a.click();a.remove();
- setTimeout(()=>URL.revokeObjectURL(url),1000);
- document.getElementById('tag-status').textContent=copy[language].status;
+// A4 page with a centered 75 x 110 mm tag; rasterize at approximately 305 dpi.
+async function tagPDF(svg){
+ const source=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml;charset=utf-8'}));
+ const image=new Image();
+ try{
+  await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=reject;image.src=source;});
+  const canvas=document.createElement('canvas');canvas.width=900;canvas.height=1320;
+  const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Canvas unavailable');
+  ctx.fillStyle='#ffffff';ctx.fillRect(0,0,900,1320);ctx.drawImage(image,0,0,900,1320);
+  const jpeg=Uint8Array.from(atob(canvas.toDataURL('image/jpeg',.98).split(',')[1]),c=>c.charCodeAt(0));
+  const encode=s=>new TextEncoder().encode(s),parts=[],offsets=[0];let length=0;
+  const add=p=>{const b=typeof p==='string'?encode(p):p;parts.push(b);length+=b.length;};
+  const object=(id,body)=>{offsets[id]=length;add(id+' 0 obj\n'+body+'\nendobj\n');};
+  add('%PDF-1.4\n');
+  object(1,'<< /Type /Catalog /Pages 2 0 R /ViewerPreferences << /PrintScaling /None >> >>');
+  object(2,'<< /Type /Pages /Kids [3 0 R] /Count 1 >>');
+  object(3,'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.2756 841.8898] /Resources << /XObject << /Tag 4 0 R >> >> /Contents 5 0 R >>');
+  offsets[4]=length;
+  add('4 0 obj\n<< /Type /XObject /Subtype /Image /Width 900 /Height 1320 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+jpeg.length+' >>\nstream\n');
+  add(jpeg);add('\nendstream\nendobj\n');
+  const drawing='q\n212.5984 0 0 311.8110 191.3386 265.0394 cm\n/Tag Do\nQ\n';
+  object(5,'<< /Length '+encode(drawing).length+' >>\nstream\n'+drawing+'endstream');
+  const xref=length;
+  add('xref\n0 6\n0000000000 65535 f \n'+offsets.slice(1).map(n=>String(n).padStart(10,'0')+' 00000 n \n').join('')+'trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF\n');
+  return new Blob(parts,{type:'application/pdf'});
+ }finally{URL.revokeObjectURL(source);}
+}
+document.getElementById('tag-download')?.addEventListener('click',async()=>{
+ const button=document.getElementById('tag-download'),status=document.getElementById('tag-status');
+ button.disabled=true;button.setAttribute('aria-busy','true');
+ status.textContent=language==='en'?'Preparing your PDF…':'Deine PDF wird vorbereitet …';
+ try{
+  const url=URL.createObjectURL(await tagPDF(tagSVG()));
+  const a=document.createElement('a');a.href=url;a.download='kiddotronic-weihnachtsanhaenger.pdf';document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+  status.textContent=copy[language].status;
+ }catch{
+  status.textContent=language==='en'?'The PDF could not be created. Please try again.':'Die PDF konnte nicht erstellt werden. Bitte versuche es erneut.';
+ }finally{button.disabled=false;button.removeAttribute('aria-busy');}
 });
+
 // Decorative snow: six vector crystals, three on mobile, with a user-controlled off switch.
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
 let snowEnabled=true;
@@ -115,3 +150,4 @@ document.querySelectorAll('#site-menu a').forEach(a=>a.addEventListener('click',
 new MutationObserver(localize).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 localize();
 })();
+

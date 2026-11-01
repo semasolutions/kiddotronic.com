@@ -155,3 +155,21 @@ body .lang-switch{top:auto;bottom:12px;right:10px;box-shadow:0 2px 8px #194f3c20
 .atelier-brand small{text-align:center;margin-top:7px}
 @media(max-width:760px){.atelier-brand{gap:9px}.brand-logo-compact{width:44px}.brand-logo-wordmark{width:170px}.atelier-brand small{font-size:.5rem;letter-spacing:.16em;margin-top:6px}}
 @media(max-width:360px){.atelier-brand{gap:7px}.brand-logo-compact{width:38px}.brand-logo-wordmark{width:155px}}
+
+/* Keep portrait artwork in normal flow, including its disclosure and caption. */
+.hero .visual-card{display:flex;flex-direction:column;aspect-ratio:auto;gap:12px;max-width:380px;min-width:0}
+.hero .visual-card img{width:100%;height:auto;max-width:100%;border-radius:16px;filter:none}
+.hero .visual-card .mini-note{position:static;transform:none;white-space:normal;text-align:center;margin:0}
+.hero .visual-card .ai-content-note{position:static;color:#194F3C;margin:0}
+.hero .cube-stage{overflow:hidden}
+.hero .cube-stage:after{height:35px;background-size:280px 35px}
+@media(max-width:760px){
+.hero .cube-stage{position:relative;top:auto;min-height:0;padding:14px 14px 45px;border-radius:22px}
+.hero .visual-card{width:100%;max-width:300px;gap:10px}
+.hero .hero-inner{gap:28px;align-items:start}
+.hero #headline{font-size:clamp(2rem,8vw,2.6rem);line-height:1.12;margin-bottom:18px}
+.hero .hero-kicker{line-height:1.5}
+.hero-copy>p{font-size:1rem;line-height:1.65}
+body .privacy-settings{position:static!important;display:block!important;width:max-content;max-width:calc(100% - 32px);margin:18px auto!important;padding:10px 14px!important;box-shadow:none!important;font-size:12px!important;border-width:1px!important}
+body .lang-switch{position:static!important;width:max-content;margin:16px auto 24px!important;transform:none!important;box-shadow:none!important}
+}
