@@ -132,13 +132,17 @@ document.addEventListener('visibilitychange',()=>{layer.style.visibility=documen
 const popup=document.getElementById('gift-hint-popup'),close=popup?.querySelector('.offer-popup-close');
 let opener=null;const inerted=[];
 function closeGift(){if(!popup)return;popup.hidden=true;document.body.classList.remove('offer-popup-open');inerted.splice(0).forEach(([el,was])=>el.inert=was);opener?.focus();}
-document.querySelectorAll('[data-open-gift]').forEach(button=>button.addEventListener('click',()=>{
- if(!popup)return;opener=button;
+function openGift(button=null){
+ if(!popup||!popup.hidden)return;opener=button;
  const source=document.querySelector('.hero .amazon-offer');const target=popup.querySelector('.offer-popup-content');target.replaceChildren(source.cloneNode(true));
  popup.hidden=false;document.body.classList.add('offer-popup-open');
  [...document.body.children].filter(el=>el!==popup&&!['SCRIPT','STYLE'].includes(el.tagName)).forEach(el=>{inerted.push([el,el.inert]);el.inert=true;});
  close.focus();
-}));
+}
+document.querySelectorAll('[data-open-gift]').forEach(button=>button.addEventListener('click',()=>openGift(button)));
+// Present the Christmas gift immediately on every fresh page load.
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>openGift(),{once:true});
+else openGift();
 close?.addEventListener('click',closeGift);
 popup?.addEventListener('click',e=>{if(e.target===popup)closeGift();});
 document.addEventListener('keydown',e=>{
