@@ -815,6 +815,18 @@ body{background:var(--paper)}
 @keyframes kiddotronic-snowfall{0%{transform:translate3d(0,-5vh,0) rotate(0deg);opacity:0}12%{opacity:var(--opacity)}85%{opacity:var(--opacity)}100%{transform:translate3d(var(--drift),115vh,0) rotate(95deg);opacity:0}}
 @media(max-width:680px){.kiddotronic-snow .flake:nth-child(n+4){display:none;animation:none}}
 @media(prefers-reduced-motion:reduce){.kiddotronic-snow{display:none}.kiddotronic-snow .flake{animation:none}html{scroll-behavior:auto}}
+
+/* Christmas gift: transparent overlay, floating present and direct Amazon action */
+.offer-popup{background:rgba(10,34,26,.18)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.offer-popup-card{width:min(490px,100%)!important;background:transparent!important;box-shadow:none!important;border:0!important;overflow:visible!important;max-height:calc(100dvh - 28px)!important}
+.offer-popup-content .amazon-offer{background:rgba(255,248,235,.94)!important;border:2px solid #d8b66a!important;border-radius:30px!important;box-shadow:0 18px 55px rgba(12,39,30,.24)!important;padding:22px 24px 26px!important;max-height:calc(100dvh - 32px);overflow-y:auto}
+.offer-popup-content .gift-eyebrow{color:#194f3c!important;font-weight:900!important}
+.offer-popup-content .gift-image{width:min(100%,225px)!important;max-height:28vh!important;object-fit:contain!important;margin-bottom:10px!important}
+.offer-popup-content .amazon-offer-label{color:#194f3c!important;font-size:clamp(1.2rem,4vw,1.65rem)!important}
+.offer-popup-content .amazon-gift-copy{font-size:clamp(.88rem,2.5vw,1rem)!important;margin-bottom:14px!important}
+.offer-popup-content .btn.product{background:#b93639!important;color:white!important;border-color:#194f3c!important;box-shadow:0 5px 0 #194f3c!important;text-decoration:none!important}
+.offer-popup .offer-popup-close{right:0!important;top:-13px!important;background:#194f3c!important;color:white!important;border:2px solid #fff6e8!important;box-shadow:0 4px 15px rgba(0,0,0,.18)!important;width:43px!important;height:43px!important}
+@media(max-width:560px){.offer-popup{padding:12px!important}.offer-popup-content .amazon-offer{padding:18px 14px 20px!important}.offer-popup-content .gift-image{max-height:23vh!important}}
 </style>
   <script src=language.js defer></script>
 <!-- TikTok Pixel Code Start -->
@@ -830,7 +842,7 @@ body{background:var(--paper)}
   <link rel="stylesheet" href="ai-content-notes.css">
   <link rel="stylesheet" href="christmas.css?v=atelier-20261101">
 <link rel="stylesheet" href="christmas-atelier.css?v=mobile-pdf-2">
-<script src="christmas-atelier.js?v=mobile-pdf-2" defer></script>
+<script src="christmas-atelier.js?v=gift-popup-20261101" defer></script>
 </head>
 <body>
   <div class="offer-popup" id="gift-hint-popup" hidden>
