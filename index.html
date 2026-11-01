@@ -788,33 +788,33 @@
     }
   
 /* Weihnachten 2026 – festliche, mobilefreundliche Gestaltung */
-:root{--paper:#f6f5ed;--paper-light:#fffdf7;--sand:#e4efe5;--mint:#b9d9ca;--red:#b91f32;--yellow:#f5d978;--ink:#18382e}
+:root{--paper:#FFF6E8;--paper-light:#fffdf7;--sand:#e4efe5;--mint:#b9d9ca;--red:#B93639;--yellow:#D8B66A;--ink:#18382e}
 body{background:var(--paper)}
-.nav{background:#e1eee5}.marquee{background:#173d32;color:#fff9e8;border-bottom-color:#d7b36c}.marquee-track span{color:inherit}
+.nav{background:#e1eee5}.marquee{background:#194F3C;color:#fff9e8;border-bottom-color:#D8B66A}.marquee-track span{color:inherit}
 .hero{background:radial-gradient(circle at 85% 16%,#fff7d8 0,transparent 34%),linear-gradient(135deg,#e4f0e6 0%,#fffaf0 58%,#f8e5e4 100%)}
 .hero::before{background:#c5dfd0}.hero::after{background:#f5df9d}
-.amazon-offer{background:linear-gradient(145deg,#fffdf4,#f7eee1 60%,#e8f2e9);border:3px solid #1d4939;box-shadow:0 12px 30px rgba(24,56,46,.13)}
-.gift-eyebrow{color:#a32237;letter-spacing:.025em}.amazon-offer-label{color:#173d32}
-.btn.product,.nav-link.amazon-link{background:#b91f32;color:#fff;border-color:#173d32}
+.amazon-offer{background:linear-gradient(145deg,#fffdf4,#f7eee1 60%,#e8f2e9);border:3px solid #194F3C;box-shadow:0 12px 30px rgba(24,56,46,.13)}
+.gift-eyebrow{color:#B93639;letter-spacing:.025em}.amazon-offer-label{color:#194F3C}
+.btn.product,.nav-link.amazon-link{background:#B93639;color:#fff;border-color:#194F3C}
 .btn.product:hover,.nav-link.amazon-link:hover{background:#92192a}
-.christmas-ribbon{background:#a82337;color:#fff9e9;text-align:center;padding:11px 18px;font-weight:800;font-size:clamp(.92rem,2vw,1.12rem);letter-spacing:.01em}
+.christmas-ribbon{background:#B93639;color:#fff9e9;text-align:center;padding:11px 18px;font-weight:800;font-size:clamp(.92rem,2vw,1.12rem);letter-spacing:.01em}
 .christmas-ribbon a{color:#fff9e9;text-decoration:underline;text-underline-offset:3px}
-.christmas-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:9px 17px;margin:0 0 18px;border-radius:99px;background:#fffdf5;border:2px solid #c5a55b;color:#174232;font-weight:800;box-shadow:0 5px 0 rgba(23,66,50,.13)}
+.christmas-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:9px 17px;margin:0 0 18px;border-radius:99px;background:#fffdf5;border:2px solid #D8B66A;color:#174232;font-weight:800;box-shadow:0 5px 0 rgba(23,66,50,.13)}
 .christmas-benefits{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 18px;justify-content:center}
 .christmas-benefits span{background:#fff;border:1px solid #d5dfd5;border-radius:99px;padding:7px 11px;font-size:.9rem;font-weight:800;color:#204535}
 .christmas-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
-.christmas-stars span{position:absolute;color:#c49a45;opacity:.7;font-size:clamp(20px,3vw,36px)}
+.christmas-stars span{position:absolute;color:#D8B66A;opacity:.7;font-size:clamp(20px,3vw,36px)}
 .christmas-stars span:nth-child(1){top:10%;left:4%}.christmas-stars span:nth-child(2){top:17%;right:9%}.christmas-stars span:nth-child(3){bottom:12%;left:47%}.christmas-stars span:nth-child(4){bottom:20%;right:4%}
 .offer-popup{background:rgba(9,35,27,.7)}.offer-popup-card{box-shadow:0 18px 70px rgba(0,0,0,.3)}
 @media(max-width:680px){.christmas-ribbon{line-height:1.4;padding:9px 12px}.christmas-eyebrow{font-size:.9rem}.christmas-stars span:nth-child(3){display:none}.amazon-offer{padding:20px 15px}.christmas-benefits span{font-size:.78rem}}
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
 /* Dezenter Kristall-Schneefall: reine Dekoration, keine Klicks blockieren */
-.kiddotronic-snow{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden;contain:layout style;aria-hidden:true}
+.kiddotronic-snow{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden;contain:layout style}
 .kiddotronic-snow .flake{position:absolute;top:-12vh;left:var(--x);font-family:Georgia,serif;font-size:var(--size);line-height:1;color:#eaf5f7;opacity:0;text-shadow:0 1px 3px rgba(25,66,76,.32),0 0 9px rgba(255,255,255,.7);animation:kiddotronic-snowfall var(--duration) linear infinite;animation-delay:var(--delay);will-change:transform,opacity}
 @keyframes kiddotronic-snowfall{0%{transform:translate3d(0,-5vh,0) rotate(0deg);opacity:0}12%{opacity:var(--opacity)}85%{opacity:var(--opacity)}100%{transform:translate3d(var(--drift),115vh,0) rotate(95deg);opacity:0}}
-@media(max-width:680px){.kiddotronic-snow .flake:nth-child(n+4){display:none}}
-@media(prefers-reduced-motion:reduce){.kiddotronic-snow{display:none}}
+@media(max-width:680px){.kiddotronic-snow .flake:nth-child(n+4){display:none;animation:none}}
+@media(prefers-reduced-motion:reduce){.kiddotronic-snow{display:none}.kiddotronic-snow .flake{animation:none}html{scroll-behavior:auto}}
 </style>
   <script src=language.js defer></script>
 <!-- TikTok Pixel Code Start -->
