@@ -142,9 +142,18 @@ function openGift(button=null){
  close.focus();
 }
 document.querySelectorAll('[data-open-gift]').forEach(button=>button.addEventListener('click',()=>openGift(button)));
-// Present the Christmas gift immediately on every fresh page load.
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>openGift(),{once:true});
-else openGift();
+// Respect the cookie choice: do not stack two dialogs on first visit.
+function showGiftWhenReady(){
+ const banner=document.querySelector('.cookie-banner');
+ if(banner&&!banner.hidden){
+  const observer=new MutationObserver(()=>{if(banner.hidden){observer.disconnect();openGift();}});
+  observer.observe(banner,{attributes:true,attributeFilter:['hidden']});
+  return;
+ }
+ openGift();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',showGiftWhenReady,{once:true});
+else showGiftWhenReady();
 close?.addEventListener('click',closeGift);
 popup?.addEventListener('click',e=>{if(e.target===popup)closeGift();});
 document.addEventListener('keydown',e=>{
