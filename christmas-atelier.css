@@ -143,3 +143,15 @@ body .lang-switch{top:auto;bottom:12px;right:10px;box-shadow:0 2px 8px #194f3c20
 @media(max-width:360px){.atelier-section-head h2,.atelier-faq h2{font-size:2.05rem}.atelier-welcome h1{font-size:2.08rem}.atelier-brand{font-size:1.35rem}.atelier-form{padding-inline:14px}.tag-theme{font-size:.7rem}}
 
 .winter-workshop h2{overflow-wrap:anywhere;hyphens:auto}
+
+/* Original brand artwork: crop only the transparent canvas in CSS. */
+.atelier-brand{flex-shrink:0;gap:12px}
+.brand-logo{display:block;position:relative;overflow:hidden;flex-shrink:0}
+.brand-logo img{position:absolute;max-width:none;height:auto;display:block}
+.brand-logo-compact{width:60px;aspect-ratio:3532/2208}
+.brand-logo-compact img{width:226.5006%;left:-63.7599%;top:-51.9928%}
+.brand-logo-wordmark{width:200px;aspect-ratio:6968/1384}
+.brand-logo-wordmark img{width:114.8249%;left:-8.7830%;top:-113.8728%}
+.atelier-brand small{text-align:center;margin-top:7px}
+@media(max-width:760px){.atelier-brand{gap:9px}.brand-logo-compact{width:44px}.brand-logo-wordmark{width:170px}.atelier-brand small{font-size:.5rem;letter-spacing:.16em;margin-top:6px}}
+@media(max-width:360px){.atelier-brand{gap:7px}.brand-logo-compact{width:38px}.brand-logo-wordmark{width:155px}}
