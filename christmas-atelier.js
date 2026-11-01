@@ -134,7 +134,9 @@ let opener=null;const inerted=[];
 function closeGift(){if(!popup)return;popup.hidden=true;document.body.classList.remove('offer-popup-open');inerted.splice(0).forEach(([el,was])=>el.inert=was);opener?.focus();}
 function openGift(button=null){
  if(!popup||!popup.hidden)return;opener=button;
- const source=document.querySelector('.hero .amazon-offer');const target=popup.querySelector('.offer-popup-content');target.replaceChildren(source.cloneNode(true));
+ const target=popup.querySelector('.offer-popup-content');
+ target.innerHTML=`<div class="christmas-present" aria-hidden="true"><div class="present-bow"><span></span><span></span></div><div class="present-lid"></div><div class="present-box"><span class="present-ribbon"></span><span class="present-star">✦</span></div></div><div class="christmas-present-copy"><span class="present-eyebrow">🎄 Eine besondere Geschenkidee</span><h2>Weihnachtsfreude zum Auspacken!</h2><p>Mit dem Kiddotronic KI Sticker Printer werden kreative Ideen zu eigenen Stickern. Ein Geschenk voller Fantasie!</p><a class="present-amazon" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">🎁 Geschenk auf Amazon entdecken</a></div>`;
+ const english=document.documentElement.lang==='en';if(english){target.querySelector('.present-eyebrow').textContent='🎄 A special gift idea';target.querySelector('h2').textContent='Unwrap Christmas joy!';target.querySelector('p').textContent='Turn creative ideas into your own stickers with the Kiddotronic AI Sticker Printer.';target.querySelector('.present-amazon').textContent='🎁 Discover the gift on Amazon';}
  popup.hidden=false;document.body.classList.add('offer-popup-open');
  [...document.body.children].filter(el=>el!==popup&&!['SCRIPT','STYLE'].includes(el.tagName)).forEach(el=>{inerted.push([el,el.inert]);el.inert=true;});
  close.focus();
