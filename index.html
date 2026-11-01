@@ -828,6 +828,7 @@ body{background:var(--paper)}
 </script>
 <!-- TikTok Pixel Code End -->
   <link rel="stylesheet" href="ai-content-notes.css">
+  <link rel="stylesheet" href="christmas.css?v=20261101-wonderland">
 </head>
 <body>
   <div class="offer-popup" id="gift-hint-popup" hidden>
@@ -864,7 +865,20 @@ body{background:var(--paper)}
     </div>
   </nav>
 
-  <main class="hero">
+<section class="winter-welcome" aria-labelledby="winter-title">
+  <div class="container winter-grid">
+    <div>
+      <span class="winter-kicker">Willkommen in Kiddos Weihnachtswelt</span>
+      <h1 id="winter-title">Kleine Ideen.<br><em>Zauberhafte<br>Weihnachten.</em></h1>
+      <p>Zwischen Tannenduft, Plätzchen und Zuckerstangen wartet ein Geschenk voller Fantasie: eigene Sticker, die Kinderaugen leuchten lassen.</p>
+      <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Weihnachtsgeschenk entdecken</a><br>
+      <a class="winter-secondary" href="#weihnachtsgeschenk">Kiddotronic kennenlernen ↓</a>
+      <span class="winter-caption">Fantasie schenken. Gemeinsam kreativ werden.</span>
+    </div>
+    <img class="winter-art" src="assets/christmas-wonderland.svg" width="800" height="600" alt="" aria-hidden="true">
+  </div>
+</section>
+  <main class="hero" id="weihnachtsgeschenk">
     <span class="sparkle one">✦</span>
     <span class="sparkle two">✦</span>
     <div class="container hero-inner">
@@ -875,8 +889,8 @@ body{background:var(--paper)}
         </a>
       </div>
       <section class="hero-copy" aria-labelledby="headline">
-        <span class="hero-kicker">Kreativität</span>
-        <h1 id="headline"><span>KI Sticker</span><span>Printer</span></h1>
+        <span class="hero-kicker">Ein kleines Geschenk. Unendlich viele Ideen.</span>
+        <h2 id="headline"><span>KI Sticker</span><span>Printer</span></h2>
         <p>Einfach eine Idee einsprechen, die KI erstellt ein Motiv und der Drucker gibt es als Sticker aus. So wird aus jedem Einfall sofort etwas zum Kleben, Sammeln, Ausmalen und Verschenken.</p>
         <div class="actions">
           <div class="amazon-offer" aria-label="Geschenkidee von Kiddotronic">
@@ -884,6 +898,7 @@ body{background:var(--paper)}
             <img class="gift-image" src="assets/kiddotronic-gift-cutout.png" alt="Ein Kind entdeckt den roten Kiddotronic Stickerdrucker mit Einhornmotiv, Papierrollen und USB-Kabel" width="1266" height="1243"><small class="ai-content-note">(KI generierte Inhalte)</small>
             <span class="amazon-offer-label">Dieses Weihnachten Fantasie verschenken ✨</span>
             <p class="amazon-gift-copy">Verschenke ein kleines Wow – und ganz viel Fantasie. Mit Kiddotronic werden aus „Stell dir mal vor …“ echte Sticker zum Ausmalen, Kleben und Verschenken.</p>
+            <div class="winter-treats" aria-hidden="true">🎄 &nbsp; 🍪 &nbsp; 🎁 &nbsp; 🍬</div>
             <div class="christmas-benefits"><span>🎨 Eigene Sticker gestalten</span><span>✨ Kreativität verschenken</span><span>🎁 Für kleine Entdecker</span></div>
             <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">🎁 Weihnachtsgeschenk auf Amazon entdecken</a>
           </div>
@@ -892,6 +907,16 @@ body{background:var(--paper)}
     </div>
   </main>
 
+<section class="winter-workshop" aria-labelledby="workshop-title">
+  <div class="container">
+    <div class="winter-workshop-header"><span class="winter-kicker" style="color:#B93639">Aus kleinen Ideen wird Weihnachtsfreude</span><h2 id="workshop-title">Die Weihnachtswerkstatt<br>für kleine Fantasieköpfe.</h2><p>Ein bisschen Magie, ganz viel Selbermachen – und Weihnachtsmomente, die euch gehören.</p></div>
+    <div class="winter-ideas">
+      <article class="winter-idea"><span class="treat-icon" aria-hidden="true">🎄</span><h3>Weihnachtskarten mit Herz</h3><p>Tannenbäume, Rentiere oder ein Weihnachtsdrache: eigene Sticker ausmalen und Karten für die Liebsten gestalten.</p></article>
+      <article class="winter-idea"><span class="treat-icon" aria-hidden="true">🍪</span><h3>Grüße aus der Keksdose</h3><p>Selbstgemachte Anhänger für Plätzchentüten mit fantasievollen Stickern verzieren. So wird schon das Verpacken zum Familienmoment.</p></article>
+      <article class="winter-idea"><span class="treat-icon" aria-hidden="true">🎁</span><h3>Geschenke voller Fantasie</h3><p>Geschenkpapier und Namenskärtchen selbst verschönern. Jedes Päckchen bekommt eine ganz persönliche kleine Geschichte.</p></article>
+    </div>
+  </div>
+</section>
   <section class="steps-section" aria-labelledby="steps-title">
     <div class="container">
       <div class="section-head">
@@ -1240,7 +1265,7 @@ body{background:var(--paper)}
       const sourceOffer = document.querySelector(".hero .amazon-offer");
       const popupContent = popup?.querySelector(".offer-popup-content");
       const closeButton = popup?.querySelector(".offer-popup-close");
-      const sessionKey = "kiddotronic_christmas_2026_seen";
+      const sessionKey = "kiddotronic_christmas_wonderland_seen";
 
       if (!popup || !sourceOffer || !popupContent || !closeButton) return;
       try {

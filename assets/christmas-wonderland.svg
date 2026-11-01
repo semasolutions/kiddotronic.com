@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs>
+<linearGradient id="tree" x2="1" y2="1"><stop stop-color="#34765b"/><stop offset="1" stop-color="#194F3C"/></linearGradient>
+<linearGradient id="red" x2="0.7" y2="1"><stop stop-color="#db6660"/><stop offset="1" stop-color="#B93639"/></linearGradient>
+<pattern id="candy" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><rect width="22" height="22" fill="#fff6e8"/><rect width="10" height="22" fill="#B93639"/></pattern>
+<filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0b3028" flood-opacity=".16"/></filter>
+<g id="star"><path d="M0-18 5-5 19-5 8 4 12 18 0 10-12 18-8 4-19-5-5-5Z" fill="#D8B66A" stroke="#fff0c1" stroke-width="2"/></g>
+<g id="cookie"><circle r="39" fill="#ba783f" stroke="#8a4c28" stroke-width="3"/><circle r="30" fill="none" stroke="#fff6e8" stroke-width="4" stroke-dasharray="3 7" stroke-linecap="round"/><path d="m0-19 5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1Z" fill="#fff6e8"/></g>
+<g id="gift"><rect width="100" height="82" rx="7" fill="url(#red)"/><path d="M41 0h18v82H41zM0 25h100v13H0z" fill="#D8B66A"/><path d="M50 0C-1-6 28-45 50-5 71-45 101-6 50 0Z" fill="none" stroke="#D8B66A" stroke-width="10"/></g>
+<g id="cane"><path d="M0 134V23C0-23 62-23 62 23v17" fill="none" stroke="#fff6e8" stroke-width="23" stroke-linecap="round"/><path d="M0 134V23C0-23 62-23 62 23v17" fill="none" stroke="#B93639" stroke-width="21" stroke-dasharray="13 15"/></g>
+</defs>
+<ellipse cx="403" cy="534" rx="350" ry="42" fill="#d9e9dc"/>
+<circle cx="415" cy="270" r="240" fill="#fff6e8" opacity=".1"/>
+<g filter="url(#shadow)">
+<path d="M379 419h38v117h-38z" fill="#9a6139"/>
+<path d="M398 54 301 208h43l-99 133h56L195 475q202 64 407 0L494 341h55L449 208h43Z" fill="url(#tree)" stroke="#123e30" stroke-width="4" stroke-linejoin="round"/>
+<path d="M301 208q98 40 191 0M245 341q153 55 304 0M195 475q205 62 407 0" fill="none" stroke="#fff6e8" stroke-width="16" stroke-linecap="round"/>
+<path d="M341 178q55 36 105 0M299 271q85 75 194 10M257 383q133 94 272 12" fill="none" stroke="#D8B66A" stroke-width="4"/>
+<g fill="#ffe6a0"><circle cx="354" cy="186" r="6"/><circle cx="393" cy="194" r="6"/><circle cx="430" cy="188" r="6"/><circle cx="316" cy="286" r="6"/><circle cx="357" cy="311" r="6"/><circle cx="404" cy="322" r="6"/><circle cx="453" cy="306" r="6"/><circle cx="278" cy="400" r="6"/><circle cx="327" cy="425" r="6"/><circle cx="384" cy="441" r="6"/><circle cx="444" cy="438" r="6"/><circle cx="500" cy="415" r="6"/></g>
+<g fill="url(#red)" stroke="#f0a29a" stroke-width="2"><circle cx="363" cy="237" r="14"/><circle cx="452" cy="363" r="19"/><circle cx="330" cy="374" r="17"/><circle cx="403" cy="458" r="17"/></g>
+<use href="#star" transform="translate(398 49) scale(1.6)"/>
+<use href="#cane" transform="translate(175 314) rotate(-19) scale(1.1)"/>
+<use href="#cane" transform="translate(605 338) rotate(20) scale(.9)"/>
+<use href="#gift" transform="translate(440 466) rotate(5) scale(1.15)"/>
+<g transform="translate(280 472) rotate(-7)"><rect width="110" height="72" rx="5" fill="#D8B66A"/><path d="M45 0h20v72H45zM0 24h110v13H0z" fill="#fff6e8"/><path d="M55 0C5-9 33-42 55-4 77-42 104-9 55 0" fill="none" stroke="#fff6e8" stroke-width="9"/></g>
+<g transform="translate(116 436) rotate(-10)"><path d="M-30 18-44 1q-15-16-24 0-7 13 15 31l18 13-13 40q-5 19 10 20 12 0 21-33l7-17 8 17q9 33 21 33 15-1 10-20L20 45l18-13q22-18 15-31-9-16-24 0L15 18Z" fill="#bd804a" stroke="#8c522d" stroke-width="3"/><circle cx="-9" cy="-10" r="28" fill="#bd804a" stroke="#8c522d" stroke-width="3"/><g fill="#fff6e8"><circle cx="-18" cy="-14" r="3"/><circle cx="0" cy="-14" r="3"/><circle cx="-9" cy="42" r="4"/><circle cx="-9" cy="57" r="4"/></g><path d="M-20-3q11 12 22 0M-42 40l12 8M19 40l-11 8M-32 85l12 5M15 85l-12 5" fill="none" stroke="#fff6e8" stroke-width="4"/><path d="m-10 22-15-8v16l15-8 15-8v16Z" fill="#B93639"/></g>
+<use href="#cookie" transform="translate(660 468) rotate(18)"/>
+<use href="#cookie" transform="translate(598 538) scale(.7) rotate(-15)"/>
+<use href="#star" transform="translate(195 165) scale(.7)"/><use href="#star" transform="translate(618 180) scale(.65)"/><use href="#star" transform="translate(703 312) scale(.5)"/>
+</g>
+<g fill="#fff6e8" opacity=".8"><circle cx="180" cy="250" r="4"/><circle cx="583" cy="100" r="5"/><circle cx="662" cy="248" r="3"/><circle cx="268" cy="91" r="3"/><circle cx="100" cy="350" r="4"/></g>
+</svg>
