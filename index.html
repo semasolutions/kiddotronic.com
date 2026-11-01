@@ -828,7 +828,9 @@ body{background:var(--paper)}
 </script>
 <!-- TikTok Pixel Code End -->
   <link rel="stylesheet" href="ai-content-notes.css">
-  <link rel="stylesheet" href="christmas.css?v=20261101-wonderland">
+  <link rel="stylesheet" href="christmas.css?v=atelier-20261101">
+<link rel="stylesheet" href="christmas-atelier.css?v=20261101">
+<script src="christmas-atelier.js?v=20261101" defer></script>
 </head>
 <body>
   <div class="offer-popup" id="gift-hint-popup" hidden>
@@ -844,48 +846,47 @@ body{background:var(--paper)}
     </div>
   </div>
 
-  <nav class="nav" aria-label="Hauptnavigation">
-    <div class="container">
-      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      <a class="brand" href="index.html" aria-label="Kiddotronic Startseite"><img src="logo.png" alt="Kiddotronic Logo"><small class="ai-content-note">(KI generierte Inhalte)</small></a>
-      <div class="nav-actions" aria-label="Wichtige Links">
-        <a class="nav-link amazon-link" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" aria-label="Kiddotronic KI Sticker Printer auf Amazon.de ansehen">Auf Amazon ansehen</a>
-        <a class="nav-link" href="datenblatt.html">Datenblatt</a>
-        <a class="nav-link" href="anleitung.html">Anleitung</a>
-      </div>
-    </div>
-    <div class="menu-panel" id="site-menu">
-      <div class="menu-panel-inner" aria-label="Menülinks">
-        <a class="nav-link amazon-link" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Auf Amazon ansehen</a>
-        <a class="nav-link" href="datenblatt.html">Datenblatt</a>
-        <a class="nav-link" href="anleitung.html">Anleitung</a>
-        <a class="nav-link" href="impressum.html">Impressum</a>
-        <a class="nav-link" href="datenschutz.html">Datenschutz</a>
-      </div>
-    </div>
-  </nav>
-
-<section class="winter-welcome" aria-labelledby="winter-title">
-  <div class="container winter-grid">
-    <div>
-      <span class="winter-kicker">Willkommen in Kiddos Weihnachtswelt</span>
-      <h1 id="winter-title">Kleine Ideen.<br><em>Zauberhafte<br>Weihnachten.</em></h1>
-      <p>Zwischen Tannenduft, Plätzchen und Zuckerstangen wartet ein Geschenk voller Fantasie: eigene Sticker, die Kinderaugen leuchten lassen.</p>
-      <a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Weihnachtsgeschenk entdecken</a><br>
-      <a class="winter-secondary" href="#weihnachtsgeschenk">Kiddotronic kennenlernen ↓</a>
-      <span class="winter-caption">Fantasie schenken. Gemeinsam kreativ werden.</span>
-    </div>
-    <img class="winter-art" src="assets/christmas-wonderland.svg" width="800" height="600" alt="" aria-hidden="true">
+<nav class="nav atelier-nav" aria-label="Hauptnavigation">
+ <div class="container">
+  <a class="atelier-brand" href="index.html" aria-label="Kiddotronic Startseite"><span class="brand-star" aria-hidden="true">✦</span><span>Kiddotronic<small data-xmas-copy="brandSeason">DIE WEIHNACHTSWELT</small></span></a>
+  <div class="atelier-nav-links" data-xmas-localized>
+   <a href="#weihnachtsgeschenk" data-xmas-copy="navProduct">Das Geschenk</a><a href="#weihnachtsatelier" data-xmas-copy="navAtelier">Weihnachtsatelier</a><a href="#reviews-title" data-xmas-copy="navReviews">Familienstimmen</a>
   </div>
+  <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+ </div>
+ <div class="menu-panel" id="site-menu"><div class="menu-panel-inner" data-xmas-localized>
+  <a class="nav-link" href="#weihnachtsgeschenk" data-xmas-copy="navProduct">Das Geschenk</a><a class="nav-link" href="#weihnachtsatelier" data-xmas-copy="navAtelier">Weihnachtsatelier</a><a class="nav-link" href="#weihnachtsfragen" data-xmas-copy="navFaq">Gut zu wissen</a><a class="nav-link" href="anleitung.html" data-xmas-copy="navGuide">Anleitung</a><a class="nav-link" href="datenschutz.html" data-xmas-copy="navPrivacy">Datenschutz</a>
+ </div></div>
+</nav>
+
+<a class="skip-content" href="#weihnachtsgeschenk" data-xmas-copy="skip">Zum Inhalt</a>
+<section class="winter-welcome atelier-welcome" aria-labelledby="winter-title">
+ <div class="container winter-grid">
+  <div class="atelier-intro" data-xmas-localized>
+   <span class="winter-kicker" data-xmas-copy="heroKicker">FÜR KLEINE KÖPFE MIT GROSSEN IDEEN</span>
+   <h1 id="winter-title"><span data-xmas-copy="heroLine1">Unter dem Baum.</span><em data-xmas-copy="heroLine2">Eine ganze Welt</em><span data-xmas-copy="heroLine3">voller Fantasie.</span></h1>
+   <p data-xmas-copy="heroText">Ein Drache im Schnee? Ein Einhorn mit Weihnachtsmütze? Mit Kiddotronic werden aus Kinderideen eigene Sticker – und aus einem Geschenk immer neue Geschichten.</p>
+   <div class="atelier-hero-actions"><a class="btn product" href="#weihnachtsgeschenk" data-xmas-copy="heroCta">Das Geschenk entdecken <span aria-hidden="true">↗</span></a><a class="winter-secondary" href="#weihnachtsatelier" data-xmas-copy="heroSecondary">Erst mal Weihnachtszauber machen ↓</a></div>
+   <div class="hero-proof"><span data-xmas-copy="proof1">Idee einsprechen</span><i aria-hidden="true">✦</i><span data-xmas-copy="proof2">Ohne Tinte drucken</span><i aria-hidden="true">✦</i><span data-xmas-copy="proof3">Gemeinsam gestalten</span></div>
+  </div>
+  <div class="atelier-stage">
+   <div class="atelier-orbit" aria-hidden="true"></div>
+   <img class="winter-art" src="assets/christmas-wonderland.svg" width="800" height="600" alt="" aria-hidden="true" fetchpriority="high">
+   <a class="atelier-product-peek" href="#weihnachtsgeschenk"><img src="Kiddotronic%20cube.jpeg?v=4" alt="Kiddotronic KI Sticker Printer" width="320" height="320"><span data-xmas-copy="peek">Kleine Box. Große Ideen.</span></a>
+   <span class="atelier-stamp" data-xmas-copy="stamp">Mit Liebe.<br>Mit Fantasie.</span>
+  </div>
+ </div>
+ <div class="winter-toolbar container" data-xmas-localized><span data-xmas-copy="toolbarText">Mach es dir weihnachtlich.</span><button type="button" id="snow-toggle" aria-pressed="true"><span aria-hidden="true">❄</span> <span data-xmas-copy="snowLabel">Schneefall</span></button><button type="button" data-open-gift><span aria-hidden="true">🎁</span> <span data-xmas-copy="giftHint">Geschenktipp ansehen</span></button></div>
 </section>
-  <main class="hero" id="weihnachtsgeschenk">
+<div class="atelier-route" data-xmas-localized><div class="container"><a href="#weihnachtsgeschenk"><span>01</span><span data-xmas-copy="route1">Ein Geschenk voller Ideen</span></a><a href="#weihnachtsatelier"><span>02</span><span data-xmas-copy="route2">Dein persönlicher Weihnachtsgruß</span></a><a href="#weihnachtsfragen"><span>03</span><span data-xmas-copy="route3">Alles, was du wissen möchtest</span></a></div></div>
+  <main class="hero" id="weihnachtsgeschenk" tabindex="-1">
     <span class="sparkle one">✦</span>
     <span class="sparkle two">✦</span>
     <div class="container hero-inner">
       <div class="cube-stage">
         <a class="visual-card" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" aria-label="Kiddotronic KI Sticker Printer auf Amazon ansehen">
           <img src="Kiddotronic%20cube.jpeg?v=4" alt="Kiddotronic KI Sticker Printer"><small class="ai-content-note">(KI generierte Inhalte)</small>
-          <span class="mini-note">AI Sticker</span>
+          <span class="mini-note">KI Sticker Printer</span>
         </a>
       </div>
       <section class="hero-copy" aria-labelledby="headline">
@@ -907,6 +908,29 @@ body{background:var(--paper)}
     </div>
   </main>
 
+<section class="gift-atelier" id="weihnachtsatelier" aria-labelledby="atelier-title" data-xmas-localized>
+ <div class="container">
+  <div class="atelier-section-head"><div><span class="winter-kicker" data-xmas-copy="atelierKicker">EIN KLEINES GESCHENK VON UNS</span><h2 id="atelier-title" data-xmas-copy="atelierTitle">Deine Fantasie.<br>Dein Weihnachtsgruß.</h2></div><p data-xmas-copy="atelierIntro">Gestalte einen persönlichen Geschenkanhänger. Für dein Kiddotronic-Päckchen, die selbstgebackenen Kekse oder einfach einen lieben Menschen.</p></div>
+  <div class="atelier-editor">
+   <div class="atelier-form">
+    <fieldset><legend data-xmas-copy="themeLegend">1. Wähle deinen Weihnachtszauber</legend><div class="tag-themes" role="group" aria-label="Weihnachtsmotiv">
+     <button type="button" class="tag-theme is-selected" data-tag-theme="tree" aria-pressed="true"><span aria-hidden="true">♧</span><span data-xmas-copy="themeTree">Tannenliebe</span></button>
+     <button type="button" class="tag-theme" data-tag-theme="cookie" aria-pressed="false"><span aria-hidden="true">✿</span><span data-xmas-copy="themeCookie">Kekszauber</span></button>
+     <button type="button" class="tag-theme" data-tag-theme="star" aria-pressed="false"><span aria-hidden="true">✦</span><span data-xmas-copy="themeStar">Sternenglanz</span></button>
+    </div></fieldset>
+    <label for="gift-to" data-xmas-copy="toLabel">2. Für wen ist dein Geschenk?</label>
+    <input id="gift-to" type="text" maxlength="24" placeholder="z. B. Emma" autocomplete="off">
+    <label for="gift-from" data-xmas-copy="fromLabel">3. Von wem kommt der Weihnachtsgruß?</label>
+    <input id="gift-from" type="text" maxlength="24" placeholder="z. B. Mama & Papa" autocomplete="off">
+    <button class="btn product tag-download" type="button" id="tag-download" data-xmas-copy="download">Deinen Anhänger herunterladen ↓</button>
+    <p class="atelier-privacy" data-xmas-copy="atelierPrivacy">Ohne Anmeldung. Deine Eingaben bleiben in deinem Browser. Als SVG speichern und auf Papier ausdrucken.</p>
+    <p id="tag-status" class="tag-status" role="status" aria-live="polite"></p>
+   </div>
+   <div class="tag-preview-stage"><div class="tag-preview-rope" aria-hidden="true"></div><div id="tag-preview" role="img" aria-label="Vorschau deines Geschenkanhängers"></div><span class="tag-preview-caption" data-xmas-copy="previewCaption">Für kleine Gesten, die ganz groß ankommen.</span></div>
+  </div>
+  <noscript><p>Für die persönliche Vorschau und den Download bitte JavaScript aktivieren.</p></noscript>
+ </div>
+</section>
 <section class="winter-workshop" aria-labelledby="workshop-title">
   <div class="container">
     <div class="winter-workshop-header"><span class="winter-kicker" style="color:#B93639">Aus kleinen Ideen wird Weihnachtsfreude</span><h2 id="workshop-title">Die Weihnachtswerkstatt<br>für kleine Fantasieköpfe.</h2><p>Ein bisschen Magie, ganz viel Selbermachen – und Weihnachtsmomente, die euch gehören.</p></div>
@@ -1224,6 +1248,16 @@ body{background:var(--paper)}
     </div>
   </section>
 
+<section class="atelier-faq" id="weihnachtsfragen" aria-labelledby="faq-title" data-xmas-localized><div class="container atelier-faq-grid">
+ <div><span class="winter-kicker" data-xmas-copy="faqKicker">GUT ZU WISSEN</span><h2 id="faq-title" data-xmas-copy="faqTitle">Große Vorfreude.<br>Klare Antworten.</h2><p data-xmas-copy="faqIntro">Damit aus einer schönen Geschenkidee ein gutes Gefühl wird.</p><a href="anleitung.html" class="atelier-text-link" data-xmas-copy="guideLink">Zur ausführlichen Anleitung ↗</a></div>
+ <div class="faq-items">
+  <details><summary data-xmas-copy="q1">Was macht der KI Sticker Printer?</summary><p data-xmas-copy="a1">Kinder sprechen eine Idee ein. Die KI erstellt daraus ein Motiv und der Drucker bringt es aufs Papier. Die Sticker lassen sich anschließend ausmalen, sammeln, kleben oder verschenken.</p></details>
+  <details><summary data-xmas-copy="q2">Braucht er Tintenpatronen?</summary><p data-xmas-copy="a2">Nein. Der Kiddotronic Sticker Printer verwendet Thermodruck. Dafür wird passendes Thermopapier beziehungsweise Thermo-Stickerpapier benötigt.</p></details>
+  <details><summary data-xmas-copy="q3">Wo bestelle ich das Geschenk?</summary><p data-xmas-copy="a3">Die Bestellung erfolgt bei Amazon. Dort findest du die aktuellen Angaben zu Verfügbarkeit, Liefertermin, Lieferumfang und Produktdetails. Bitte prüfe den angezeigten Liefertermin vor deiner Bestellung.</p><a href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" data-xmas-copy="amazonLink">Produkt auf Amazon ansehen ↗</a></details>
+  <details><summary data-xmas-copy="q4">Wo finde ich Hilfe zur Einrichtung?</summary><p data-xmas-copy="a4">Unsere digitale Anleitung führt durch die Einrichtung und enthält WLAN-Hinweise. Das Datenblatt bietet weitere Produktinformationen.</p><a href="anleitung.html" data-xmas-copy="navGuide">Anleitung</a> · <a href="datenblatt.html" data-xmas-copy="dataSheet">Datenblatt</a></details>
+  <details><summary data-xmas-copy="q5">Ist der Geschenkanhänger ein Ausdruck des Geräts?</summary><p data-xmas-copy="a5">Der Anhänger im Weihnachtsatelier ist eine eigene Gestaltungshilfe dieser Webseite. Du kannst ihn als SVG herunterladen und mit einem normalen Drucker auf Papier drucken. Er zeigt keine Druckvorschau des Kiddotronic-Geräts.</p></details>
+ </div></div></section>
+<section class="atelier-finale" data-xmas-localized><div class="container"><span class="winter-kicker" data-xmas-copy="finalKicker">DAS SCHÖNSTE PASST IN KEINE SCHLEIFE</span><h2 data-xmas-copy="finalTitle">Zeit zusammen.<br>Ideen ohne Ende.</h2><p data-xmas-copy="finalText">Schenke den Anfang von vielen kleinen Geschichten.</p><a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" data-xmas-copy="finalCta">Kiddotronic auf Amazon entdecken ↗</a></div></section>
   <footer class="footer">
     <div class="container">
       <span>Kiddotronic KI Sticker Printer</span>
@@ -1259,71 +1293,8 @@ body{background:var(--paper)}
       });
     });
   </script>
-  <script>
-    (() => {
-      const popup = document.getElementById("gift-hint-popup");
-      const sourceOffer = document.querySelector(".hero .amazon-offer");
-      const popupContent = popup?.querySelector(".offer-popup-content");
-      const closeButton = popup?.querySelector(".offer-popup-close");
-      const sessionKey = "kiddotronic_christmas_wonderland_seen";
 
-      if (!popup || !sourceOffer || !popupContent || !closeButton) return;
-      try {
-        if (sessionStorage.getItem(sessionKey) === "true") return;
-      } catch (_) { /* Keep the hint usable when storage is unavailable. */ }
 
-      const popupOffer = sourceOffer.cloneNode(true);
-      popupOffer.querySelectorAll("[id]").forEach((element) => {
-        element.id = "popup-" + element.id;
-      });
-      popupContent.appendChild(popupOffer);
 
-      const closePopup = () => {
-        popup.hidden = true;
-        document.body.classList.remove("offer-popup-open");
-        sourceOffer.querySelector("a")?.focus();
-      };
-
-      // A timeless gift hint, shown only once per browser session.
-      popup.hidden = false;
-      document.body.classList.add("offer-popup-open");
-      try { sessionStorage.setItem(sessionKey, "true"); } catch (_) {}
-      closeButton.focus();
-
-      closeButton.addEventListener("click", closePopup);
-      popup.addEventListener("click", (event) => {
-        if (event.target === popup) closePopup();
-      });
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && !popup.hidden) closePopup();
-      });
-    })();
-  </script>
-
-<script>
-/* Vereinzelte, langsam fallende Kristall-Schneeflocken; keine externen Ressourcen. */
-(() => {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.querySelector('.kiddotronic-snow')) return;
-  const layer = document.createElement('div');
-  layer.className = 'kiddotronic-snow';
-  layer.setAttribute('aria-hidden', 'true');
-  const flakes = [
-    ['7%','22px','19s','-4s','34px','.62','❄'],
-    ['24%','18px','25s','-17s','-29px','.55','❅'],
-    ['43%','26px','23s','-10s','42px','.48','❄'],
-    ['63%','19px','27s','-22s','-38px','.60','❅'],
-    ['79%','24px','21s','-7s','24px','.50','❄'],
-    ['93%','17px','29s','-15s','-26px','.58','❅']
-  ];
-  for (const [x,size,duration,delay,drift,opacity,glyph] of flakes) {
-    const flake=document.createElement('span');
-    flake.className='flake';
-    flake.textContent=glyph;
-    for (const [key,val] of Object.entries({'--x':x,'--size':size,'--duration':duration,'--delay':delay,'--drift':drift,'--opacity':opacity})) flake.style.setProperty(key,val);
-    layer.appendChild(flake);
-  }
-  document.body.appendChild(layer);
-})();
-</script>
 </body>
 </html>

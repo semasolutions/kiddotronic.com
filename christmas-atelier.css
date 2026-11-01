@@ -1,0 +1,145 @@
+/* Christmas atelier: expressive, usable, and deliberately lightweight. */
+:root{--atelier-green:#194F3C;--atelier-red:#B93639;--atelier-gold:#D8B66A;--atelier-cream:#FFF6E8}
+html{scroll-padding-top:24px}
+button,input,a,summary{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid #a95322;outline-offset:5px}
+.skip-content{position:fixed;top:10px;left:10px;transform:translateY(-160%);z-index:100001;background:#fff6e8;color:#194F3C;padding:12px 20px;border-radius:10px}
+.skip-content:focus{transform:none}
+.marquee{font-size:.88rem}
+.atelier-nav .container{display:flex;justify-content:space-between;min-height:98px;gap:30px}
+.atelier-brand{display:flex;align-items:center;gap:12px;color:#194F3C;text-decoration:none;font-size:2rem;font-weight:800;line-height:1}
+.atelier-brand small{display:block;font-size:.61rem;letter-spacing:.19em;font-weight:700;margin-top:8px}
+.brand-star{display:grid;place-items:center;width:45px;height:45px;font-size:2.1rem;background:#194F3C;border-radius:50%;color:#D8B66A}
+.atelier-nav-links{display:flex;gap:28px;padding-right:110px}
+.atelier-nav-links a{color:#194F3C;text-decoration:none;font-size:1.02rem;font-weight:700;position:relative}
+.atelier-nav-links a:after{content:"";height:2px;background:#B93639;position:absolute;bottom:-5px;left:0;right:0;transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.atelier-nav-links a:hover:after{transform:scaleX(1)}
+.atelier-nav .menu-toggle{display:none}
+.atelier-welcome{padding:85px 0 20px;background:radial-gradient(ellipse at 84% 35%,#326c50,transparent 55%),#133f31}
+.atelier-welcome .winter-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:35px}
+.atelier-welcome h1{font-size:clamp(2.8rem,4.75vw,4.6rem);line-height:1.06;letter-spacing:-.04em!important;margin-bottom:24px}
+.atelier-welcome h1>span,.atelier-welcome h1>em{display:block}
+.atelier-welcome h1 em{color:#edce8f}
+.atelier-welcome p{font-size:1.15rem;max-width:490px;color:#ede8d7;line-height:1.65}
+.atelier-welcome .winter-kicker{letter-spacing:.13em;font-size:.72rem;margin-bottom:22px}
+.atelier-welcome .btn{font-size:1.05rem;min-height:58px;border:1px solid #df8e7a;border-radius:12px;padding:16px 24px;background:#B93639;box-shadow:0 5px 0 #0e2d22}
+.atelier-welcome .winter-secondary{font-size:.95rem;margin-top:18px}
+.atelier-hero-actions{display:flex;align-items:flex-start;flex-direction:column}
+.hero-proof{display:flex;align-items:center;flex-wrap:wrap;gap:9px;font-size:.77rem;color:#f1dcae;margin-top:26px}
+.hero-proof i{font-style:normal;font-size:.65rem}
+.atelier-stage{position:relative;padding:25px 0 70px;min-width:0}
+.atelier-stage .winter-art{position:relative;z-index:1;width:110%;max-width:none;margin-left:-4%;filter:drop-shadow(0 20px 20px #09271d55)}
+.atelier-orbit{position:absolute;inset:8% 3% 15%;border:1px solid #e6c77c45;border-radius:50%;transform:rotate(-12deg)}
+.atelier-orbit:before{content:"✦";position:absolute;right:15%;top:0;color:#e6c77c;font-size:36px}
+.atelier-product-peek{position:absolute;bottom:24px;left:7%;z-index:3;display:flex;align-items:center;gap:14px;padding:10px 19px 10px 10px;border-radius:14px;background:#fff6e8;color:#194F3C;box-shadow:0 16px 32px #071d2355;transform:rotate(-5deg);text-decoration:none;max-width:80%}
+.atelier-product-peek img{width:80px;height:80px;object-fit:cover;border-radius:8px}
+.atelier-product-peek span{font-size:.95rem;font-weight:800;max-width:110px;line-height:1.25}
+.atelier-product-peek:hover{transform:rotate(-2deg)}
+.atelier-stamp{position:absolute;right:1%;top:8%;z-index:2;width:94px;height:94px;display:grid;place-content:center;text-align:center;border:1px dashed #e5c88f;border-radius:50%;background:#194F3C;color:#e5c88f;font-size:.82rem;font-weight:700;transform:rotate(13deg)}
+.winter-toolbar{position:relative;z-index:3;display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:10px 0 42px;color:#e9dcb9;font-size:.77rem}
+.winter-toolbar button{font:inherit;min-height:38px;color:#FFF6E8;border:1px solid #e5c88f66;background:#ffffff08;border-radius:99px;padding:7px 14px;cursor:pointer}
+.winter-toolbar button:hover,.winter-toolbar button:focus-visible{background:#ffffff20}
+.winter-toolbar button[aria-pressed=false]{opacity:.6}
+.winter-toolbar button:disabled{cursor:default;opacity:.45}
+.atelier-route{background:#fff6e8;border-bottom:1px solid #194f3c22}
+.atelier-route .container{display:grid;grid-template-columns:repeat(3,1fr);padding-block:24px;gap:25px}
+.atelier-route a{display:flex;gap:14px;align-items:center;font-size:.9rem;text-decoration:none;color:#194F3C;font-weight:700}
+.atelier-route a>span:first-child{font-size:.72rem;color:#9c6b35;border:1px solid #d8b66a;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;flex:none}
+.hero{padding-block:90px}
+.hero .hero-inner{gap:70px}
+.hero .cube-stage{border-radius:28px;border:1px solid #c4d1bd;background:radial-gradient(circle,#fffaf4 15%,#d7e5d2);box-shadow:0 20px 60px #194f3c0d;padding:25px 20px 70px}
+.hero .visual-card img{filter:drop-shadow(0 20px 15px #194f3c33)}
+.hero .mini-note{border:1px solid #194f3c44;background:#FFF6E8;box-shadow:0 5px 12px #194f3c10;font-size:.9rem}
+.hero #headline{font-size:clamp(2.8rem,4vw,4rem)}
+.hero-copy>p{font-size:1.15rem;line-height:1.6}
+.hero .hero-kicker{font-size:.95rem;text-transform:uppercase;letter-spacing:.06em!important;line-height:1.35}
+.amazon-offer{border-radius:18px}
+.hero .amazon-offer{padding:26px 22px 22px}
+.hero .amazon-offer .gift-image{max-width:200px}
+.amazon-offer .btn{border-radius:12px;box-shadow:0 4px 0 #194f3c;min-height:56px;padding:14px 18px;font-size:1rem}
+.christmas-benefits span{font-size:.75rem}
+.gift-atelier{padding:88px 0;background:#eadfc9;color:#194F3C;position:relative;border-top:1px solid #d8b66a}
+.gift-atelier:before{content:"";position:absolute;inset:0 0 auto;height:7px;background:repeating-linear-gradient(45deg,#B93639 0 10px,#FFF6E8 10px 20px)}
+.atelier-section-head{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:end;margin-bottom:40px}
+.atelier-section-head .winter-kicker,.atelier-faq .winter-kicker{color:#99612e;font-size:.75rem;letter-spacing:.12em}
+.atelier-section-head h2,.atelier-faq h2{font-size:clamp(2.4rem,4vw,4rem);line-height:1.08;color:#194F3C!important}
+.atelier-section-head>p{font-size:1.1rem;line-height:1.6;margin:0;max-width:430px}
+.atelier-editor{display:grid;grid-template-columns:1fr 1fr;border:1px solid #cab78f;border-radius:24px;overflow:hidden;background:#FFF6E8;box-shadow:0 18px 50px #493d2410}
+.atelier-form{padding:38px}
+.atelier-form fieldset{margin:0 0 24px;border:0;padding:0;min-width:0}
+.atelier-form legend,.atelier-form label{display:block;font-size:1rem;font-weight:800;margin:0 0 11px}
+.tag-themes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tag-theme{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:90px;border:1px solid #c9c6af;border-radius:12px;background:transparent;color:#194F3C;font:700 .8rem "Baloo 2",Arial,sans-serif;cursor:pointer}
+.tag-theme>span:first-child{font-size:1.6rem;line-height:1}
+.tag-theme.is-selected{background:#194F3C;color:#FFF6E8;border-color:#194F3C;box-shadow:inset 0 0 0 3px #FFF6E8}
+.atelier-form input{display:block;width:100%;min-height:50px;border:1px solid #b5bba7;background:#fffdf7;border-radius:10px;padding:12px 14px;font:1rem "Baloo 2",Arial,sans-serif;color:#194F3C;margin-bottom:22px}
+.atelier-form .tag-download{width:100%;font-size:1rem;min-height:56px;border:1px solid #92262e;border-radius:12px;box-shadow:0 4px 0 #194F3C;padding:14px 12px}
+.atelier-privacy{font-size:.79rem;line-height:1.5;color:#6a6d5a;margin:18px 0 0}
+.tag-status{font-size:.86rem;font-weight:700;min-height:1.4em;margin:10px 0 0;color:#194F3C}
+.tag-preview-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;background:radial-gradient(circle at 50% 50%,#426952,#194F3C);overflow:hidden}
+.tag-preview-stage:before,.tag-preview-stage:after{position:absolute;content:"✦";color:#d8b66a66;font-size:42px;left:10%;top:18%}
+.tag-preview-stage:after{left:auto;top:auto;right:10%;bottom:22%;font-size:24px}
+.tag-preview-rope{position:absolute;width:2px;top:0;height:100px;background:#d8b66a;transform:rotate(9deg)}
+#tag-preview{position:relative;width:min(100%,270px);filter:drop-shadow(0 20px 15px #08281f66);transform:rotate(-4deg)}
+#tag-preview svg{display:block;width:100%;height:auto}
+.tag-preview-caption{position:relative;margin-top:25px;font-size:.85rem;color:#f1dcae;text-align:center}
+.winter-workshop{border:0;background:#f6eddb;padding:64px 0}
+.winter-workshop-header{max-width:680px}
+.winter-workshop h2{font-size:clamp(2.2rem,3.4vw,3.3rem)}
+.winter-idea{box-shadow:none;border-color:#d9cbb0;border-radius:14px;text-align:left;padding:28px}
+.winter-idea p{font-size:1rem;line-height:1.6}
+.steps-section,.benefits-section,.video-section,.mode-demo-section,.reviews-section{padding-block:80px}
+.step-card,.approved-card,.benefits-card,.review-card,.video-card{box-shadow:none;border-width:1px;border-radius:22px}
+.step-card{transform:none!important}
+.section-head h2,.benefits-head h2,.video-copy h2,.reviews-section h2{font-size:clamp(2.4rem,4vw,4rem);line-height:1.06}
+.section-kicker{font-size:1rem!important;line-height:1.3}
+.approved-section{border-block-width:2px}
+.review-card{border-color:#d4c8aa;background:#fffdf7}
+.review-card blockquote{font-size:1rem;line-height:1.65}
+.review-stars{color:#9d7427}
+.atelier-faq{padding:88px 0;background:#FFF6E8;border-top:1px solid #d4c8aa}
+.atelier-faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}
+.atelier-faq-grid>div>p{margin-top:20px;font-size:1.1rem;line-height:1.6}
+.atelier-text-link,.faq-items a{color:#194F3C;font-weight:800;text-underline-offset:4px}
+.faq-items details{border-bottom:1px solid #c7cbbb;padding:20px 0}
+.faq-items details:first-child{border-top:1px solid #c7cbbb}
+.faq-items summary{font-weight:800;font-size:1.1rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.faq-items summary::-webkit-details-marker{display:none}
+.faq-items summary:after{content:"+";font-size:1.5rem;font-weight:400;color:#9b7030}
+.faq-items details[open] summary:after{content:"−"}
+.faq-items p{font-size:1rem;line-height:1.65;margin:16px 25px 10px 0;color:#4c5b4e}
+.atelier-finale{position:relative;text-align:center;overflow:hidden;padding:76px 0 90px;background:radial-gradient(ellipse at 50% 100%,#326b50,transparent 70%),#194F3C;color:#FFF6E8}
+.atelier-finale:before,.atelier-finale:after{content:"✦";position:absolute;top:26%;left:12%;font-size:60px;color:#d8b66a55;transform:rotate(15deg)}
+.atelier-finale:after{left:auto;right:12%;top:65%;font-size:30px}
+.atelier-finale h2{color:#FFF6E8!important;font-size:clamp(2.8rem,5vw,4.9rem);line-height:1.05}
+.atelier-finale p{font-size:1.1rem;margin:24px 0}
+.atelier-finale .btn{font-size:1rem;border-radius:12px;border:1px solid #e4a58e;min-height:56px;box-shadow:0 4px 0 #0b2c21}
+.atelier-finale .winter-kicker{font-size:.72rem}
+.footer{border:0;padding:55px 0 45px}
+.footer:before{display:none}
+body.snow-paused .kiddotronic-snow{display:none}
+body.snow-paused .kiddotronic-snow .flake{animation-play-state:paused}
+body .lang-switch{top:48px;right:16px;box-shadow:none;border-width:1px!important;font-size:.75rem}
+body .lang-switch button{padding:7px 9px}
+@media(max-width:1000px){.atelier-nav-links{gap:17px;padding-right:85px}.atelier-nav-links a{font-size:.88rem}.atelier-brand{font-size:1.6rem}.hero .hero-inner{gap:35px}.atelier-section-head,.atelier-faq-grid{gap:35px}.atelier-form{padding:26px}.tag-preview-stage{padding:30px}.atelier-welcome h1{font-size:clamp(2.5rem,4.8vw,4rem)}}
+@media(max-width:760px){
+.atelier-nav .container{min-height:80px;gap:15px;padding:10px 0}.atelier-brand{font-size:1.5rem}.atelier-brand small{font-size:.52rem}.brand-star{width:36px;height:36px;font-size:1.7rem}.atelier-nav-links{display:none}.atelier-nav .menu-toggle{display:grid;width:40px}.menu-toggle span{width:30px;height:3px}.menu-panel .nav-link{box-shadow:none;border-width:1px;border-radius:10px;background:#fffaf2}
+.atelier-welcome{padding:76px 0 10px}.atelier-welcome .winter-grid{grid-template-columns:1fr;gap:10px}.atelier-intro{text-align:center}.atelier-welcome h1{font-size:clamp(2.3rem,8.4vw,3.9rem);line-height:1.08}.atelier-welcome p{margin:0 auto 20px;font-size:1.03rem}.atelier-welcome .winter-kicker{font-size:.63rem;letter-spacing:.1em}.atelier-hero-actions{align-items:center}.hero-proof{justify-content:center;font-size:.7rem;gap:7px;margin-top:21px}
+.atelier-stage{width:min(100%,430px);margin:auto;padding:0 0 72px}.atelier-stage .winter-art{width:100%;max-width:none;margin:0}.atelier-orbit{inset:5% 9% 15%}.atelier-stamp{right:5%;top:3%;width:76px;height:76px;font-size:.7rem}.atelier-product-peek{left:10%;bottom:18px;padding:6px 15px 6px 6px}.atelier-product-peek img{width:60px;height:60px}.atelier-product-peek span{font-size:.84rem}
+.winter-toolbar{justify-content:center;flex-wrap:wrap;padding-bottom:35px;gap:8px}.winter-toolbar>span{width:100%;text-align:center;margin-bottom:4px}.winter-toolbar button{font-size:.72rem}
+.atelier-route .container{gap:15px;padding-block:18px}.atelier-route a{flex-direction:column;text-align:center;gap:7px;font-size:.69rem;line-height:1.3}.atelier-route a>span:first-child{width:25px;height:25px;font-size:.65rem}
+.hero{padding-block:45px}.hero .cube-stage{padding:12px 12px 45px}.hero .visual-card{max-width:330px}.hero #headline{font-size:2.9rem}.hero .hero-kicker{font-size:.8rem}.hero-copy>p{font-size:1.04rem}
+.gift-atelier,.atelier-faq{padding:55px 0}.atelier-section-head,.atelier-faq-grid{grid-template-columns:1fr;gap:22px}.atelier-section-head{margin-bottom:28px}.atelier-section-head h2,.atelier-faq h2{font-size:2.5rem}.atelier-section-head>p{font-size:1rem}.atelier-editor{grid-template-columns:1fr}.tag-preview-stage{grid-row:1;padding:35px 25px 25px}.tag-preview-rope{height:75px}#tag-preview{width:190px}.tag-preview-caption{font-size:.75rem;margin-top:18px}.atelier-form{padding:24px 18px}.atelier-form label,.atelier-form legend{font-size:.9rem}.tag-theme{font-size:.74rem;min-height:78px}.atelier-form .tag-download{font-size:.94rem}
+.steps-section,.benefits-section,.video-section,.mode-demo-section,.reviews-section{padding-block:55px}.winter-workshop{padding-block:50px}.winter-ideas{gap:14px}.winter-idea{padding:23px}.winter-workshop h2{font-size:2.2rem}.winter-workshop .winter-kicker{font-size:.66rem}.atelier-finale{padding:60px 0}.atelier-finale .winter-kicker{font-size:.61rem}.atelier-finale:before{left:2%;font-size:30px}.atelier-finale:after{right:2%}.atelier-finale h2{font-size:2.9rem}
+body .lang-switch{top:auto;bottom:12px;right:10px;box-shadow:0 2px 8px #194f3c20}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.kiddotronic-snow{display:none!important}.kiddotronic-snow .flake{animation:none!important}}
+@media print{.nav,.marquee,.winter-toolbar,.lang-switch,.kiddotronic-snow,.offer-popup{display:none!important}}
+
+[data-xmas-copy="stamp"],[data-xmas-copy="atelierTitle"],[data-xmas-copy="faqTitle"],[data-xmas-copy="finalTitle"]{white-space:pre-line}
+.kiddotronic-snow .flake svg{width:var(--size);height:var(--size)}
+
+.atelier-section-head>*,.atelier-faq-grid>*,.atelier-editor>*,.atelier-welcome .winter-grid>*{min-width:0}
+@media(max-width:360px){.atelier-section-head h2,.atelier-faq h2{font-size:2.05rem}.atelier-welcome h1{font-size:2.08rem}.atelier-brand{font-size:1.35rem}.atelier-form{padding-inline:14px}.tag-theme{font-size:.7rem}}
+
+.winter-workshop h2{overflow-wrap:anywhere;hyphens:auto}
