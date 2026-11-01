@@ -808,6 +808,13 @@ body{background:var(--paper)}
 .offer-popup{background:rgba(9,35,27,.7)}.offer-popup-card{box-shadow:0 18px 70px rgba(0,0,0,.3)}
 @media(max-width:680px){.christmas-ribbon{line-height:1.4;padding:9px 12px}.christmas-eyebrow{font-size:.9rem}.christmas-stars span:nth-child(3){display:none}.amazon-offer{padding:20px 15px}.christmas-benefits span{font-size:.78rem}}
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* Dezenter Kristall-Schneefall: reine Dekoration, keine Klicks blockieren */
+.kiddotronic-snow{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden;contain:layout style;aria-hidden:true}
+.kiddotronic-snow .flake{position:absolute;top:-12vh;left:var(--x);font-family:Georgia,serif;font-size:var(--size);line-height:1;color:#eaf5f7;opacity:0;text-shadow:0 1px 3px rgba(25,66,76,.32),0 0 9px rgba(255,255,255,.7);animation:kiddotronic-snowfall var(--duration) linear infinite;animation-delay:var(--delay);will-change:transform,opacity}
+@keyframes kiddotronic-snowfall{0%{transform:translate3d(0,-5vh,0) rotate(0deg);opacity:0}12%{opacity:var(--opacity)}85%{opacity:var(--opacity)}100%{transform:translate3d(var(--drift),115vh,0) rotate(95deg);opacity:0}}
+@media(max-width:680px){.kiddotronic-snow .flake:nth-child(n+4){display:none}}
+@media(prefers-reduced-motion:reduce){.kiddotronic-snow{display:none}}
 </style>
   <script src=language.js defer></script>
 <!-- TikTok Pixel Code Start -->
@@ -1267,5 +1274,31 @@ body{background:var(--paper)}
       });
     })();
   </script>
+
+<script>
+/* Vereinzelte, langsam fallende Kristall-Schneeflocken; keine externen Ressourcen. */
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.querySelector('.kiddotronic-snow')) return;
+  const layer = document.createElement('div');
+  layer.className = 'kiddotronic-snow';
+  layer.setAttribute('aria-hidden', 'true');
+  const flakes = [
+    ['7%','22px','19s','-4s','34px','.62','❄'],
+    ['24%','18px','25s','-17s','-29px','.55','❅'],
+    ['43%','26px','23s','-10s','42px','.48','❄'],
+    ['63%','19px','27s','-22s','-38px','.60','❅'],
+    ['79%','24px','21s','-7s','24px','.50','❄'],
+    ['93%','17px','29s','-15s','-26px','.58','❅']
+  ];
+  for (const [x,size,duration,delay,drift,opacity,glyph] of flakes) {
+    const flake=document.createElement('span');
+    flake.className='flake';
+    flake.textContent=glyph;
+    for (const [key,val] of Object.entries({'--x':x,'--size':size,'--duration':duration,'--delay':delay,'--drift':drift,'--opacity':opacity})) flake.style.setProperty(key,val);
+    layer.appendChild(flake);
+  }
+  document.body.appendChild(layer);
+})();
+</script>
 </body>
 </html>
