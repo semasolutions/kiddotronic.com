@@ -848,20 +848,11 @@ body{background:var(--paper)}
 @media(max-height:640px){.christmas-present{transform:scale(.72) rotate(-5deg);margin:-23px auto -34px}.christmas-present-copy{padding:15px}.christmas-present-copy p{margin-bottom:9px}}
 @media(prefers-reduced-motion:reduce){.christmas-present,.present-amazon{animation:none!important;transition:none!important}}
 
-/* First-screen Christmas product image on mobile and desktop */
-.atelier-stage{position:relative}
-.christmas-hero-photo{position:relative;z-index:5;display:block;width:min(100%,470px);margin:0 auto 16px;text-decoration:none;transform:rotate(1deg);transition:transform .2s ease}
-.christmas-hero-photo:hover{transform:rotate(0) translateY(-3px)}
-.christmas-hero-photo img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;filter:drop-shadow(0 12px 22px rgba(4,30,20,.22))}
-.christmas-photo-caption .ai-content-note,.atelier-product-peek .ai-content-note{margin:3px 0 0}
-.christmas-photo-caption{display:table;margin:7px auto 0;padding:5px 12px;border-radius:999px;background:#fff6e8;text-align:center;color:#194f3c;font-weight:900;font-size:clamp(.9rem,2.5vw,1.12rem)}
-@media(max-width:780px){.winter-grid{display:flex!important;flex-direction:column!important}.atelier-intro{order:0}.atelier-stage{order:1;width:100%;margin-top:14px}.christmas-hero-photo{width:min(100%,370px);margin:0 auto 10px}.christmas-hero-photo img{max-height:260px}.atelier-orbit,.winter-art,.atelier-product-peek,.atelier-stamp{display:none!important}}
-@media(prefers-reduced-motion:reduce){.christmas-hero-photo{transition:none}}
 </style>
   <script src=language.js defer></script>
 <link rel="stylesheet" href="ai-content-notes.css">
   <link rel="stylesheet" href="christmas.css?v=atelier-20261101">
-<link rel="stylesheet" href="christmas-atelier.css?v=mobile-pdf-2">
+<link rel="stylesheet" href="christmas-atelier.css?v=unified-scene-20261109">
 <script src="christmas-atelier.js?v=no-tracking-20261101" defer></script>
 </head>
 <body>
@@ -902,11 +893,42 @@ body{background:var(--paper)}
    <div class="hero-proof"><span data-xmas-copy="proof1">Idee einsprechen</span><i aria-hidden="true">✦</i><span data-xmas-copy="proof2">Ohne Tinte drucken</span><i aria-hidden="true">✦</i><span data-xmas-copy="proof3">Gemeinsam gestalten</span></div>
   </div>
   <div class="atelier-stage">
-   <a class="christmas-hero-photo" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" aria-label="Kiddotronic Weihnachtsgeschenk auf Amazon entdecken"><img src="kiddotronic-weihnachten-freigestellt.webp" alt="Ein Kind mit Weihnachtsmütze druckt ein Motiv mit Weihnachtsmann und Rentier auf dem roten Kiddotronic Stickerdrucker" width="940" height="940" fetchpriority="high"><span class="christmas-photo-caption">🎁 Das Geschenk voller Fantasie<small class="ai-content-note">durch KI generiert</small></span></a>
-   <div class="atelier-orbit" aria-hidden="true"></div>
-   <img class="winter-art" src="assets/christmas-wonderland.svg" width="800" height="600" alt="" aria-hidden="true" fetchpriority="high">
-   <a class="atelier-product-peek" href="#weihnachtsgeschenk"><img src="Kiddotronic%20cube.jpeg?v=4" alt="Kiddotronic KI Sticker Printer" width="320" height="320"><span><span data-xmas-copy="peek">Kleine Box. Große Ideen.</span><small class="ai-content-note">durch KI generiert</small></span></a>
-   <span class="atelier-stamp" data-xmas-copy="stamp">Mit Liebe.<br>Mit Fantasie.</span>
+   <a class="christmas-hero-scene" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" aria-label="Kiddotronic Weihnachtsgeschenk auf Amazon entdecken">
+<svg class="christmas-scene" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" role="img" aria-labelledby="christmas-scene-title"><title id="christmas-scene-title">Mädchen mit rotem Kiddotronic Sticker-Drucker vor dem Weihnachtsbaum, umgeben von Geschenken und einem Lebkuchenmann</title>
+<defs>
+<linearGradient id="tree" x2="1" y2="1"><stop stop-color="#34765b"/><stop offset="1" stop-color="#194F3C"/></linearGradient>
+<linearGradient id="red" x2="0.7" y2="1"><stop stop-color="#db6660"/><stop offset="1" stop-color="#B93639"/></linearGradient>
+<pattern id="candy" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><rect width="22" height="22" fill="#fff6e8"/><rect width="10" height="22" fill="#B93639"/></pattern>
+<filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0b3028" flood-opacity=".16"/></filter>
+<g id="star"><path d="M0-18 5-5 19-5 8 4 12 18 0 10-12 18-8 4-19-5-5-5Z" fill="#D8B66A" stroke="#fff0c1" stroke-width="2"/></g>
+<g id="cookie"><circle r="39" fill="#ba783f" stroke="#8a4c28" stroke-width="3"/><circle r="30" fill="none" stroke="#fff6e8" stroke-width="4" stroke-dasharray="3 7" stroke-linecap="round"/><path d="m0-19 5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1Z" fill="#fff6e8"/></g>
+<g id="gift"><rect width="100" height="82" rx="7" fill="url(#red)"/><path d="M41 0h18v82H41zM0 25h100v13H0z" fill="#D8B66A"/><path d="M50 0C-1-6 28-45 50-5 71-45 101-6 50 0Z" fill="none" stroke="#D8B66A" stroke-width="10"/></g>
+<g id="cane"><path d="M0 134V23C0-23 62-23 62 23v17" fill="none" stroke="#fff6e8" stroke-width="23" stroke-linecap="round"/><path d="M0 134V23C0-23 62-23 62 23v17" fill="none" stroke="#B93639" stroke-width="21" stroke-dasharray="13 15"/></g>
+</defs>
+<ellipse cx="403" cy="575" rx="350" ry="42" fill="#d9e9dc"/>
+<circle cx="415" cy="270" r="240" fill="#fff6e8" opacity=".1"/>
+<g filter="url(#shadow)">
+<path d="M379 419h38v117h-38z" fill="#9a6139"/>
+<path d="M398 54 301 208h43l-99 133h56L195 475q202 64 407 0L494 341h55L449 208h43Z" fill="url(#tree)" stroke="#123e30" stroke-width="4" stroke-linejoin="round"/>
+<path d="M301 208q98 40 191 0M245 341q153 55 304 0M195 475q205 62 407 0" fill="none" stroke="#fff6e8" stroke-width="16" stroke-linecap="round"/>
+<path d="M341 178q55 36 105 0M299 271q85 75 194 10M257 383q133 94 272 12" fill="none" stroke="#D8B66A" stroke-width="4"/>
+<g fill="#ffe6a0"><circle cx="354" cy="186" r="6"/><circle cx="393" cy="194" r="6"/><circle cx="430" cy="188" r="6"/><circle cx="316" cy="286" r="6"/><circle cx="357" cy="311" r="6"/><circle cx="404" cy="322" r="6"/><circle cx="453" cy="306" r="6"/><circle cx="278" cy="400" r="6"/><circle cx="327" cy="425" r="6"/><circle cx="384" cy="441" r="6"/><circle cx="444" cy="438" r="6"/><circle cx="500" cy="415" r="6"/></g>
+<g fill="url(#red)" stroke="#f0a29a" stroke-width="2"><circle cx="363" cy="237" r="14"/><circle cx="452" cy="363" r="19"/><circle cx="330" cy="374" r="17"/><circle cx="403" cy="458" r="17"/></g>
+<use href="#star" transform="translate(398 49) scale(1.6)"/>
+<image href="kiddotronic-weihnachten-freigestellt.webp" x="155" y="145" width="450" height="450"/>
+<use href="#cane" transform="translate(175 314) rotate(-19) scale(1.1)"/>
+<use href="#cane" transform="translate(605 338) rotate(20) scale(.9)"/>
+<use href="#gift" transform="translate(620 490) rotate(5) scale(1.15)"/>
+<g transform="translate(95 535) rotate(-7)"><rect width="110" height="72" rx="5" fill="#D8B66A"/><path d="M45 0h20v72H45zM0 24h110v13H0z" fill="#fff6e8"/><path d="M55 0C5-9 33-42 55-4 77-42 104-9 55 0" fill="none" stroke="#fff6e8" stroke-width="9"/></g>
+<g transform="translate(100 420) rotate(-10)"><path d="M-30 18-44 1q-15-16-24 0-7 13 15 31l18 13-13 40q-5 19 10 20 12 0 21-33l7-17 8 17q9 33 21 33 15-1 10-20L20 45l18-13q22-18 15-31-9-16-24 0L15 18Z" fill="#bd804a" stroke="#8c522d" stroke-width="3"/><circle cx="-9" cy="-10" r="28" fill="#bd804a" stroke="#8c522d" stroke-width="3"/><g fill="#fff6e8"><circle cx="-18" cy="-14" r="3"/><circle cx="0" cy="-14" r="3"/><circle cx="-9" cy="42" r="4"/><circle cx="-9" cy="57" r="4"/></g><path d="M-20-3q11 12 22 0M-42 40l12 8M19 40l-11 8M-32 85l12 5M15 85l-12 5" fill="none" stroke="#fff6e8" stroke-width="4"/><path d="m-10 22-15-8v16l15-8 15-8v16Z" fill="#B93639"/></g>
+<use href="#cookie" transform="translate(710 450) rotate(18)"/>
+<use href="#cookie" transform="translate(660 590) scale(.7) rotate(-15)"/>
+<use href="#star" transform="translate(195 165) scale(.7)"/><use href="#star" transform="translate(618 180) scale(.65)"/><use href="#star" transform="translate(703 312) scale(.5)"/>
+</g>
+<g fill="#fff6e8" opacity=".8"><circle cx="180" cy="250" r="4"/><circle cx="583" cy="100" r="5"/><circle cx="662" cy="248" r="3"/><circle cx="268" cy="91" r="3"/><circle cx="100" cy="350" r="4"/></g>
+</svg>
+    <span class="christmas-photo-caption">🎁 Das Geschenk voller Fantasie<small class="ai-content-note">durch KI generiert</small></span>
+   </a>
   </div>
  </div>
  <div class="winter-toolbar container" data-xmas-localized><span data-xmas-copy="toolbarText">Mach es dir weihnachtlich.</span><button type="button" id="snow-toggle" aria-pressed="true"><span aria-hidden="true">❄</span> <span data-xmas-copy="snowLabel">Schneefall</span></button><button type="button" data-open-gift><span aria-hidden="true">🎁</span> <span data-xmas-copy="giftHint">Geschenktipp ansehen</span></button></div>
@@ -1332,4 +1354,3 @@ body{background:var(--paper)}
 
 </body>
 </html>
-
