@@ -142,7 +142,18 @@ function openGift(button=null){
  close.focus();
 }
 document.querySelectorAll('[data-open-gift]').forEach(button=>button.addEventListener('click',()=>openGift(button)));
-// Keep the intro video visible on arrival; open the gift dialog only on request.
+// Show the Christmas gift popup automatically once per browser session, while keeping the intro video available after dismissal.
+if (popup) {
+  let alreadyShown = false;
+  try { alreadyShown = sessionStorage.getItem('kiddotronic-gift-popup-shown') === 'yes'; } catch {}
+  if (!alreadyShown) {
+    window.setTimeout(() => {
+      if (document.visibilityState === 'hidden' || !popup.hidden) return;
+      try { sessionStorage.setItem('kiddotronic-gift-popup-shown', 'yes'); } catch {}
+      openGift();
+    }, 2500);
+  }
+}
 close?.addEventListener('click',closeGift);
 popup?.addEventListener('click',e=>{if(e.target===popup)closeGift();});
 document.addEventListener('keydown',e=>{
