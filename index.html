@@ -854,6 +854,8 @@ body{background:var(--paper)}
   <link rel="stylesheet" href="christmas.css?v=atelier-20261101">
 <link rel="stylesheet" href="christmas-atelier.css?v=unified-scene-20261109">
 <script src="christmas-atelier.js?v=no-tracking-20261101" defer></script>
+<link rel="stylesheet" href="intro-video.css?v=20261115">
+<script src="intro-video.js?v=20261115" defer></script>
 </head>
 <body>
   <div class="offer-popup" id="gift-hint-popup" hidden>
@@ -881,6 +883,27 @@ body{background:var(--paper)}
   <a class="nav-link" href="#weihnachtsgeschenk" data-xmas-copy="navProduct">Das Geschenk</a><a class="nav-link" href="#weihnachtsatelier" data-xmas-copy="navAtelier">Weihnachtsatelier</a><a class="nav-link" href="#weihnachtsfragen" data-xmas-copy="navFaq">Gut zu wissen</a><a class="nav-link" href="anleitung.html" data-xmas-copy="navGuide">Anleitung</a><a class="nav-link" href="datenschutz.html" data-xmas-copy="navPrivacy">Datenschutz</a>
  </div></div>
 </nav>
+
+<section class="intro-spotlight" aria-labelledby="amazon-intro-title">
+ <div class="container intro-spotlight-grid">
+  <figure class="intro-player">
+   <video id="amazon-intro-video" autoplay muted loop playsinline controls preload="auto" poster="assets/kiddotronic-intro-amazon.jpg" width="1280" height="720" aria-label="Kiddotronic Intro Amazon – Produktvideo" aria-describedby="amazon-intro-help">
+    <source src="assets/kiddotronic-intro-amazon.mp4" type="video/mp4">
+    <a href="assets/kiddotronic-intro-amazon.mp4">Kiddotronic-Video ansehen</a>
+   </video>
+   <button id="amazon-intro-play" class="intro-play" type="button" hidden>▶ Video starten</button>
+   <figcaption id="amazon-intro-help">Ton und Pause direkt im Video steuern.</figcaption>
+  </figure>
+  <div class="intro-copy">
+   <span class="intro-eyebrow">KIDDOTRONIC IN AKTION</span>
+   <h2 id="amazon-intro-title">Deine Idee.<br>Dein Sticker.</h2>
+   <p>Einsprechen, drucken, gestalten: Entdecke den Kiddotronic KI Sticker Printer.</p>
+   <a class="intro-amazon" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Jetzt auf Amazon entdecken ↗</a>
+   <a class="intro-amazon-url" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">www.amazon.de/dp/B0GYMHN6Z5</a>
+  </div>
+ </div>
+</section>
+
 
 <a class="skip-content" href="#weihnachtsgeschenk" data-xmas-copy="skip">Zum Inhalt</a>
 <section class="winter-welcome atelier-welcome" aria-labelledby="winter-title">
