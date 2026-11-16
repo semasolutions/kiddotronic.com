@@ -856,6 +856,8 @@ body{background:var(--paper)}
 <script src="christmas-atelier.js?v=intro-20261115" defer></script>
 <link rel="stylesheet" href="intro-video.css?v=20261115-2">
 <script src="intro-video.js?v=20261115" defer></script>
+<link rel="stylesheet" href="lumi-book.css?v=20261116">
+<script src="lumi-book.js?v=20261116" defer></script>
 </head>
 <body>
   <div class="offer-popup" id="gift-hint-popup" hidden>
@@ -885,7 +887,8 @@ body{background:var(--paper)}
 </nav>
 
 <section class="intro-spotlight" aria-labelledby="amazon-intro-title">
- <div class="container intro-spotlight-grid">
+ <div class="container intro-spotlight-grid gift-pair">
+ <article class="gift-pair-card" aria-labelledby="amazon-intro-title">
   <figure class="intro-player">
    <video id="amazon-intro-video" autoplay muted loop playsinline controls preload="auto" poster="assets/kiddotronic-intro-amazon.jpg" width="1280" height="720" aria-label="Kiddotronic Intro Amazon – Produktvideo" aria-describedby="amazon-intro-help">
     <source src="assets/kiddotronic-intro-amazon.mp4" type="video/mp4">
@@ -901,6 +904,31 @@ body{background:var(--paper)}
    <a class="intro-amazon" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">Jetzt auf Amazon entdecken ↗</a>
    <a class="intro-amazon-url" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer">www.amazon.de/dp/B0GYMHN6Z5</a>
   </div>
+ </article>
+ <article class="gift-pair-card lumi-book" id="lumi-buch" aria-labelledby="lumi-book-title" lang="de" data-xmas-localized>
+  <figure class="intro-player lumi-player">
+   <video id="lumi-book-video" controls playsinline preload="none" poster="assets/lumi-book-spread.webp" aria-label="Lumi und das verschwundene Weihnachtsleuchten – Buchvorstellung" aria-describedby="lumi-video-help">
+    <source src="assets/lumi-book-video.mp4" type="video/mp4">
+    <a href="assets/lumi-book-video.mp4">Buchvideo ansehen</a>
+   </video>
+   <button class="intro-play lumi-play" id="lumi-book-play" type="button">▶ Buchvideo mit Ton ansehen</button>
+   <figcaption id="lumi-video-help">Entdecke Lumis Weihnachtsabenteuer im Video.</figcaption>
+  </figure>
+  <div class="intro-copy lumi-copy">
+   <a class="lumi-cover" href="assets/lumi-book-spread.webp" target="_blank" rel="noopener" aria-label="Vorder- und Rückseite des Buchs groß ansehen">
+    <img src="assets/lumi-cover.webp" width="1000" height="1329" alt="Buchcover: Lumi und das verschwundene Weihnachtsleuchten" decoding="async">
+    <span>Buch ansehen ↗</span>
+   </a>
+   <div class="lumi-description">
+    <span class="intro-eyebrow">NEU · LUMIS MITMACHBUCH</span>
+    <h2 id="lumi-book-title">Lumi und das verschwundene Weihnachtsleuchten</h2>
+    <p>Ein kleines Licht. Ein großes Abenteuer. Hilf Lumi und Flocke, das Weihnachtsleuchten zurückzubringen – mit deinen eigenen Bildern.</p>
+   </div>
+   <p class="lumi-details">36 Mitmach-Szenen · 73 Klebe- und Malflächen<br>Lesen, mit dem Kiddotronic Sticker drucken und einkleben – oder direkt ins Buch malen.</p>
+   <a class="intro-amazon" href="https://www.amazon.de/dp/B0HRVSWYWW?ref_=ast_sto_dp" target="_blank" rel="noopener noreferrer">Das Buch auf Amazon entdecken ↗</a>
+   <p class="lumi-note">Buch und Drucker sind separat erhältlich.</p>
+  </div>
+ </article>
  </div>
 </section>
 
@@ -1336,7 +1364,7 @@ body{background:var(--paper)}
   <details><summary data-xmas-copy="q4">Wo finde ich Hilfe zur Einrichtung?</summary><p data-xmas-copy="a4">Unsere digitale Anleitung führt durch die Einrichtung und enthält WLAN-Hinweise. Das Datenblatt bietet weitere Produktinformationen.</p><a href="anleitung.html" data-xmas-copy="navGuide">Anleitung</a> · <a href="datenblatt.html" data-xmas-copy="dataSheet">Datenblatt</a></details>
   <details><summary data-xmas-copy="q5">Ist der Geschenkanhänger ein Ausdruck des Geräts?</summary><p data-xmas-copy="a5">Der Anhänger im Weihnachtsatelier ist eine eigene Gestaltungshilfe dieser Webseite. Du kannst ihn als mittig ausgerichtete A4-PDF herunterladen und mit einem normalen Drucker auf Papier drucken. Er zeigt keine Druckvorschau des Kiddotronic-Geräts.</p></details>
  </div></div></section>
-<section class="xmas-game-promo" id="lumis-welt" aria-labelledby="xmas-game-title" style="padding:54px 18px;background:linear-gradient(135deg,#194f3c,#24664d);color:#fff6e8;text-align:center"><div class="container" style="max-width:850px;margin:auto"><p style="font-weight:900;color:#f3d18a;letter-spacing:.09em;margin:8px 0">✨ WILLKOMMEN IN LUMIS WELT ✨</p><h2 id="xmas-game-title" style="font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin:12px 0">Lumis Weihnachtsbäckerei</h2><p style="font-size:clamp(1.05rem,2.5vw,1.25rem);margin:12px auto 23px">Lumi und Flocke, der Schneemann, laden dich in ihre gemütliche Weihnachtsbäckerei ein! Finde fünf versteckte Backstuben-Sticker und entdecke eine zauberhafte Winterwelt.</p><img src="82D23C28-0878-490E-82E1-DCEA57038753.png?v=7" alt="Lumi als kleines Mädchen mit blauer Mütze und orangefarbenem Schal und Flocke als Schneemann in einer reich illustrierten Weihnachtsbäckerei" loading="lazy" style="display:block;width:min(100%,700px);height:auto;margin:18px auto 26px;border-radius:22px;border:5px solid #f0d7a8;box-shadow:0 16px 35px #082d2280"><a href="weihnachtsspiel.html" style="display:inline-block;background:#fff6e8;color:#194f3c;padding:15px 30px;border-radius:999px;border:3px solid #d8b66a;text-decoration:none;font-weight:900;font-size:1.2rem;box-shadow:0 6px 0 #0b3427">🎮 Lumis Weihnachtsbäckerei spielen</a><p style="font-size:1rem;opacity:.94;margin-top:19px">📖 Und das Beste: <strong>Ein Buch mit Lumi und Flocke ist in Vorbereitung!</strong></p><p style="font-size:.9rem;opacity:.8;margin-top:10px">Kostenlos · Ohne Anmeldung · Für Handy und Computer</p></div></section>
+<section class="xmas-game-promo" id="lumis-welt" aria-labelledby="xmas-game-title" style="padding:54px 18px;background:linear-gradient(135deg,#194f3c,#24664d);color:#fff6e8;text-align:center"><div class="container" style="max-width:850px;margin:auto"><p style="font-weight:900;color:#f3d18a;letter-spacing:.09em;margin:8px 0">✨ WILLKOMMEN IN LUMIS WELT ✨</p><h2 id="xmas-game-title" style="font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin:12px 0">Lumis Weihnachtsbäckerei</h2><p style="font-size:clamp(1.05rem,2.5vw,1.25rem);margin:12px auto 23px">Lumi und Flocke, der Schneemann, laden dich in ihre gemütliche Weihnachtsbäckerei ein! Finde fünf versteckte Backstuben-Sticker und entdecke eine zauberhafte Winterwelt.</p><img src="82D23C28-0878-490E-82E1-DCEA57038753.png?v=7" alt="Lumi als kleines Mädchen mit blauer Mütze und orangefarbenem Schal und Flocke als Schneemann in einer reich illustrierten Weihnachtsbäckerei" loading="lazy" style="display:block;width:min(100%,700px);height:auto;margin:18px auto 26px;border-radius:22px;border:5px solid #f0d7a8;box-shadow:0 16px 35px #082d2280"><a href="weihnachtsspiel.html" style="display:inline-block;background:#fff6e8;color:#194f3c;padding:15px 30px;border-radius:999px;border:3px solid #d8b66a;text-decoration:none;font-weight:900;font-size:1.2rem;box-shadow:0 6px 0 #0b3427">🎮 Lumis Weihnachtsbäckerei spielen</a><p style="font-size:1rem;opacity:.94;margin-top:19px">📖 Und das Beste: <strong>Lumis Mitmachbuch ist da!</strong> <a href="#lumi-buch" style="color:inherit;text-underline-offset:4px">Das Buch entdecken ↑</a></p><p style="font-size:.9rem;opacity:.8;margin-top:10px">Kostenlos · Ohne Anmeldung · Für Handy und Computer</p></div></section>
 <section class="atelier-finale" data-xmas-localized><div class="container"><span class="winter-kicker" data-xmas-copy="finalKicker">DAS SCHÖNSTE PASST IN KEINE SCHLEIFE</span><h2 data-xmas-copy="finalTitle">Zeit zusammen.<br>Ideen ohne Ende.</h2><p data-xmas-copy="finalText">Schenke den Anfang von vielen kleinen Geschichten.</p><a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" data-xmas-copy="finalCta">Kiddotronic auf Amazon entdecken ↗</a></div></section>
   <footer class="footer">
     <div class="container">

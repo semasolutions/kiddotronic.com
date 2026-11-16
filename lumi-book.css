@@ -1,0 +1,21 @@
+/* Two gift ideas share the existing Christmas palette and video presentation. */
+.intro-spotlight-grid.gift-pair{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:32px}
+.gift-pair-card{min-width:0;display:grid;gap:26px;padding:22px;border:1px solid #d8b66a66;border-radius:24px;background:#fff6e808}
+.gift-pair-card .intro-copy h2{font-size:clamp(1.85rem,2.7vw,2.8rem)}
+.gift-pair-card .intro-copy .intro-amazon{font-size:1.15rem;min-height:60px}
+.gift-pair-card .intro-amazon-url{font-size:1rem}
+.lumi-player{position:relative}
+.lumi-player video{aspect-ratio:16/9;object-fit:contain}
+.lumi-player video.has-started{height:clamp(360px,65vh,560px);aspect-ratio:auto}
+.lumi-play{display:block;width:100%;margin-top:12px;min-height:48px;background:#ffdc85}
+.lumi-copy{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;align-items:start}
+.lumi-cover{color:#fff1c5;text-decoration:none;font-size:.78rem;text-align:center;line-height:1.4}
+.lumi-cover img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 7px 18px #061c2290;margin-bottom:10px}
+.lumi-copy .lumi-description h2{font-size:clamp(1.45rem,2.1vw,2rem);line-height:1.13;overflow-wrap:break-word}
+.lumi-description p{font-size:1rem;margin-bottom:0}
+.lumi-copy .lumi-details,.lumi-copy .intro-amazon,.lumi-copy .lumi-note{grid-column:1/-1}
+.lumi-copy .lumi-details{font-size:.98rem;line-height:1.6;margin:0}
+.lumi-copy .lumi-note{font-size:.8rem;color:#e8d8b6;text-align:center;margin:0}
+@media(max-width:800px){.intro-spotlight-grid.gift-pair{grid-template-columns:minmax(0,1fr);gap:24px}.gift-pair-card{padding:18px;gap:20px}.lumi-copy .lumi-description h2{font-size:clamp(1.5rem,5vw,2.2rem)}}
+@media(max-width:540px){.lumi-copy{grid-template-columns:minmax(0,1fr)}.lumi-cover{width:130px;margin-inline:auto}.lumi-copy .lumi-description h2{font-size:1.6rem;hyphens:auto}}
+@media(max-width:380px){.gift-pair-card{padding:14px}.lumi-copy{gap:14px}.lumi-copy .intro-eyebrow{font-size:.68rem}}
