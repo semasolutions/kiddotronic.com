@@ -15,3 +15,40 @@
 #kiddotronic-ai-demo .kd-stage > .ai-content-note {
   position: absolute; top: 8px; left: 0; right: 0; z-index: 6;
 }
+
+/* Keep AI disclosures readable and outside product artwork on all screen sizes. */
+.visual-card > .ai-content-note {
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 40px);
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: #fffaf2;
+  color: #111;
+  font: 600 13px/1.4 Arial, sans-serif;
+  z-index: 5;
+}
+.cube-stage { padding-bottom: 36px; overflow: visible; }
+.intro-copy > .kd-ai-label-below {
+  position: static;
+  display: table;
+  clear: both;
+  width: fit-content;
+  max-width: 100%;
+  margin: 10px 0 18px;
+  padding: 7px 12px;
+  background: #fffaf2;
+  color: #111;
+  border: 1px solid #555;
+  font: 700 13px/1.4 Arial, sans-serif;
+  z-index: 2;
+}
+.ai-transparency-note { color: inherit; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .visual-card > .ai-content-note { bottom: -38px; font-size: 12px; }
+  .intro-copy > .kd-ai-label-below { margin-bottom: 20px; }
+}
