@@ -989,7 +989,7 @@ body{background:var(--paper)}
     <a href="assets/lumi-book-video.mp4">Buchvideo ansehen</a>
    </video>
    <button class="intro-play lumi-play" id="lumi-book-play" type="button">▶ Buchvideo mit Ton ansehen</button>
-   <figcaption id="lumi-video-help">Entdecke Lumis Weihnachtsabenteuer im Video.</figcaption>
+   <figcaption id="lumi-video-help">Entdecke Lumis Weihnachtsabenteuer im Video.<span class="ai-transparency-note">🤖 KI-Hinweis: Dieses Buchvideo enthält KI-generierte oder KI-bearbeitete Illustrationen.</span></figcaption>
   </figure>
   <div class="intro-copy lumi-copy">
    <a class="lumi-cover" href="assets/lumi-book-spread.webp" target="_blank" rel="noopener" aria-label="Vorder- und Rückseite des Buchs groß ansehen">
@@ -1210,10 +1210,11 @@ body{background:var(--paper)}
           }
           #kiddotronic-ai-demo .kd-examples { display: none; }
         }
-      </style>
+        .ai-transparency-note { display:block; margin:10px 0; font-size:.9rem; line-height:1.45; font-weight:600; }
+  </style>
 ﻿<div id="kiddotronic-ai-demo" class="kd-demo">
   <div class="kd-controls card">
-    <div class="form-label">Teste unsere 6 Zeichenmodi</div>
+    <div class="form-label">Teste unsere 6 Zeichenmodi</div><p class="ai-transparency-note">🤖 Demo-Hinweis: Die Vorschau zeigt beispielhafte Motive und ist keine Live-KI-Generierung. Tatsächliche Druckergebnisse können abweichen.</p>
     <div class="viz-controls" id="kd-choices">
       <button class="btn btn-primary" type="button" data-motif="dog" aria-pressed="true">Einfache Strichzeichnung</button>
       <button class="btn" type="button" data-motif="lineart" aria-pressed="false">Linienkunst</button>
@@ -1387,11 +1388,12 @@ body{background:var(--paper)}
   <details><summary data-xmas-copy="q4">Wo finde ich Hilfe zur Einrichtung?</summary><p data-xmas-copy="a4">Unsere digitale Anleitung führt durch die Einrichtung und enthält WLAN-Hinweise. Das Datenblatt bietet weitere Produktinformationen.</p><a href="anleitung.html" data-xmas-copy="navGuide">Anleitung</a> · <a href="datenblatt.html" data-xmas-copy="dataSheet">Datenblatt</a></details>
   <details><summary data-xmas-copy="q5">Ist der Geschenkanhänger ein Ausdruck des Geräts?</summary><p data-xmas-copy="a5">Der Anhänger im Weihnachtsatelier ist eine eigene Gestaltungshilfe dieser Webseite. Du kannst ihn als mittig ausgerichtete A4-PDF herunterladen und mit einem normalen Drucker auf Papier drucken. Er zeigt keine Druckvorschau des Kiddotronic-Geräts.</p></details>
  </div></div></section>
-<section class="xmas-game-promo" id="lumis-welt" aria-labelledby="xmas-game-title" style="padding:54px 18px;background:linear-gradient(135deg,#194f3c,#24664d);color:#fff6e8;text-align:center"><div class="container" style="max-width:850px;margin:auto"><p style="font-weight:900;color:#f3d18a;letter-spacing:.09em;margin:8px 0">✨ WILLKOMMEN IN LUMIS WELT ✨</p><h2 id="xmas-game-title" style="font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin:12px 0">Lumis Weihnachtsbäckerei</h2><p style="font-size:clamp(1.05rem,2.5vw,1.25rem);margin:12px auto 23px">Lumi und Flocke, der Schneemann, laden dich in ihre gemütliche Weihnachtsbäckerei ein! Finde fünf versteckte Backstuben-Sticker und entdecke eine zauberhafte Winterwelt.</p><img src="82D23C28-0878-490E-82E1-DCEA57038753.png?v=7" alt="Lumi als kleines Mädchen mit blauer Mütze und orangefarbenem Schal und Flocke als Schneemann in einer reich illustrierten Weihnachtsbäckerei – KI-generierte Illustration" loading="lazy" style="display:block;width:min(100%,700px);height:auto;margin:18px auto 26px;border-radius:22px;border:5px solid #f0d7a8;box-shadow:0 16px 35px #082d2280"><a href="weihnachtsspiel.html" style="display:inline-block;background:#fff6e8;color:#194f3c;padding:15px 30px;border-radius:999px;border:3px solid #d8b66a;text-decoration:none;font-weight:900;font-size:1.2rem;box-shadow:0 6px 0 #0b3427">🎮 Lumis Weihnachtsbäckerei spielen</a><p style="font-size:1rem;opacity:.94;margin-top:19px">📖 Und das Beste: <strong>Lumis Mitmachbuch ist da!</strong> <a href="#lumi-buch" style="color:inherit;text-underline-offset:4px">Das Buch entdecken ↑</a></p><p style="font-size:.9rem;opacity:.8;margin-top:10px">Kostenlos · Ohne Anmeldung · Für Handy und Computer</p></div></section>
+<section class="xmas-game-promo" id="lumis-welt" aria-labelledby="xmas-game-title" style="padding:54px 18px;background:linear-gradient(135deg,#194f3c,#24664d);color:#fff6e8;text-align:center"><div class="container" style="max-width:850px;margin:auto"><p style="font-weight:900;color:#f3d18a;letter-spacing:.09em;margin:8px 0">✨ WILLKOMMEN IN LUMIS WELT ✨</p><h2 id="xmas-game-title" style="font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin:12px 0">Lumis Weihnachtsbäckerei</h2><p style="font-size:clamp(1.05rem,2.5vw,1.25rem);margin:12px auto 23px">Lumi und Flocke, der Schneemann, laden dich in ihre gemütliche Weihnachtsbäckerei ein! Finde fünf versteckte Backstuben-Sticker und entdecke eine zauberhafte Winterwelt.</p><img src="82D23C28-0878-490E-82E1-DCEA57038753.png?v=7" alt="Lumi als kleines Mädchen mit blauer Mütze und orangefarbenem Schal und Flocke als Schneemann in einer reich illustrierten Weihnachtsbäckerei – KI-generierte Illustration" loading="lazy" style="display:block;width:min(100%,700px);height:auto;margin:18px auto 26px;border-radius:22px;border:5px solid #f0d7a8;box-shadow:0 16px 35px #082d2280"><p class="ai-transparency-note" style="color:#fff6e8;margin:0 auto 16px;max-width:700px">🤖 KI-generierte Illustration: Die Weihnachtsbäckerei ist eine fantasievolle, künstlich erstellte Darstellung.</p><a href="weihnachtsspiel.html" style="display:inline-block;background:#fff6e8;color:#194f3c;padding:15px 30px;border-radius:999px;border:3px solid #d8b66a;text-decoration:none;font-weight:900;font-size:1.2rem;box-shadow:0 6px 0 #0b3427">🎮 Lumis Weihnachtsbäckerei spielen</a><p style="font-size:1rem;opacity:.94;margin-top:19px">📖 Und das Beste: <strong>Lumis Mitmachbuch ist da!</strong> <a href="#lumi-buch" style="color:inherit;text-underline-offset:4px">Das Buch entdecken ↑</a></p><p style="font-size:.9rem;opacity:.8;margin-top:10px">Kostenlos · Ohne Anmeldung · Für Handy und Computer</p></div></section>
 <section class="atelier-finale" data-xmas-localized><div class="container"><span class="winter-kicker" data-xmas-copy="finalKicker">DAS SCHÖNSTE PASST IN KEINE SCHLEIFE</span><h2 data-xmas-copy="finalTitle">Zeit zusammen.<br>Ideen ohne Ende.</h2><p data-xmas-copy="finalText">Schenke den Anfang von vielen kleinen Geschichten.</p><a class="btn product" href="https://www.amazon.de/dp/B0GYMHN6Z5" target="_blank" rel="noopener noreferrer" data-xmas-copy="finalCta">Kiddotronic auf Amazon entdecken ↗</a></div></section>
   <footer class="footer">
     <div class="container">
       <span>Kiddotronic KI Sticker Printer</span>
+      <p class="ai-transparency-note" style="max-width:640px;margin:12px auto">KI-Transparenz: Auf dieser Website werden KI-generierte oder KI-bearbeitete Illustrationen und Videos eingesetzt. Entsprechende Inhalte sind an den jeweiligen Stellen gekennzeichnet. Der KI-Stickerdrucker erstellt Motive aus gesprochenen Ideen mithilfe künstlicher Intelligenz.</p>
       <div class="legal-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
