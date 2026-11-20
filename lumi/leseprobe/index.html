@@ -1,0 +1,99 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lumis Buchvorschau · Kiddotronic</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 38%,#356951,#12372e);color:#fff4dd;font:16px/1.45 system-ui,sans-serif}main{width:100%;text-align:center}.space{width:min(94vw,101svh,1000px);aspect-ratio:770/517;margin:auto;perspective:1800px}.book{position:relative;width:100%;height:100%;transform:translateX(-25%);transition:transform .62s ease}.book.open{transform:none}.book canvas{width:100%;height:100%;display:block;pointer-events:none;filter:drop-shadow(3px 5px 4px #08291f55)}.control{position:absolute;z-index:100;top:0;width:50%;height:100%;border:0;background:transparent;cursor:pointer;touch-action:pan-y pinch-zoom}.left{left:0}.right{right:0}.control:disabled{pointer-events:none}.control:focus-visible,button:focus-visible{outline:3px solid #eeb53c;outline-offset:3px}nav{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;margin:1.6rem 0 .4rem}button{font:inherit}nav button,#toggle{border:1px solid #e6ca89;border-radius:24px;padding:.6rem 1.1rem;cursor:pointer}nav button{background:#173e33;color:inherit}nav button:disabled{opacity:.45;cursor:default}#toggle{background:#efd089;color:#14382d;font-weight:650;margin:1rem}#count{font-variant-numeric:tabular-nums}[hidden]{display:none!important}@media(prefers-reduced-motion:reduce){.sheet,.board,.book{transition-duration:.001s}}
+</style></head><body><main><div class="space"><div class="book" id="book"><canvas aria-hidden="true"></canvas><button class="control left" aria-label="Linke Seite zurückblättern" hidden></button><button class="control right" aria-label="Hardcover öffnen"></button></div></div>
+<nav hidden><button id="prev">‹ Zurück</button><span id="count" aria-live="polite"></span><button id="next">Weiter ›</button></nav><span id="notice" role="status"></span><button id="toggle" aria-expanded="false">Buch aufklappen</button></main>
+<script>
+const $=s=>document.querySelector(s), book=$('#book'),left=$('.left'),right=$('.right'),toggle=$('#toggle'),prev=$('#prev'),next=$('#next'),total=15;
+const canvas=$('canvas'),ctx=canvas.getContext('2d'),last=(total+1)/2;
+const images=new Map(),ready=new Map();
+let position=0,busy=false,active=null;
+function load(key){
+ if(!key)return Promise.resolve();
+ if(ready.has(key))return ready.get(key);
+ const img=new Image();
+ img.src=key==='cover'?'cover.webp':'seiten/'+key+'.png';
+ const promise=img.decode().then(()=>{images.set(key,img)}).catch(error=>{ready.delete(key);throw error});
+ ready.set(key,promise);return promise
+}
+function visible(pos){return pos===0?[null,'cover']:[(pos-1)*2,(pos-1)*2+1]}
+function page(key,x,w,h){
+ if(key===null)return;
+ ctx.fillStyle='#fcf5e6';ctx.fillRect(x,0,w,h);
+ if(images.has(key))ctx.drawImage(images.get(key),x,0,w,h)
+}
+function paint(){
+ const w=canvas.width/2,h=canvas.height;
+ ctx.clearRect(0,0,2*w,h);
+ if(!active){
+  const [l,r]=visible(position);page(l,0,w,h);page(r,w,w,h);return
+ }
+ const {low,high,phase}=active;
+ const [leftPage,front]=visible(low),[back,rightPage]=visible(high);
+ page(leftPage,0,w,h);page(rightPage,w,w,h);
+ // Draw the same sheet throughout the turn. Each strip carries the image
+ // for its visible side, including the frame where it settles on the left.
+ const angle=phase*Math.PI, flex=low===0?0:.19*Math.sin(angle);
+ const strips=36;
+ for(let i=0;i<strips;i++){
+  const u=i/strips,v=(i+1)/strips;
+  const x1=w*(1+u*Math.cos(angle+flex*(1-u)));
+  const x2=w*(1+v*Math.cos(angle+flex*(1-v)));
+  const facingFront=x2>=x1,key=facingFront?front:back;
+  const x=Math.min(x1,x2),width=Math.abs(x2-x1)+.55;
+  const pic=images.get(key);
+  if(pic){
+   const sx=(facingFront?u:1-v)*pic.naturalWidth;
+   ctx.drawImage(pic,sx,0,pic.naturalWidth/strips,pic.naturalHeight,x,0,width,h)
+  }else{ctx.fillStyle='#fcf5e6';ctx.fillRect(x,0,width,h)}
+  const shade=Math.sin(angle)*(.06+.14*(1-u));
+  if(shade>.001){ctx.fillStyle='rgba(40,29,15,'+shade+')';ctx.fillRect(x,0,width,h)}
+ }
+}
+function resize(){
+ const box=canvas.getBoundingClientRect(),ratio=Math.min(devicePixelRatio||1,2);
+ canvas.width=Math.max(2,Math.round(box.width*ratio/2)*2);
+ canvas.height=Math.max(1,Math.round(box.height*ratio));paint()
+}
+new ResizeObserver(resize).observe(canvas);
+function refresh(){
+ const open=position>0,start=(position-1)*2;
+ book.classList.toggle('open',open);$('nav').hidden=!open;left.hidden=!open;
+ toggle.textContent=open?'Buch zuklappen':'Buch aufklappen';toggle.setAttribute('aria-expanded',String(open));
+ left.disabled=prev.disabled=position<=1;right.disabled=next.disabled=position===last;
+ right.setAttribute('aria-label',open?'Rechte Seite umblättern':'Hardcover öffnen');
+ $('#count').textContent=open?(start?'Seiten '+start+'–'+(start+1):'Seite 1')+' von '+total:''
+}
+async function move(to){
+ if(busy||to<0||to>last||to===position)return;
+ busy=true;$('#notice').textContent='';const old=position,forward=to>old,low=Math.min(old,to),high=Math.max(old,to);
+ try{
+  await Promise.all([...visible(old),...visible(to)].map(load));
+  book.classList.toggle('open',to>0);
+  const duration=matchMedia('(prefers-reduced-motion:reduce)').matches?0:620;
+  await new Promise(resolve=>{
+   let start;
+   function frame(now){
+    start??=now;
+    const t=duration?Math.min(1,(now-start)/duration):1;
+    // Reach the spine early, then ease the illustrated back onto the spread.
+    const eased=1-Math.pow(1-t,1.65);
+    active={low,high,phase:forward?eased:1-eased};paint();
+    if(t<1)requestAnimationFrame(frame);else resolve()
+   }
+   requestAnimationFrame(frame)
+  });
+  position=to
+ }catch{document.querySelector('#notice').textContent='Die Seite konnte nicht geladen werden. Bitte tippe noch einmal.'}
+ finally{active=null;busy=false;refresh();paint()}
+}
+load('cover').then(()=>{paint();return Promise.all(Array.from({length:total},(_,i)=>load(i+1)))}).catch(()=>{});
+let swipe=null,ignoreClick=false;
+book.addEventListener('touchstart',e=>{swipe=e.touches.length===1?e.touches[0]:null;ignoreClick=false},{passive:true});
+book.addEventListener('touchend',e=>{if(!swipe)return;const t=e.changedTouches[0],dx=t.clientX-swipe.clientX,dy=t.clientY-swipe.clientY;swipe=null;if(Math.abs(dx)>42&&Math.abs(dx)>Math.abs(dy)){ignoreClick=true;if(dx<0||position>1)move(position+(dx<0?1:-1))}},{passive:true});
+function tap(direction){if(ignoreClick){ignoreClick=false;return}move(position+direction)}
+left.onclick=()=>tap(-1);right.onclick=()=>tap(1);prev.onclick=()=>move(position-1);next.onclick=()=>move(position+1);
+toggle.onclick=()=>move(position?0:1);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')move(position+1);if(e.key==='ArrowLeft'&&position>1)move(position-1)});
+refresh()
+</script></body></html>
