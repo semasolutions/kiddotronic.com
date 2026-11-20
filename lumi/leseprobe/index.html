@@ -1,9 +1,30 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lumis Buchvorschau · Kiddotronic</title>
 <style>
 *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 38%,#356951,#12372e);color:#fff4dd;font:16px/1.45 system-ui,sans-serif}main{width:100%;text-align:center}.space{width:min(94vw,101svh,1000px);aspect-ratio:770/517;margin:auto;perspective:1800px}.book{position:relative;width:100%;height:100%;transform:translateX(-25%);transition:transform .62s ease}.book.open{transform:none}.book canvas{width:100%;height:100%;display:block;pointer-events:none;filter:drop-shadow(3px 5px 4px #08291f55)}.control{position:absolute;z-index:100;top:0;width:50%;height:100%;border:0;background:transparent;cursor:pointer;touch-action:pan-y pinch-zoom}.left{left:0}.right{right:0}.control:disabled{pointer-events:none}.control:focus-visible,button:focus-visible{outline:3px solid #eeb53c;outline-offset:3px}nav{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;margin:1.6rem 0 .4rem}button{font:inherit}nav button,#toggle{border:1px solid #e6ca89;border-radius:24px;padding:.6rem 1.1rem;cursor:pointer}nav button{background:#173e33;color:inherit}nav button:disabled{opacity:.45;cursor:default}#toggle{background:#efd089;color:#14382d;font-weight:650;margin:1rem}#count{font-variant-numeric:tabular-nums}[hidden]{display:none!important}@media(prefers-reduced-motion:reduce){.sheet,.board,.book{transition-duration:.001s}}
-</style></head><body><main><div class="space"><div class="book" id="book"><canvas aria-hidden="true"></canvas><button class="control left" aria-label="Linke Seite zurückblättern" hidden></button><button class="control right" aria-label="Hardcover öffnen"></button></div></div>
-<nav hidden><button id="prev">‹ Zurück</button><span id="count" aria-live="polite"></span><button id="next">Weiter ›</button></nav><span id="notice" role="status"></span><button id="toggle" aria-expanded="false">Buch aufklappen</button></main>
+
+html.embedded,html.embedded body{margin:0;min-height:0;height:auto;overflow:hidden;background:transparent}
+.embedded body{display:block;font-family:"Baloo 2",system-ui,sans-serif}
+.embedded main{padding:6px 0 3px}
+.embedded .space{width:min(97%,780px)}
+.embedded .actions{display:grid;align-items:center;justify-items:center;min-height:94px;margin-top:12px}
+.embedded .actions nav,.embedded .actions #toggle{grid-column:1}
+.embedded .actions nav{margin:0;flex-wrap:nowrap;gap:clamp(4px,2vw,12px)}
+.embedded nav button{padding:.4rem .65rem;min-height:40px}
+.embedded #count{font-size:.9rem}
+.embedded #toggle{margin:0;padding:.4rem 1.1rem;min-height:40px}
+.embedded #toggle[aria-expanded="true"]{background:transparent;color:#fff0cd;border-color:transparent;text-decoration:underline;text-underline-offset:3px}
+.embedded #notice:empty{display:none}
+@media(max-width:280px){.embedded nav button{padding:.35rem}.embedded #count{font-size:.8rem}}
+</style><link rel="stylesheet" href="../../fonts.css"></head><body><main><div class="space"><div class="book" id="book"><canvas aria-hidden="true"></canvas><button class="control left" aria-label="Linke Seite zurückblättern" hidden></button><button class="control right" aria-label="Hardcover öffnen"></button></div></div>
+<div class="actions"><nav hidden><button id="prev">‹ Zurück</button><span id="count" aria-live="polite"></span><button id="next">Weiter ›</button></nav><span id="notice" role="status"></span><button id="toggle" aria-expanded="false">Buch aufklappen</button></div></main>
 <script>
+if(window.frameElement && new URLSearchParams(location.search).has('ansicht')){
+ document.documentElement.classList.add('embedded');
+ const frame=window.frameElement,main=document.querySelector('main');
+ function fitFrame(){frame.style.height=Math.ceil(main.getBoundingClientRect().height)+'px'}
+ new ResizeObserver(fitFrame).observe(main);
+ fitFrame()
+}
 const $=s=>document.querySelector(s), book=$('#book'),left=$('.left'),right=$('.right'),toggle=$('#toggle'),prev=$('#prev'),next=$('#next'),total=15;
 const canvas=$('canvas'),ctx=canvas.getContext('2d'),last=(total+1)/2;
 const images=new Map(),ready=new Map();
